@@ -1,0 +1,10 @@
+import { chromium } from 'playwright-core';
+const browser = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+const page = await (await browser.newContext({ viewport: { width: 1300, height: 900 } })).newPage();
+page.on('pageerror', (e) => console.log('PAGEERROR', e.message));
+await page.goto('file://' + process.cwd() + '/catalog/gambino-catalog.html'); await page.waitForTimeout(1500);
+await page.screenshot({ path: 'catalog/preview.png' });
+await page.click('.card'); await page.waitForTimeout(400);
+await page.screenshot({ path: 'catalog/preview-detail.png' });
+console.log(await page.textContent('#count'));
+await browser.close();

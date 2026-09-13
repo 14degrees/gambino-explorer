@@ -74,6 +74,13 @@ Interactive pages built from the scene data (each `zeus/*.html` is self-containe
 - Flash Cash Jackpot popup in anime.js — https://claude.ai/code/artifact/481993e6-2826-42b3-8f6e-2e3846db7ab9
 - Wheel jackpot popup in anime.js — https://claude.ai/code/artifact/7765a6ef-c41a-4c55-b54a-e627fbf035b8
 - Teardown write-up — https://claude.ai/code/artifact/d905a3ff-c95a-476b-94dc-ca1a3b8f55da
+- **Catalogue of every game and lobby feature** — https://claude.ai/code/artifact/f85b486a-f866-43e3-beb8-2be5f5564a62
+
+```
+node catalog/crawl.mjs        # every .wad.xml manifest in the map (games + lobby) + lobby tiles, ~35 s
+node catalog/index.mjs        # -> catalog/catalog.json: scenes, state machines, animated states, sprites, videos, grid…
+node catalog/build-page.mjs   # -> catalog/gambino-catalog.html
+```
 
 ```
 node assets.mjs fetch game154 slot && node assets.mjs fetch game154 slot_bg

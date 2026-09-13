@@ -1,0 +1,178 @@
+<title>Gambino Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #EEF0F3; --panel: #FFFFFF; --panel-2: #E4E7EC; --ink: #171A20; --muted: #5E6774; --line: #D3D8E0;
+    --gold: #B8871F; --gold-ink: #7A5A12; --gold-soft: #F3E7C8; --thumb: #14161C; --chip: #EEF0F3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ground: #14161C; --panel: #1B1E26; --panel-2: #242833; --ink: #E8E6E0; --muted: #8E96A3; --line: #2C313B; --gold: #E2B54B; --gold-ink: #E2B54B; --gold-soft: #33290F; --thumb: #0A0B0E; --chip: #242833; }
+  }
+  :root[data-theme="dark"] { --ground: #14161C; --panel: #1B1E26; --panel-2: #242833; --ink: #E8E6E0; --muted: #8E96A3; --line: #2C313B; --gold: #E2B54B; --gold-ink: #E2B54B; --gold-soft: #33290F; --thumb: #0A0B0E; --chip: #242833; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.45 "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-inline: clamp(16px, 3vw, 32px); padding-block: 24px 60px; }
+  h1 { font: 700 44px/1 "Barlow Condensed", "Arial Narrow", sans-serif; margin: 0; letter-spacing: 0.005em; }
+  .eyebrow { font: 600 13px "Barlow Condensed", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 6px; }
+  .lede { color: var(--muted); max-width: 70ch; margin: 10px 0 0; }
+  code, .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+  code { font-size: 0.9em; background: var(--panel-2); padding: 1px 5px; border-radius: 3px; }
+
+  /* totals */
+  .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); margin: 22px 0 18px; }
+  .totals div { padding: 12px 14px 12px 0; border-bottom: 1px solid var(--line); }
+  .totals dt { font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .totals dd { margin: 2px 0 0; font: 600 26px/1.1 "Barlow Condensed", sans-serif; font-variant-numeric: tabular-nums; }
+
+  /* controls */
+  .ctl { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 0 0 14px; }
+  .ctl input[type=search], .ctl select { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 6px 9px; }
+  .ctl input[type=search] { min-width: 220px; flex: 1; max-width: 360px; }
+  .ctl label { color: var(--muted); display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; }
+  .ctl input[type=checkbox] { accent-color: var(--gold); }
+  .count { color: var(--muted); font-size: 13px; margin-left: auto; }
+  input:focus-visible, select:focus-visible, button:focus-visible, .card:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 12px; }
+  .card { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: start; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 10px; cursor: pointer; text-align: left; color: inherit; font: inherit; min-width: 0; }
+  .card:hover { border-color: var(--gold); }
+  .card .th { width: 64px; height: 64px; border-radius: 4px; background: var(--thumb) center/cover no-repeat; flex: none; }
+  .card .th.none { display: grid; place-items: center; color: var(--muted); font: 600 11px "Barlow Condensed", sans-serif; letter-spacing: 0.08em; }
+  .card b { display: block; font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
+  .card .id { color: var(--muted); font-size: 12px; }
+  .card .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .chip { font: 500 11px/1 "IBM Plex Mono", monospace; background: var(--chip); border-radius: 3px; padding: 3px 5px; color: var(--muted); white-space: nowrap; }
+  .chip.g { color: var(--gold-ink); background: var(--gold-soft); }
+  .unlisted .th { opacity: 0.6; }
+
+  h2 { font: 600 28px/1.1 "Barlow Condensed", sans-serif; margin: 40px 0 10px; }
+  .tbl { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 7px 12px 7px 0; border-bottom: 1px solid var(--line); vertical-align: top; font-variant-numeric: tabular-nums; }
+  th { font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--ink); }
+  td.n, th.n { text-align: right; }
+  tr.row { cursor: pointer; } tr.row:hover td { background: var(--gold-soft); }
+
+  /* detail drawer */
+  .drawer { position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: none; z-index: 10; }
+  .drawer[open] { display: block; }
+  .sheet { position: absolute; right: 0; top: 0; bottom: 0; width: min(760px, 100%); background: var(--panel); border-left: 1px solid var(--line); overflow: auto; padding: 20px clamp(16px, 3vw, 28px) 40px; }
+  .sheet header { display: flex; gap: 14px; align-items: flex-start; }
+  .sheet .th { width: 96px; height: 96px; border-radius: 6px; background: var(--thumb) center/cover no-repeat; flex: none; }
+  .sheet h3 { font: 700 30px/1 "Barlow Condensed", sans-serif; margin: 0; }
+  .sheet .sub { color: var(--muted); margin-top: 4px; }
+  .sheet .x { margin-left: auto; font: 600 16px "Barlow Condensed", sans-serif; background: none; border: 1px solid var(--line); color: var(--ink); border-radius: 4px; padding: 4px 10px; cursor: pointer; }
+  .sheet h4 { font: 600 13px "Barlow Condensed", sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 22px 0 6px; }
+  .kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px 14px; }
+  .kv div { padding: 8px 0; border-top: 1px solid var(--line); }
+  .kv dt { font-size: 12px; color: var(--muted); } .kv dd { margin: 0; font-weight: 500; }
+  details { border-top: 1px solid var(--line); }
+  details summary { cursor: pointer; padding: 7px 0; display: grid; grid-template-columns: 1fr auto auto auto; gap: 10px; font-size: 13px; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  details summary .m { color: var(--muted); font-variant-numeric: tabular-nums; }
+  details summary .a { color: var(--gold-ink); font-variant-numeric: tabular-nums; }
+  .anims { margin: 0 0 8px; padding: 0 0 0 12px; font: 12px/1.6 "IBM Plex Mono", monospace; color: var(--muted); }
+  .anims b { color: var(--ink); font-weight: 500; }
+  pre { background: #0E1014; color: #E6E3DA; padding: 12px 14px; border-radius: 6px; overflow-x: auto; font: 12px/1.5 "IBM Plex Mono", monospace; }
+  .names { font: 12px/1.6 "IBM Plex Mono", monospace; color: var(--muted); overflow-wrap: anywhere; }
+  footer { margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">game.onlinefungames.net · public asset map · built __BUILT__</div>
+  <h1>Gambino Catalogue</h1>
+  <p class="lede">Every game and lobby feature the Gambino Slots client can load, indexed from their <code>.wad.xml</code> manifests: scene graphs, state machines, animated states with durations, sprites, symbol videos, sounds, fonts and reel geometry. Manifests only — the pixels stay on Spiral Interactive's CDN. For study.</p>
+
+  <dl class="totals" id="totals"></dl>
+
+  <div class="ctl">
+    <input type="search" id="q" placeholder="Search title or id…" aria-label="Search">
+    <select id="sort" aria-label="Sort">
+      <option value="title">Sort: title</option><option value="anim">Sort: animated states</option><option value="videos">Sort: symbol videos</option><option value="sprites">Sort: sprites</option><option value="scenes">Sort: scenes</option><option value="id">Sort: game id</option>
+    </select>
+    <select id="gridf" aria-label="Reel grid"><option value="">Any grid</option></select>
+    <label><input type="checkbox" id="wheel"> has a wheel</label>
+    <label><input type="checkbox" id="listed" checked> listed in lobby only</label>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="grid" id="games"></div>
+
+  <h2>Lobby features</h2>
+  <p class="lede">Everything that isn't a slot: the lobby shell, popups, the wheels, mini-games, promos. Click a row for its scenes.</p>
+  <div class="tbl"><table id="lobby"><thead><tr><th>Feature</th><th class="n">Wads</th><th class="n">Scenes</th><th class="n">Nodes</th><th class="n">Animated states</th><th class="n">Sprites</th><th class="n">Videos</th><th class="n">Sounds</th></tr></thead><tbody></tbody></table></div>
+
+  <footer>Index built from <code>assets/en.low.master_1438c33c….map.json</code>. "Animated state" = a state-machine state whose entry timeline contains at least one tween of ≥ 40 ms; instant switches are not counted. Rebuild any entry locally with <code>node assets.mjs fetch &lt;id&gt; slot &amp;&amp; node zeus/build.mjs &lt;id&gt;</code>.</footer>
+</div>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true"><div class="sheet" id="sheet"></div></div>
+
+<script>
+const C = /*__DATA__*/null;
+const THUMBS = /*__THUMBS__*/{};
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => n.toLocaleString('en-US');
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+// totals
+$('totals').innerHTML = [['Games on the CDN', C.totals.games, `${C.totals.titled} listed in the lobby`], ['Lobby features', C.totals.lobbyFeatures, ''], ['Scenes', C.totals.scenes, ''], ['Nodes', C.totals.nodes, 'in scene graphs'], ['Sprites', C.totals.sprites, 'frame-sheet entries'], ['Symbol videos', C.totals.videos, 'RGB|alpha WebM'], ['Sounds', C.totals.audio, ''], ['Animated states', C.totals.animStates, 'timelines with tweens']]
+  .map(([k, v, s]) => `<div><dt>${k}</dt><dd>${fmt(v)}</dd>${s ? `<div style="font-size:12px;color:var(--muted)">${s}</div>` : ''}</div>`).join('');
+
+// grid filter options
+const gridKey = (g) => g.grid ? `${g.grid.cols}×${g.grid.rows}` : null;
+const gridCounts = {}; for (const g of C.games) { const k = gridKey(g); if (k) gridCounts[k] = (gridCounts[k] || 0) + 1; }
+for (const [k, n] of Object.entries(gridCounts).sort((a, b) => b[1] - a[1])) { const o = document.createElement('option'); o.value = k; o.textContent = `${k} reels (${n})`; $('gridf').appendChild(o); }
+
+const hasWheel = (g) => g.features.some((f) => /wheel/i.test(f)) || g.scenes.some((s) => /wheel/i.test(s.id));
+function render() {
+  const q = $('q').value.trim().toLowerCase(); const sort = $('sort').value; const gf = $('gridf').value; const wheel = $('wheel').checked; const listed = $('listed').checked;
+  let list = C.games.filter((g) => (!listed || g.title) && (!gf || gridKey(g) === gf) && (!wheel || hasWheel(g)) && (!q || (g.title || '').toLowerCase().includes(q) || g.id.includes(q)));
+  const key = { title: (g) => (g.title || '~' + g.id).toLowerCase(), anim: (g) => -g.animStates, videos: (g) => -g.videos, sprites: (g) => -g.sprites, scenes: (g) => -g.scenes.length, id: (g) => +g.id.slice(4) }[sort];
+  list.sort((a, b) => key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : 0);
+  $('count').textContent = `${list.length} of ${C.games.length}`;
+  $('games').innerHTML = list.map((g) => `<button class="card${g.title ? '' : ' unlisted'}" data-id="${g.id}">
+    <div class="th${THUMBS[g.id] ? '' : ' none'}" ${THUMBS[g.id] ? `style="background-image:url(${THUMBS[g.id]})"` : ''}>${THUMBS[g.id] ? '' : 'no tile'}</div>
+    <div><b>${esc(g.title || 'unlisted')}</b><span class="id">${g.id}${g.grid ? ` · ${g.grid.cols}×${g.grid.rows} · ${g.grid.w}×${g.grid.h}` : ''}</span>
+    <div class="chips"><span class="chip g">${g.animStates} anim</span><span class="chip">${g.scenes.length} scenes</span><span class="chip">${g.videos} video</span><span class="chip">${g.sprites} spr</span>${hasWheel(g) ? '<span class="chip g">wheel</span>' : ''}</div></div></button>`).join('');
+  $('games').querySelectorAll('.card').forEach((b) => b.addEventListener('click', () => openGame(C.games.find((g) => g.id === b.dataset.id))));
+}
+['q', 'sort', 'gridf', 'wheel', 'listed'].forEach((id) => $(id).addEventListener('input', render));
+
+function scenesHtml(rec) {
+  const byWad = {}; for (const s of rec.scenes) (byWad[s.wad] ||= []).push(s);
+  return Object.entries(byWad).map(([wad, ss]) => `<h4>${esc(wad)} · ${ss.length} scene${ss.length === 1 ? '' : 's'}</h4>` + ss.sort((a, b) => b.anims.length - a.anims.length || b.nodes - a.nodes).map((s) => `<details><summary><span class="mono">${esc(s.id.replace(/\.object$/, ''))}</span><span class="m">${s.nodes} nodes</span><span class="m">${s.states} states</span><span class="a">${s.anims.length ? s.anims.length + ' anim' : '—'}</span></summary>
+    <div class="anims">${Object.entries(s.types).map(([t, n]) => `${t} ${n}`).join(' · ')}${s.grid ? ` · grid ${s.grid.cols}×${s.grid.rows} of ${s.grid.w}×${s.grid.h}` : ''}<br>${s.anims.slice(0, 40).map(([id, ms, tw, own]) => `<b>${esc(id)}</b> ${ms} ms · ${tw} tween${tw === 1 ? '' : 's'}${own ? ` · #${esc(own)}` : ''}`).join('<br>')}${s.anims.length > 40 ? `<br>… ${s.anims.length - 40} more` : ''}</div></details>`).join('')).join('');
+}
+function openGame(g) {
+  const wads = Object.entries(g.wads).map(([w, v]) => `<tr><td class="mono">${esc(w)}</td><td class="n">${v.scenes}</td><td class="n">${v.sprites}</td><td class="n">${v.textures}</td><td class="n">${v.videos}</td><td class="n">${v.audio}</td><td class="n">${v.kb} KB</td></tr>`).join('');
+  $('sheet').innerHTML = `<header><div class="th" ${THUMBS[g.id] ? `style="background-image:url(${THUMBS[g.id]})"` : ''}></div><div><h3>${esc(g.title || 'unlisted game')}</h3><div class="sub">${g.id}${g.assetsVersion ? ` · assets v${g.assetsVersion}` : ''}${g.level != null ? ` · from level ${g.level}` : ''}${g.title ? '' : ' · on the CDN but not in the current lobby'}</div></div><button class="x" id="closeb">Close</button></header>
+    <dl class="kv"><div><dt>Reel grid</dt><dd>${g.grid ? `${g.grid.cols} × ${g.grid.rows} of ${g.grid.w} × ${g.grid.h}` : '—'}</dd></div><div><dt>Symbols</dt><dd>${g.symbols}</dd></div><div><dt>Scenes</dt><dd>${g.scenes.length}</dd></div><div><dt>Nodes</dt><dd>${fmt(g.totalNodes)}</dd></div><div><dt>Animated states</dt><dd>${g.animStates}</dd></div><div><dt>Sprites</dt><dd>${g.sprites}</dd></div><div><dt>Symbol videos</dt><dd>${g.videos}</dd></div><div><dt>Sounds</dt><dd>${g.audio}</dd></div><div><dt>Fonts</dt><dd>${g.fonts}</dd></div><div><dt>Manifests</dt><dd>${fmt(g.kb)} KB</dd></div></dl>
+    ${g.features.length ? `<h4>Extra packages</h4><div class="names">${g.features.map(esc).join(' · ')}</div>` : ''}
+    <h4>Packages</h4><div class="tbl"><table><thead><tr><th>wad</th><th class="n">scenes</th><th class="n">sprites</th><th class="n">textures</th><th class="n">videos</th><th class="n">sounds</th><th class="n">size</th></tr></thead><tbody>${wads}</tbody></table></div>
+    ${g.videoNames.length ? `<h4>Symbol videos</h4><div class="names">${g.videoNames.map(esc).join(' · ')}</div>` : ''}
+    ${g.bigSprites.length ? `<h4>Largest sprites</h4><div class="names">${g.bigSprites.map(([n, w, h]) => `${esc(n.split('/').pop())} ${w}×${h}`).join(' · ')}</div>` : ''}
+    <h4>Rebuild locally</h4><pre>node assets.mjs fetch ${g.id} slot &amp;&amp; node assets.mjs fetch ${g.id} slot_bg
+node zeus/build.mjs ${g.id}          # scene inspector with timeline player
+node zeus/to-anime.mjs --wad dl/${g.id}/slot.wad.xml --scene &lt;scene&gt; --state &lt;state&gt; --out zeus/anime/${g.id}.html</pre>
+    <h4>Scenes</h4>${scenesHtml(g)}`;
+  $('drawer').setAttribute('open', ''); $('closeb').addEventListener('click', close); $('sheet').scrollTop = 0; $('closeb').focus();
+}
+function openLobby(l) {
+  const wads = Object.entries(l.wads).map(([w, v]) => `<tr><td class="mono">${esc(w)}</td><td class="n">${v.scenes}</td><td class="n">${v.sprites}</td><td class="n">${v.textures}</td><td class="n">${v.videos}</td><td class="n">${v.audio}</td><td class="n">${v.kb} KB</td></tr>`).join('');
+  $('sheet').innerHTML = `<header><div><h3>${esc(l.id)}</h3><div class="sub">lobby feature · ${Object.keys(l.wads).length} package${Object.keys(l.wads).length === 1 ? '' : 's'}</div></div><button class="x" id="closeb">Close</button></header>
+    <dl class="kv"><div><dt>Scenes</dt><dd>${l.scenes.length}</dd></div><div><dt>Nodes</dt><dd>${fmt(l.totalNodes)}</dd></div><div><dt>Animated states</dt><dd>${l.animStates}</dd></div><div><dt>Sprites</dt><dd>${l.sprites}</dd></div><div><dt>Videos</dt><dd>${l.videos}</dd></div><div><dt>Sounds</dt><dd>${l.audio}</dd></div><div><dt>Fonts</dt><dd>${l.fonts}</dd></div></dl>
+    <h4>Packages</h4><div class="tbl"><table><thead><tr><th>wad</th><th class="n">scenes</th><th class="n">sprites</th><th class="n">textures</th><th class="n">videos</th><th class="n">sounds</th><th class="n">size</th></tr></thead><tbody>${wads}</tbody></table></div>
+    <h4>Rebuild locally</h4><pre>node assets.mjs get lobby_next_version/${Object.keys(l.wads)[0]}
+node zeus/build.mjs --wad dl/lobby_next_version/${Object.keys(l.wads)[0]} --main &lt;scene&gt; --title "${esc(l.id)}" --out zeus/${esc(l.id.replace(/\W+/g, '-'))}-inspector.html</pre>
+    <h4>Scenes</h4>${scenesHtml(l)}`;
+  $('drawer').setAttribute('open', ''); $('closeb').addEventListener('click', close); $('sheet').scrollTop = 0; $('closeb').focus();
+}
+function close() { $('drawer').removeAttribute('open'); }
+$('drawer').addEventListener('click', (e) => { if (e.target === $('drawer')) close(); });
+addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+$('lobby').querySelector('tbody').innerHTML = [...C.lobby].sort((a, b) => b.animStates - a.animStates).map((l, i) => `<tr class="row" data-i="${C.lobby.indexOf(l)}"><td>${esc(l.id)}</td><td class="n">${Object.keys(l.wads).length}</td><td class="n">${l.scenes.length}</td><td class="n">${fmt(l.totalNodes)}</td><td class="n">${l.animStates}</td><td class="n">${l.sprites}</td><td class="n">${l.videos}</td><td class="n">${l.audio}</td></tr>`).join('');
+$('lobby').querySelectorAll('tr.row').forEach((r) => r.addEventListener('click', () => openLobby(C.lobby[+r.dataset.i])));
+render();
+</script>
