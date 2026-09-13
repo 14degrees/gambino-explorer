@@ -63,6 +63,11 @@ Local samples in `game117/`: `slot.wad.xml`, `slot.atlas.{webp,png}`,
 The art is Gambino's (Spiral Interactive) copyrighted work — fine to study
 the format and technique, not to ship.
 
+## Viewer app
+
+`viewer/` — Vite + React app that loads any game or lobby feature on demand and plays its
+states with anime.js: `cd viewer && npm install && npm run dev`. See `viewer/README.md`.
+
 ## Scene inspectors and anime.js rebuilds
 
 Interactive pages built from the scene data (each `zeus/*.html` is self-contained):
