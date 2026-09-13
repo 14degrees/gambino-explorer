@@ -23,7 +23,7 @@ around like the real client — and what that is worth for gamby.
 
 ## Plan — three layers, in this order
 
-### 1. Interaction runtime (generic, one sitting)
+### 1. Interaction runtime (generic, one sitting) — DONE, `viewer/src/syd/runtime.ts`
 
 In `viewer/src/syd/`:
 
@@ -40,7 +40,7 @@ In `viewer/src/syd/`:
 Result: the composed lobby and bet bar respond to the mouse — buttons depress, tooltips open,
 panels switch modes — with zero hand-written behaviour.
 
-### 2. Glue for the flows that matter (hand-written, small)
+### 2. Glue for the flows that matter (hand-written, small) — tile → game and Back → lobby done; rest open
 
 - Tile click → load that game in the in-game wrapper (both halves exist already).
 - BUY → `send(shopPopup, "show")` (the popup scenes are in `PaymentPage.wad.xml` / `popups.wad.xml`).
@@ -60,3 +60,17 @@ Balances, prices, jackpot values, level, timers from a small local JSON so every
 - For gamby the payoff is **layer 1**: a state-machine-plus-timeline runtime where designers
   author states and code only sends events. That is exactly the shape the gamby wheel and
   jackpot reveal want, with our own art.
+
+## What the data turned out to mean (found while building layer 1)
+
+- Every button has a **self-signal** (`signalEvents` entry with source = target = the button)
+  carrying the engine's touch value: 0 up, 1 down, 2 hover. Its `_up/_down/_hover` states
+  transition on `signal` rules with those values. All `signalEvents` in these scenes are
+  self-signals — there are no authored cross-node reactions; that is always code.
+- A state's `targets[i]` is an index into its **container's `children`**, not a global state index.
+- `TouchArea` is a top-left box `{x, y, w, h}` from the node origin; buttons without one hit on
+  their sprites.
+- `click_sound_play` / `click_sound_default` are sent by code around a click; `dis`, `activate`,
+  `lock_*`, `hide` are code-sent params too.
+- The top bar is authored at the design-box origin (measured against the live client), and the
+  client sends it `TopPanelMode → "game"` and `LeftBtnStates → "btn_back"` when a game opens.

@@ -4,7 +4,7 @@ export type SpriteSheet = { frames: Frame[]; meta: { image: string } };
 export type Glyph = { x: number; y: number; w: number; h: number; xo: number; yo: number; xa: number };
 export type Font = { base: number; lineHeight: number; page: string; chars: Record<number, Glyph> };
 export type Node = { type: string; properties?: Record<string, any>; children?: number[]; actions?: number[]; stateMachine?: number; effect?: string[]; blend?: { destinationFactor?: string } };
-export type Scene = { nodes: Node[]; actions?: any[]; states?: any[]; transitions?: any[]; rules?: any[] };
+export type Scene = { nodes: Node[]; actions?: any[]; states?: any[]; transitions?: any[]; rules?: any[]; signalEvents?: any[] };
 export type Wad = {
   scenes: Record<string, Scene>;
   sprites: Record<string, SpriteSheet>;

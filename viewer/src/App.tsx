@@ -4,6 +4,7 @@ import { parseWad, mergeWads, cdn, type Wad, type Scene } from './syd/wad';
 import { buildScene, preloadTextures, SCREEN, type Built } from './syd/dom';
 import { listStates, type StateInfo } from './syd/scene';
 import { playState } from './syd/timeline';
+import { Runtime } from './syd/runtime';
 import Assets from './ui/Assets';
 import Tree from './ui/Tree';
 import { nodeBox, fmtMs } from './ui/util';
@@ -48,6 +49,9 @@ export default function App() {
   const frameRef = useRef<HTMLDivElement>(null);
   const builtRef = useRef<Built | null>(null);
   const tlRef = useRef<any>(null);
+  const runtimesRef = useRef<Runtime[]>([]);
+  const [events, setEvents] = useState<string[]>([]);
+  const [showHits, setShowHits] = useState(false);
   const scaleRef = useRef(1);
 
   useEffect(() => { fetch('/catalog.json').then((r) => r.json()).then(setCatalog); fetch('/map.json').then((r) => r.json()).then(setMap); }, []);
@@ -104,6 +108,12 @@ export default function App() {
     step(0);
   }, [play]);
 
+  const openGame = useCallback((id: string) => { const e = entries.find((x) => x.kind === 'game' && x.id === id); if (!e) return; setEntry(e); setWadName(''); setSceneId(''); setView('scene'); setCompose('ingame'); setEvents((l) => [...l, `open ${e.title}`]); }, [entries]);
+  const openLobby = useCallback(() => { const e = entries.find((x) => x.kind === 'lobby' && x.id === 'LobbyMain'); if (!e) return; setEntry(e); setWadName(''); setSceneId('LobbyMain/sceneGames16x9.object'); setView('scene'); setCompose('lobby'); }, [entries]);
+  // the hand-written glue: what a click means. Everything else just animates as authored.
+  const onButton = (layer: string, id: string | null, node: number) => {
+    if (id === 'BackBtn' || id === 'backHHRBtn' || id === 'HomeBtn') openLobby();
+  };
   // (re)build the DOM for the current scene
   useEffect(() => {
     let cleanup = () => {};
@@ -119,17 +129,24 @@ export default function App() {
     for (const i of hiddenNodes) if (b.els[i]) b.els[i].style.display = 'none';
     host.appendChild(b.root); builtRef.current = b;
     // wrappers: the packages the client stacks around a scene
-    const X = extraRef.current; const layer = (w: Wad | undefined, id: string, z: number, dx = 0, dy = 0, into?: HTMLElement) => { if (!w?.scenes[id]) return null; const bb = buildScene(w, w.scenes[id], { applyInitial: opts.initial }); bb.root.style.zIndex = String(z); if (dx || dy) bb.root.style.transform = `translate(${dx}px, ${dy}px)`; (into || host).appendChild(bb.root); return bb; };
+    runtimesRef.current.forEach((rt) => rt.dispose()); runtimesRef.current = [];
+    const wire = (w: Wad, sc: Scene, bb: Built, name: string) => { const rt = new Runtime(sc, bb, w, name); rt.on((ev) => { if (ev.kind === 'click') onButton(name, ev.id, ev.node); if (ev.kind === 'click' || (ev.kind === 'enter' && ev.state && !/^_/.test(ev.state))) setEvents((l) => [...l.slice(-60), `${name} ${ev.id ? '#' + ev.id : '[' + ev.node + ']'} ${ev.kind === 'click' ? 'click' : '→ ' + ev.state}`]); }); runtimesRef.current.push(rt); return rt; };
+    wire(wad, scene, b, sceneId.replace(/\.object$/, ''));
+    (window as any).__rt = runtimesRef.current; // for probing from the console
+    const X = extraRef.current; const layer = (w: Wad | undefined, id: string, z: number, dx = 0, dy = 0, into?: HTMLElement) => { if (!w?.scenes[id]) return null; const bb = buildScene(w, w.scenes[id], { applyInitial: opts.initial }); bb.root.style.zIndex = String(z); if (dx || dy) bb.root.style.transform = `translate(${dx}px, ${dy}px)`; (into || host).appendChild(bb.root); wire(w, w.scenes[id], bb, id.split('/').slice(-2).join('/').replace(/\.object$/, '')); return bb; };
     if (compose === 'ingame' && !sceneId.startsWith('icons/')) {
       layer(X[K.bottom], 'bottom/scene16x9.object', 900);
-      layer(X[K.lobby], 'lobby/Panels/Top/scene16x9.object', 910, -SCREEN.ox, 0); // the client parents the top bar at the screen origin
+      const topB = layer(X[K.lobby], 'lobby/Panels/Top/scene16x9.object', 910, 0, 0); // measured against the live client: the bar is authored at the design-box origin
+      if (topB) { const topRt = runtimesRef.current[runtimesRef.current.length - 1]; // the params the client sends when a game opens
+        const byId = (id: string) => topRt.scene.nodes.findIndex((n) => n.properties?.Id === id);
+        setTimeout(() => { for (const [id, param] of [['TopPanelMode', 'game'], ['LeftBtnStates', 'btn_back']]) { const n = byId(id); if (n >= 0) topRt.send(n, param); } }, 0); }
       layer(X[K.indicator], 'IndicatorPanel/scene16x9.object', 905);
     }
     if (compose === 'lobby') {
       host.innerHTML = ''; builtRef.current = null;
       layer(X[K.lobby], 'lobby_bg/scene.object', 1);
       const grid = layer(X[K.lobbyMain], 'LobbyMain/sceneGames16x9.object', 10);
-      const top = grid?.els.find((e) => e?.dataset.id === 'TopPanelContainer'); layer(X[K.lobby], 'lobby/Panels/Top/scene16x9.object', 910, 0, 0, top || undefined);
+      layer(X[K.lobby], 'lobby/Panels/Top/scene16x9.object', 910, 0, 0); // design-box origin, above the grid
       const area = grid?.els.find((e) => e?.dataset.id === 'GamesScrollingArea');
       if (area && catalog) { area.style.zIndex = '20';
         // the scroll area's masks are sized by the client at runtime; lift them so the tiles paint
@@ -137,7 +154,7 @@ export default function App() {
         // tiles are laid out by code in the client; use the catalogue's lobby games
         const games = catalog.games.filter((g: any) => g.title).sort((a: any, b: any) => (a.level ?? 99) - (b.level ?? 99) || a.title.localeCompare(b.title));
         const T = 196, G = 19; // measured from the live lobby: ~196 px tiles on a 215 px pitch, two rows
-        games.forEach((g: any, i: number) => { const col = Math.floor(i / 2), row = i % 2; const d = document.createElement('div'); d.className = 'tile-lobby'; d.style.cssText = `position:absolute;left:${-26 + col * (T + G)}px;top:${row * (T + G)}px;width:${T}px;height:${T}px;background:url(/thumbs/${g.id}.webp) center/cover;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.5)`; d.title = g.title; area.appendChild(d); });
+        games.forEach((g: any, i: number) => { const col = Math.floor(i / 2), row = i % 2; const d = document.createElement('div'); d.className = 'tile-lobby'; d.style.cssText = `position:absolute;left:${-26 + col * (T + G)}px;top:${row * (T + G)}px;width:${T}px;height:${T}px;background:url(/thumbs/${g.id}.webp) center/cover;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.5)`; d.title = g.title; d.addEventListener('click', () => openGame(g.id)); area.appendChild(d); });
       }
       layer(X[K.indicator], 'IndicatorPanel/scene16x9.object', 905);
       const rail = grid?.els.find((e) => e?.dataset.id === 'IndicatorScrollingArea'); if (rail) rail.style.zIndex = '21';
@@ -175,7 +192,7 @@ export default function App() {
   const sceneMeta = (id: string) => cat?.scenes.find((s: any) => s.id === id);
 
   return (
-    <div className="app">
+    <div className={`app${showHits ? ' hits' : ''}`}>
       <header>
         <h1>Gambino Viewer</h1>
         {entry && <div className="crumb"><b>{entry.title}</b><span>{entry.id}{status ? ' · ' + status : ''}{loadNote ? ' · ' + loadNote : ''}</span></div>}
@@ -212,6 +229,7 @@ export default function App() {
             <span className="mono">{playing ? `${playing.label} · ${playing.tracks} tracks · ${fmtMs(playing.total)}${opts.loop && playing.total && !playing.label.endsWith('once') ? ' · loop' : ''}` : (scene ? `${sceneId.replace(/\.object$/, '')} · ${scene.nodes.length} nodes · ${animated.length} animated states` : '')}</span>
             {wheelNode >= 0 && <button className="b gold" onClick={spin} title="rotate the wheel node the way the engine's code does">Spin</button>}
           </div>
+          <div className="events">{events.length ? events.slice(-8).map((e, i) => <div key={i}><b>{e.split(' ')[0]}</b>{e.slice(e.indexOf(' '))}</div>) : 'Buttons react as authored — hover, press, release, click sound. Tiles open the game; Back returns to the lobby. Events show here.'}</div>
         </>}
       </main>
 

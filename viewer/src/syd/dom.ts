@@ -7,7 +7,7 @@ import { cdn } from './wad';
 import { initialProps, effectiveProps, kidsByZ, roots } from './scene';
 import { AlphaVideo } from './video';
 
-export type Built = { root: HTMLElement; els: HTMLElement[]; videos: Map<number, AlphaVideo>; init: Record<number, Record<string, any>>; setFrame: (i: number, f: number) => void; reset: () => void; visibleLeaves: () => number };
+export type Built = { root: HTMLElement; els: HTMLElement[]; videos: Map<number, AlphaVideo>; sounds: Map<number, HTMLAudioElement>; init: Record<number, Record<string, any>>; setFrame: (i: number, f: number) => void; reset: () => void; visibleLeaves: () => number };
 
 const texUrl = (w: Wad, id: string) => { const t = w.textures[id]; return t ? cdn(t.webp || t.png!) : null; };
 
@@ -37,7 +37,7 @@ export function preloadTextures(w: Wad, r: Scene, timeoutMs = 8000): Promise<voi
 export const SCREEN = { w: 1366, h: 768, design: 1152, ox: 107 };
 export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; reveal?: boolean } = {}): Built {
   const init = opts.applyInitial === false ? {} : initialProps(r);
-  const els: HTMLElement[] = []; const videos = new Map<number, AlphaVideo>();
+  const els: HTMLElement[] = []; const videos = new Map<number, AlphaVideo>(); const sounds = new Map<number, HTMLAudioElement>();
   const spriteEl = (name: string, frameIdx = 0) => {
     const sh = w.sprites[name]; if (!sh) return null;
     const f = sh.frames[Math.min(frameIdx, sh.frames.length - 1)]; const url = texUrl(w, sh.meta.image); if (!url) return null;
@@ -84,6 +84,7 @@ export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; rev
     el.style.cssText = st.join(';');
     if (n.type === 'sprite' || n.type === 'ninePatch') { const s = spriteEl(p.SpriteName, p.Frame || 0); if (s) el.appendChild(s); }
     else if (n.type === 'text') { const t = textEl(p); if (t) el.appendChild(t); }
+    else if ((n.type === 'sound' || n.type === 'stream') && p.SoundName && w.audio[p.SoundName]) { const a = new Audio(cdn(w.audio[p.SoundName].ogg || w.audio[p.SoundName].mp3!)); a.preload = 'none'; a.loop = !!p.Loop; sounds.set(i, a); }
     else if (n.type === 'videoSprite' && p.VideoName && w.videos[p.VideoName]) { const v = new AlphaVideo(cdn(w.videos[p.VideoName].webm || w.videos[p.VideoName].mp4!)); videos.set(i, v); el.appendChild(v.canvas); }
     for (const k of kidsByZ(r, n)) el.appendChild(build(k));
     els[i] = el; return el;
@@ -92,9 +93,9 @@ export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; rev
   for (const rt of roots(r)) root.appendChild(build(rt));
   const base = els.map((e) => e?.style.cssText);
   return {
-    root, els, videos, init,
+    root, els, videos, sounds, init,
     setFrame: (i, f) => { const sp = els[i]?.querySelector('.spr') as HTMLElement | null; const sh = w.sprites[r.nodes[i].properties?.SpriteName]; const fr = sh?.frames[Math.min(f, sh.frames.length - 1)]; if (sp && fr) sp.style.backgroundPosition = `-${fr.frame.x}px -${fr.frame.y}px`; },
-    reset: () => { els.forEach((e, i) => { if (e) e.style.cssText = base[i]; }); videos.forEach((v) => v.stop()); },
+    reset: () => { els.forEach((e, i) => { if (e) e.style.cssText = base[i]; }); videos.forEach((v) => v.stop()); sounds.forEach((a) => { a.pause(); a.currentTime = 0; }); },
     // leaves that would actually paint at rest (no hidden / alpha-0 ancestor)
     visibleLeaves: () => [...root.querySelectorAll('.spr')].filter((e) => { let p = e.parentElement; while (p && p !== root) { if (p.style.display === 'none' || p.style.opacity === '0' || p.style.opacity === '0.000' || /brightness\(0\.[0-2]/.test(p.style.filter)) return false; p = p.parentElement; } return true; }).length,
   };

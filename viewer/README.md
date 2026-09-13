@@ -26,6 +26,10 @@ npm run dev          # asset server on :8787 + Vite on :5173, opens the browser
   with the top bar parented into `TopPanelContainer`, tiles from the catalogue laid into
   `GamesScrollingArea`, and a rail widget. **The lobby** is also the first sidebar entry.
   `screenAlignment` nodes anchor a subtree's origin to a screen edge (Center/Bottom = bottom-centre).
+- **Interactive**: buttons carry hit boxes from their `TouchArea` and run their `_hover / _down /
+  _up` states and click sound as authored (`src/syd/runtime.ts` — state machines with param and
+  signal transitions). Lobby tiles open the game in the wrapper; the top bar switches to game
+  mode; Back returns to the lobby. Events show under the player. *View options → show hit boxes*.
 - Deep links: the URL hash carries `#game:game154//slot/scene_mobile.object`.
 
 `src/syd/` is the runtime: `wad.ts` (parser), `scene.ts` (initial state, expanded-order

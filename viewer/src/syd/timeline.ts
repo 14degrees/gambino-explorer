@@ -20,7 +20,7 @@ export function playState(r: Scene, built: Built, actionIndex: number, ownerNode
     if (tr.discrete) {
       const v = tr.value;
       if (tr.prop === 'Hidden') tl.call(() => { target.style.display = v ? 'none' : ''; }, tr.t0);
-      else if (tr.prop === '__play') tl.call(() => { const vid = built.videos.get(tr.node); if (vid) v ? vid.play() : vid.stop(); }, tr.t0);
+      else if (tr.prop === '__play') tl.call(() => { const vid = built.videos.get(tr.node); if (vid) v ? vid.play() : vid.stop(); const snd = built.sounds.get(tr.node); if (snd) { if (v) { snd.currentTime = 0; snd.play().catch(() => {}); } else snd.pause(); } }, tr.t0);
       else if (tr.prop === 'Frame') tl.call(() => built.setFrame(tr.node, v ?? 0), tr.t0);
       else if (tr.prop === 'Position') tl.set(target, { x: (v?.x ?? 0) - (O.x || 0), y: (v?.y ?? 0) - (O.y || 0) }, tr.t0);
       else if (tr.prop === 'Scale') tl.set(target, { scaleX: v?.x ?? 1, scaleY: v?.y ?? 1 }, tr.t0);

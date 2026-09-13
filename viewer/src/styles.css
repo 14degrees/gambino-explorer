@@ -113,3 +113,11 @@ button.b.gold { background: var(--gold); color: #1a1408; border-color: var(--gol
 .font { border: 1px solid var(--line); border-radius: 6px; background: var(--panel); padding: 10px; margin-bottom: 10px; }
 .font .glyphs { position: relative; overflow: hidden; background: repeating-conic-gradient(#1a1d24 0 25%, #14161c 0 50%) 0 0 / 12px 12px; }
 .font .glyphs .spr { position: absolute; }
+
+.scene, .nd, .txt { pointer-events: none; }
+.hit { position: absolute; pointer-events: auto; cursor: pointer; }
+.app.hits .hit { outline: 1px dashed rgba(226,181,75,0.6); background: rgba(226,181,75,0.08); }
+.tile-lobby { pointer-events: auto; cursor: pointer; }
+.tile-lobby:hover { outline: 3px solid #fff; }
+.events { font: 11px/1.5 "IBM Plex Mono", monospace; color: var(--muted); max-height: 110px; overflow: auto; padding: 6px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+.events b { color: var(--gold); font-weight: 500; }
