@@ -1,0 +1,9 @@
+lobby_next_version/DailyDraw.wad.xml
+lobby_next_version/HighestWin.wad.xml
+lobby_next_version/Features/SpinnerWinner/SweepstakesV2InLobby.wad.xml
+lobby_next_version/Features/SpinnerWinner/SweepstakesV2Popups.wad.xml
+lobby_next_version/congratulationsPopup.wad.xml
+lobby_next_version/Features/SpinnerWinner/SweepstakesV2.wad.xml
+lobby_next_version/Features/SpinRoyale/SpinRoyale_panel_old.wad.xml
+lobby_next_version/LevelUpChallengeLotto.wad.xml
+lobby_next_version/Features/SpinRoyale/SpinRoyale_panel.wad.xml

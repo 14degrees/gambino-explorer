@@ -1,0 +1,191 @@
+URL: https://gambino-apps.appspot.com/_ah/api/endlessPersonalOffer/v1/getCurrentState
+
+{
+  "userId" : 6402833844404224,
+  "campaignId" : 120260912,
+  "configId" : 196738,
+  "timeToEnd" : 92626007,
+  "showInInbox" : false,
+  "triggerParams" : [ {
+    "actionType" : "on_login",
+    "actionParams" : [ {
+      "key" : "each",
+      "value" : "1"
+    } ]
+  } ],
+  "nextRewardedItem" : 1,
+  "items" : [ {
+    "id" : 1,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "1"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "coins",
+      "currencyParams" : "{\"bonusCurrency\":\"coins\",\"coins\":96000.0,\"usdEquivalent\":0.3}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  }, {
+    "id" : 2,
+    "price" : 1.99,
+    "providerProductId" : "774522",
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "2"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "coins",
+      "currencyParams" : "{\"bonusCurrency\":\"coins\",\"coins\":3200000.0,\"usdEquivalent\":8.99}",
+      "customParams" : "{}"
+    }, {
+      "currencyType" : "free_spins",
+      "currencyParams" : "{\"round\":1,\"multiplier\":1.0,\"bonusCurrency\":\"free_spins\",\"count\":1,\"usdEquivalent\":0.99}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0,
+    "contributionPoints" : 94.0
+  }, {
+    "id" : 3,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "3"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "machine_free_spins",
+      "currencyParams" : "{\"machineVolatility\":2,\"name\":\"free\",\"betMultiplier\":1.0,\"parameter\":0,\"from\":\"BONUS\",\"ignoreRebuy\":false,\"bonusCurrency\":\"machine_free_spins\",\"paramsOpt\":{\"empty\":true,\"present\":false},\"betOpt\":{\"empty\":true,\"present\":false},\"totalBetOpt\":{\"empty\":true,\"present\":false},\"baseCoinsBetOpt\":{\"empty\":true,\"present\":false},\"machineId\":114,\"groupName\":\"free\",\"betType\":\"default\",\"freeSpinAmount\":10,\"usdEquivalent\":1.99,\"fsTypeName\":\"Free Spins\"}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  }, {
+    "id" : 4,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "4"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "coins",
+      "currencyParams" : "{\"bonusCurrency\":\"coins\",\"coins\":640000.0,\"usdEquivalent\":1.99}",
+      "customParams" : "{}"
+    }, {
+      "currencyType" : "xp_booster",
+      "currencyParams" : "{\"bonusCurrency\":\"xp_booster\",\"count\":2,\"type\":\"small\",\"usdEquivalent\":0.99}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  }, {
+    "id" : 5,
+    "price" : 2.99,
+    "providerProductId" : "774549",
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "5"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "coins",
+      "currencyParams" : "{\"bonusCurrency\":\"coins\",\"coins\":5600000.0,\"usdEquivalent\":13.99}",
+      "customParams" : "{}"
+    }, {
+      "currencyType" : "machine_free_spins",
+      "currencyParams" : "{\"machineVolatility\":2,\"name\":\"free\",\"betMultiplier\":1.0,\"parameter\":0,\"from\":\"BONUS\",\"ignoreRebuy\":false,\"bonusCurrency\":\"machine_free_spins\",\"paramsOpt\":{\"empty\":true,\"present\":false},\"betOpt\":{\"empty\":true,\"present\":false},\"totalBetOpt\":{\"empty\":true,\"present\":false},\"baseCoinsBetOpt\":{\"empty\":true,\"present\":false},\"machineId\":134,\"groupName\":\"free\",\"betType\":\"default\",\"freeSpinAmount\":10,\"usdEquivalent\":2.99,\"fsTypeName\":\"Free Spins\"}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0,
+    "contributionPoints" : 142.0
+  }, {
+    "id" : 6,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "6"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "free_spins",
+      "currencyParams" : "{\"round\":1,\"multiplier\":1.0,\"bonusCurrency\":\"free_spins\",\"count\":1,\"usdEquivalent\":0.99}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  }, {
+    "id" : 7,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "7"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "coins",
+      "currencyParams" : "{\"bonusCurrency\":\"coins\",\"coins\":640000.0,\"usdEquivalent\":1.99}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  }, {
+    "id" : 8,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "8"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "contest_booster",
+      "currencyParams" : "{\"bonusCurrency\":\"contest_booster\",\"count\":1,\"usdEquivalent\":0.99}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  }, {
+    "id" : 9,
+    "price" : 0.99,
+    "providerProductId" : "774548",
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "9"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "coins",
+      "currencyParams" : "{\"bonusCurrency\":\"coins\",\"coins\":1300000.0,\"usdEquivalent\":3.99}",
+      "customParams" : "{}"
+    }, {
+      "currencyType" : "machine_free_spins",
+      "currencyParams" : "{\"machineVolatility\":2,\"name\":\"free\",\"betMultiplier\":1.0,\"parameter\":0,\"from\":\"BONUS\",\"ignoreRebuy\":false,\"bonusCurrency\":\"machine_free_spins\",\"paramsOpt\":{\"empty\":true,\"present\":false},\"betOpt\":{\"empty\":true,\"present\":false},\"totalBetOpt\":{\"empty\":true,\"present\":false},\"baseCoinsBetOpt\":{\"empty\":true,\"present\":false},\"machineId\":178,\"groupName\":\"free\",\"betType\":\"default\",\"freeSpinAmount\":15,\"usdEquivalent\":0.99,\"fsTypeName\":\"Free Spins\"}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0,
+    "contributionPoints" : 47.0
+  }, {
+    "id" : 10,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "10"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "contest_booster",
+      "currencyParams" : "{\"bonusCurrency\":\"contest_booster\",\"count\":1,\"usdEquivalent\":0.99}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  }, {
+    "id" : 11,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "11"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "coins",
+      "currencyParams" : "{\"bonusCurrency\":\"coins\",\"coins\":640000.0,\"usdEquivalent\":1.99}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  }, {
+    "id" : 12,
+    "customParams" : [ {
+      "key" : "endlessPersonalOfferId",
+      "value" : "12"
+    } ],
+    "rewards" : [ {
+      "currencyType" : "machine_free_spins",
+      "currencyParams" : "{\"machineVolatility\":2,\"name\":\"free\",\"betMultiplier\":1.0,\"parameter\":0,\"from\":\"BONUS\",\"ignoreRebuy\":false,\"bonusCurrency\":\"machine_free_spins\",\"paramsOpt\":{\"empty\":true,\"present\":false},\"betOpt\":{\"empty\":true,\"present\":false},\"totalBetOpt\":{\"empty\":true,\"present\":false},\"baseCoinsBetOpt\":{\"empty\":true,\"present\":false},\"machineId\":114,\"groupName\":\"free\",\"betType\":\"default\",\"freeSpinAmount\":10,\"usdEquivalent\":0.99,\"fsTypeName\":\"Free Spins\"}",
+      "customParams" : "{}"
+    } ],
+    "rewarded" : 0
+  } ],
+  "images" : [ {
+    "resolution" : "high",
+    "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/endless_offer/EO_Luxury_start_your_dream_21_06{type}"
+  } ]
+}

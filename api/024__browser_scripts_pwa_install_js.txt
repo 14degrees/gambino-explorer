@@ -1,0 +1,54 @@
+URL: https://game.onlinefungames.net/browser/scripts/pwa_install.js
+
+// Initialize deferredPrompt for use later to show browser install prompt.
+var deferredPrompt = null;
+
+var pwaInfoUpdatedCallback;
+var setAvailableInstallPromptCallback;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    // // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    // Update UI notify the user they can install the PWA
+    //showInstallPromotion();
+    // Optionally, send analytics event that PWA install promo was shown.
+    console.log(`'beforeinstallprompt' event was fired.`);
+});
+
+if (window.addEventListener) {
+    window.addEventListener("message", handlePwaEvents, false);
+}
+else if (window.attachEvent) {
+    window.attachEvent("onmessage", handlePwaEvents, false);
+}
+
+function handlePwaEvents(event) {
+    if (!isTrustedParentOrigin(event.origin)) return;
+
+    var data = event.data;
+    if(data.event === "isPwa") {
+        isPwa = data.value;
+        if(pwaInfoUpdatedCallback != null){
+            pwaInfoUpdatedCallback(isPwa);
+        }
+    } else if(data.func === "setAvailableInstallPrompt") {
+        if(setAvailableInstallPromptCallback != null){
+            setAvailableInstallPromptCallback(data.flag);
+        }
+    }
+}
+
+function initPwa(infoCallback) {
+    pwaInfoUpdatedCallback = infoCallback;
+
+    postToParent({
+        'func': 'initPwa',
+        'params': {}
+    });
+}
+
+function subscribeForSetAvailableInstallPrompt(infoCallback) {
+    setAvailableInstallPromptCallback = infoCallback;
+}

@@ -1,0 +1,321 @@
+URL: https://game.onlinefungames.net/browser/resources/login.css
+
+.splash-bg-screen {
+    background: url(../bg.webp) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.splash-bg-screen-halloween {
+    background: url(../bgHL.webp) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.splash-bg-screen-christmas {
+    background: url(../bgXHL.webp) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.top-canvas-node{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.top-canvas-panel{
+    right: 0;
+    margin: auto;
+    position: relative;
+}
+
+.top-canvas-logo{
+    position: relative;
+    left: 28.5%;
+    width: 20%;
+    margin: auto;
+    //top:7px;
+}
+
+.top-panel-right-side {
+    position: relative;
+    left: 57%;
+    bottom: 3px;
+    width: 29%;
+    display: inline-block;
+}
+
+.sign-in-btn {
+    background-image: linear-gradient(0deg, rgba(26,53,14,1) 0%, rgba(88,190,58,1) 100%) !important; border-radius: 19px;
+    border: 3px solid rgba(42,28,128,1);
+    height: 38px;
+    max-height: 5vh;
+    max-width: 16vh;
+    width: 46%;
+    outline: none;
+    line-height: 15px;
+    cursor: pointer;
+    font-size: 19px;
+    font-size: 1.85vmin;
+    font-family: 'Segoe UI Emoji', sans-serif;
+    color: white;
+    margin: 0;
+    top: -6px;
+    float: right;
+}
+
+.top-panel-username-website{
+    font-size: 17px;
+    font-size: 1.9vmin;
+    font-family: 'Segoe UI Emoji', sans-serif;
+    position: relative;
+    top:-1vmin;
+    text-align: right;
+    margin: 0;
+    color: white;
+    display: inline-block;
+    float: right;
+    left: -65%;
+}
+
+.top-panel-username-facebook{
+    font-size: 17px;
+    font-size: 1.9vmin;
+    font-family: 'Segoe UI Emoji', sans-serif;
+    position: relative;
+    left: 38%;
+    width: 29%;
+    top:-1vmin;
+    text-align: right;
+    margin: 0;
+    color: white;
+    display: inline-block;
+}
+
+.top-panel-bookmark-btn-image{
+    width: 13%;
+    top: -1.6px
+}
+.top-panel-bookmark-btn-image:hover{
+    cursor: pointer;
+}
+
+.login-btn-image {
+    width: 40%;
+    cursor: pointer;
+}
+
+
+.top-panel-fullscreen-btn-image{
+    width: 2.6%;
+    bottom: 10px;
+}
+.top-panel-fullscreen-btn-image:hover{
+    cursor: pointer;
+}
+
+
+.top-panel-fullscreen-btn-image-facebook{
+    position: relative;
+    left: -60.5%;
+    width: 3%;
+}
+.top-panel-fullscreen-btn-image-facebook:hover{
+    cursor: pointer;
+}
+
+.canvas-node {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+
+    border-width: 7px;
+    border-style: solid;
+    -webkit-border-image-source: url(../gambino_frame_small.webp);
+    -webkit-border-image-slice: 40 50;
+    -webkit-border-image-width: 40px 50px;
+    -webkit-border-image-outset: 1;
+    -webkit-border-image-repeat: round;
+    -o-border-image-source: url(../gambino_frame_small.webp);
+    -o-border-image-slice: 40 50;
+    -o-border-image-width: 40px 50px;
+    -o-border-image-outset: 1;
+    -o-border-image-repeat: round;
+    border-image-source: url(../gambino_frame_small.webp);
+    border-image-slice: 40 50;
+    border-image-width: 40px 50px;
+    border-image-outset: 1;
+    border-image-repeat: round;
+}
+
+.splashLoginSA {
+    background: url(splash_sa.webp) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    position: absolute;
+    vertical-align: middle;
+}
+
+.splashLoginFB {
+    background: url(splash-min.webp) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    position: absolute;
+}
+
+.tooltip_bookmark {
+    display: inline;
+    position: relative;
+    left: -56%;
+    bottom: 8px;
+}
+
+.tooltip_bookmark .tooltip_bookmark_content {
+    display: inline;
+    visibility: hidden;
+    width: 29vh;
+    height: 6vh;
+    top: 34px;
+    left: -26px;
+    color: #ffffff;
+    text-align: center;
+    border-style: solid;
+    border-width: 3.5px;
+    border-radius: 14px;
+    background: radial-gradient(#3a0064, #320057);
+    border-color: #a200f5;
+    padding: 0.4vh 0;
+    position: absolute;
+    font-family: 'Segoe UI Emoji', sans-serif;
+    font-size: 2.2vh;
+    font-weight: bold;
+    box-shadow: -1px -1px 2vh black;
+    text-shadow: 3px 3px 1vh black;
+    z-index: 1;
+}
+
+.tooltip_bookmark .tooltip_bookmark_content::after {
+    content: " ";
+    position: absolute;
+    background: radial-gradient(#3a0064, #320057);
+    bottom: 79%;
+    width: 6%;
+    height: 32%;
+    left: 12%;
+    margin-left: -5px;
+    border-style: solid;
+    border-width: 3.5px;
+    border-color: #a200f5 transparent transparent #a200f5;
+    border-radius: 6px;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+
+.tooltip_bookmark:hover .tooltip_bookmark_content {
+    visibility: visible;
+}
+
+.tooltip_bookmark.hidden {
+    visibility: hidden;
+}
+
+.tooltip_fullscreen {
+    display: inline;
+    position: relative;
+    left: -74%;
+    bottom: 8px;
+}
+
+.tooltip_fullscreen .tooltip_fullscreen_content {
+    display: inline;
+    visibility: hidden;
+    width: 14.5vh;
+    height: 6vh;
+    top: 34px;
+    left: -21px;
+    color: #ffffff;
+    text-align: center;
+    border-style: solid;
+    border-width: 3.5px;
+    border-radius: 14px;
+    background: radial-gradient(#3a0064, #320057);
+    border-color: #a200f5;
+    padding: 0.4vh 0;
+    position: absolute;
+    font-family: 'Segoe UI Emoji', sans-serif;
+    font-size: 2.2vh;
+    font-weight: bold;
+    box-shadow: -1px -1px 2vh black;
+    text-shadow: 3px 3px 1vh black;
+    z-index: 1;
+}
+
+.tooltip_fullscreen .tooltip_fullscreen_content::after {
+    content: " ";
+    position: absolute;
+    background: radial-gradient(#3a0064, #320057);
+    bottom: 76%;
+    width: 13%;
+    height: 35%;
+    left: 22%;
+    margin-left: -5px;
+    border-style: solid;
+    border-width: 3.5px;
+    border-color: #a200f5 transparent transparent #a200f5;
+    border-radius: 6px;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+
+.tooltip_fullscreen:hover .tooltip_fullscreen_content {
+    visibility: visible;
+}
+
+.tooltip_text {
+    position: relative;
+    top: 4%;
+    vertical-align: middle;
+}

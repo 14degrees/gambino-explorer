@@ -1,0 +1,108 @@
+URL: https://game.onlinefungames.net/browser/scripts/google_auth.js
+
+console.log('google_auth.js init');
+
+var googleClient;
+var onSingedInCallback;
+var onErrorCallback;
+// var clientInitialized = false;
+var idToken;
+var accessToken;
+
+function authenticateGoogle(relogin, onSingedIn, onError) {
+  console.log("GoogleAuth authenticateGoogle call: " + relogin);
+  onSingedInCallback = onSingedIn;
+  onErrorCallback = onError;
+
+  initClient();
+
+  if (!relogin) {
+    if (idToken) {
+      onSingedIn(idToken);
+      return;
+    }
+
+    if (accessToken) {
+      showAccessPopup();
+    }
+  }
+
+  wrapRequestAccessToken();
+}
+
+function wrapRequestAccessToken() {
+  console.log('google before requestAccessToken');
+  googleClient.requestAccessToken();
+  console.log('google after requestAccessToken');
+}
+
+function initClient() {
+  console.log('google before initClient');
+  googleClient = google.accounts.oauth2.initTokenClient({
+    client_id: GOOGLE_AUTH_CLIENT_ID,
+    scope: 'https://www.googleapis.com/auth/userinfo.profile \ https://www.googleapis.com/auth/userinfo.email',
+    ux_mode: 'popup',
+    callback: onTokenRespone,
+    error_callback: onTokenResponseError,
+    prompt: '',
+  });
+  console.log('google after initClient');
+}
+
+function onTokenRespone(response) {
+  if (response.error) {
+    const tokenError = {
+      error: response.error,
+      details: response.error_description,
+    };
+    onErrorCallback(tokenError);
+  } else if (response.access_token) {
+    accessToken = response.access_token;
+    console.log('response.access_token != null');
+    showAccessPopup();
+  }
+
+  console.log('onTokenRespone error: ' + response.error);
+  console.log('onTokenRespone state: ' + response.state);
+  console.log('onTokenRespone token_type: ' + response.token_type);
+}
+
+function showAccessPopup() {
+  google.accounts.id.initialize({
+    client_id: GOOGLE_AUTH_CLIENT_ID,
+    callback: handleCredentialResponse,
+    cancel_on_tap_outside: false,
+    auto_select: true,
+  });
+  google.accounts.id.prompt();
+}
+
+function handleCredentialResponse(credentialResponse) {
+  console.log('handleCredentialResponse');
+  if (credentialResponse.credential) {
+    idToken = credentialResponse.credential;
+    console.log('credentialResponse.credential exists');
+    onSingedInCallback(credentialResponse.credential);
+  }
+  else {
+    console.log('credentialResponse.credential does not exist');
+    const tokenError = {
+      error: '',
+      details: '',
+    };
+    onErrorCallback(tokenError);
+  }
+}
+
+function onTokenResponseError(responseError) {
+  const tokenError = {
+    error: responseError.type,
+    details: '',
+  };
+  onErrorCallback(tokenError);
+  console.log('onTokenResponseError type: ' + responseError.type);
+}
+
+function revokeAllScopes() {
+
+}

@@ -1,0 +1,11 @@
+import { chromium } from 'playwright-core';
+const browser = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+const page = await (await browser.newContext({ viewport: { width: 1400, height: 900 } })).newPage();
+page.on('pageerror', (e) => console.log('PAGEERROR', e.message));
+page.on('console', (m) => { if (m.type() === 'error') console.log('CONSOLE', m.text().slice(0, 200)); });
+await page.goto('file://' + process.cwd() + '/zeus/' + (process.argv[2] || 'game154') + '-inspector.html');
+await page.waitForTimeout(2500);
+await page.screenshot({ path: 'zeus/preview.png' });
+await page.check('#reveal'); await page.waitForTimeout(600);
+await page.screenshot({ path: 'zeus/preview-reveal.png' });
+await browser.close();

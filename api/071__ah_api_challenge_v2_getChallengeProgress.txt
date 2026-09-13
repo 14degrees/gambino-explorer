@@ -1,0 +1,16 @@
+URL: https://gambino-apps.appspot.com/_ah/api/challenge/v2/getChallengeProgress
+
+{
+  "challengeProgress" : {
+    "task" : {
+      "challengeId" : 39334,
+      "taskId" : 174365,
+      "currentNumber" : 0,
+      "totalNumber" : 10,
+      "currentNumberDouble" : 0.0,
+      "totalNumberDouble" : 10.0
+    },
+    "timeToEnd" : 28797757,
+    "challengeId" : 39334
+  }
+}

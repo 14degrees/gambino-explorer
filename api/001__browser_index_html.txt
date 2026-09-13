@@ -1,0 +1,495 @@
+URL: https://game.onlinefungames.net/browser/index.html?cid=gbclidf4f7c31cc78ec152
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml">
+ <link href="gambino_game.webmanifest" rel="manifest"/>
+ <head>
+  <title>
+   Gambino Fun Games
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport"/>
+   <meta content="on" http-equiv="x-dns-prefetch-control"/>
+   <meta content="noindex, nofollow" name="robots"/>
+   <link href="resources/login.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Open+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&amp;display=swap" rel="stylesheet"/>
+    <link href="resources/login_styles_1.2.css" rel="stylesheet"/>
+    <link href="resources/coda.css" rel="stylesheet" type="text/css"/>
+    <link href="resources/common.css" rel="stylesheet" type="text/css"/>
+    <noscript>
+     <img alt="" height="1" src="https://www.facebook.com/tr?ev=6034788314833&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" style="display:none" width="1"/>
+    </noscript>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <script src="scripts/detect_incognito.min.js">
+    </script>
+    <script src="scripts/parent_origins.js">
+    </script>
+    <script src="scripts/svc_api_integration.js">
+    </script>
+    <script src="scripts/device_info_provider.js">
+    </script>
+    <script src="scripts/init_common_variables.js">
+    </script>
+    <script src="scripts/init_firebase_variables.js">
+    </script>
+    <script src="scripts/init_website_variables.js">
+    </script>
+    <script async="" defer="" src="scripts/google_auth.js">
+    </script>
+    <script async="" defer="" src="https://accounts.google.com/gsi/client">
+    </script>
+    <script src="scripts/meta_pixel.js">
+    </script>
+    <noscript>
+     <img height="1" src="https://www.facebook.com/tr?id=1254658614728540&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
+    </noscript>
+   </link>
+  </meta>
+ </head>
+ <body id="bod" style="margin: 0;">
+  <div class="hide" id="login-overlay">
+   <div class="main">
+   </div>
+   <div class="h5-container h5-container__register-with-mail hide" id="container-register">
+    <div class="form__wrapper">
+     <div class="form__wrapper-position form__wrapper-position__register-with-mail">
+      <div class="h5-form-title">
+       <img alt="title Register with your e-mail" src="resources/img/web/register-with-mail.webp"/>
+      </div>
+      <form class="h5-form" id="registerform" onsubmit="return registration($('#emailRegister').val(), $('#passwordRegister').val(), $('#register-remember-me').is(':checked'))">
+       <div class="input__wrapper">
+        <div class="input__wrapper_password">
+         <input class="h5-input" id="emailRegister" oninput="return changeRegisterSubmitButton()" placeholder="Your email address" type="email"/>
+         <div class="h5-input-icon h5-input-icon__email">
+          <img alt="Question" src="resources/img/web/ask-icon.webp"/>
+          <div class="tooltip-info tooltip-info__email">
+           Your email will be used for password resets and support
+          </div>
+         </div>
+         <div class="tooltip-error tooltip-error__email" id="error-message-register-email" style="display: none">
+          Invalid
+          email address
+         </div>
+         <div class="tooltip-error tooltip-error__register" id="error-message-register" style="display: none">
+          The email is already in use
+         </div>
+        </div>
+        <div class="input__wrapper_password">
+         <input class="h5-input" id="passwordRegister" oninput="return changeRegisterSubmitButton()" placeholder="Choose password" type="password"/>
+         <div class="h5-input-icon h5-input-icon__password">
+          <img alt="Question" src="resources/img/web/ask-icon.webp"/>
+          <div class="tooltip-info tooltip-info__password">
+           Password should have at least 5 characters, including a capital letter and a number
+          </div>
+         </div>
+         <div class="tooltip-error tooltip-error__password" id="error-message-register-password" style="display: none">
+          Password should have at least 5 characters, including a capital letter and a number
+         </div>
+        </div>
+        <div class="input__wrapper_password">
+         <input class="h5-input" id="passwordConfirmation" oninput="return changeRegisterSubmitButton()" placeholder="Confirm password" type="password"/>
+         <div class="tooltip-error tooltip-error__password-confirm" id="error-message-register-password-match" style="display: none">
+          Passwords don't match. Please try again
+         </div>
+        </div>
+        <button class="btn-submit btn-submit__play-now" type="submit">
+         <a role="button">
+          <img alt="Play now" id="register-submit-img" src="resources/img/web/play-now.webp"/>
+         </a>
+        </button>
+        <button class="btn-submit btn-submit__login" id="sign-in-reg" type="button">
+         <img alt="Button already registered?" src="resources/img/web/already-registered.webp"/>
+        </button>
+       </div>
+      </form>
+     </div>
+     <div class="h5-close">
+      <img alt="arrow button" onclick="returnToMainForm()" src="resources/img/web/arrow.webp"/>
+     </div>
+     <div class="h5-bottom-text">
+      If you need assistance,
+      <a class="a-underline" id="btn-support-register" role="button">
+       contact us here
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="h5-container h5-container__login hide" id="container-login">
+    <div class="form__wrapper">
+     <div class="form__wrapper-position form__wrapper-position__login">
+      <div class="h5-form-title h5-form-title__login">
+       <img alt="title Sign in to play" src="resources/img/web/title-sign-in.webp"/>
+      </div>
+      <form class="h5-form" id="signin" onsubmit="return login($('#email').val(), $('#password').val(), $('#signin-remember-me').is(':checked'))">
+       <div class="input__wrapper input__wrapper__login">
+        <div class="input__wrapper_password">
+         <input class="h5-input" id="email" placeholder="Your email address" type="email"/>
+         <div class="tooltip-error tooltip-error__login-email" id="error-message-login-email" style="display: none">
+          Please use the email address you've registered with
+         </div>
+        </div>
+        <div class="input__wrapper_password">
+         <input class="h5-input" id="password" placeholder="Password" type="password"/>
+         <div class="tooltip-error tooltip-error__login" id="error-message-login" style="display: none">
+          The credentials don't match. Please try again
+         </div>
+         <div class="tooltip-error tooltip-error__login-password" id="error-message-login-password" style="display: none">
+          Please enter your password
+         </div>
+        </div>
+        <div class="checkbox__wrapper">
+         <label class="label checkbox-label__login" for="">
+          <input checked="checked" class="h5-checkbox" id="signin-remember-me" name="checkbox" type="checkbox"/>
+          <span>
+           Remember me
+          </span>
+         </label>
+         <a class="a-underline" id="forgotpassword" role="button">
+          Forgot password?
+         </a>
+        </div>
+        <button class="btn-submit btn-submit__login_green" type="submit">
+         <a role="button">
+          <img alt="Play now" id="login-submit-img" src="resources/img/web/sign-in-button.webp"/>
+         </a>
+        </button>
+        <div class="h5-form-text__login">
+         New player? Register
+         <a class="a-underline" id="reg-sigh-in" role="button">
+          here
+         </a>
+        </div>
+       </div>
+      </form>
+     </div>
+     <div class="h5-close">
+      <img alt="close button" onclick="returnToMainForm()" src="resources/img/web/arrow.webp"/>
+     </div>
+     <div class="h5-bottom-text">
+      If you need assistance,
+      <a class="a-underline" id="btn-support-login" role="button">
+       contact us here
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="h5-container h5-container__fp-1 hide" id="container-forgot-password">
+    <div class="form__wrapper">
+     <div class="form__wrapper-position form__wrapper-position__fp-1">
+      <div class="h5-form-title h5-form-title__fp-1">
+       <img alt="forgot your password" src="resources/img/web/title-forgot-password.webp"/>
+      </div>
+      <div class="h5-form-subtitle">
+       Enter your email for password reset instructions
+      </div>
+      <form class="h5-form" id="forgotform" onsubmit="return forgot($('#emailForgot').val())">
+       <div class="input__wrapper input__wrapper__fp-1">
+        <div class="input__wrapper_password">
+         <input class="h5-input h5-input__login" id="emailForgot" oninput="return changeForgotSubmitButton()" placeholder="Email address" type="email"/>
+         <div class="tooltip-error tooltip-error__forgot-email" id="error-message-forgot-email" style="display: none">
+          Invalid
+          email address
+         </div>
+         <div class="tooltip-error tooltip-error__forgot" id="error-message-forgot" style="display: none">
+          Please use the email address you've registered with
+         </div>
+        </div>
+        <button class="btn-submit btn-submit__reset" type="submit">
+         <a role="button">
+          <img alt="Play now" id="forgot-submit-img" src="resources/img/web/reset-password.webp"/>
+         </a>
+        </button>
+        <button class="btn-submit btn-submit__back-to-login" id="forgotToLogin" type="button">
+         <a role="button">
+          <img alt="Play now" src="resources/img/web/back-to-sign.webp"/>
+         </a>
+        </button>
+        <div class="h5-bottom-text__fp-2">
+         New player? Register
+         <a class="a-underline" id="forgotToRegister" role="button">
+          here
+         </a>
+        </div>
+       </div>
+      </form>
+     </div>
+     <div class="h5-close">
+      <img alt="close button" onclick="returnToMainForm()" src="resources/img/web/arrow.webp"/>
+     </div>
+     <div class="h5-bottom-text">
+      If you need assistance,
+      <a class="a-underline" id="btn-support-forget-password" role="button">
+       contact us here
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="h5-container h5-container__fp-2 hide" id="container-forgot-password-success">
+    <div class="form__wrapper">
+     <div class="form__wrapper-position">
+      <div class="h5-form-title">
+       <img alt="forgot your password" src="resources/img/web/title-check-inbox.webp"/>
+      </div>
+      <div class="h5-form-subtitle">
+       A password reset email is on its way to
+      </div>
+      <div class="email__fp-2">
+       <p id="forgotSuccessEmail">
+        player'semail@gambinoslot.com
+       </p>
+      </div>
+      <div class="h5-form-line">
+       <img alt="line" src="resources/img/line.webp"/>
+      </div>
+      <div class="h5-bottom-text__fp-2">
+       You may need
+       <br/>
+       to check your spam/junk folder
+      </div>
+      <button class="btn-submit btn-submit__fp-2" id="forgotSuccessToLogin" type="button">
+       <a role="button">
+        <img alt="Play now" src="resources/img/web/great-cta.webp"/>
+       </a>
+      </button>
+     </div>
+     <div class="h5-close">
+      <img alt="close button" onclick="changeLoginFormVisibility(true, 'main')" src="resources/img/web/arrow.webp"/>
+     </div>
+     <div class="h5-bottom-text">
+      If you need assistance,
+      <a class="a-underline" id="btn-support-forget-password-success" role="button">
+       contact us here
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="h5-container h5-container__loading hide" id="container-loading">
+    <div class="form__wrapper">
+     <div class="spinner__wrapper">
+      <div class="lds-spinner">
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="h5-container h5-container__main-form hide" id="container-login-options">
+    <div class="form__wrapper form__wrapper__main-form">
+     <div class="form__wrapper-position">
+      <div class="h5-form-title h5-form-title__login">
+       <div aria-label="Connect to play" class="h5-form-title__login-img h5-form-title__login-img--connect" id="login-options-title-img" role="img">
+       </div>
+      </div>
+      <div class="h5-btn__wrapper">
+       <button class="btn__main-form" onclick="preLoginGoogle()" type="button">
+        <a role="button">
+         <img alt="Play now" src="resources/img/google-btn.webp"/>
+        </a>
+       </button>
+       <button class="btn__main-form" id="register" type="button">
+        <a role="button">
+         <img alt="Play now" src="resources/img/email-btn.webp"/>
+        </a>
+       </button>
+      </div>
+     </div>
+     <div class="h5-close-main hide" id="close-login-btn">
+      <img alt="close button" onclick="cancelRegistration()" src="resources/img/4_X.webp"/>
+     </div>
+     <div class="h5-bottom-text">
+      If you need assistance,
+      <a class="a-underline" id="btn-support-main" role="button">
+       contact us here
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="h5-container h5-container__password-reset hide" id="container-password-reset">
+    <div class="form__wrapper">
+     <div class="form__wrapper-position">
+      <div class="h5-form-title h5-form-title__login">
+       <img alt="title password reset" src="resources/img/web/title-password-reset.webp"/>
+      </div>
+      <form class="h5-form" id="resetform" onsubmit="return resetPassword( $('#passwordReset').val(),  $('#reset-remember-me').is(':checked'))">
+       <div class="input__wrapper input__wrapper__login">
+        <div class="input__wrapper_password">
+         <input class="h5-input h5-input__login" id="passwordReset" oninput="return changeResetSubmitButton()" placeholder="Choose new password" type="password"/>
+         <div class="tooltip-error tooltip-error__reset-password" id="error-message-reset-password" style="display: none">
+          Your new password must be at least 5 characters long and include a capital letter &amp; a
+							number.
+         </div>
+        </div>
+        <div class="input__wrapper_password">
+         <input class="h5-input h5-input__login" id="passwordConfirmReset" oninput="return changeResetSubmitButton()" placeholder="Confirm password" type="password"/>
+         <div class="tooltip-error tooltip-error__reset-password-confirm" id="error-message-reset-password-match" style="display: none">
+          Passwords don't match. Please try again
+         </div>
+        </div>
+        <button class="btn-submit btn-submit__reset-password" type="submit">
+         <a role="button">
+          <img alt="Play now" id="reset-submit-img" src="resources/img/web/reset-now.webp"/>
+         </a>
+        </button>
+       </div>
+      </form>
+     </div>
+    </div>
+    <div class="h5-close">
+     <img alt="close button" onclick="changeLoginFormVisibility(true, 'login')" src="resources/img/web/arrow.webp"/>
+    </div>
+    <div class="h5-bottom-text">
+     If you need assistance,
+     <a class="a-underline" id="btn-support-password-reset" role="button">
+      contact us here
+     </a>
+    </div>
+   </div>
+  </div>
+  <div id="fb-root">
+  </div>
+  <div align="center" class="llogout" id="logout">
+   <img src="resources/quit_demo_button.webp"/>
+  </div>
+  <div class="top-canvas-node" id="top-canvas-node" style="display:none;">
+   <div class="top-canvas-panel" id="top-canvas-panel">
+    <img class="" style="width:11%">
+     <img class="top-canvas-logo" src="resources/logo.webp" style="width:20%;"/>
+     <div class="top-panel-right-side">
+      <p class="top-panel-username-website" id="top-panel-username">
+      </p>
+      <img class="login-btn-image" id="sigh-in-btn" onclick="signInClicked()" src="resources/big_btn_green.webp" style="display: none"/>
+     </div>
+     <div class="tooltip_bookmark hidden" id="top-panel-shortcut-wrapper">
+      <img class="top-panel-bookmark-btn-image" id="top-panel-bookmark-btn-image" onclick="return htmlAddShortcutClick()" src="resources/btn_shortcut.webp"/>
+      <div class="tooltip_bookmark_content">
+       <span class="tooltip_text">
+        Add us to your taskbar
+       </span>
+      </div>
+     </div>
+     <div class="tooltip_fullscreen">
+      <img class="top-panel-fullscreen-btn-image" id="top-panel-fullscreen-btn-image" onclick="return htmlFullscreenClick()" src="resources/fullScreen.webp"/>
+      <div class="tooltip_fullscreen_content">
+       <span class="tooltip_text">
+        Full screen
+       </span>
+      </div>
+     </div>
+    </img>
+   </div>
+   <canvas height="1080" id="drawHere" style="display:none;" tabindex="1" width="1920">
+   </canvas>
+  </div>
+  <div class="overlayLogin" id="overlayGlobal">
+  </div>
+  <div class="underline">
+  </div>
+  <div id="splashLoadingContainer" style="display: none">
+   <div class="splashLoginSA" id="splashLogin" style="display: block">
+   </div>
+   <div class="new-player-logo">
+   </div>
+   <div class="loader">
+    <svg viewbox="0 0 100 100">
+     <defs>
+      <lineargradient gradientunits="userSpaceOnUse" id="movingGradient" x1="0" x2="100" y1="0" y2="0">
+       <stop offset="0%" stop-color="#6fa92a">
+       </stop>
+       <stop offset="100%" stop-color="#cfff9c">
+       </stop>
+      </lineargradient>
+     </defs>
+     <circle class="ring-bg" cx="50" cy="50" r="42">
+     </circle>
+     <circle class="ring-progress" cx="50" cy="50" r="42">
+     </circle>
+    </svg>
+    <div class="percent" id="percentLabel">
+     0
+     <span class="sign">
+      %
+     </span>
+    </div>
+   </div>
+  </div>
+  <script>
+   documentLoaded();
+  </script>
+  <div class="splash-bg-screen" id="splash-bg" style="display: none">
+  </div>
+  <script src="scripts/notifications.js">
+  </script>
+  <script src="scripts/spiral_context.js">
+  </script>
+  <script src="scripts/pwa_install.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-messaging-compat.js">
+  </script>
+  <script src="scripts/firebase_messaging.js">
+  </script>
+  <script src="scripts/facebook.js">
+  </script>
+  <script src="scripts/clipboard.js">
+  </script>
+  <script src="scripts/splash_screen_website.js">
+  </script>
+  <script src="scripts/auth_website.js">
+  </script>
+  <script src="scripts/preloader.js">
+  </script>
+  <script src="scripts/meta_pixel_events.js">
+  </script>
+  <script src="scripts/fb_payments.js">
+  </script>
+  <script src="https://cdn.paddle.com/paddle/paddle.js">
+  </script>
+  <script src="scripts/paddle.js">
+  </script>
+  <script src="scripts/service_worker.js">
+  </script>
+  <script src="scripts/utils.js">
+  </script>
+  <script src="scripts/url_utils.js">
+  </script>
+  <script src="scripts/like_button.js">
+  </script>
+  <script src="scripts/attribution_support.js">
+  </script>
+  <script src="scripts/full_screen_helper.js">
+  </script>
+  <script src="scripts/js.cookie-2.1.2.min.js">
+  </script>
+  <script defer="" src="gambino.dart.js?v=master_1438c33c6a97863445a7b44a76a92d819a0ddb8e">
+  </script>
+ </body>
+</html>

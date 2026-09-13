@@ -1,0 +1,443 @@
+URL: https://gambino-apps.appspot.com/_ah/api/batching/v1/getBatchInfo
+
+{
+  "response" : {
+    "wheelofwins.getcurrentstate" : {
+      "timeToEnd" : 92628112,
+      "goal" : 8,
+      "progress" : 0,
+      "qb" : 0.0,
+      "totalQualifyBet" : 0.0,
+      "highRollerOnly" : false,
+      "rewarded" : false,
+      "finished" : false,
+      "cycle" : 1,
+      "spinAttempts" : 0,
+      "resourceUrl" : "customUrl",
+      "paidMultiplier" : 0.0,
+      "paidGame" : false
+    },
+    "levelupfs.getcurrentstate" : null,
+    "galacticadventure.getcurrentstate" : null,
+    "slots.getbiggestwin" : {
+      "biggestWins" : [ {
+        "userId" : 5890361695666176,
+        "name" : "Alvinlimmk Alvin",
+        "totalWin" : 7.128E18
+      }, {
+        "userId" : 5890361695666176,
+        "name" : "Alvinlimmk Alvin",
+        "totalWin" : 3.0294E18
+      }, {
+        "userId" : 5890361695666176,
+        "name" : "Alvinlimmk Alvin",
+        "totalWin" : 1.6038E18
+      }, {
+        "userId" : 5890361695666176,
+        "name" : "Alvinlimmk Alvin",
+        "totalWin" : 1.6038E18
+      }, {
+        "userId" : 5890361695666176,
+        "name" : "Alvinlimmk Alvin",
+        "totalWin" : 1.4256E18
+      } ]
+    },
+    "bonus.getdailybonuswheelinfo" : {
+      "wheels" : [ {
+        "round" : 0,
+        "wedges" : [ {
+          "type" : "ADVANCE",
+          "params" : { }
+        }, {
+          "value" : 5940.0,
+          "params" : { }
+        }, {
+          "value" : 12100.0,
+          "params" : { }
+        }, {
+          "value" : 8910.0,
+          "params" : { }
+        }, {
+          "value" : 9900.0,
+          "params" : { }
+        }, {
+          "value" : 6930.0,
+          "params" : { }
+        }, {
+          "value" : 15400.0,
+          "params" : { }
+        }, {
+          "value" : 8910.0,
+          "params" : { }
+        }, {
+          "value" : 29700.0,
+          "params" : { }
+        }, {
+          "value" : 9900.0,
+          "params" : { }
+        }, {
+          "value" : 6930.0,
+          "params" : { }
+        }, {
+          "value" : 7920.0,
+          "params" : { }
+        }, {
+          "value" : 6930.0,
+          "params" : { }
+        }, {
+          "value" : 7920.0,
+          "params" : { }
+        }, {
+          "value" : 13200.0,
+          "params" : { }
+        }, {
+          "value" : 5940.0,
+          "params" : { }
+        } ]
+      }, {
+        "round" : 1,
+        "wedges" : [ {
+          "type" : "ADVANCE",
+          "params" : { }
+        }, {
+          "value" : 1210000.0,
+          "params" : { }
+        }, {
+          "value" : 1540000.0,
+          "params" : { }
+        }, {
+          "value" : 2200000.0,
+          "params" : { }
+        }, {
+          "value" : 4950000.0,
+          "params" : { }
+        }, {
+          "value" : 1320000.0,
+          "params" : { }
+        }, {
+          "value" : 1760000.0,
+          "params" : { }
+        }, {
+          "value" : 2530000.0,
+          "params" : { }
+        }, {
+          "value" : 9900000.0,
+          "params" : { }
+        }, {
+          "value" : 1540000.0,
+          "params" : { }
+        }, {
+          "value" : 2310000.0,
+          "params" : { }
+        }, {
+          "value" : 1650000.0,
+          "params" : { }
+        }, {
+          "value" : 4950000.0,
+          "params" : { }
+        }, {
+          "value" : 1980000.0,
+          "params" : { }
+        }, {
+          "value" : 3300000.0,
+          "params" : { }
+        }, {
+          "value" : 1540000.0,
+          "params" : { }
+        } ]
+      }, {
+        "round" : 2,
+        "wedges" : [ {
+          "type" : "ADVANCE",
+          "params" : { }
+        }, {
+          "value" : 1650000.0,
+          "params" : { }
+        }, {
+          "value" : 2530000.0,
+          "params" : { }
+        }, {
+          "value" : 3300000.0,
+          "params" : { }
+        }, {
+          "value" : 8250000.0,
+          "params" : { }
+        }, {
+          "value" : 1980000.0,
+          "params" : { }
+        }, {
+          "value" : 2970000.0,
+          "params" : { }
+        }, {
+          "value" : 4070000.0,
+          "params" : { }
+        }, {
+          "value" : 1.65E7,
+          "params" : { }
+        }, {
+          "value" : 2530000.0,
+          "params" : { }
+        }, {
+          "value" : 3630000.0,
+          "params" : { }
+        }, {
+          "value" : 2640000.0,
+          "params" : { }
+        }, {
+          "value" : 8250000.0,
+          "params" : { }
+        }, {
+          "value" : 2970000.0,
+          "params" : { }
+        }, {
+          "value" : 4950000.0,
+          "params" : { }
+        }, {
+          "value" : 2530000.0,
+          "params" : { }
+        } ]
+      }, {
+        "round" : 3,
+        "wedges" : [ {
+          "type" : "MEGA_BONUS",
+          "params" : { }
+        }, {
+          "value" : 9900000.0,
+          "params" : { }
+        }, {
+          "value" : 1.54E7,
+          "params" : { }
+        }, {
+          "value" : 1.98E7,
+          "params" : { }
+        }, {
+          "value" : 4.95E7,
+          "params" : { }
+        }, {
+          "value" : 1.21E7,
+          "params" : { }
+        }, {
+          "value" : 1.76E7,
+          "params" : { }
+        }, {
+          "value" : 2.53E7,
+          "params" : { }
+        }, {
+          "value" : 9.9E7,
+          "params" : { }
+        }, {
+          "value" : 1.54E7,
+          "params" : { }
+        }, {
+          "value" : 2.2E7,
+          "params" : { }
+        }, {
+          "value" : 1.54E7,
+          "params" : { }
+        }, {
+          "value" : 4.95E7,
+          "params" : { }
+        }, {
+          "value" : 1.76E7,
+          "params" : { }
+        }, {
+          "value" : 2.97E7,
+          "params" : { }
+        }, {
+          "value" : 1.54E7,
+          "params" : { }
+        } ]
+      } ],
+      "currentRound" : 0,
+      "daysInARow" : 1,
+      "attempts" : 1,
+      "configId" : 118400,
+      "currentDayReturnBonus" : 10.0,
+      "grandPrize" : 1.65E8,
+      "finished" : false,
+      "showTutorialStage1" : true,
+      "showTutorialStage2" : true,
+      "bonusInfo" : {
+        "dayInARowBonus" : {
+          "step" : 10.0,
+          "max" : 90.0
+        },
+        "dayInARowBonuses" : [ 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 90.0 ],
+        "tierBonus" : {
+          "step" : 10.0,
+          "max" : 500.0
+        },
+        "friendBonus" : {
+          "step" : 3.0,
+          "max" : 30.0
+        }
+      },
+      "wheelType" : "V6",
+      "roundAttempts" : {
+        "0" : 1
+      },
+      "freeRoundAttempts" : {
+        "0" : 1
+      },
+      "name" : "usual",
+      "crmMultipliers" : {
+        "boosterMultiplier" : 1.0,
+        "coinsMultiplier" : 1.0
+      },
+      "possibleFreeSpinOnAdsCount" : 1
+    },
+    "gift.getcompensations" : {
+      "compensations" : [ {
+        "id" : 6310106809106432,
+        "type" : "marketingCompensation",
+        "imageLocation" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/compensations/CMP_Registration_25_11{type}",
+        "displayType" : "single",
+        "params" : [ {
+          "key" : "anim_delay",
+          "value" : "0"
+        }, {
+          "key" : "showOnLogin",
+          "value" : "true"
+        } ],
+        "gifts" : [ {
+          "id" : 6310106809106432,
+          "giftType" : "marketingCompensation",
+          "giftName" : "support_compensation_site_registration",
+          "value" : 100000.0,
+          "receiver" : "6402833844404224",
+          "collectsRemain" : 0,
+          "sentDateTimeInUserTimeZone" : "2026-09-13T08:16:10.181Z",
+          "expireDateTimeUTC" : "2027-01-01T00:00:00.000Z",
+          "expireDateTimeUtcMillis" : 1798761600000,
+          "expired" : false,
+          "imageLocation" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/compensations/CMP_Registration_25_11{type}",
+          "message" : "",
+          "useMultiplier" : false,
+          "currencyType" : "coins",
+          "params" : [ {
+            "key" : "showOnLogin",
+            "value" : "true"
+          }, {
+            "key" : "anim_delay",
+            "value" : "0"
+          } ]
+        } ],
+        "triggerParams" : [ {
+          "id" : 1412,
+          "qualifier" : "marketing",
+          "actionType" : "on_website_registration"
+        } ]
+      }, {
+        "id" : 4902731925553152,
+        "type" : "marketingCompensation",
+        "imageLocation" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/compensations/CMP_inbox_marketing_materials_for_1_day{type}",
+        "displayType" : "single",
+        "params" : [ {
+          "key" : "anim_delay",
+          "value" : "0"
+        }, {
+          "key" : "showOnLogin",
+          "value" : "true"
+        } ],
+        "gifts" : [ {
+          "id" : 4902731925553152,
+          "giftType" : "marketingCompensation",
+          "giftName" : "support_compensation_fwp",
+          "value" : 25.0,
+          "receiver" : "6402833844404224",
+          "collectsRemain" : 0,
+          "sentDateTimeInUserTimeZone" : "2026-09-13T08:16:10.181Z",
+          "expireDateTimeUTC" : "2026-10-06T10:00:00.000Z",
+          "expireDateTimeUtcMillis" : 1791280800000,
+          "currencyParams" : "{\"betType\":\"default\",\"machineIds\":[107,114,134,122],\"machineIconSizeTypes\":{\"114\":\"1x2\",\"134\":\"1x2\",\"122\":\"1x2\",\"107\":\"1x2\"},\"sceneURL\":\"https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/choose_fs_game/Choose_FS_PlayBtn_footer_22_05{type}\"}",
+          "expired" : false,
+          "imageLocation" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/compensations/CMP_inbox_marketing_materials_for_1_day{type}",
+          "message" : "",
+          "useMultiplier" : false,
+          "currencyType" : "choose_free_spin",
+          "params" : [ {
+            "key" : "showOnLogin",
+            "value" : "true"
+          }, {
+            "key" : "anim_delay",
+            "value" : "0"
+          } ]
+        } ],
+        "triggerParams" : [ {
+          "id" : 1539,
+          "qualifier" : "marketing",
+          "actionType" : "back_to_lobby",
+          "actionParams" : [ {
+            "key" : "each",
+            "value" : "1"
+          } ]
+        } ]
+      } ]
+    },
+    "bonus.getexperienceboosterinfo" : {
+      "config" : [ {
+        "type" : "small",
+        "multiplier" : 2.0,
+        "durationMs" : 1800000
+      }, {
+        "type" : "big",
+        "multiplier" : 2.0,
+        "durationMs" : 14400000
+      }, {
+        "type" : "permanent_xp_standard",
+        "multiplier" : 1.05,
+        "durationMs" : 0
+      }, {
+        "type" : "permanent_xp_premium",
+        "multiplier" : 1.1,
+        "durationMs" : 0
+      }, {
+        "type" : "permanent_xp_basic",
+        "multiplier" : 1.05,
+        "durationMs" : 0
+      }, {
+        "type" : "permanent_xp_prime",
+        "multiplier" : 1.1,
+        "durationMs" : 0
+      } ]
+    },
+    "slotsfeatures.getunplayedfeatures" : { },
+    "challenge.getchallengeconfig" : {
+      "hasMoreChallenges" : true,
+      "challenge" : {
+        "id" : 39334,
+        "timeToEnd" : 28799772,
+        "startTime" : 1731063600000,
+        "name" : "FWP_challenge_day_0",
+        "description" : "",
+        "rewarded" : false,
+        "resourceType" : "resourceType",
+        "resourceLocation" : "",
+        "reward" : 3800.0,
+        "tasks" : [ {
+          "id" : 174365,
+          "description" : "Spin 10 times in any game",
+          "shortDescription" : "SPIN",
+          "currentNumber" : 0,
+          "currentNumberDouble" : 0.0,
+          "totalNumber" : 10,
+          "totalNumberDouble" : 10.0,
+          "reward" : 940.0,
+          "rewarded" : false,
+          "resourceLocation" : "",
+          "type" : "SpinNTimesTask",
+          "qb" : 0.1,
+          "totalQualifyBet" : 25.0,
+          "params" : [ ]
+        } ],
+        "totalTaskCount" : 4,
+        "skipsAllowed" : 4,
+        "skipsAvailable" : 0,
+        "skipsUsed" : 0,
+        "multiplier" : 1.0,
+        "isHighRollerRoom" : false,
+        "isVipHost" : false
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+URL: https://gambino-apps.appspot.com/_ah/api/advertisement/v1/trackAdvertisementAttributes
+

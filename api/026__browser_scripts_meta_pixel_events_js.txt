@@ -1,0 +1,150 @@
+URL: https://game.onlinefungames.net/browser/scripts/meta_pixel_events.js
+
+function logAchievement(contentType, contentId) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = contentType;
+    // params[FB.AppEvents.ParameterNames.CONTENT_ID] = contentId;
+    // FB.AppEvents.logEvent(
+    //     FB.AppEvents.EventNames.UNLOCKED_ACHIEVEMENT,
+    //     null,  // numeric value for this event - in this case, none
+    //     params
+    // );
+    fbq('trackCustom', 'UnlockedAchivement', {
+        content_type: contentType,
+        content_ids: [contentId],
+    });
+}
+
+function logContent(contentType, contentId) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = contentType;
+    // params[FB.AppEvents.ParameterNames.CONTENT_ID] = contentId;
+    // FB.AppEvents.logEvent(
+    //     FB.AppEvents.EventNames.VIEWED_CONTENT,
+    //     null,  // numeric value for this event - in this case, none
+    //     params
+    // );
+    fbq('trackCustom', 'ViewedContent', {
+        content_type: contentType,
+        content_ids: [contentId],
+    });
+}
+
+function logInvite(contentType, contentId, count) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = contentType;
+    // params[FB.AppEvents.ParameterNames.CONTENT_ID] = contentId;
+    // params[FB.AppEvents.ParameterNames.NUM_ITEMS] = count;
+    // FB.AppEvents.logEvent(
+    //     "Invite",
+    //     null,  // numeric value for this event - in this case, none
+    //     params
+    // );
+    fbq('trackCustom', 'Invite', {
+        content_type: contentType,
+        content_ids: [contentId],
+        num_items: count,
+    });
+}
+
+function logLevel(level) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.LEVEL] = level;
+    // FB.AppEvents.logEvent(
+    //     FB.AppEvents.EventNames.ACHIEVED_LEVEL,
+    //     null,  // numeric value for this event - in this case, none
+    //     params
+    // );
+    fbq('trackCustom', 'AchievedLevel', {
+        level: level,
+    });
+}
+
+function logPurchase(sum, currency, contentType, contentId) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = contentType;
+    // params[FB.AppEvents.ParameterNames.CONTENT_ID] = contentId;
+    // FB.AppEvents.logPurchase(
+    //     sum,
+    //     currency,
+    //     params
+    // );
+    fbq('track', 'Purchase', {
+        content_type: contentType,
+        content_ids: [contentId],
+        value: sum,
+        currency: currency,
+    });
+}
+
+function logPurchaseCanceled(sum, currency, contentType, contentId, cancelReason) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = contentType;
+    // params[FB.AppEvents.ParameterNames.CONTENT_ID] = contentId;
+    // params[FB.AppEvents.ParameterNames.CURRENCY] = currency;
+    // params["Cancel Reason"] = cancelReason;
+    // FB.AppEvents.logEvent(
+    //     "fb_mobile_purchase_failed",
+    //     sum,  // numeric value for this event - in this case, none
+    //     params
+    // );
+    fbq('trackCustom', 'FBMobilePurchaseFailed', {
+        content_type: contentType,
+        content_ids: [contentId],
+        currency: currency,
+        value: sum,
+        cancel_reason: cancelReason,
+    });
+}
+
+function logPurchaseInitiated(sum, currency, contentType, contentId) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = contentType;
+    // params[FB.AppEvents.ParameterNames.CONTENT_ID] = contentId;
+    // params[FB.AppEvents.ParameterNames.CURRENCY] = currency;
+    // FB.AppEvents.logEvent(
+    //     FB.AppEvents.EventNames.INITIATED_CHECKOUT,
+    //     sum,  // numeric value for this event - in this case, none
+    //     params
+    // );
+    fbq('track', 'InitiateCheckout', {
+        content_category: contentType,
+        content_ids: [contentId],
+        currency: currency,
+        value: sum,
+    });
+}
+
+function logRegistrationCompleted(registrationType) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.REGISTRATION_METHOD] = registrationType;
+    // FB.AppEvents.logEvent(
+    //     FB.AppEvents.EventNames.COMPLETED_REGISTRATION,
+    //     null,  // numeric value for this event - in this case, none
+    //     params
+    // );
+    fbq('track', 'CompleteRegistration', {
+        content_name: registrationType,
+        status: true,
+    });
+}
+
+function logSharing(objectParamName, giftToken) {
+    // var params = {};
+    // params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = objectParamName;
+    // params[FB.AppEvents.ParameterNames.CONTENT_ID] = giftToken;
+    // FB.AppEvents.logEvent(
+    //     "FB share",
+    //     null,  // numeric value for this event - in this case, none
+    //     params
+    // );
+    fbq('trackCustom', 'FBShare', {
+        content_type: objectParamName,
+        content_ids: [giftToken],
+    });
+}
+
+function logEvent(eventName, parameters) {
+    var json = JSON.parse(parameters);
+    fbq('trackCustom', eventName, json);
+}

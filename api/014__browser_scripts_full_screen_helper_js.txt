@@ -1,0 +1,89 @@
+URL: https://game.onlinefungames.net/browser/scripts/full_screen_helper.js
+
+var isFullScreen = false;
+
+if (window.addEventListener) {
+    window.addEventListener("message", handleFullScreenEvents, false);
+}
+else if (window.attachEvent) {
+    window.attachEvent("onmessage", handleFullScreenEvents, false);
+}
+
+function handleFullScreenEvents(event) {
+    if (!isTrustedParentOrigin(event.origin)) return;
+
+    var data = event.data;
+    if (data.func === "setIsFullScreenMode") {
+        isFullScreen = data.flag;
+    }
+}
+
+function enterFullscreen() {
+    const isNotStandAlone = STANDALONE_APP === 'false';
+    if (isNotStandAlone) {
+        element = document.documentElement;
+        if(element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if(element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if(element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if(element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    } else {
+        postToParent({
+            'func': 'enterFullscreenPost',
+            'params': {}
+        });
+    }
+}
+
+function exitFullscreen() {
+    zIndexOverlays("auto");
+    const isNotStandAlone = STANDALONE_APP === 'false';
+    if (isNotStandAlone) {
+        var d = document;
+        if (d.fullscreenElement && d.exitFullscreen) {
+            d.exitFullscreen();
+        }
+        else if (d.mozFullScreenElement && d.mozCancelFullScreen) {
+            d.mozCancelFullScreen();
+        }
+        else if (d.webkitFullscreenElement && d.webkitExitFullscreen) {
+            d.webkitExitFullscreen();
+        }
+        else if (d.msFullscreenElement && d.msExitFullscreen) {
+            d.msExitFullscreen();
+        }
+    } else {
+        postToParent({
+            'func': 'exitFullscreenPost',
+            'params': {}
+        });
+    }
+}
+
+function isFullscreenMode() {
+    const isNotStandAlone = STANDALONE_APP === 'false';
+    if (isNotStandAlone) {
+        var res = (document.fullScreenElement && document.fullScreenElement !== null)
+            || (document.msFullscreenElement && document.msFullscreenElement !== null)
+            || document.mozFullScreen || document.webkitIsFullScreen;
+        return (res === null || res === undefined) ? false : res;
+    } else {
+        return isFullScreen;
+    }
+}
+
+function zIndexOverlaysMax() { zIndexOverlays("2147483647"); }
+function zIndexOverlays(zIndex) {
+    var overLayButtons = document.getElementsByClassName("overlay");
+    if (overLayButtons != null && overLayButtons.length > 0) {
+        overLayButtons.forEach((arg) => {
+            if (arg != null && arg.st != null) {
+                arg.style.zIndex = zIndex;
+            }
+        });
+    }
+}

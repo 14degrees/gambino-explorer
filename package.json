@@ -1,0 +1,15 @@
+{
+  "name": "gambino-explore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gambino.dart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright-core": "^1.47.2"
+  }
+}

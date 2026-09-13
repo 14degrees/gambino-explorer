@@ -1,0 +1,93 @@
+{
+    "Stages": [
+        {
+            "Name": "Microgaming events (stage 1)",
+            "OriginalName": "Stage1",
+            "StageAddress": "microgaming-events-dot-severn-stage-1",
+            "FacebookAppId": "967234843290532",
+            "FacebookAppNamespace": "gambino-stage-one",
+            "ClientProperties": {
+                "server.urls.user": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/user/v1",
+                "server.urls.game": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/game/v1",
+                "server.urls.gameFeatures": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/gameFeatures/v1",
+                "server.urls.gift": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/gift/v1",
+                "server.urls.inapp": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/inapp/v1",
+                "server.urls.payment": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/payment/v1",
+                "server.urls.push": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/push/v1",
+                "server.urls.authorization": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/authorization/v1",
+                "server.urls.bonus": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/bonus/v1",
+                "server.urls.contests": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/contests/v1",
+                "server.urls.slots": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/slots/v1",
+                "server.urls.challenge": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/challenge/v2",
+                "server.urls.batching": "https://microgaming-events-dot-severn-stage-1.appspot.com/_ah/api/batching/v1"
+            }
+        },
+        {
+            "Name": "Migrate Users (stage 1)",
+            "OriginalName": "Stage1",
+            "StageAddress": "migrate-users-dot-severn-stage-1",
+            "FacebookAppId": "967234843290532",
+            "FacebookAppNamespace": "gambino-stage-one",
+            "ClientProperties": {
+                "server.urls.user": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/user/v1",
+                "server.urls.game": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/game/v1",
+                "server.urls.gameFeatures": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/gameFeatures/v1",
+                "server.urls.gift": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/gift/v1",
+                "server.urls.inapp": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/inapp/v1",
+                "server.urls.payment": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/payment/v1",
+                "server.urls.push": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/push/v1",
+                "server.urls.authorization": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/authorization/v1",
+                "server.urls.bonus": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/bonus/v1",
+                "server.urls.contests": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/contests/v1",
+                "server.urls.slots": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/slots/v1",
+                "server.urls.challenge": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/challenge/v2",
+                "server.urls.batching": "https://migrate-users-dot-severn-stage-1.appspot.com/_ah/api/batching/v1"
+            }
+        },
+        {
+            "Name": "EndlessPo Badges",
+            "OriginalName": "Stage3",
+            "StageAddress": "origin-feature-endless-po-cut-dot-severn-stage-3",
+            "FacebookAppId": "1601267593220584",
+            "FacebookAppNamespace": "gambino-stage-three",
+            "ClientProperties": {
+                "server.urls.user": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/user/v1",
+                "server.urls.game": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/game/v1",
+                "server.urls.gameFeatures": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/gameFeatures/v1",
+                "server.urls.gift": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/gift/v1",
+                "server.urls.inapp": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/inapp/v1",
+                "server.urls.payment": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/payment/v1",
+                "server.urls.push": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/push/v1",
+                "server.urls.authorization": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/authorization/v1",
+                "server.urls.bonus": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/bonus/v1",
+                "server.urls.contests": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/contests/v1",
+                "server.urls.slots": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/slots/v1",
+                "server.urls.challenge": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/challenge/v2",
+                "server.urls.batching": "https://origin-feature-endless-po-cut-dot-severn-stage-3.appspot.com/_ah/api/batching/v1"
+            }
+        },
+        {
+            "Name": "rnd-2077-wif",
+            "OriginalName": "Stage2",
+            "StageAddress": "rnd-2077-wif-dot-severn-stage-2",
+            "FacebookAppId": "1600909946589682",
+            "FacebookAppNamespace": "gambino-stage-two",
+            "ClientProperties": {
+                "server.urls.user": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/user/v1",
+                "server.urls.game": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/game/v1",
+                "server.urls.gameFeatures": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/gameFeatures/v1",
+                "server.urls.gift": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/gift/v1",
+                "server.urls.inapp": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/inapp/v1",
+                "server.urls.payment": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/payment/v1",
+                "server.urls.push": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/push/v1",
+                "server.urls.authorization": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/authorization/v1",
+                "server.urls.bonus": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/bonus/v1",
+                "server.urls.contests": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/contests/v1",
+                "server.urls.slots": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/slots/v1",
+                "server.urls.challenge": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/challenge/v2",
+                "server.urls.batching": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/batching/v1",
+                "server.urls.slotsfeatures": "https://rnd-2077-wif-dot-severn-stage-2.appspot.com/_ah/api/slotsfeatures/v1"
+            }
+        }
+    ]
+}

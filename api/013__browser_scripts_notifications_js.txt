@@ -1,0 +1,58 @@
+URL: https://game.onlinefungames.net/browser/scripts/notifications.js
+
+var parentNotificationPermission = "";
+var notificationCallbackInitialized = false;
+
+function handleNotificationEvents(event) {
+    if (!isTrustedParentOrigin(event.origin)) return;
+
+    var data = event.data;
+    if (data.event === 'notificationDetailsReceived' && data.permission) {
+        parentNotificationPermission = data.permission;
+    }
+}
+
+function checkForParentNotificationPermission() {
+    if(inIframe()) {
+        if(!notificationCallbackInitialized) {
+            notificationCallbackInitialized = true;
+            if (window.addEventListener) {
+                window.addEventListener("message", handleNotificationEvents, false);
+            }
+            else if (window.attachEvent) {
+                window.attachEvent("onmessage", handleNotificationEvents, false);
+            }
+        }
+
+        postToParent({
+            'func': 'checkNotificationPermission',
+            'params': {'setNotificationEvent': 'notificationDetailsReceived'}
+        });
+    }
+}
+
+function notificationPermissionGranted() {
+    if(inIframe()) {
+        checkForParentNotificationPermission();
+        return parentNotificationPermission === "granted";
+    }
+
+    return Notification.permission === "granted";
+}
+
+function notificationPermissionDenied() {
+    if(inIframe()) {
+        checkForParentNotificationPermission();
+        return parentNotificationPermission === "denied";
+    }
+
+    return Notification.permission === "denied";
+}
+
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}

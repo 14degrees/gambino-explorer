@@ -1,0 +1,24 @@
+URL: https://game.onlinefungames.net/browser/scripts/init_website_variables.js
+
+var STANDALONE_APP = "true";
+var IS_H5PAY = "true";
+var ATTRIBUTION_TOOL_URL = "https://a.onlinefungames.net/api/attribute/";
+var PIXEL_SCRIPT = "https://js-pixel-stage.onlinefungames.net/pixelScript.js";
+var PADDLE_VENDOR_ID = "140297";
+var CODA_BASE_URL = "https://airtime.codapayments.com/airtime";
+
+if (PIXEL_SCRIPT.startsWith("%")) {
+    PIXEL_SCRIPT = "https://js-pixel-stage.onlinefungames.net/pixelScript.js";
+}
+
+if (ATTRIBUTION_TOOL_URL.startsWith("%")) {
+    ATTRIBUTION_TOOL_URL = "https://a.onlinefungames.net/api/attribute/";
+}
+
+if (PADDLE_VENDOR_ID.startsWith("%")) {
+    PADDLE_VENDOR_ID = "5140";
+}
+
+if (CODA_BASE_URL.startsWith("%")) {
+    CODA_BASE_URL = "https://sandbox.codapayments.com/airtime";
+}

@@ -1,0 +1,200 @@
+<package>
+    <source id = "vs">
+      attribute vec2 av_Pos;
+      uniform vec4 uv_Projection;
+
+      #ifdef COLORING
+      attribute vec4 av_Color;
+      varying lowp vec4 outColor;
+      #endif
+
+      #ifdef TEXTURING
+      attribute highp vec2 av_TexCoord;
+      varying highp vec2 outCoord;
+      #ifdef VIDEO
+      varying highp vec2 outCoordAlpha;
+      #endif
+      #endif
+
+      #ifdef MASK1
+      uniform mediump vec2 maskTexCoord1;
+      uniform mediump vec2 maskTexCoordScale1;
+      uniform mat3 maskMatrix1;
+      varying mediump vec2 outMaskCoord1;
+      #endif
+
+      #ifdef MASK2
+      uniform mediump vec2 maskTexCoord2;
+      uniform mediump vec2 maskTexCoordScale2;
+      uniform mat3 maskMatrix2;
+      varying mediump vec2 outMaskCoord2;
+      #endif
+
+      #ifdef TRANSFORM
+      uniform mat3 um_Transform;
+      #endif
+
+      void main(void)
+      {
+      #ifdef TRANSFORM
+          vec3 vpos = vec3(av_Pos, 1.0) * um_Transform;
+      #else
+          vec3 vpos = vec3(av_Pos, 1.0);
+      #endif
+          gl_Position = vec4(vpos.xy * uv_Projection.xy + uv_Projection.zw, 0, 1);
+    
+      #ifdef COLORING
+      #ifdef PREMULTALPHA
+          outColor = vec4(av_Color.rgb * av_Color.a, av_Color.a);
+      #else
+          outColor = av_Color;
+      #endif
+      #endif
+    
+      #ifdef TEXTURING
+          outCoord = av_TexCoord;
+      #ifdef VIDEO
+          outCoordAlpha = outCoord + vec2(0.5, 0.0);
+      #endif
+      #endif
+    
+      #ifdef MASK1
+          vec3 v1 = vpos * maskMatrix1;
+          outMaskCoord1 = maskTexCoord1 + v1.xy * maskTexCoordScale1;
+      #endif    
+
+      #ifdef MASK2
+          vec3 v2 = vpos * maskMatrix2;
+          outMaskCoord2 = maskTexCoord2 + v2.xy * maskTexCoordScale2;
+      #endif          
+      }    
+    </source>
+
+    <source id = "fs">
+      #ifdef TEXTURING
+      varying highp vec2 outCoord;
+      #ifdef VIDEO
+      varying highp vec2 outCoordAlpha;
+      #endif
+      uniform lowp sampler2D us_0;
+      #endif
+
+      #ifdef COLORING
+      varying lowp vec4 outColor;
+      #endif
+
+      #ifdef COLOR_ADJUST
+      uniform lowp mat3 hue;
+      uniform lowp vec3 br;
+      #endif
+
+      #ifdef COLOROFFSET
+      uniform lowp vec3 clrOffset;
+      #endif
+
+      #ifdef MASK1
+      uniform lowp sampler2D us_M1;
+      varying mediump vec2 outMaskCoord1;
+      #endif
+
+      #ifdef MASK2
+      uniform lowp sampler2D us_M2;
+      varying mediump vec2 outMaskCoord2;
+      #endif
+
+      void main(void)
+      {
+      #if defined TEXTURING
+        lowp vec4 color = texture2D(us_0, outCoord);
+        #ifdef VIDEO
+            color.w = texture2D(us_0, outCoordAlpha).x;
+        #endif
+      #else
+        #if defined COLORING
+            lowp vec4 color = outColor;
+        #endif
+      #endif
+        
+      #ifdef COLOR_ADJUST
+      #if defined PREMULTALPHA
+          color = vec4(hue * color.rgb + br * color.a, color.a);
+      #else
+          color = vec4(hue * color.rgb + br, color.a);
+      #endif
+      #endif
+    
+      #if defined COLORING
+      #if defined ADD
+          color = vec4(outColor.rgb + color.rgb, color.a * outColor.a);
+      #else
+      #if defined MODULATE
+          color = vec4(outColor * color);
+      #else
+      #if defined BLEND
+      #if defined PREMULTALPHA
+          color = vec4(outColor.rgb * (1.0 - color.a) + color.rgb, color.a + outColor.a);
+      #else
+          color = vec4(mix(outColor.rgb, color.rgb, color.a), color.a + outColor.a);
+      #endif
+      #else
+      #if defined REPLACE
+          color = outColor;
+      #endif
+      #endif
+      #endif
+      #endif
+      #endif
+    
+      #if defined COLOROFFSET
+      #if defined PREMULTALPHA
+          color = color + vec4(clrOffset * color.a, 0);
+      #else
+          color = vec4(color.rgb + clrOffset, color.a);
+      #endif
+      #endif
+    
+      #ifdef MASK1
+      #if defined MASKINVERT
+      #if defined PREMULTALPHA
+          color *= 1.0 - texture2D(us_M1, outMaskCoord1).x;
+      #else
+          color.a *= 1.0 - texture2D(us_M1, outMaskCoord1).x;
+      #endif
+      #else
+      #if defined PREMULTALPHA
+          color *= texture2D(us_M1, outMaskCoord1).x;
+      #else
+          color.a *= texture2D(us_M1, outMaskCoord1).x;
+      #endif
+      #endif
+      #endif
+
+      #ifdef MASK2
+      #if defined MASKINVERT
+      #if defined PREMULTALPHA
+          color *= 1.0 - texture2D(us_M2, outMaskCoord2).x;
+      #else
+          color.a *= 1.0 - texture2D(us_M2, outMaskCoord2).x;
+      #endif
+      #else
+      #if defined PREMULTALPHA
+          color *= texture2D(us_M2, outMaskCoord2).x;
+      #else
+          color.a *= texture2D(us_M2, outMaskCoord2).x;
+      #endif
+      #endif
+      #endif
+      
+
+          gl_FragColor = color;
+      }		
+    </source>
+
+  <shader id="default" vertex="vs" fragment="fs" />
+
+  <blend id="One_InverseSourceAlpha" src="one" dst="invSrcAlpha" />
+  <blend id="One_InverseSourceColor" src="one" dst="invSrcColor" />
+  <blend id="SourceAlpha_InverseSourceAlpha" src="srcAlpha" dst="invSrcAlpha" />
+  <blend id="One_One" src="one" dst="one" />
+  <blend id="disabled" />
+</package>

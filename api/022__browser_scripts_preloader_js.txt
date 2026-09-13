@@ -1,0 +1,38 @@
+URL: https://game.onlinefungames.net/browser/scripts/preloader.js
+
+const script = document.createElement('script');
+script.src = PIXEL_SCRIPT + "?v=" + Math.floor(Math.random() * 100000).toString();
+
+document.head.appendChild(script);
+
+loadFacebookSdk(window, FB_ID);
+(function () {
+
+    var preloader = document.getElementById("preloader");
+    if (preloader) {
+        var widthToHeight = parseInt(preloader.style.width) / parseInt(preloader.style.height);
+        var w = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth;
+        var h = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight;
+        var newWidth = w;
+        var newHeight = h;
+        var newWidthToHeight = newWidth / newHeight, b = 0;
+
+        if (newWidth >= 990) {
+            newHeight = 990;
+            newWidth = newHeight * widthToHeight;
+        } else if (newWidth < 990) {
+            newHeight = h * newWidthToHeight;
+            newWidth = newHeight * widthToHeight;
+        }
+
+
+        newWidth = ~~newWidth;
+        newHeight = ~~newHeight;
+        preloader.style.width = newWidth + "px";
+        preloader.style.height = newHeight + "px";
+        preloader.style.position = "absolute";
+        preloader.style.top = "0px";
+        preloader.style.left = ((w - newWidth) * 0.5) + "px";
+        if (preloader.style.backgroundSize) preloader.style.backgroundSize = newWidth + "px " + newHeight + "px";
+    }
+})();

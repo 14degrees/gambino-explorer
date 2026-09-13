@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games at Gambino – Casino Style Gaming</title>
+    <meta
+      name="description"
+      content="Explore fun games at Gambino and experience colorful reels, exciting themes, and immersive casino-style entertainment online."
+    />
+    <link
+      rel="canonical"
+      href="https://game.onlinefungames.net/play/free_fun_games.html"
+    />
+    <link
+      rel="icon"
+      href="icon/favicon.ico.png"
+      type="image/x-icon"
+    />
+    <link rel="manifest" href="gambino.webmanifest" />
+    <!-- added upon Konstantin Shablouski request from #h5-pixel on 2023-09-12 -->
+    <script
+      id="landingScript"
+      src="https://storage.googleapis.com/js-pixel/pixelScript.js"
+    ></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+      const gaId =
+        location.host === "local.gambinoslot.com" ||
+        location.host === "stage.gambinoslot.com"
+          ? "G-SCY995PNPT"
+          : "G-6SL4G56WDV";
+      var gam = gam || {};
+      gam.pageloadTs = Date.now();
+      let gaScript = document.createElement("script");
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + gaId;
+      document.head.appendChild(gaScript);
+
+      gam.gaConf = {};
+      if (gaId === "G-SCY995PNPT") gam.gaConf.debug_mode = true;
+      gam.userId = JSON.parse(localStorage.getItem("externalUserId"));
+      if (gam.userId) gam.gaConf.user_id = gam.userId;
+      gam.sessData = localStorage.getItem("gam-source");
+      if (gam.sessData) {
+        gam.sessData = JSON.parse(gam.sessData);
+        gam.lastActivity = localStorage.getItem("gam-last-activity");
+        gam.isNewSession =
+          !gam.lastActivity ||
+          new Date().getTime() - parseInt(gam.lastActivity, 10) >
+            30 * 60 * 1000;
+      }
+      if (gam.sessData && gam.sessData.pageType && !gam.isNewSession) {
+        gam.gaConf.landing_page_type = gam.sessData.pageType;
+        gam.gaConf.landing_was_player = gam.sessData.sessionWasPlayer;
+      } else {
+        // new
+        gam.gaConf.landing_page_type = window.location.search?.includes(
+          "cid=gbclid"
+        )
+          ? "H5 with Tracking"
+          : "H5";
+        gam.gaConf.landing_was_player = gam.userId ? 1 : 0;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag.sessionData = gam.sessData ? gam.sessData : {};
+      gtag("js", new Date());
+      gtag("config", gaId, gam.gaConf);
+      if (location.pathname.startsWith("/free_fun_games.")) {
+        gam.lastTimingTs = Date.now();
+        gtag("event", "load_h5_pageview", {
+          h5_view: 1,
+          load_timing: 1,
+          load_timing_norm: 1,
+          loading_phase: "h5_pageview",
+          load_timing_delta: 1,
+          value: 1,
+        });
+      }
+    </script>
+    <!-- End Google Tag -->
+
+    <script type="text/javascript" src="scripts/install_prompt.js"></script>
+    <script type="text/javascript" src="scripts/clipboard.js"></script>
+  </head>
+
+  <body class="body">
+    <style>
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 2;
+      }
+
+      .modal__dialog {
+        max-width: 800px;
+        margin: 40px auto;
+      }
+
+      .modal__content {
+        position: relative;
+        width: 100%;
+        padding: 40px;
+      }
+
+      .modal__close {
+        position: absolute;
+        top: 56px;
+        right: 75px;
+        cursor: pointer;
+      }
+
+      .modal__close__btn {
+        padding: 0;
+        width: 70px;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .modal__close__btn img {
+        width: 100%;
+      }
+
+      .modal__img {
+        width: 100%;
+      }
+
+      .modal__img img {
+        width: 100%;
+      }
+
+      .modal__button {
+        position: absolute;
+        top: 77%;
+        left: 34%;
+        width: 290px;
+      }
+
+      .modal__button img {
+        width: 100%;
+      }
+
+      .modal__button-2 {
+        display: flex;
+        top: 67%;
+        left: 35%;
+      }
+
+      .modal__button-2 img {
+        width: 100%;
+      }
+
+      .modal__button-3 {
+        display: flex;
+        top: 71%;
+        left: 27%;
+        width: 500px;
+      }
+
+      .modal__button-3 img {
+        width: 100%;
+      }
+
+      .modal__button-4 {
+        display: flex;
+        top: 71%;
+        left: 21%;
+        width: 500px;
+      }
+
+      .modal__button-4 img {
+        width: 100%;
+      }
+
+      .modal__button-5 {
+        top: 74%;
+        left: 38%;
+        width: 220px;
+      }
+
+      .modal__button-5 img {
+        width: 100%;
+      }
+
+      .modal__button-6 {
+        position: absolute;
+        top: 68%;
+        left: 49%;
+        width: 250px;
+      }
+
+      .modal__button-6 img {
+        width: 100%;
+      }
+
+      .show {
+        display: block !important;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
+
+    <!-- --------The Modal--------->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <img
+          src="https://best.gambinoslot.com/wp-content/uploads/2021/03/popup_text.png"
+          class="boxText"
+        />
+        <img
+          src="https://best.gambinoslot.com/wp-content/uploads/2021/03/popup_btn.png"
+          id="popupBtn"
+        />
+      </div>
+    </div>
+    <div id="myBtn" />
+
+    <style>
+      .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+        background-image: url(https://best.gambinoslot.com/wp-content/uploads/2021/03/popup_shape.png);
+        width: 562px;
+        /* adjust as per your needs */
+        height: 160px;
+        /* adjust as per your needs */
+        margin: 100px auto 400px;
+        padding: 20px;
+        border: 1px solid #888;
+        max-height: 802px;
+        border: none;
+      }
+
+      .boxText {
+        margin-left: 18%;
+        width: 350px;
+      }
+
+      /*OK Button in popup*/
+      #popupBtn {
+        position: absolute;
+        top: 340px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        border: none;
+        cursor: pointer;
+      }
+
+      /*OK Button in popup*/
+      #modalBtnShrtc {
+        position: absolute;
+        top: 340px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        border: none;
+        cursor: pointer;
+      }
+
+      body {
+        margin: 0px;
+        overflow: hidden;
+      }
+
+      iframe#advanced_iframe {
+        height: 100vh;
+      }
+    </style>
+
+    <!-- --------The Modal END------->
+
+    <!-- START OF ACCESS MODAL -->
+
+    <div class="modal-access hide" id="inapp-access">
+      <div class="modal__dialog-access">
+        <div class="modal__content-access">
+          <div class="modal__close-access">
+            <button class="modal__close__btn-access" id="close-inapp-access">
+              <img src="img/X_btn_Inapp_close.webp" alt="Modal close" />
+            </button>
+          </div>
+          <div class="modal__img-access">
+            <img src="img/popup-fix.webp" alt="Modal" />
+          </div>
+          <div class="modal__button-access">
+            <a href="#">
+              <img
+                src="img/btn_access.webp"
+                alt="Play Now"
+                id="img-inapp-access"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .modal-access {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 2;
+      }
+
+      .modal__dialog-access {
+        max-width: 800px;
+        margin: 40px auto;
+      }
+
+      .modal__content-access {
+        position: relative;
+        width: 100%;
+        padding: 40px 0px;
+      }
+
+      .modal__close-access {
+        position: absolute;
+        top: 38px;
+        right: -65px;
+        cursor: pointer;
+      }
+
+      .modal__close__btn-access {
+        padding: 0;
+        width: 70px;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .modal__close__btn-access img {
+        width: 100%;
+      }
+
+      .modal__img-access {
+        width: 100%;
+      }
+
+      .modal__img-access img {
+        width: 100%;
+      }
+
+      .modal__button-access {
+        position: absolute;
+        top: 75%;
+        left: 32%;
+        width: 290px;
+      }
+
+      .modal__button-access img {
+        width: 100%;
+      }
+
+      .show {
+        display: block !important;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      @media (max-width: 1300px) {
+        .modal__dialog-access {
+          max-width: 700px;
+          margin: -15px auto;
+        }
+
+        .modal__button-access {
+          left: 29%;
+        }
+      }
+    </style>
+
+    <!-- FINISH OF ACCESS MODAL -->
+
+    <script>
+      var addShortcutModal = document.getElementById("inapp-access");
+      var addShortcutBtn = document.getElementById("img-inapp-access");
+      var closeShortcutModalBtn = document.getElementById("close-inapp-access");
+      addShortcutBtn.onclick = function () {
+        addShortcutModal.classList.add("hide");
+        showInstallPromptInternal();
+      };
+      closeShortcutModalBtn.onclick = function () {
+        addShortcutModal.classList.add("hide");
+      };
+
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      // Get the button that closes popup
+      var popupBtn = document.getElementById("popupBtn");
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      // When the user clicks the button, open the modal
+      // btn.onclick = function () {
+      //  modal.style.display = "block";
+      // };
+      // When receive bookmark event, open the modal
+      window.onmessage = function (e) {
+        if (e.data == "addBookmarkClicked") {
+          modal.style.display = "block";
+        }
+
+        if (e.data == "addShortcutkClicked") {
+          addShortcutModal.classList.remove("hide");
+        }
+
+        if (typeof window[e.data.func] == "function") {
+          window[e.data.func].call(null, e.data.params);
+        }
+      };
+      popupBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      if (window.addEventListener) {
+        window.addEventListener("message", onMessage, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onmessage", onMessage, false);
+      }
+
+      function onMessage(event) {
+        // Check sender origin to be trusted
+        if (event.origin !== "http://example.com") return;
+
+        var data = event.data;
+
+        if (typeof window[data.func] == "function") {
+          window[data.func].call(null, data.message);
+        }
+      }
+    </script>
+
+    <iframe
+      id="advanced_iframe"
+      name="advanced_iframe"
+      src="https://game.onlinefungames.net/browser/index.html"
+      allow="identity-credentials-get"
+      width="100%"
+      height="800px"
+      scrolling="no"
+      frameborder="0"
+      allowtransparency="true"
+      style="background: transparent; z-index: 0"
+      allowfullscreen
+    ></iframe>
+    <script>
+      function gbpx(w, u) {
+        if (w.location.search.indexOf("gbclid") != -1) {
+          return;
+        }
+        var h = new URL(u);
+        h.search = new URLSearchParams(w.location.search);
+        fetch(h, { mode: "no-cors" });
+      }
+      gbpx(window, "https://c.gambinoslot.com/");
+    </script>
+    <script type="text/javascript">
+      var ifrm_advanced_iframe = document.getElementById("advanced_iframe");
+      var hiddenTabsDoneadvanced_iframe = false;
+      function resizeCallbackadvanced_iframe() {}
+      function aiChangeUrl(loc) {}
+    </script>
+    <script type="text/javascript">
+      function passParametersInGambinoIframe() {
+        const rootUrl = window.location.href;
+        const splittedArr = rootUrl.split("?");
+        const iframeElement = document.getElementById("advanced_iframe");
+        if (!iframeElement || splittedArr.length < 2) return;
+        const rootUrlParameters = splittedArr[1];
+        iframeElement.src = `${iframeElement.src}?${rootUrlParameters}`;
+      }
+      passParametersInGambinoIframe();
+    </script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const modalCloseBtn = document.querySelectorAll(".modal__close__btn");
+        const navigator = window.navigator;
+        const body = document.querySelector(".body");
+        const buttonGetCoins = document.querySelectorAll(".modal__button");
+
+        const spiralToken = JSON.parse(
+          localStorage.getItem("gambino_spiral_token")
+        );
+
+        const iframe = document.getElementById("advanced_iframe");
+        iframe.onload = function () {
+          iframe.contentWindow.postMessage(
+            { event: "setSpiralToken", value: spiralToken },
+            "*"
+          );
+        };
+
+        function hexToDec(hex) {
+          return parseInt(hex, 16);
+        }
+
+        const checkSpiralToken = hexToDec(spiralToken);
+
+        const popupConfig = [{ id: "0" }, { id: "1" }, { id: "2" }];
+        const initialList = popupConfig.map((item) => item.id);
+
+        const clickedPopups =
+          JSON.parse(localStorage.getItem("clickedPopups")) || [];
+
+        const finalList = initialList.filter(
+          (n) => clickedPopups.indexOf(n) === -1
+        );
+        const finalItems = finalList.length;
+
+        const numberOfModal = +finalList[0];
+
+        function showModal() {
+          const lastVisit = localStorage.getItem("numberOfModal");
+          if (lastVisit) {
+            if (lastVisit !== numberOfModal) {
+              //to do sent event to tracking server
+              let testGroup = checkSpiralToken % 2 === 0;
+              const addEvent = async (name, value = {}) => {
+                let url = new URL("https://www.gambinoslot.com/api/events/");
+                url.searchParams.append("spiralToken", spiralToken);
+                url.searchParams.append("name", "show_popup");
+                url.searchParams.append(
+                  "value",
+                  JSON.stringify({
+                    id: numberOfModal,
+                    clickedPopups: clickedPopups,
+                    testGroup: testGroup,
+                  })
+                );
+                url.searchParams.append("time", new Date().toLocaleString());
+                const response = await fetch(url, {
+                  mode: "no-cors",
+                });
+                const data = await response;
+
+                return data;
+              };
+              if (testGroup) {
+                addEvent("show_popup");
+                return;
+              }
+              addEvent("show_popup");
+              openModal(numberOfModal);
+              localStorage.setItem("numberOfModal", numberOfModal);
+            } else {
+              localStorage.setItem("numberOfModal", numberOfModal + 1);
+            }
+          } else {
+            localStorage.setItem("numberOfModal", numberOfModal);
+          }
+        }
+
+        function showModalOnceADay() {
+          const today = new Date().toISOString().split("T")[0]; // Format: 'YYYY-MM-DD'
+
+          const lastShown = localStorage.getItem("modalLastShown");
+
+          if (!lastShown) {
+            showModal();
+            localStorage.setItem("modalLastShown", today);
+          }
+
+          if (lastShown !== today) {
+            showModal();
+
+            localStorage.setItem("modalLastShown", today);
+          }
+        }
+
+        function openModal(n) {
+          if (
+            /Mobile|iP(hone|od|ad)|Android|BlackBerry|BB|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/gi.test(
+              navigator.userAgent
+            )
+          ) {
+            console.log("mobile");
+            document.getElementById(`${n}`).classList.remove("show");
+            document.getElementById(`${n}`).classList.add("hide");
+            document.body.style.overflow = "visible";
+          } else {
+            console.log("desktop");
+            console.log(document.getElementById(`${n}`));
+            document.getElementById(`${n}`).classList.add("show");
+            document.getElementById(`${n}`).classList.remove("hide");
+            document.body.style.overflow = "hidden";
+          }
+        }
+
+        modalCloseBtn.forEach((button) => {
+          button.addEventListener("click", function (event) {
+            document
+              .getElementById(`${numberOfModal}`)
+              .classList.remove("show");
+            document.getElementById(`${numberOfModal}`).classList.add("hide");
+            document.body.style.overflow = "";
+            body.removeEventListener("mouseleave", openModal);
+          });
+        });
+
+        buttonGetCoins.forEach((button) => {
+          button.addEventListener("click", function (event) {
+            const numberOfLink = event.target.id.slice(4);
+            clickedPopups.push(numberOfLink);
+            localStorage.setItem(
+              "clickedPopups",
+              JSON.stringify(clickedPopups)
+            );
+          });
+        });
+
+        // document
+        //   .getElementById(`${numberOfModal}`)
+        //   .addEventListener("click", (e) => {
+        //     if (e.target === document.getElementById(`${numberOfModal}`)) {
+        //       document
+        //         .getElementById(`${numberOfModal}`)
+        //         .classList.remove("show");
+        //       document.getElementById(`${numberOfModal}`).classList.add("hide");
+        //       document.body.style.overflow = "";
+        //       body.removeEventListener("mouseleave", openModal);
+        //     }
+        //   });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.code === "Escape" &&
+            document
+              .getElementById(`${numberOfModal}`)
+              .classList.contains("show")
+          ) {
+            document
+              .getElementById(`${numberOfModal}`)
+              .classList.remove("show");
+            document.getElementById(`${numberOfModal}`).classList.add("hide");
+            document.body.style.overflow = "";
+            body.removeEventListener("mouseleave", openModal);
+          }
+        });
+      });
+    </script>
+    <script type="text/javascript" src="js/spiraltoken-v1.0.js"></script>
+    <script type="text/javascript">
+      PLUGIN.sendUserInformation({});
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-messaging-compat.js"></script>
+    <script type="text/javascript" src="scripts/firebase_messaging.js"></script>
+    <script type="text/javascript" src="scripts/full_screen_helper.js"></script>
+<!--    <script defer src="assets/dist/shared.2700adca8985c0f9775e.js"></script>-->
+<!--    <script defer src="assets/dist/play.667aa28fb59daa06f5a8.js"></script>-->
+  </body>
+</html>

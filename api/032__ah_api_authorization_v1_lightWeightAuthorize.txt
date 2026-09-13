@@ -1,0 +1,3060 @@
+URL: https://gambino-apps.appspot.com/_ah/api/authorization/v1/lightWeightAuthorize
+
+{
+  "authorizationInfo" : {
+    "authId" : 5965611240390656,
+    "authorizationKey" : "4d3da3fc-b371-418d-b281-f12aaebbf069-6402833844404224-4ef1e3a6-71f4-4616-8c8f-c0ffeb6c3d90-1789287366873",
+    "session" : "6402833844404224-13206e69-689d-4cbd-935b-3253b380bf83",
+    "authorizationType" : "SA",
+    "firstAuth" : true,
+    "clientConfigProperties" : [ {
+      "key" : "triggers.handlersConfig.back_to_lobby",
+      "type" : "string",
+      "value" : "compensation",
+      "isDefault" : false
+    }, {
+      "key" : "rubyRush.customScene",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/ruby_rush/RubyRush_Forest_06_10{type}",
+      "isDefault" : false
+    }, {
+      "key" : "features.rubyRush.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.wheelOfWins.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "intercom.showChatWindow",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "intercom.useCustomLauncher",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "intercom.lobby.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.endless_offer.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "galactic.toasts.unqualified_bet_toast_interval",
+      "type" : "string",
+      "value" : "25",
+      "isDefault" : false
+    }, {
+      "key" : "features.hotReels.hitGoalTooltip.interval",
+      "type" : "int",
+      "value" : "25",
+      "isDefault" : false
+    }, {
+      "key" : "puzzleHl.toasts.unqualified_bet_toast_interval",
+      "type" : "int",
+      "value" : "25",
+      "isDefault" : false
+    }, {
+      "key" : "progressionCrm.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "cash_in_vegas.toasts.unqualified_bet_toast_interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "spinnerWinner.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "chiliChase.unqualifiedBetToastSpinInterval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "goldAdventureGame.tooltips.unqualifiedBetTooltipInterval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "albumHeadline.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "farmHl.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "halloween.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "wheelOfWins.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "plinko.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "snakesAndLadders.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "pirates.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "war.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "words.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "wheelOfWinsHrr.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "fantastic_race.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "rubyRush.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "xmas_magic.toasts.unqualifiedBet.interval",
+      "type" : "string",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "features.hotReels.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "candyland_magic.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "features.rateUs.starsFilter.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.levelUpChallenge.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "notEnoughCoins.popupType",
+      "type" : "string",
+      "value" : "PersonalOffer, InApp",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.1.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/1-Deck-the-Halls.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.2.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/2-It%E2%80%99s-Cold-Outside.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.3.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/3-Made-with-Love.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.4.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/4-Snow-much-fun.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.5.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/5-International-Traditions.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.6.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/6-Time-to-Play.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.7.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/7-Reindeer-Games.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.8.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/8-Christmas-Binge.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.9.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/9-Jolly-Good-Times.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.10.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/10-12%20Days-of-Christmas.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.11.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/11-Shopping-List.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.albumReward.silver.12.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/12-Santa-Life.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.challengeReward.silver.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/album_hl_v7/Grand-prize.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.albumHeadline.title",
+      "type" : "string",
+      "value" : "Join the fun!",
+      "isDefault" : false
+    }, {
+      "key" : "contests.minLevel",
+      "type" : "int",
+      "value" : "13",
+      "isDefault" : false
+    }, {
+      "key" : "features.buyFeature.enableCustomPopup",
+      "type" : "string",
+      "value" : "168;20168;165;20165;163;20163;113;20113;124;20124;140;20140;141;20141;159;20159;112;20112;166;20166;169;20169;171;20171;172;20172;176;20176;180;20180;183;20183;184;20184;186;20186;187;20187;188;20188;189;20189;190;20190;191;20191;192;20192;193;20193;194;20194;195;20195;197;20197;198;20198;199;20199;200;20200;201;20201;202;20202;203;20203;204;20204;206;20206;207;20207;208;20208;209;20209;210;20210",
+      "isDefault" : false
+    }, {
+      "key" : "marketing.item.badges.url",
+      "type" : "string",
+      "value" : "https://storage.googleapis.com/assets-marketing-live/MediaLibrary/{platform}/{locale}/{res}/marketing/item_plugins/ItemPlugins_item_multipliers{type}",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus0.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/2-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus0.title",
+      "type" : "string",
+      "value" : "I just won an amazing bonus at Gambino Slots",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus1.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/3-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus1.title",
+      "type" : "string",
+      "value" : "I just won an Amazing Bonus at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus2.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/1-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus2.title",
+      "type" : "string",
+      "value" : "I just won an Epic Bonus at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus3.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/4-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus3.title",
+      "type" : "string",
+      "value" : "I just won a Grand Bonus at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus.description",
+      "type" : "string",
+      "value" : "Ready to win? Join & get 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.customScene",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/piggy_bank/Piggy_New_Piggy_Sale_100_NEW_ITEM_22_06_UDI{type}",
+      "isDefault" : false
+    }, {
+      "key" : "features.resourcePatch.domainReplaceEnabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "CashInVegas.resourcePatchUrl",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/FeaturePatches/{platform}/{locale}/{res}/CashInVegas/Viva_Las_Vegas_facelift_default_chips/20260226135213/config.json",
+      "isDefault" : false
+    }, {
+      "key" : "features.metaPixel.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "refreshRates.refreshMarketingOnBackToLobby",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.galactic.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.inbox.welcomeFSPackageTooltip.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.scratch_cards.tutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.scratch_cards.chest.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Scratch%20Sun%20Grand%20Prize.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.sociallogin.forceShowLobbyLoginButton",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.timedLock.syncTimeout",
+      "type" : "int",
+      "value" : "300",
+      "isDefault" : false
+    }, {
+      "key" : "features.timedLock.asyncTimeout",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "features.fishing.tutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.fishing.showTimer",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.freeSpins.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "snakesAndLadders.showPersonalOffer",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "snakesAndLadders.showJackpotPanel",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "gWheel.initialWheelIndex",
+      "type" : "int",
+      "value" : "1",
+      "isDefault" : false
+    }, {
+      "key" : "registration.websiteRegistrationPromptLevels",
+      "type" : "string",
+      "value" : "1000000",
+      "isDefault" : false
+    }, {
+      "key" : "features.cash_in_vegas_piggy.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.manualBreak",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.ShowAgainLevel",
+      "type" : "int",
+      "value" : "8",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.beforeEndToastMinutes",
+      "type" : "int",
+      "value" : "15",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.flashingTimerMinutes",
+      "type" : "int",
+      "value" : "180",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.iconPages",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.showOfferOnExitEachN",
+      "type" : "int",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.tutorial.tooltipDuration",
+      "type" : "int",
+      "value" : "5000",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.gambingo.title",
+      "type" : "string",
+      "value" : "Join the fun!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.gambingo.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.gambingo.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/GamBINGO_Sharing Icon.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.galactic_piggy.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.paymentPage.type",
+      "type" : "string",
+      "value" : "CODA",
+      "isDefault" : false
+    }, {
+      "key" : "registration.websiteRegistrationBonus",
+      "type" : "double",
+      "value" : "100000",
+      "isDefault" : false
+    }, {
+      "key" : "gWheel.maxNotificationCount",
+      "type" : "int",
+      "value" : "999",
+      "isDefault" : false
+    }, {
+      "key" : "features.xtremeBet.disabledPerSlot",
+      "type" : "string",
+      "value" : "20093,20101,20104,20106,20112,20114,20116,20117,20107,20105,20037,20118,20111,20113,20115,20119,20036,20120,20121,20122,20123,20124,20125,20126,20127,20128,20129,20130,20098,20131,20132,20133,20134,20135,20136,20137,20138,20139,20058,20103,20099,20048,20100,20140,20141,20142,20143,20144,20145,20909,20902,20110,20109,20108,20102,20097,20096,20095,20094,20091,20090,20088,20087,20086,20085,20080,20074,20073,20072,20070,20069,20067,20065,20064,20063,20062,20061,20060,20056,20055,20052,20051,20046,20044,20043,20042,20040,20035,20034,20032,20030,20026,20023,20022,20020,20019,20013,20012,20010,20009,20008,20007,20006,20005,20146,20147,20148,20149,20150,20151,20152,20153,20154,20155,20156,20157,20158,20159,20160,20161,20162,20163,20164,20165,20166,20167,20168,20169,20170,20171,20172,20173,20174,20175,20176,20177,20178,20179,20180,20181,20182,20183,20184,20185,20186,20187,20188,20189,20190,20191,20192,20193,20194,20195,20196,20197,20198,20199,20200,20201,20202,20203,20204,20205,20206,20207,20208,20209,20210",
+      "isDefault" : false
+    }, {
+      "key" : "features.maxBetPlus.disabledPerSlot",
+      "type" : "string",
+      "value" : "20093,20101,20104,20106,20112,20114,20116,20117,20107,20105,20037,20118,20111,20113,20115,20118,20119,20036,20120,20121,20122,20123,20124,20125,20126,20127,20128,20129,20130,20098,20131,20132,20133,20134,20135,20136,20137,20138,20139,20058,20103,20099,20048,20100,20140,20141,20142,20143,20144,20145,20909,20902,20110,20109,20108,20102,20097,20096,20095,20094,20091,20090,20088,20087,20086,20085,20080,20074,20073,20072,20070,20069,20067,20065,20064,20063,20062,20061,20060,20056,20055,20052,20051,20046,20044,20043,20042,20040,20035,20034,20032,20030,20026,20023,20022,20020,20019,20013,20012,20010,20009,20008,20007,20006,20005,20146,20147,20148,20149,20150,20151,20152,20153,20154,20155,20156,20157,20158,20159,20160,20161,20162,20163,20164,20165,20166,20167,20168,20169,20170,20171,20172,20173,20174,20175,20176,20177,20178,20179,20180,20181,20182,20183,20184,20185,20186,20187,20188,20189,20190,20191,20192,20193,20194,20195,20196,20197,20198,20199,20200,20201,20202,20203,20204,20205,20206,20207,20208,20209,20210",
+      "isDefault" : false
+    }, {
+      "key" : "features.clonedGames.gamesList",
+      "type" : "string",
+      "value" : "20116=116,20107=107,20105=105,20037=37,20118=118,20111=111,20113=113,20115=115,20119=119,20036=36,20120=120,20121=121,20122=122,20123=123,20124=124,20125=125,20126=126,20127=127,20128=128,20129=129,20130=130,20098=98,20131=131,20132=132,20133=133,20134=134,20135=135,20136=136,20137=137,20138=138,20139=139,20058=58,20103=103,20099=99,20048=48,20100=100,20140=140,20141=141,20142=142,20143=143,20144=144,20145=145,20909=909,20902=902,20110=110,20109=109,20108=108,20102=102,20097=97,20096=96,20095=95,20094=94,20091=91,20090=90,20088=88,20087=87,20086=86,20085=85,20080=80,20074=74,20073=73,20072=72,20070=70,20069=69,20067=67,20065=65,20064=64,20063=63,20062=62,20061=61,20060=60,20056=56,20055=55,20052=52,20051=51,20046=46,20044=44,20043=43,20042=42,20040=40,20035=35,20034=34,20032=32,20030=30,20026=26,20023=23,20022=22,20020=20,20019=19,20013=13,20012=12,20010=10,20009=9,20008=8,20007=7,20006=6,20005=5,20146=146,20147=147,20148=148,20149=149,20150=150,20151=151,20152=152,20153=153,20154=154,20155=155,20156=156,20157=157,20158=158,20159=159,20160=160,20161=161,20162=162,20163=163,20164=164,20165=165,20166=166,20167=167,20168=168,20169=169,20170=170,20171=171,20172=172,20173=173,20174=174,20175=175,20176=176,20177=177,20178=178,20179=179,20180=180,20181=181,20182=182,20183=183,20184=184,20185=185,20186=186,20187=187,20188=188,20189=189,20190=190,20191=191,20192=192,20193=193,20194=194,20195=195,20196=196,20197=197,20198=198,20199=199,20200=200,20201=201,20202=202,20203=203,20204=204,20205=205,20206=206,20207=207,20208=208,20209=209,20210=210",
+      "isDefault" : false
+    }, {
+      "key" : "favoriteGames.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.highRollerRoom.maxTooltipCount",
+      "type" : "int",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "puzzleHl.toasts.max_bet_toast_interval",
+      "type" : "int",
+      "value" : "300",
+      "isDefault" : false
+    }, {
+      "key" : "gifts.sendFacebookRequest",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "halloween.tutorial.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "halloween.unrewardedSteps",
+      "type" : "int",
+      "value" : "20000000",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.halloween.image",
+      "type" : "string",
+      "value" : "https://storage.googleapis.com/gambino-slots/sharingPictures/NewSharings/PlinGo_ShareFB_cut-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.halloween.description",
+      "type" : "string",
+      "value" : "Want to win fang-tastic prizes too? Start collecting candies with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "features.privacyPopup.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "highRollerRoom.chooseGamesEnabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.canBeInInbox",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "registration.websiteMandatoryRegistrationLevel",
+      "type" : "int",
+      "value" : "100000",
+      "isDefault" : false
+    }, {
+      "key" : "profile.allowEditForFacebookUsers",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.celebrateWithFriends.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "trackingPopup.isGetMoreFun",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.spinAccelerationMultiplier.enabledPerSlot",
+      "type" : "string",
+      "value" : "909:1000, 5:1000, 902:300, 4:1000, 6:1000, 7:1000, 8:1000, 9:300, 10:1000, 12:1000, 13:300, 15:1000, 16:1000, 17:1000, 18:1000, 19:300, 20:1000, 21:1000, 22:1000, 23:1000, 24:1000, 26:1000, 28:1000, 30:1000, 31:1000, 32:1000, 34:1000, 35:1000, 36:1000, 37:1000, 39:1000, 40:1000, 42:1000, 44:1000, 45:1000, 46:1000, 48:1000, 49:1000, 51:300, 52:1000, 55:1000, 56:1000,  60:1000, 64:1000, 78:1000, 85:1000, 84:1000, 88:1000, 87:1000, 86:1000, 90:1000, 93:1000, 53:1000, 58:1000, 61:1000, 62:1000, 63:1000, 65:1000, 67:1000, 69:300, 70:1000, 71:1000, 72:1000, 73:1000, 74:1000, 80:1000, 91:1000, 95:1000, 96:1000, 97:1000, 98:1000, 94:1000, 99:200, 100:200, 101:900, 102:1000, 103:1000, 104:500, 105:1000, 106:1000, 10100:200, 107:1000, 108:1000, 109:1000, 110:1000, 111:1000, 112:1000, 113:1000, 114:500, 115:1000, 116:500, 20093:1000, 20101:900, 20104:500,  20112:1000, 20114:500, 20116:500, 117:1000, 20117:1000, 20107:1000, 20105:1000, 20037:1000, 118:1000, 20118:1000, 20111:1000, 20113:1000, 20115:1000, 20106:1000, 119:1000, 20119:1000, 20036:1000, 120:1000, 20120:1000, 121:1000, 20121:1000, 122:1000, 20122:1000, 123:1000, 20123:1000, 124:1000, 20124:1000, 125:1000, 20125:1000, 126:1000, 20126:1000, 127:1000, 20127:1000, 128:1000, 20128:1000, 129:1000, 20129:1000, 130:1000, 20130:1000, 20098:1000, 20131:1000, 131:1000, 20132:1000, 132:1000, 20133:1000, 133:1000, 20134:1000, 134:1000, 20135:1000, 135:1000, 20136:1000, 136:1000,  20137:1000, 137:1000, 138:200, 20138:200, 139:200, 20139:200, 20058:1000, 20103:1000, 20099:1000, 20048:1000, 20100:200, 140:1000, 20140:1000, 141:1000, 20141:1000, 142:1000, 20142:1000, 143:1000, 20143:1000, 144:1000, 20144:1000, 145:1000, 20145:1000, 20909:1000, 20902:300, 20110:1000, 20109:1000, 20108:1000, 20102:1000, 20097:1000, 20096:1000, 20095:1000, 20094:1000, 20091:1000, 20090:1000, 20088:1000, 20087:1000, 20086:1000, 20085:1000, 20080:1000, 20074:1000, 20073:1000, 20072:1000, 20070:1000, 20069:300, 20067:1000, 20065:1000, 20064:1000, 20063:1000, 20062:1000, 20061:1000, 20060:1000, 20056:1000, 20055:1000, 20052:1000, 20051:300, 20046:1000, 20044:1000, 20042:1000, 20040:1000, 20035:1000, 20034:1000, 20032:1000, 20030:1000, 20026:1000, 20023:1000, 20022:1000, 20020:1000, 20019:300, 20013:300, 20012:1000, 20010:1000, 20009:300, 20008:1000, 20007:1000, 20006:1000, 20005:1000, 146:200, 20146:200, 147:1000, 20147:1000, 148:1000, 20148:1000, 149:200, 20149:200, 150:1000, 20150:1000, 151:1000, 20151:1000, 152:1000, 20152:1000, 153:1000, 20153:1000, 154:1000, 20154:1000, 155:1000, 20155:1000, 156:1000, 20156:1000, 157:1000, 20157:1000, 158:1000, 20158:1000, 159:1000, 20159:1000, 160:1000, 20160:1000, 161:1000, 20161:1000, 162:300, 20162:300, 163:1000, 20163:1000, 164:1000, 20164:1000, 165:1000, 20165:1000, 166:1000, 20166:1000, 167:1000, 20167:1000, 168:1000, 20168:1000, 169:1000, 20169:1000, 170:1000, 20170:1000, 171:300, 20171:300, 172:1000, 20172:1000, 173:1000, 20173:1000, 174:1000, 20174:1000, 175:1000, 20175:1000, 176:300, 20176:300, 177:1000, 20177:1000, 178:300, 20178:300, 179:1000, 20179:1000, 180:1000, 20180:1000, 181:1000, 20181:1000, 182:1000, 20182:1000, 183:1000, 20183:1000, 184:1000, 20184:1000, 185:1000, 20185:1000, 186:1000, 20186:1000, 187:1000, 20187:1000, 188:1000, 20188:1000, 189:300, 20189:300, 190:1000, 20190:1000, 191:1000, 20191:1000, 192:1000, 20192:1000, 193:1000, 20193:1000, 194:300, 20194:300, 195:1000, 20195:1000, 196:1000, 20196:1000, 197:1000, 20197:1000, 198:1000, 20198:1000, 199:300, 20199:300, 200:1000, 20200:1000, 201:1000, 20201:1000, 202:1000, 20202:1000, 203:1000, 20203:1000, 204:300, 20204:300, 205:1000, 20205:1000, 206:300, 20206:300, 207:1000, 20207:1000, 208:1000, 20208:1000, 209:300, 20209:300, 210:1000, 20210:1000",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "cash_in_vegas.toasts.max_bet_toast_interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "goldAdventureGame.tooltips.notMaxBetInterval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "albumHeadline.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "farmHl.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "halloween.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "plinko.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "snakesAndLadders.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "pirates.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "words.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "wheelOfWinsHrr.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "300",
+      "isDefault" : false
+    }, {
+      "key" : "fantastic_race.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "xmas_magic.toasts.notMaxBet.interval",
+      "type" : "string",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "features.hotReels.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "war.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "wheelOfWins.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "candyland_magic.toasts.notMaxBet.interval",
+      "type" : "int",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.cash_in_vegas_headline.station.title",
+      "type" : "string",
+      "value" : "I just won a bonus playing Viva Las VEGAS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.cash_in_vegas_headline.grand_prize.title",
+      "type" : "string",
+      "value" : "I just won a bonus playing Viva Las VEGAS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.cash_in_vegas_headline.grand_prize.image",
+      "type" : "string",
+      "value" : "https://storage.googleapis.com/gambino-slots/sharingPictures/NewSharings/VivaLasVegasGrand.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.cash_in_vegas_headline.station.image",
+      "type" : "string",
+      "value" : "https://storage.googleapis.com/gambino-slots/sharingPictures/NewSharings/VivaLasVegasStation.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.multiFeatureLobbyBanner.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "tracking.userlevel",
+      "type" : "string",
+      "value" : "2,6,10,12,20,50,150",
+      "isDefault" : false
+    }, {
+      "key" : "tracking.retention",
+      "type" : "string",
+      "value" : "1,3,7",
+      "isDefault" : false
+    }, {
+      "key" : "wheelOfWins.iconPages",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "features.wheelOfWins.flashing_period",
+      "type" : "int",
+      "value" : "10",
+      "isDefault" : false
+    }, {
+      "key" : "chiliChase.betToastSpinInterval",
+      "type" : "int",
+      "value" : "300",
+      "isDefault" : false
+    }, {
+      "key" : "features.spinTimeOut.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "progressiveJackpot.iconPages",
+      "type" : "string",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "features.challenges.spinInterval",
+      "type" : "int",
+      "value" : "25",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.vip.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/$(tier).png",
+      "isDefault" : false
+    }, {
+      "key" : "features.multiReplaceStaticConfig.enabledPerSlot",
+      "type" : "string",
+      "value" : "23;98;99;100;101;103;105;39;20101;20105;121;20121;122;20122;123;20123;126;20126;127;20127;128;20128;129;20129;20098;131;20131;132;20132;135;20135;137;20137;138;20138;139;20139;20103;20099;20100;140;20140;141;20141;142;20142;144;20144;145;20145;20023;146;20146;147;20147;149;20149;150;20150;151;20151;152;20152;153;20153;154;20154;155;20155;156;20156;157;20157;158;20158;159;20159;160;20160;161;20161;163;20163;164;20164;165;20165;166;20166;167;20167;168;20168;169;20169;170;20170;173;20173;174;20174;175;20175;177;20177;183;20183;184;20184;186;20186;187;20187;188;20188;190;20190;191;20191;192;20192;193;20193;195;20195;196;20196;197;20197;200;20200;114;20114;182;20182;143;20143;115;20115;198;20198;201;20201;203;20203;204;20204;205;20205;207;20207;210;20210",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.CollectiblesEnabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "cash_in_vegas.toasts.bet_toast_enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.cash_in_vegas_headline.station.description",
+      "type" : "string",
+      "value" : "Want to cruise the strip? Start collecting chips with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.cash_in_vegas_headline.grand_prize.description",
+      "type" : "string",
+      "value" : "Want to cruise the strip? Start collecting chips with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "features.turboWin.prepurchasePopupFrequency",
+      "type" : "int",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "application.tutorial.configLobby",
+      "type" : "string",
+      "value" : "{\"lobbyFlow\":{\"HourlyTooltipTutorial\":{\"duration\":0,\"sceneName\":\"TreasureTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"},\"GwheelsTutorial\":{\"duration\":4000,\"sceneName\":\"GwheelsTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"},\"AvatarTutorial\":{\"duration\":4000,\"sceneName\":\"AvatarTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"},\"BannerTutorial\":{\"duration\":4000,\"sceneName\":\"sceneBannerTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"}}}",
+      "isDefault" : false
+    }, {
+      "key" : "application.tutorial.config",
+      "type" : "string",
+      "value" : "{\"SpinTutorial\":{\"duration\":0,\"sceneName\":\"spinTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"},\"slotMachineFlow\":{\"XPTutorial\":{\"duration\":4000,\"sceneName\":\"XPTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"},\"BetTutorial\":{\"duration\":4000,\"sceneName\":\"BetTutorialDefault\",\"showState\":\"show\",\"hideState\":\"hide\"},\"BuyInGameTutorial\":{\"duration\":4000,\"sceneName\":\"BuyInGameTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"},\"InboxTutorial\":{\"duration\":4000,\"sceneName\":\"InboxTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"},\"LobbyBtnTutorial\":{\"duration\":4000,\"sceneName\":\"LobbyBtnTutorial\",\"showState\":\"show\",\"hideState\":\"hide\"}}}",
+      "isDefault" : false
+    }, {
+      "key" : "features.highestWin.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.continuesPurchase.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "dailyBonus.displayInCampaign",
+      "type" : "string",
+      "value" : "OnlyFree",
+      "isDefault" : false
+    }, {
+      "key" : "profile.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "profile.openMachine",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.epicWin.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/12-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.epicWin.description",
+      "type" : "string",
+      "value" : "Get 250 Free Spins when you join and win big too!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.epicWin.title",
+      "type" : "string",
+      "value" : "I just spun an EPIC WIN",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.freeSpins.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/11-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.freeSpins.description",
+      "type" : "string",
+      "value" : "Ready to win? Join & get 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.freeSpins.title",
+      "type" : "string",
+      "value" : "I just won Free Spins on $(machine_name)!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.gambinoChallenge.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/10-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.gambinoChallenge.description",
+      "type" : "string",
+      "value" : "Join today with 250 Free Spins & hit the next challenge!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.gambinoChallenge.title",
+      "type" : "string",
+      "value" : "I beat the house in the Gambino Challenge",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.uwp.needSetLink",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.vip.description",
+      "type" : "string",
+      "value" : "Click to celebrate with me! Here's some FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.vip.title",
+      "type" : "string",
+      "value" : "Yey! I reached $(tier) VIP Tier at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "features.experienceBoosters.badge.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.experienceBoosters.tooltip.delay",
+      "type" : "int",
+      "value" : "120000",
+      "isDefault" : false
+    }, {
+      "key" : "features.experienceBoosters.tooltip.duration",
+      "type" : "int",
+      "value" : "5000",
+      "isDefault" : false
+    }, {
+      "key" : "features.paymentPage.gCardsTooltipEveryN",
+      "type" : "int",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "features.levelUpMaxBetPopup.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.levelUpMaxBetPopup.enabledPerSlot",
+      "type" : "string",
+      "value" : "58,13,902,36,9,73,51,34,37,32,85,5,64,8,30,70,6,41,29,26,909,24,43,20,63,15,7,49,74,28,12,21,19,42,65,60,40,18,11,10,31,22,17,16,907,69,72,71,4,45,35,48,52,62,55,56,67,44,39,75,61,23,46,77,84,88,87,86,89,90,93,91,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,20093,20101,20104,20106,20112,20114,20116,117,20117,20107,20105,20037,118,20118,20111,20113,20115,119,20119,20036,120,20120,121,20121,122,20122,123,20123,124,20124,125,20125,126,20126,127,20127,128,20128,129,20129,130,20130,20098,20131,131,20132,132,20133,133,134,20134,20135,135,20136,136,20137,137,20138,138,20139,139,20058,20103,20099,20048,20100,20140,140,20141,141,20142,142,20143,143,20144,144,20145,145,20909,20902,20110,20109,20108,20102,20097,20096,20095,20094,20091,20090,20088,20087,20086,20085,20080,20074,20073,20072,20070,20069,20067,20065,20064,20063,20062,20061,20060,20056,20055,20052,20051,20046,20044,20043,20042,20040,20035,20034,20032,20030,20026,20023,20022,20020,20019,20013,20012,20010,20009,20008,20007,20006,20005,20146,146,20147,147,20148,148,20149,149,20150,150,20151,151,20152,152,20153,153,20154,154,20155,155,20156,156,20157,157,20158,158,20159,159,20160,160,20161,161,20162,162,20163,163,20164,164,20165,165,20166,166,20167,167,20168,168,20169,169,20170,170,20171,171,20172,172,20173,173,20174,174,20175,175,20176,176,20177,177,20178,178,20179,179,20180,180,20181,181,20182,182,20183,183,20184,184,20185,185,20186,186,20187,187,20188,188,20189,189,20190,190,20191,191,20192,192,20193,193,20194,194,20195,195,20196,196,20917,197,20198,198,20199,199,20200,200,20201,201,20202,202,20203,203,20204,204,20205,205,20206,206,20207,207,20208,208,20209,209,20210,210",
+      "isDefault" : false
+    }, {
+      "key" : "features.xpInfo.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.luckyCloverChase.iconPages",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "features.luckyCloverChase.minutesTillTheCampaignEnd",
+      "type" : "string",
+      "value" : "60",
+      "isDefault" : false
+    }, {
+      "key" : "features.luckyCloverChase.describeTooltipInterval",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.luckyCloverChase.description",
+      "type" : "string",
+      "value" : "Join Gambino Slots & begin collecting coins with 250 FREE SPINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.luckyCloverChase.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/1-min (15322a6f-8d16-48d1-8abb-eb6c8031f318).png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.luckyCloverChase.title",
+      "type" : "string",
+      "value" : "I just won Free Spins in Lucky Clover Chase!",
+      "isDefault" : false
+    }, {
+      "key" : "features.luckyCloverChase.HigherBetToastSpinInterval",
+      "type" : "string",
+      "value" : "400",
+      "isDefault" : false
+    }, {
+      "key" : "headline.unrewardedSteps",
+      "type" : "int",
+      "value" : "5",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.headline.station.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/PlinGo_ShareFB_cut-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.headline.station.title",
+      "type" : "string",
+      "value" : "I just won a fang-tastic prize!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.headline.grand_prize.title",
+      "type" : "string",
+      "value" : "I just won a fang-tastic prize!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.headline.grand_prize.description",
+      "type" : "string",
+      "value" : "Want to win fang-tastic prizes too? Start collecting candies with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.headline.station.description",
+      "type" : "string",
+      "value" : "Want to win fang-tastic prizes too? Start collecting candies with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "features.luckyCloverChase.betToastSpinInterval",
+      "type" : "string",
+      "value" : "20",
+      "isDefault" : false
+    }, {
+      "key" : "features.reBuyFreeSpins.games",
+      "type" : "string",
+      "value" : "101;97;36;94;102;37;17;96;100;909;98;56;99;111;110;107;106;112;105;104;103;30;58;34;8;51;9;902;20;5;40;113;114;115;118;119;120;121;122;123;124;126;127;128;129;131;132;134;135;136;137;138;140;141;142;143;144;145;146;147;148;149;150;151;152;153;154;155;156;157;158;159;160;161;162;163;164;165;166;167;168;169;170;171;172;173;174;175;176;177;178;179;181;182;183;184;185;186;187;188;189;190;191;192;193;194;195;196;197;198;199;200;201;202;203;204;205;206;207;208;209;210",
+      "isDefault" : false
+    }, {
+      "key" : "features.replceStaticConfig.enabledPerSlot",
+      "type" : "string",
+      "value" : "23;96;98;99;100;101;95;103;105;110;2010;20105;118;20118;121;20121;122;20122;123;20123;126;20126;127;20127;128;20128;129;20129;20098;131;20131;132;20132;135;20135;137;20137;138;20138;20103;20099;20100;140;20140;141;20141;142;20142;144;20144;145;20145;20110;20096;20095;20023;146;20146;147;20147;20148;148;20149;149;20150;150;20151;151;20152;152;20153;153;20154;154;20155;155;20156;156;20157;157;20158;158;20159;159;20160;160;20161;161;20163;163;20164;164;20165;165;20166;166;20167;167;20168;168;20169;169;20170;170;20173;173;20174;174;20175;175;20177;177;20182;182;20183;183;20184;184;20186;186;20187;187;20188;188;20190;190;20191;191;20192;192;20193;193;20195;195;20196;196;20197;197;20198;198;20200;200;114;20114;143;20143;115;20115;201;20201;203;20203;204;20204;205;20205;207;20207;210;20210",
+      "isDefault" : false
+    }, {
+      "key" : "eventLogging.url",
+      "type" : "string",
+      "value" : "https://client-events.gambinoslot.com/uploadMultipartServlet",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.level_up_challenge.description",
+      "type" : "string",
+      "value" : "Ready to win too? Get started with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.level_up_challenge.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/PlinGo_ShareFB_cut-min (de6189e4-6968-4a9a-8f88-86bc55d3fbfe).png",
+      "isDefault" : false
+    }, {
+      "key" : "features.levelUpChallenge.indicatorToastDuration",
+      "type" : "int",
+      "value" : "5000",
+      "isDefault" : false
+    }, {
+      "key" : "features.levelUpChallenge.betToastSpinInterval",
+      "type" : "int",
+      "value" : "500",
+      "isDefault" : false
+    }, {
+      "key" : "albumHeadline.toasts.xPacksAvailable.interval",
+      "type" : "int",
+      "value" : "1000",
+      "isDefault" : false
+    }, {
+      "key" : "cash_in_vegas.toasts.xChipsAvailable.interval",
+      "type" : "int",
+      "value" : "1000",
+      "isDefault" : false
+    }, {
+      "key" : "fantastic_race.toasts.xEnvelopesAvailable.interval",
+      "type" : "int",
+      "value" : "1000",
+      "isDefault" : false
+    }, {
+      "key" : "puzzleHl.toasts.x_chips_available.interval",
+      "type" : "int",
+      "value" : "1000",
+      "isDefault" : false
+    }, {
+      "key" : "xmas_magic.toasts.xEnvelopesAvailable.interval",
+      "type" : "string",
+      "value" : "1000",
+      "isDefault" : false
+    }, {
+      "key" : "candyland_magic.toasts.xEnvelopesAvailable.interval",
+      "type" : "int",
+      "value" : "1000",
+      "isDefault" : false
+    }, {
+      "key" : "features.free_spins_level_up.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.piggyBank.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.gabyTutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.challenges.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.contests.boosters.toasts.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "chiliChase.beforeEndToastMinutes",
+      "type" : "int",
+      "value" : "10",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.chiliChase.title",
+      "type" : "string",
+      "value" : "I just won a HOT bonus in Chili Chase!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.chiliChase.description",
+      "type" : "string",
+      "value" : "Join Gambino Slots today & begin your Chase with 200 FREE SPINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.chiliChase.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/MediaLibrary/11423_1576149920.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.challenges.spinInterval.wrongSlot",
+      "type" : "int",
+      "value" : "25",
+      "isDefault" : false
+    }, {
+      "key" : "features.challenges.spinInterval.lessBet",
+      "type" : "int",
+      "value" : "25",
+      "isDefault" : false
+    }, {
+      "key" : "progressiveJackpot.tickerCycleDuration",
+      "type" : "int",
+      "value" : "1500",
+      "isDefault" : false
+    }, {
+      "key" : "features.turboWin.animationDuration",
+      "type" : "int",
+      "value" : "2000",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.turboWin.title",
+      "type" : "string",
+      "value" : "$(first_name) just won BIGGER with Turbo Wins booster!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.turboWin.description",
+      "type" : "string",
+      "value" : "Click to get FREE G-COINS and BOOST your wins too!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.turboWin.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/15-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.turboWin.caption",
+      "type" : "string",
+      "value" : "Gambino Slots",
+      "isDefault" : false
+    }, {
+      "key" : "features.newAutoSpin.Enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "hourlyBonus.payedGame.duration",
+      "type" : "int",
+      "value" : "20",
+      "isDefault" : false
+    }, {
+      "key" : "levelup.popup.timer",
+      "type" : "int",
+      "value" : "5000",
+      "isDefault" : false
+    }, {
+      "key" : "levelup.notificationDuration.level",
+      "type" : "int",
+      "value" : "3000",
+      "isDefault" : false
+    }, {
+      "key" : "levelup.notificationDuration.nextMachine",
+      "type" : "int",
+      "value" : "5000",
+      "isDefault" : false
+    }, {
+      "key" : "levelup.notificationDuration.unlockedMachine",
+      "type" : "int",
+      "value" : "5000",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.unlockedMachine.title",
+      "type" : "string",
+      "value" : "I just unlocked $(machine_name) slot!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.unlockedMachine.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/MediaLibrary/11421_1576142380.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.unlockedMachine.description",
+      "type" : "string",
+      "value" : "Want to try it out? Join Gambino Slots with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.levelUp.title",
+      "type" : "string",
+      "value" : "I just reached level $(level) on Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.levelUp.description",
+      "type" : "string",
+      "value" : "Level up with 250 Free Spins when you install Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.levelUp.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/Level-Up_1200x630.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.bonusGame93.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/16-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.toasts.piggyFull.interval",
+      "type" : "int",
+      "value" : "450",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.thresholds.first",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.thresholds.second",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "piggyBank.thresholds.third",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "features.compensations.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "vip.needWelcomePopup",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "application.tutorial.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.shareSheet.gifts.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.newFastSpinLogic.Enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.disableBluredIcons.enabledPerSlot",
+      "type" : "string",
+      "value" : "4;5;7;8;9;10;11;12;13;15;16;17;18;19;20;21;22;23;24;26;28;29;30;31;32;34;35;36;37;39;40;41;42;43;44;46;49;51;53;55;56;61;63;64;65;69;70;71;72;73;74;75;77;78;79;84;85;86;87;88;89;90;91;93;95;96;98;902;907;20093;20037;20036;20098;20100;20902;20096;20095;20091;20090;20088;20087;20086;20085;20074;20073;20072;20070;20069;20065;20064;20063;20061;20056;20055;20051;20046;20044;20043;20042;20040;20035;20034;20032;20030;20026;20023;20022;20020;20019;20013;20012;20010;20009;20008;20007;20005",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.sharingType",
+      "type" : "string",
+      "value" : "Dialog",
+      "isDefault" : false
+    }, {
+      "key" : "features.socialGifts.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "inbox.maxCount",
+      "type" : "int",
+      "value" : "25",
+      "isDefault" : false
+    }, {
+      "key" : "fbReward.showAlreadyCollectedPopup",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.slotBetStorage.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.maxBetAnimation.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.levelUpSpeedGauge.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.maxBetAnimation.enabledPerSlot",
+      "type" : "string",
+      "value" : "58,13,902,36,9,73,51,34,37,32,85,5,64,8,30,70,6,41,29,26,909,24,43,20,63,15,7,49,74,28,12,21,19,42,65,60,40,18,11,10,31,22,17,16,907,69,72,71,4,45,35,48,52,62,55,56,67,44,39,75,61,23,46,77,84,88,87,86,89,90,93,91,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,20093,20101,20104,20106,20112,20114,20116,117,20117,20107,20105,20037,118,20118,20111,20113,20115,119,20119,20036,120,20120,121,20121,122,20122,123,20123,124,20124,125,20125,126,20126,127,20127,128,20128,129,20129,130,20130,20098,20131,131,20132,132,20133,133,20134,134,20135,135,20136,136,20137,137,20138,138,20139,139,20058,20103,20099,20048,20100,20140,140,20141,141,20142,142,20143,143,20144,144,20145,145,20909,20902,20110,20109,20108,20102,20097,20096,20095,20094,20091,20090,20088,20087,20086,20085,20080,20074,20073,20072,20070,20069,20067,20065,20064,20063,20062,20061,20060,20056,20055,20052,20051,20046,20044,20043,20042,20040,20035,20034,20032,20030,20026,20023,20022,20020,20019,20013,20012,20010,20009,20008,20007,20006,20005,20146,146,20147,147,20148,148,20149,149,20150,150,20151,151,20152,152,20153,153,20154,154,20155,155,20156,156,20157,157,20158,158,20159,159,20160,160,20161,161,20162,162,20163,163,20164,164,20165,165,20166,166,20167,167,20168,168,20169,169,20170,170,20171,171,20172,172,20173,173,20174,174,20175,175,20176,176,20177,177,20178,178,20179,179,20180,180,20181,181,20182,182,20183,183,20184,184,20185,185,20186,186,20187,187,20188,188,20189,189,20190,190,20191,191,20192,192,20193,193,20194,194,20195,195,20196,196,20197,197,20198,198,20199,199,20200,200,20201,201,20202,202,20203,203,20204,204,20205,205,20206,206,20207,207,20208,208,20209,209,20210,210",
+      "isDefault" : false
+    }, {
+      "key" : "features.spinAccelerationMultiplier.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.unplayedFeatures.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.contests.boosters.toasts.specific.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "application.storeId.ipad",
+      "type" : "string",
+      "value" : "1339110872",
+      "isDefault" : false
+    }, {
+      "key" : "features.forceFreeSpinRedirectToMachine.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.contestLeaderboards.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.experienceBoosters.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.panelTaskTextByType.ANY_WIN",
+      "type" : "string",
+      "value" : "WINS",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.panelTaskTextByType.BIG_WIN",
+      "type" : "string",
+      "value" : "BIG WINS",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.panelTaskTextByType.EPIC_WIN",
+      "type" : "string",
+      "value" : "EPIC WINS",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.panelTaskTextByType.FREE_SPINS",
+      "type" : "string",
+      "value" : "FREE SPINS",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.panelTaskTextByType.MEGA_WIN",
+      "type" : "string",
+      "value" : "MEGA WINS",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.panelTaskTextByType.RE_SPINS",
+      "type" : "string",
+      "value" : "RESPINS",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.popupTaskTextByType.ANY_WIN",
+      "type" : "string",
+      "value" : "wins",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.popupTaskTextByType.BIG_WIN",
+      "type" : "string",
+      "value" : "big wins",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.popupTaskTextByType.EPIC_WIN",
+      "type" : "string",
+      "value" : "epic wins",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.popupTaskTextByType.FREE_SPINS",
+      "type" : "string",
+      "value" : "free spins",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.popupTaskTextByType.MEGA_WIN",
+      "type" : "string",
+      "value" : "mega wins",
+      "isDefault" : false
+    }, {
+      "key" : "sideBet.popupTaskTextByType.RE_SPINS",
+      "type" : "string",
+      "value" : "respins",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Daily-Bonus_1200x630_Like.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.sharingStyle",
+      "type" : "string",
+      "value" : "Feed",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.challenge.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/8-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.jackpot.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/7-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.contest.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/9-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.bonusGame.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/machines/machine_$(machineId).png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.contest.group.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/5-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "levelup.delayClose.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "invites.rewardLevel",
+      "type" : "int",
+      "value" : "30",
+      "isDefault" : false
+    }, {
+      "key" : "features.extraBet.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.inbox.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.challenges.treasureTutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "videoAds.initTimeout",
+      "type" : "int",
+      "value" : "45",
+      "isDefault" : false
+    }, {
+      "key" : "features.tutorial.server.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.challenge",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/challenge/v2",
+      "isDefault" : false
+    }, {
+      "key" : "invites.maxUsersToInvite",
+      "type" : "int",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.minLevel",
+      "type" : "int",
+      "value" : "1",
+      "isDefault" : false
+    }, {
+      "key" : "features.contests.boosters.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.contests.boosters.tutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "localRating.cooldownDays",
+      "type" : "int",
+      "value" : "15",
+      "isDefault" : false
+    }, {
+      "key" : "features.linkReward.rewardPopup.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.linkReward.sendLinkInfo.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.fbInvitationReward.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.jackpot.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "contests.hideRules",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "contests.useCoinsShortening",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "fconnect.loyaltyReward",
+      "type" : "int",
+      "value" : "200",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.requestProgressOnSpin",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.commonJson",
+      "type" : "string",
+      "value" : "\"al\": { \n\t\"iphone\": { \"url\": \"gambino://open?link_click_id=link-$(branchId)\", \"app_store_id\": \"981448273\" },\n\t\"ipad\": { \"url\": \"gambino://open?link_click_id=link-$(branchId)\", \"app_store_id\": \"981449053\" },\n\t\"android\": { \"url\": \"gambino://open?link_click_id=link-$(branchId)\", \"package\": \"gambino.android\" },\n\t\"web\": {\"url\": \"$(desktopUrl)\", \"should_fallback\": \"false\"}\n}",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.completionNotifiers.popup",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "dailyBonus.autoSpinInterval",
+      "type" : "int",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "featurePromotions.vip",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.dailyBonus.centerButton.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.dailyBonus.tutorial.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "vip.infoUpdate.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "vip.infoUpdate.rate",
+      "type" : "int",
+      "value" : "60",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.piggy.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/SharingPiggy_$(type).png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.piggy.title",
+      "type" : "string",
+      "value" : "Wow! I've just won a bet! Now I'm a lucky owner of the $(type) Piggy!",
+      "isDefault" : false
+    }, {
+      "key" : "rateUs.timeToRemindAfterClose",
+      "type" : "int",
+      "value" : "4",
+      "isDefault" : false
+    }, {
+      "key" : "triggers.handlersConfig.level_up",
+      "type" : "string",
+      "value" : "compensation, inapp, rateUs, advancedRateUs, endlessOffer",
+      "isDefault" : false
+    }, {
+      "key" : "features.levelMap.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "triggers.handlersConfig.on_close_po",
+      "type" : "string",
+      "value" : "compensation",
+      "isDefault" : false
+    }, {
+      "key" : "features.firstTimeMaxBetIncreaseTooltip.enable",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.firstTimeMaxBetIncreaseTooltip.disabledPerSlot",
+      "type" : "string",
+      "value" : "20909,20902,20186,20185,20184,20183,20182,20181,20180,20179,20178,20177,20176,20175,20174,20173,20172,20171,20170,20169,20168,20167,20166,20165,20164,20163,20162,20161,20160,20159,20158,20157,20156,20155,20154,20153,20152,20151,20150,20149,20148,20147,20146,20145,20144,20143,20142,20141,20140,20139,20138,20137,20136,20135,20134,20133,20132,20131,20130,20129,20128,20127,20126,20125,20124,20123,20122,20121,20120,20119,20118,20117,20116,20115,20114,20113,20112,20111,20110,20109,20108,20107,20106,20105,20104,20103,20102,20101,20100,20099,20098,20097,20096,20095,20094,20093,20091,20090,20088,20087,20086,20085,20080,20074,20073,20072,20070,20069,20067,20065,20064,20063,20062,20061,20060,20058,20056,20055,20052,20051,20048,20046,20044,20043,20042,20040,20037,20036,20035,20034,20032,20030,20026,20023,20020,20019,20013,20012,20010,20009,20008,20007,20006,20005,10100,10096,909,907,906,904,902,186,185,184,183,182,181,180,179,178,177,176,175,174,173,172,171,170,169,168,167,166,165,164,163,162,161,160,159,158,157,156,155,154,153,152,151,150,149,148,147,146,145,144,143,142,141,140,139,138,137,136,135,134,133,132,131,130,129,128,127,126,125,124,123,122,121,120,119,118,117,116,115,114,113,112,111,110,109,108,107,106,105,104,103,102,101,100,99,98,97,96,95,94,93,91,90,89,88,87,86,85,84,83,82,81,80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,26,24,23,22,21,20,19,18,17,16,15,13,12,11,10,9,8,7,6,5,4,1",
+      "isDefault" : false
+    }, {
+      "key" : "localPush.message",
+      "type" : "string",
+      "value" : "Your G-Reels bonus is ready! Collect it now",
+      "isDefault" : false
+    }, {
+      "key" : "features.paymentPage.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "facebook.app_namespace",
+      "type" : "string",
+      "value" : "gambino-slots",
+      "isDefault" : false
+    }, {
+      "key" : "features.webBanners.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "support.url",
+      "type" : "string",
+      "value" : "https://support.gambinoslot.com/?IDFA={idfa}&user_Id={userId}&appVersion={appVersion}&deviceType={deviceType}&osVersion={osVersion}&platform={platform}&platform_id={platform_id}",
+      "isDefault" : false
+    }, {
+      "key" : "tracking.userlevel.webSA",
+      "type" : "string",
+      "value" : "2, 6, 12, 50",
+      "isDefault" : false
+    }, {
+      "key" : "features.allowDisableVideoIconsSafari",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.authorization",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/authorization/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.users",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/user/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.games",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/game/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.gamesFeatures",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/gameFeatures/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.contests",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/contests/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.gifts",
+      "type" : "string",
+      "value" : "https://gifts-dot-gambino-apps.appspot.com/_ah/api/gift/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.inapps",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/inapp/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.payments",
+      "type" : "string",
+      "value" : "https://payment-dot-gambino-apps.appspot.com/_ah/api/payment/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.pushes",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/push/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.slots",
+      "type" : "string",
+      "value" : "https://slots-dot-gambino-apps.appspot.com/_ah/api/slots/v1",
+      "isDefault" : false
+    }, {
+      "key" : "features.dailyBonus.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.personalOffers.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.contests.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.rateUs.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.bigWin.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "rateUs.timeToRemindAfterRate",
+      "type" : "int",
+      "value" : "36500",
+      "isDefault" : false
+    }, {
+      "key" : "showForcedUpgrade",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "contests.getOpponentsInterval",
+      "type" : "int",
+      "value" : "15",
+      "isDefault" : false
+    }, {
+      "key" : "contests.getWinnersInterval",
+      "type" : "int",
+      "value" : "15",
+      "isDefault" : false
+    }, {
+      "key" : "contests.getContestsInterval",
+      "type" : "int",
+      "value" : "120",
+      "isDefault" : false
+    }, {
+      "key" : "eventLogging.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "eventLogging.scheme",
+      "type" : "string",
+      "value" : "user_id,funnel_id,session_id,event_ts,game_id,platform_id,network_id,sn_user_id,device_identifier,connection_type,device_os,device_type,browser,screen_resolution,server_id,user_level,user_xp,user_balance,login_number,event_type,event_name,event_value,event_initiator,event_initiator_id,feature_id,subfeature,additional_params,first_login,client_version,tx_id,cheat_user,appsflyer_device_id,unique_device_id,funnel_sequence,user_tier",
+      "isDefault" : false
+    }, {
+      "key" : "support.terms",
+      "type" : "string",
+      "value" : "https://gambinoslot.com/terms-of-service/",
+      "isDefault" : false
+    }, {
+      "key" : "support.policy",
+      "type" : "string",
+      "value" : "https://gambinoslot.com/privacy-policy/",
+      "isDefault" : false
+    }, {
+      "key" : "maintenance.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.deepLinking.androidPackage",
+      "type" : "string",
+      "value" : "gambino.android",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus.actionName",
+      "type" : "string",
+      "value" : "$(app_namespace):win",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus.objectParamName",
+      "type" : "string",
+      "value" : "daily_bonus",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.levelUp.actionName",
+      "type" : "string",
+      "value" : "$(app_namespace):reach",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.levelUp.objectParamName",
+      "type" : "string",
+      "value" : "level",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.levelUp.objectJson",
+      "type" : "string",
+      "value" : "{   \"og:type\": \"$(app_namespace):level\",   \"og:title\": \"Level $(level)\",   \"og:image\": \"https://static.gambinoslot.com/sharingPictures/icon_level_up_158x158.png\",   \"$(app_namespace):level\": \"$(level)\",   \"$(app_namespace):gift_count\": \"$(gift_count)\",   $(commonJson) }",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus.objectJson",
+      "type" : "string",
+      "value" : "{ \"og:type\": \"$(app_namespace):daily_bonus\",  \"og:title\": \"Daily Bonus\",  \"og:image\": \"https://static.gambinoslot.com/sharingPictures/icon_daily_bonus_158x158.png\",  \"$(app_namespace):sum\": \"$(bonus_sum)\",  \"$(app_namespace):gift_count\": \"$(gift_count)\",    $(commonJson)}",
+      "isDefault" : false
+    }, {
+      "key" : "features.inapps.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "eventLogging.timeRate",
+      "type" : "int",
+      "value" : "60",
+      "isDefault" : false
+    }, {
+      "key" : "eventLogging.bufferSize",
+      "type" : "int",
+      "value" : "10000",
+      "isDefault" : false
+    }, {
+      "key" : "fanpage.fb.url",
+      "type" : "string",
+      "value" : "https://www.facebook.com/GambinoSlots/",
+      "isDefault" : false
+    }, {
+      "key" : "faq.url",
+      "type" : "string",
+      "value" : "http://support.gambinoslot.com/?IDFA={idfa}&user_Id={userId}&appVersion={appVersion}&deviceType={deviceType}&osVersion={osVersion}&platform={platform}&faq=",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.user",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/user/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.game",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/game/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.gameFeatures",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/gameFeatures/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.inapp",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/inapp/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.payment",
+      "type" : "string",
+      "value" : "https://payment-dot-gambino-apps.appspot.com/_ah/api/payment/v1",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.push",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/push/v1",
+      "isDefault" : false
+    }, {
+      "key" : "contests.timerColors.redPercent",
+      "type" : "int",
+      "value" : "90",
+      "isDefault" : false
+    }, {
+      "key" : "contests.timerColors.yellowPercent",
+      "type" : "int",
+      "value" : "60",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.contest.title",
+      "type" : "string",
+      "value" : "WOW! What an exciting contest!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.dailyBonus.title",
+      "type" : "string",
+      "value" : "I just won a Daily Bonus at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.giftCount",
+      "type" : "int",
+      "value" : "10",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.bonusGame.title",
+      "type" : "string",
+      "value" : "I just won a Bonus Game at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "refreshRates.restore.syncUpdateSpan",
+      "type" : "int",
+      "value" : "10",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.campaign",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/campaign/v1",
+      "isDefault" : false
+    }, {
+      "key" : "features.tutorial.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.beSocial.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.localization.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "localization.availableLocales",
+      "type" : "string",
+      "value" : "en",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.updateRate",
+      "type" : "int",
+      "value" : "120",
+      "isDefault" : false
+    }, {
+      "key" : "firstLogin.showCampaign",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "notEnoughCoins.action",
+      "type" : "string",
+      "value" : "AskForGift",
+      "isDefault" : false
+    }, {
+      "key" : "features.scaleSlot.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.beSocial.description",
+      "type" : "string",
+      "value" : "Come experience the excitement of Las Vegas slots with FREE social machines!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.beSocial.message",
+      "type" : "string",
+      "value" : "I'm having a blast playing Gambino Slots! Come join me at",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.beSocial.title",
+      "type" : "string",
+      "value" : "Gambino Slots",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.beSocial.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/120.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.beSocial.twitter.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/506x254_twitter.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.branchSharing",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.fbaward.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "dailyBonus.type",
+      "type" : "string",
+      "value" : "daily_bonus",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout",
+      "type" : "int",
+      "value" : "15",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.slots.spin",
+      "type" : "int",
+      "value" : "15",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.serverErrorRetrying",
+      "type" : "int",
+      "value" : "4",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.noInternetRetrying",
+      "type" : "int",
+      "value" : "4",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.payment.finishPurchase",
+      "type" : "int",
+      "value" : "60",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.newChallengeCheckRate",
+      "type" : "int",
+      "value" : "300",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.beforeEnd.minutes",
+      "type" : "int",
+      "value" : "30",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.beforeEnd.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.challenge.title",
+      "type" : "string",
+      "value" : "I just completed the challenge!",
+      "isDefault" : false
+    }, {
+      "key" : "rateUs.minLevel",
+      "type" : "int",
+      "value" : "13",
+      "isDefault" : false
+    }, {
+      "key" : "rateUs.minLoginNumber",
+      "type" : "int",
+      "value" : "1",
+      "isDefault" : false
+    }, {
+      "key" : "eventLogging.uploadTimeoutSeconds",
+      "type" : "int",
+      "value" : "30",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.beforeEnd.localPush.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.beforeEnd.localPush.message",
+      "type" : "string",
+      "value" : "The challenge is running out!",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.beforeEnd.localPush.sound",
+      "type" : "string",
+      "value" : "Default",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.beforeEnd.localPush.title",
+      "type" : "string",
+      "value" : "Gambino Slots",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.beforeEnd.localPush.type",
+      "type" : "string",
+      "value" : "ChallengeEndingPush",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.requestPermissionsOnLogin",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.defaultCheckState",
+      "type" : "string",
+      "value" : "Settings",
+      "isDefault" : false
+    }, {
+      "key" : "fconnect.ChallengeWin.list",
+      "type" : "string",
+      "value" : "1,10",
+      "isDefault" : false
+    }, {
+      "key" : "fconnect.ContestWin.list",
+      "type" : "string",
+      "value" : "1,10",
+      "isDefault" : false
+    }, {
+      "key" : "fconnect.ChallengeWin.min",
+      "type" : "int",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "connect.ContestWin.each",
+      "type" : "int",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "fconnect.ContestWin.min",
+      "type" : "int",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "features.purchase.highCost",
+      "type" : "double",
+      "value" : "24.99",
+      "isDefault" : false
+    }, {
+      "key" : "web.winphone.url",
+      "type" : "string",
+      "value" : "https://www.microsoft.com/en-us/store/p/gambino-slots-free-vegas-casino-slot-machines/9n0nh999d6xj",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.branchSharing.applinkHack",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "requestStatistics.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "contribution.fbconnect.points",
+      "type" : "string",
+      "value" : "200",
+      "isDefault" : false
+    }, {
+      "key" : "rateUs.triggers",
+      "type" : "string",
+      "value" : "MegaWin,UnlockMachines,LevelUp,EpicWin",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.contribution",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/contribution/v1",
+      "isDefault" : false
+    }, {
+      "key" : "fconnect.triggers",
+      "type" : "string",
+      "value" : "ContestWin",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.gift.sendGift",
+      "type" : "int",
+      "value" : "180",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.gift.collectGiftsById",
+      "type" : "int",
+      "value" : "180",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.noInternetRetrying.gift.sendGift",
+      "type" : "int",
+      "value" : "1",
+      "isDefault" : false
+    }, {
+      "key" : "features.localRating.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.user.getFriendsSocialInfo",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.user.getFriends",
+      "type" : "int",
+      "value" : "50",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.noInternetRetrying.user.getFriendsSocialInfo",
+      "type" : "int",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.noInternetRetrying.user.getFriends",
+      "type" : "int",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.serverErrorRetrying.user.getFriendsSocialInfo",
+      "type" : "int",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.serverErrorRetrying.user.getFriends",
+      "type" : "int",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "jackpot.getStateRequestDelay",
+      "type" : "string",
+      "value" : "60",
+      "isDefault" : false
+    }, {
+      "key" : "jackpot.getStateRequestInterval",
+      "type" : "string",
+      "value" : "70",
+      "isDefault" : false
+    }, {
+      "key" : "jackpot.infoLine0",
+      "type" : "string",
+      "value" : "In order to participate in the Jackpot competition, you must be connected to your Facebook account.",
+      "isDefault" : false
+    }, {
+      "key" : "jackpot.infoLine1",
+      "type" : "string",
+      "value" : "Each spin from every participant contributes to the Jackpot.",
+      "isDefault" : false
+    }, {
+      "key" : "jackpot.infoLine2",
+      "type" : "string",
+      "value" : "When you have filled your Progress Bar – located below the Jackpot amount – you become eligible to win in the random draw.",
+      "isDefault" : false
+    }, {
+      "key" : "jackpot.infoLine3",
+      "type" : "string",
+      "value" : "Only one player wins each Jackpot. The winner needs to be playing at the time of the draw.",
+      "isDefault" : false
+    }, {
+      "key" : "gifts.displayedGiftsLimit",
+      "type" : "int",
+      "value" : "100",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.jackpot.title",
+      "type" : "string",
+      "value" : "I just hit the Jackpot at Gambino slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.jackpot.caption",
+      "type" : "string",
+      "value" : "Gambino Slots",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.jackpot.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.gift.collectAndSendBackGifts",
+      "type" : "int",
+      "value" : "180",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.gift.collectAndSendBackAllGifts",
+      "type" : "int",
+      "value" : "180",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.contest.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.challenge.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.bonusGame.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.gift.sendCoinsGift",
+      "type" : "int",
+      "value" : "180",
+      "isDefault" : false
+    }, {
+      "key" : "features.inbox.allowHideOffers.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.inbox.dontShowPromotionsCheckbox.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.contest.group.title",
+      "type" : "string",
+      "value" : "Awesome news! My team {0} won the contest!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.contest.group.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.specifyStyleInCampaign",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "syd.chromeMediaHack.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.gift",
+      "type" : "string",
+      "value" : "https://gifts-dot-gambino-apps.appspot.com/_ah/api/gift/v1",
+      "isDefault" : false
+    }, {
+      "key" : "features.subscriptions.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.piggy.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "features.extraBet.enabledPerSlot",
+      "type" : "string",
+      "value" : "6;23;29;7;24;12;22;26",
+      "isDefault" : false
+    }, {
+      "key" : "contestLeaderboards.minLevel",
+      "type" : "int",
+      "value" : "8",
+      "isDefault" : false
+    }, {
+      "key" : "contestLeaderboards.showBoosters",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.dailyDraw.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sendGifts.sortLastSendFriends",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "facebookMessages.invite",
+      "type" : "string",
+      "value" : "Join your friends and receive a FREE gift to get started!",
+      "isDefault" : false
+    }, {
+      "key" : "mgap.buyButtonLabelEnabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.shareSheet.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.shareSheet.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Art-for-Share-Sheet-feature_200.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.shareSheet.description",
+      "type" : "string",
+      "value" : "Let's have FUN together!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.shareSheet.message",
+      "type" : "string",
+      "value" : "Hi, You have to try this! I’m having the BEST time at Gambino Slots! New players get 200 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.shareSheet.title",
+      "type" : "string",
+      "value" : "Join me at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "features.reBuyFreeSpins.isPopup",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.reBuyFreeSpins.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "challenges.slidingBar",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.ppBonus.adsEnabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.progressiveJackpot.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "gameScroll.icons.displayContestInfo",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.personalOffers.po.after.po",
+      "type" : "json",
+      "value" : "{\"1225\":12406,\"1648\":1849,\"1650\":1850,\"1651\":1851,\"1653\":1852,\"1654\":1853,\"1656\":1854,\"1657\":1855,\"1663\":1856,\"1667\":1857,\"1737\":1858,\"11307\":1847,\"12432\":12433,\"12434\":12435,\"12436\":12437,\"12438\":12439,\"12440\":12441,\"12442\":12443,\"12444\":12445,\"12446\":12447,\"12448\":12449,\"12450\":12451,\"12452\":12453,\"12454\":12455,\"12456\":12457,\"12458\":12459,\"12460\":12461,\"12462\":12463,\"12464\":12465,\"12466\":12467,\"12468\":12469,\"12470\":12471,\"12472\":12473,\"12474\":12475,\"12476\":12477,\"12478\":12479,\"12480\":12481,\"12482\":12483,\"12484\":12485,\"12486\":12487,\"88781\":88782,\"88783\":88784,\"88785\":88786,\"88787\":88788,\"88789\":88790,\"88791\":88792,\"88793\":88794,\"88795\":88796,\"88797\":88798,\"88799\":88800,\"88801\":88802,\"88803\":88804,\"88805\":88806,\"88807\":88808,\"107711\":107718,\"107719\":107720,\"107721\":107722,\"107723\":107724,\"107725\":107726,\"107727\":107728,\"107729\":107730,\"107731\":107732,\"107733\":107734,\"107735\":107736,\"107737\":107738,\"107739\":107740,\"107741\":107742,\"107743\":107744,\"114755\":114756,\"114757\":114758,\"114759\":114760,\"114761\":114762,\"114763\":114764,\"114765\":114766,\"114767\":114768,\"114769\":114770,\"114771\":114772,\"114773\":114774,\"114775\":114776,\"114777\":114778,\"114779\":114780,\"114781\":114782,\"125735\":125736,\"125737\":125738,\"125739\":125740,\"125741\":125742,\"125743\":125744,\"125745\":125746,\"125747\":125748,\"125749\":125750,\"125751\":125752,\"125753\":125754,\"125755\":125756,\"125757\":125758,\"125759\":125760,\"125761\":125762,\"130131\":130132,\"130133\":130134,\"130135\":130136,\"130137\":130138,\"130139\":130140,\"130141\":130142,\"130143\":130144,\"130145\":130146,\"130147\":130148,\"130149\":130150,\"130151\":130152,\"130153\":130154,\"130155\":130156,\"130157\":130158,\"150728\":150729,\"150730\":150731,\"150732\":150733,\"150734\":150735,\"150736\":150737,\"150738\":150739,\"150740\":150741,\"150742\":150743,\"150744\":150745,\"150746\":150747,\"150748\":150749,\"150750\":150751,\"150752\":150753,\"150754\":150755,\"150901\":150902,\"150903\":150904,\"150905\":150906,\"150907\":150908,\"150909\":150910,\"150911\":150912,\"150913\":150914,\"150915\":150916,\"150917\":150918,\"150919\":150920,\"150921\":150922,\"150923\":150924,\"150925\":150926,\"150927\":150928,\"163848\":163849,\"163850\":163851,\"163852\":163853,\"163854\":163855,\"163856\":163857,\"163858\":163859,\"163860\":163861,\"163862\":163863,\"163864\":163865,\"163866\":163867,\"163868\":163869,\"163870\":163871,\"163872\":163873,\"163874\":163875,\"188582\":188583,\"188584\":188585,\"188586\":188587,\"188589\":188590,\"188591\":188592,\"188593\":188594,\"188595\":188596,\"188597\":188598,\"188599\":188600,\"188601\":188602,\"188603\":188604,\"188605\":188606,\"188607\":188608,\"188609\":188610,\"197641\":197642,\"197643\":197644,\"197645\":197646,\"197647\":197648,\"197649\":197650,\"197651\":197652,\"197653\":197654,\"197655\":197656,\"197657\":197658,\"197659\":197660,\"197661\":197662,\"197663\":197664,\"197665\":197666,\"197667\":197668,\"204442\":204443,\"204444\":204445,\"204446\":204447,\"204448\":204449,\"204450\":204451,\"204452\":204453,\"204454\":204455,\"204456\":204457,\"204458\":204459,\"204460\":204461,\"204462\":204463,\"204464\":204465,\"204466\":204467,\"204468\":204469,\"208143\":208144,\"208145\":208146,\"208147\":208148,\"208149\":208150,\"208151\":208152,\"208153\":208154,\"208155\":208156,\"208157\":208158,\"208159\":208160,\"208161\":208162,\"208163\":208164,\"208165\":208166,\"208167\":208168,\"208169\":208170,\"215539\":215540,\"215541\":215542,\"215543\":215544,\"215545\":215546,\"215547\":215548,\"215549\":215550,\"215551\":215552,\"215553\":215554,\"215555\":215556,\"215557\":215558,\"215559\":215560,\"215561\":215562,\"215563\":215564,\"215565\":215566,\"226886\":226887,\"226888\":226889,\"226890\":226891,\"226892\":226893,\"226894\":226895,\"226896\":226897,\"226898\":226899,\"226900\":226901,\"226902\":226903,\"226904\":226905,\"226906\":226907,\"226908\":226909,\"226910\":226911,\"226912\":226913,\"239559\":239560,\"239561\":239562,\"239563\":239564,\"239565\":239566,\"239567\":239568,\"239569\":239570,\"239571\":239572,\"239573\":239574,\"239575\":239576,\"239577\":239578,\"239579\":239580,\"239581\":239582,\"239583\":239584,\"239585\":239586,\"249211\":249212,\"249213\":249214,\"249215\":249216,\"249217\":249218,\"249219\":249220,\"249221\":249222,\"249223\":249224,\"249225\":249226,\"249227\":249228,\"249229\":249230,\"249231\":249232,\"249233\":249234,\"249235\":249236,\"249237\":249238,\"259337\":259338,\"259339\":259340,\"259341\":259342,\"259343\":259344,\"259345\":259346,\"259347\":259348,\"259349\":259350,\"259351\":259352,\"259353\":259354,\"259355\":259356,\"259357\":259358,\"259359\":259360,\"259361\":259362,\"259363\":259364,\"259734\":259735,\"259736\":259737,\"259738\":259739,\"259740\":259741,\"259742\":259743,\"259744\":259745,\"259746\":259747,\"259748\":259749,\"259750\":259751,\"259752\":259753,\"259754\":259755,\"259756\":259757,\"259758\":259759,\"259760\":259761,\"259925\":259926,\"259927\":259928,\"259929\":259930,\"259931\":259932,\"259933\":259934,\"259935\":259936,\"259937\":259938,\"259939\":259940,\"259941\":259942,\"259943\":259944,\"259945\":259946,\"259947\":259948,\"259949\":259950,\"259951\":259952,\"265178\":265179,\"265229\":265230,\"265231\":265232,\"265233\":265234,\"265235\":265236,\"265237\":265238,\"265239\":265240,\"265241\":265242,\"265243\":265244,\"265245\":265246,\"265247\":265248,\"265249\":265250,\"265251\":265252,\"265253\":265254,\"265255\":265256,\"273113\":273114,\"273115\":273116,\"273117\":273118,\"273119\":273120,\"273121\":273122,\"273123\":273124,\"273125\":273126,\"273127\":273128,\"273129\":273130,\"273131\":273132,\"273133\":273134,\"273135\":273136,\"273137\":273138,\"273139\":273140,\"289205\":289206,\"289207\":289208,\"289209\":289210,\"289211\":289212,\"289213\":289214,\"289215\":289216,\"289217\":289218,\"289219\":289220,\"289221\":289222,\"289223\":289224,\"289225\":289226,\"289227\":289228,\"289229\":289230,\"289231\":289232,\"296977\":296978,\"296979\":296980,\"296981\":296982,\"296983\":296984,\"296985\":296986,\"296987\":296988,\"296989\":296990,\"296991\":296992,\"296993\":296994,\"296995\":296996,\"296997\":296998,\"296999\":297000,\"297001\":297002,\"297003\":297004,\"305109\":305110,\"305111\":305112,\"305113\":305114,\"305115\":305116,\"305117\":305118,\"305119\":305120,\"305121\":305122,\"305123\":305124,\"305125\":305126,\"305127\":305128,\"305129\":305130,\"305131\":305132,\"305133\":305134,\"305135\":305136,\"308228\":308229,\"308230\":308231,\"308232\":308233,\"308234\":308235,\"308236\":308237,\"308238\":308239,\"308240\":308241,\"308242\":308243,\"308244\":308245,\"308246\":308247,\"308248\":308249,\"308250\":308251,\"308252\":308253,\"308254\":308255,\"310902\":310903,\"310904\":310905,\"310906\":310907,\"310908\":310909,\"310910\":310911,\"310912\":310913,\"310914\":310915,\"310916\":310917,\"310918\":310919,\"310920\":310921,\"310922\":310923,\"310924\":310925,\"310926\":310927,\"310928\":310929,\"316570\":316571,\"316572\":316573,\"316574\":316575,\"316576\":316577,\"316578\":316579,\"316580\":316581,\"316582\":316583,\"316584\":316585,\"316586\":316587,\"316588\":316589,\"316590\":316591,\"316592\":316593,\"316594\":316595,\"316596\":316597,\"323214\":323215,\"323216\":323217,\"323218\":323219,\"323220\":323221,\"323222\":323223,\"323224\":323225,\"323226\":323227,\"323228\":323229,\"323230\":323231,\"323232\":323233,\"323234\":323235,\"323236\":323237,\"323238\":323239,\"323240\":323241,\"326602\":326603,\"326604\":326605,\"326606\":326607,\"326608\":326609,\"326610\":326611,\"326612\":326613,\"326614\":326615,\"326616\":326617,\"326618\":326619,\"326620\":326621,\"326622\":326623,\"326624\":326625,\"326626\":326627,\"326628\":326629,\"333746\":333747,\"333748\":333749,\"333750\":333751,\"333752\":333753,\"333754\":333755,\"333756\":333757,\"333758\":333759,\"333760\":333761,\"333762\":333763,\"333764\":333765,\"333766\":333767,\"333768\":333769,\"333770\":333771,\"333772\":333773,\"341195\":341196,\"341197\":341198,\"341199\":341200,\"341201\":341202,\"341203\":341204,\"341205\":341206,\"341207\":341208,\"341209\":341210,\"341211\":341212,\"341213\":341214,\"341215\":341216,\"341217\":341218,\"341219\":341220,\"341221\":341222,\"343532\":343533,\"343534\":343535,\"343536\":343537,\"343538\":343539,\"343540\":343541,\"343542\":343543,\"343544\":343545,\"343546\":343547,\"343548\":343549,\"343550\":343551,\"343552\":343553,\"343554\":343555,\"343556\":343557,\"343558\":343559,\"345572\":345573,\"345574\":345575,\"345576\":345577,\"345578\":345579,\"345580\":345581,\"345582\":345583,\"345584\":345585,\"345586\":345587,\"345588\":345589,\"345590\":345591,\"345592\":345593,\"345594\":345595,\"345596\":345597,\"345598\":345599,\"346508\":346509,\"346510\":346511,\"346512\":346513,\"346514\":346515,\"346516\":346517,\"346518\":346519,\"346520\":346521,\"346522\":346523,\"346524\":346525,\"346526\":346527,\"346528\":346529,\"346530\":346531,\"346532\":346533,\"346534\":346535,\"350083\":350084,\"350085\":350086,\"350087\":350088,\"350089\":350090,\"350091\":350092,\"350093\":350094,\"350095\":350096,\"350097\":350098,\"350099\":350100,\"350101\":350102,\"350103\":350104,\"350105\":350106,\"350107\":350108,\"350109\":350110,\"355242\":355243,\"355244\":355245,\"355246\":355247,\"355248\":355249,\"355250\":355251,\"355252\":355253,\"355254\":355255,\"355256\":355257,\"355258\":355259,\"355260\":355261,\"355262\":355263,\"355264\":355265,\"355266\":355267,\"355268\":355269,\"361156\":361157,\"361158\":361159,\"361160\":361161,\"361162\":361163,\"361164\":361165,\"361166\":361167,\"361168\":361169,\"361170\":361171,\"361172\":361173,\"361174\":361175,\"361176\":361177,\"361178\":361179,\"361180\":361181,\"361182\":361183,\"368510\":368511,\"368512\":368513,\"368514\":368515,\"368516\":368517,\"368518\":368519,\"368520\":368521,\"368522\":368523,\"368524\":368525,\"368526\":368527,\"368528\":368529,\"368530\":368531,\"368532\":368533,\"368534\":368535,\"368536\":368537,\"373552\":373553,\"373554\":373555,\"373556\":373557,\"373558\":373559,\"373560\":373561,\"373562\":373563,\"373564\":373565,\"373566\":373567,\"373568\":373569,\"373570\":373571,\"373572\":373573,\"373574\":373575,\"373576\":373577,\"373578\":373579}",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.minor.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/2-min (cdb21e8f-ab31-4d2b-ad4d-6b3c5806e878).png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.major.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/3-min (6271c991-5232-4c86-8610-9f52321ea4d1).png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.grand.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/4-min (dd95523b-f407-4846-9945-744205a1a2aa).png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.minor.title",
+      "type" : "string",
+      "value" : "I won the MINOR JACKPOT at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.major.title",
+      "type" : "string",
+      "value" : "I won the MAJOR JACKPOT at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.grand.title",
+      "type" : "string",
+      "value" : "I won the GRAND JACKPOT at Gambino Slots!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.minor.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.major.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.progressiveJackpot.grand.description",
+      "type" : "string",
+      "value" : "The first $(gift_count) clickers on this post get FREE G-COINS!",
+      "isDefault" : false
+    }, {
+      "key" : "ageVerification.maxRetries",
+      "type" : "int",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "machines.game108ScatterAnimationChance",
+      "type" : "int",
+      "value" : "80",
+      "isDefault" : false
+    }, {
+      "key" : "machines.game108ScatterFakeAnimationChance",
+      "type" : "int",
+      "value" : "5",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.slotsfeatures",
+      "type" : "string",
+      "value" : "https://slotsfeatures-dot-gambino-apps.appspot.com/_ah/api/slotsfeatures/v1",
+      "isDefault" : false
+    }, {
+      "key" : "freeSpinsTooltip.interval",
+      "type" : "int",
+      "value" : "300",
+      "isDefault" : false
+    }, {
+      "key" : "repairGiftParams.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.buzzerBooster.aboutToEndToastShowDuration",
+      "type" : "int",
+      "value" : "5",
+      "isDefault" : false
+    }, {
+      "key" : "features.buzzerBooster.infoPopupWinMultiplier",
+      "type" : "int",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.buzzerBooster.title",
+      "type" : "string",
+      "value" : "I just won BIGGER with Buzz 'n Boost!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.buzzerBooster.description",
+      "type" : "string",
+      "value" : "Join today with 250 FREE SPINS & BOOST your wins too!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.buzzerBooster.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Win_buzzer_sharing.png",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.bonus",
+      "type" : "string",
+      "value" : "https://gambino-apps.appspot.com/_ah/api/bonus/v1",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.showCollectiblesTooltip",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.showTimerIndicatorSeconds",
+      "type" : "int",
+      "value" : "20",
+      "isDefault" : false
+    }, {
+      "key" : "features.gambingo.hideTimerIndicatorSeconds",
+      "type" : "int",
+      "value" : "80",
+      "isDefault" : false
+    }, {
+      "key" : "features.hotReels.hideTimerIndicatorSeconds",
+      "type" : "int",
+      "value" : "20",
+      "isDefault" : false
+    }, {
+      "key" : "features.hotReels.showTimerIndicatorSeconds",
+      "type" : "int",
+      "value" : "80",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.hotReels.description",
+      "type" : "string",
+      "value" : "Ready to win? Join and get 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.hotReels.title",
+      "type" : "string",
+      "value" : "I JUST WON FREE SPINS!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.hotReels.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/FS Mania_Sharing Icon_cut-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.hotReels.iconPages",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.spinnerWinner.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/Spinner Winner_Sharing Icon_cut-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.goldAdventureGame.description",
+      "type" : "string",
+      "value" : "Ready to win? Start with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.goldAdventureGame.title",
+      "type" : "string",
+      "value" : "I just won Free Spins in Gold Adventure!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.goldAdventureGame.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/Adventure Gold_Sharing Icon_cut-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "goldAdventureGame.banner.iconPages",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "farmHl.sharing.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Farm-of-Fun_Sharing-Icon.png",
+      "isDefault" : false
+    }, {
+      "key" : "farmHl.sharing.title",
+      "type" : "string",
+      "value" : "Join the fun ya'll!",
+      "isDefault" : false
+    }, {
+      "key" : "farmHl.sharing.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "farmHl.highlightAvailableActionsInterval",
+      "type" : "int",
+      "value" : "3000",
+      "isDefault" : false
+    }, {
+      "key" : "facebookConfiguration.clientToken",
+      "type" : "string",
+      "value" : "f8a7e48b5f19466373d06005be39f5ca",
+      "isDefault" : false
+    }, {
+      "key" : "inApp.pathToContainerVideo",
+      "type" : "string",
+      "value" : "{0}/MediaLibrary/html_resource/container.html?src={1}",
+      "isDefault" : false
+    }, {
+      "key" : "features.verticalSlots.list",
+      "type" : "string",
+      "value" : "129,20129",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.wheel_of_wins.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/Wheel_SharetoFB_cut-min.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.wheel_of_wins.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.wheel_of_wins.title",
+      "type" : "string",
+      "value" : "Join the fun!",
+      "isDefault" : false
+    }, {
+      "key" : "plinko.iconPages",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.plinko.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.plinko.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/PlinGo_ShareFB_cut-min (bd966689-e35e-4976-ae8b-522d8f690ad5).png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.snakes_and_ladders.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Snakes_and_Lad_underwater.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.snakes_and_ladders.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.snakes_and_ladders.title",
+      "type" : "string",
+      "value" : "Come play Snakes & Ladders!",
+      "isDefault" : false
+    }, {
+      "key" : "snakesAndLadders.iconPages",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "snakesAndLadders.outOfRollsPopup.count",
+      "type" : "int",
+      "value" : "99999999",
+      "isDefault" : false
+    }, {
+      "key" : "snakesAndLadders.outOfRollsPopup.each",
+      "type" : "int",
+      "value" : "2",
+      "isDefault" : false
+    }, {
+      "key" : "features.purchaseRecovery.macos.forgetAllTransactions",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "requestParam.timeout.payment.startPurchase",
+      "type" : "int",
+      "value" : "60",
+      "isDefault" : false
+    }, {
+      "key" : "features.pirates.tutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "pirates.toasts.endingToast.secondsBeforeEnd",
+      "type" : "int",
+      "value" : "120",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.pirates.grand.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Redbeard's_grand_prize_v2.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.pirates.island.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Redbeard's_map_v2.png",
+      "isDefault" : false
+    }, {
+      "key" : "bundle_item_state_alias.machine_free_spins.name.respins",
+      "type" : "string",
+      "value" : "freeRespin",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.war.title",
+      "type" : "string",
+      "value" : "Come play WAR!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.war.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.war.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/NewSharings/War_sharing.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.words.tutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "words.beforeEndToast.minutes",
+      "type" : "int",
+      "value" : "600",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.words.boardReward.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/word_board.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.words.grandPrizeReward.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/word_grand_prize.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.words.boardReward.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.words.boardReward.title",
+      "type" : "string",
+      "value" : "Join us for Wild Words.",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.words.grandPrizeReward.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.words.grandPrizeReward.title",
+      "type" : "string",
+      "value" : "Join us for Wild Words.",
+      "isDefault" : false
+    }, {
+      "key" : "application.macOsAppUrl",
+      "type" : "string",
+      "value" : "https://c.gambinoslot.com/H5_cross_to_win/",
+      "isDefault" : false
+    }, {
+      "key" : "application.uwpAppUrl",
+      "type" : "string",
+      "value" : "https://c.gambinoslot.com/H5_cross_to_win/",
+      "isDefault" : false
+    }, {
+      "key" : "wheelOfWinsHrr.iconPages",
+      "type" : "string",
+      "value" : "0",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.wheel_of_wins_hrr.image",
+      "type" : "string",
+      "value" : "https://storage.googleapis.com/gambino-slots/sharingPictures/new_posts/Epicspin_ShareFb.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.wheel_of_wins_hrr.description",
+      "type" : "string",
+      "value" : "Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "features.collapsibleFeaturesInSlots",
+      "type" : "string",
+      "value" : "147,20147,144,20144,120,20120,103,20103,133,20133,164,20164",
+      "isDefault" : false
+    }, {
+      "key" : "features.war.notCollapseIndicator",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "features.hotReels.notCollapseIndicator",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.challenges.notCollapseIndicator",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.pirates.wheel.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Redbeard's_wheel_v2.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.pirates.wheel.description",
+      "type" : "string",
+      "value" : "Join us for plundering and loot! Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.pirates.grand.description",
+      "type" : "string",
+      "value" : "Join us for plundering and loot! Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.pirates.island.description",
+      "type" : "string",
+      "value" : "Join us for plundering and loot! Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "fantastic_race.showTimer",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "fantastic_race.toasts.endingToast.secondsBeforeEnd",
+      "type" : "int",
+      "value" : "120",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.fantastic_race.continent.description",
+      "type" : "string",
+      "value" : "Ready for some amazing fun? Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.fantastic_race.continent.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Fantastic-Race_map.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.fantastic_race.grand_prize.description",
+      "type" : "string",
+      "value" : "Ready for some amazing fun? Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.fantastic_race.grand_prize.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Fantastic-Race_globe.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.ruby_rush.free.description",
+      "type" : "string",
+      "value" : "Ready for a rush? Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.ruby_rush.free.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/ruby-rash-free-prize.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.ruby_rush.gold.description",
+      "type" : "string",
+      "value" : "Ready for a rush? Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.ruby_rush.gold.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/ruby-rash-gold-prize.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.puzzle.image",
+      "type" : "string",
+      "value" : "https://storage.googleapis.com/gambino-slots/sharingPictures/new_posts/Puzzle%20St%20Patrick.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.galactic.grand_prize.description",
+      "type" : "string",
+      "value" : "Blast off to cosmic rewards! Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.galactic.station.description",
+      "type" : "string",
+      "value" : "Blast off to cosmic rewards! Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.galactic.grand_prize.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Galactic_grand.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.galactic.station.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Galactic_station.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.side_bet.image",
+      "type" : "string",
+      "value" : "https://storage.googleapis.com/gambino-slots/sharingPictures/new_posts/Side_bet.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.xmas_magic.tutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.xmas_magic.description",
+      "type" : "string",
+      "value" : "Are you ready for some Christmas magic? Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.xmas_magic.grand_prize.description",
+      "type" : "string",
+      "value" : "Are you ready for some Christmas magic? Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.xmas_magic.grand_prize.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Gambino_Christmas_Magic_grand.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.xmas_magic.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Gambino_Christmas_Magic.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.candyland_magic.tutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.candyland_magic.description",
+      "type" : "string",
+      "value" : "Are you ready for some Candyland magic? Get started with 250 Free Spins today!",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.candyland_magic.grand_prize.description",
+      "type" : "string",
+      "value" : "Congratulation! Sugary goodness is yours! You won the Scrumptious Dessert",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.candyland_magic.grand_prize.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Candyland%20Factory%20Grand%20prize.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.candyland_magic.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/Candyland%20Factory%20Round.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.free_spins_level_up.durationAppearingPopupBeforeAutoClose.ms",
+      "type" : "int",
+      "value" : "5000",
+      "isDefault" : false
+    }, {
+      "key" : "scratchCards.toasts.unqualifiedBet.interval",
+      "type" : "int",
+      "value" : "1000",
+      "isDefault" : false
+    }, {
+      "key" : "features.tournaments.isTimeToQualificationEnd",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "features.tournaments.tutorial.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.fishing.round.reward.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/fishing_round_gambino.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.fishing.grand.reward.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/fishing_grand_gambino.png",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.fishing.round.reward.description",
+      "type" : "string",
+      "value" : "Share G-Coins with Friends",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.fishing.grand.reward.description",
+      "type" : "string",
+      "value" : "Ready for fishin' fun?Join us today with 250 Free Spins!",
+      "isDefault" : false
+    }, {
+      "key" : "metrics.url",
+      "type" : "string",
+      "value" : "http://136.64.94.27/events",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.ice_dice.lastround.reward.image",
+      "type" : "string",
+      "value" : "https://static.gambinoslot.com/sharingPictures/new_posts/IceDice__Share_to_FB.png",
+      "isDefault" : false
+    }, {
+      "key" : "features.sociallogin.enabled",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "sharing.epicWin.enabled",
+      "type" : "bool",
+      "value" : "true",
+      "isDefault" : false
+    }, {
+      "key" : "cash_in_vegas.showTimerOnMap",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "cash_in_vegas.showTimer",
+      "type" : "bool",
+      "value" : "false",
+      "isDefault" : false
+    }, {
+      "key" : "videoAds.placement",
+      "type" : "string",
+      "value" : "MAIN-2269591",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.mg",
+      "type" : "string",
+      "value" : "https://microgaming-dot-gambino-apps.appspot.com/_ah/api/mg/v1",
+      "isDefault" : false
+    }, {
+      "key" : "mgSlot.disabledFeatures",
+      "type" : "string",
+      "value" : "RubyRush,Challenges,GambinoChallenge,SpinnerWinner,TurboWin,BuzzerBooster,HotReels",
+      "isDefault" : false
+    }, {
+      "key" : "server.urls.gameprovider",
+      "type" : "string",
+      "value" : "https://microgaming-dot-gambino-apps.appspot.com/_ah/api/gameprovider/v1",
+      "isDefault" : false
+    } ],
+    "clientProperties" : [ ],
+    "serverTs" : 1789287367757,
+    "userId" : 6402833844404224,
+    "platformId" : "h5Pay",
+    "jwt" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnYW1iaW5vIiwiZXhwIjo5MjIzMzcyMDM2ODU0Nzc1LCJzb2NpYWxJbmZvIjpudWxsfQ.pGhy74SbN3WP9Qt_MB0Hej58qed39oND1nz38O8c2hI"
+  },
+  "contentConfigs" : [ {
+    "version" : 1,
+    "type" : "general",
+    "minVersion" : 0
+  }, {
+    "version" : 1,
+    "type" : "facebook",
+    "minVersion" : 0
+  }, {
+    "version" : 1,
+    "type" : "email",
+    "minVersion" : 0
+  } ]
+}

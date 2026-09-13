@@ -1,0 +1,119 @@
+URL: https://game.onlinefungames.net/browser/scripts/facebook.js
+
+function loadFacebookSdk(window, appId) {
+    console.log(`loadFacebookSdk fbInitialized = ${fbInitialized} appId = ${appId}`);
+    if (!fbInitialized) {
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: appId,
+                cookie: true,  // enable cookies to allow the server to access
+                               // the session
+                xfbml: true,  // parse social plugins on this page
+                version: 'v25.0', // use graph api version 2.7
+                status: true,
+                frictionlessRequests: true
+            });
+            //We can use sdk from this point
+            fbInitialized = true;
+            if (onFbInitializedCallback) {
+                onFbInitializedCallback();
+            }
+        };
+
+        // Load the SDK asynchronously
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            // js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    } else {
+        FB.init({
+            appId: appId,
+            cookie: true,  // enable cookies to allow the server to access
+                           // the session
+            xfbml: true,  // parse social plugins on this page
+            version: 'v25.0', // use graph api version 2.7
+            status: true,
+            frictionlessRequests: true
+        });
+    }
+}
+
+function requestDialog(callback, params) {
+    exitFullscreen();
+    FB.ui({method: 'apprequests',
+        message: params.message,
+        to: params.to,
+        access_token: params.access_token,
+        data: '',
+        display: 'popup'
+    }, function(response){
+        if (response === '') {
+            response = null;
+        }
+        callback(response);
+    });
+}
+
+function requestPermissions(callback, params) {
+    FB.api("/me/permissions/", {access_token: params.access_token}, callback);
+}
+
+function getFriends(callback, w, h, params) {
+    if (w == null || h == null) {
+        FB.api("/me/friends/", {fields: "id,name", limit: 1000, offset: params.offset, access_token: params.access_token}, callback);
+    }
+    else {
+        FB.api("/me/friends/", {fields: "id,name,picture.width(" + w + ").height(" + h + ").type(square)", limit: 1000, offset: params.offset, access_token: params.access_token}, callback);
+    }
+}
+
+function getNextFriends(callback, params, nextUri) {
+    FB.api(nextUri, {access_token: params.access_token}, callback);
+}
+
+function getPictureUrl(callback, userId, w, h) {
+    FB.api("/" + userId + "/picture?type=square&width=" + w + "&height=" + h, {}, callback);
+}
+
+function isEligiblePromo(callback) {
+    FB.api("/me?fields=is_eligible_promo", {}, callback);
+}
+
+function getInvitableFriends(callback, w, h, params) {
+    FB.api("/me/invitable_friends/", {fields: "id,name,picture.width(" + w + ").height(" + h + ").type(square)", limit: 5000, offset: params.offset, excluded_ids: params.excluded_ids, access_token: params.access_token}, callback);
+}
+
+function showSharingDialog(callback, actionType, actionProperties) {
+    exitFullscreen();
+    FB.ui({
+        method: "share_open_graph",
+        action_type: actionType,
+        action_properties: actionProperties
+    }, callback);
+}
+
+
+function shareOnFeed(callback, params) {
+    exitFullscreen();
+    FB.ui({
+        method: "feed",
+        link: params.link,
+        app_id: params.app_id,
+        display: 'popup'
+    }, callback);
+}
+
+function onFbInitialized(callback) {
+    if(fbInitialized) {
+        callback();
+    } else {
+        onFbInitializedCallback= callback;
+    }
+}
+var fbInitialized = false;
+var onFbInitializedCallback;

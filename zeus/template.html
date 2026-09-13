@@ -1,0 +1,617 @@
+<title>__TITLE__ Scene Inspector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #EEF0F3; --panel: #FFFFFF; --panel-2: #E4E7EC; --ink: #171A20; --muted: #5E6774;
+    --line: #D3D8E0; --gold: #B8871F; --gold-soft: #F3E7C8; --stage: #0F1115; --row-hover: #F4F0E4;
+    --badge-node: #6B7280; --badge-sprite: #2F7D5B; --badge-text: #3B6FD6; --badge-mask: #9B4DCA; --badge-video: #C2571B; --badge-fx: #A0A0A0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #14161C; --panel: #1B1E26; --panel-2: #242833; --ink: #E8E6E0; --muted: #8E96A3;
+      --line: #2C313B; --gold: #E2B54B; --gold-soft: #33290F; --stage: #0A0B0E; --row-hover: #262418;
+      --badge-node: #7B8494; --badge-sprite: #4CB889; --badge-text: #6E9BFF; --badge-mask: #C084F5; --badge-video: #F0844A; --badge-fx: #8A8A8A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #14161C; --panel: #1B1E26; --panel-2: #242833; --ink: #E8E6E0; --muted: #8E96A3;
+    --line: #2C313B; --gold: #E2B54B; --gold-soft: #33290F; --stage: #0A0B0E; --row-hover: #262418;
+    --badge-node: #7B8494; --badge-sprite: #4CB889; --badge-text: #6E9BFF; --badge-mask: #C084F5; --badge-video: #F0844A; --badge-fx: #8A8A8A;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.45 "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .app { display: grid; grid-template-rows: auto 1fr; min-height: 100vh; padding-inline: 16px; padding-block: 12px 24px; gap: 12px; }
+
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+  h1 { font: 700 30px/1 "Barlow Condensed", "Arial Narrow", sans-serif; margin: 0; letter-spacing: 0.005em; }
+  h1 small { font-weight: 500; color: var(--muted); font-size: 16px; margin-left: 8px; }
+  .ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-left: auto; }
+  label.t { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); cursor: pointer; white-space: nowrap; }
+  label.t input { accent-color: var(--gold); }
+  select { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 5px 8px; }
+  select:focus-visible, input:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 12px; min-height: 0; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+
+  .stage { position: relative; background: var(--stage); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; align-self: start; }
+  .stage canvas { display: block; width: 100%; height: auto; max-width: 100%; }
+  .stage #overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .tip { position: absolute; left: 8px; bottom: 8px; padding: 4px 8px; background: rgba(10,11,14,0.85); color: #E8E6E0; font: 12px/1.4 "IBM Plex Mono", monospace; border-radius: 3px; pointer-events: none; max-width: calc(100% - 16px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tip:empty { display: none; }
+  .frame-note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .player { display: flex; align-items: center; gap: 10px; margin-top: 8px; padding: 6px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; font-size: 12px; }
+  .player button { font: inherit; background: var(--gold-soft); color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 3px 9px; cursor: pointer; }
+  .player input[type=range] { flex: 1; min-width: 80px; accent-color: var(--gold); }
+  .player #playing { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 45%; }
+  .play { font: inherit; background: none; border: 1px solid var(--line); color: var(--gold); border-radius: 3px; padding: 0 6px; cursor: pointer; margin-right: 6px; }
+  .play:hover { background: var(--gold-soft); }
+
+  aside { display: flex; flex-direction: column; min-height: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; max-height: calc(100vh - 90px); }
+  @media (max-width: 900px) { aside { max-height: 70vh; } }
+  .tabs { display: flex; border-bottom: 1px solid var(--line); }
+  .tabs button { flex: 1; font: 600 13px "Barlow Condensed", sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: none; border: 0; border-bottom: 2px solid transparent; padding: 10px 6px; cursor: pointer; }
+  .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--gold); }
+  .pane { overflow: auto; padding: 8px 6px 14px; font: 12.5px/1.5 "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+  .pane[hidden] { display: none; }
+
+  /* tree */
+  details { margin: 0; }
+  details > summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  .row { display: flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 3px; cursor: pointer; white-space: nowrap; min-width: 0; }
+  .row:hover { background: var(--row-hover); }
+  .row.sel { background: var(--gold-soft); }
+  .row input { margin: 0; accent-color: var(--gold); flex: none; }
+  .row .car { width: 10px; flex: none; color: var(--muted); font-size: 10px; }
+  details[open] > summary .car::before { content: "▾"; }
+  details:not([open]) > summary .car::before { content: "▸"; }
+  .row .idx { color: var(--muted); flex: none; }
+  .b { flex: none; font: 600 10px/1 "Barlow Condensed", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; padding: 3px 5px; border-radius: 3px; background: var(--badge-node); }
+  .b.sprite { background: var(--badge-sprite); } .b.text { background: var(--badge-text); } .b.mask { background: var(--badge-mask); }
+  .b.videoSprite, .b.stream, .b.sound { background: var(--badge-video); } .b.particles2, .b.button { background: var(--badge-fx); }
+  .row .id { font-weight: 500; overflow: hidden; text-overflow: ellipsis; }
+  .row .nm { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+  .row .hid { color: var(--muted); font-size: 10px; flex: none; }
+  .kids { padding-left: 14px; border-left: 1px solid var(--line); margin-left: 9px; }
+
+  /* node + states panes */
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin-bottom: 10px; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; overflow-wrap: anywhere; }
+  h4 { font: 600 13px "Barlow Condensed", sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 12px 0 4px; }
+  pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--panel-2); padding: 8px; border-radius: 4px; }
+  .act { padding-left: 12px; }
+  .st { padding: 6px 4px; border-top: 1px solid var(--line); }
+  .st b { color: var(--gold); }
+  .st:not(.has-anim) b { color: var(--ink); }
+  .st:not(.has-anim) .play { color: var(--muted); }
+  .dur { font-size: 11px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .dur.anim { background: var(--gold-soft); color: var(--gold-ink, var(--gold)); }
+  .dur.instant { background: var(--panel-2); color: var(--muted); }
+  .act .dur { margin: 0 0 4px 6px; display: inline-block; }
+  .st .tr { color: var(--muted); }
+  .empty { color: var(--muted); padding: 8px 4px; }
+</style>
+
+<div class="app">
+  <header>
+    <h1>__TITLE__ Scene Inspector<small>__SUBTITLE__</small></h1>
+    <div class="ctl">
+      <select id="scene" aria-label="Scene"></select>
+      <label class="t"><input type="checkbox" id="backdrop" checked> slot_bg backdrop</label>
+      <label class="t"><input type="checkbox" id="initial" checked> apply initial state</label>
+      <label class="t"><input type="checkbox" id="reels" checked> populate reels</label>
+      <label class="t"><input type="checkbox" id="reveal"> reveal hidden</label>
+      <label class="t"><input type="checkbox" id="videos"> video stills</label>
+      <label class="t"><input type="checkbox" id="bounds"> bounds</label>
+    </div>
+  </header>
+  <main>
+    <div>
+      <div class="stage">
+        <canvas id="cv" width="1366" height="768"></canvas>
+        <canvas id="overlay" width="1366" height="768"></canvas>
+        <div class="tip" id="tip"></div>
+      </div>
+      <div class="player" id="player" hidden>
+        <button id="pp" aria-label="play/pause">▶</button>
+        <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="timeline">
+        <span class="mono" id="clock">0 ms</span>
+        <label class="t"><input type="checkbox" id="loop" checked> loop</label>
+        <span class="mono" id="playing"></span>
+        <button id="stopb">✕</button>
+      </div>
+      <div class="frame-note" id="note"></div>
+    </div>
+    <aside>
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="tree">Tree</button>
+        <button role="tab" aria-selected="false" data-tab="node">Node</button>
+        <button role="tab" aria-selected="false" data-tab="states">States</button>
+      </div>
+      <div class="pane" id="tree" role="tabpanel"></div>
+      <div class="pane" id="node" role="tabpanel" hidden><div class="empty">Click a node in the tree, or on the canvas.</div></div>
+      <div class="pane" id="states" role="tabpanel" hidden></div>
+    </aside>
+  </main>
+</div>
+
+<script>
+const D = /*__DATA__*/null;
+// Scenes are authored in a 1152×768 (3:2) design space; a 16:9 screen shows 1366×768 of it.
+const W = 1366, H = 768, OX = 107;
+const MAIN = D.main;
+const cv = document.getElementById('cv'), ov = document.getElementById('overlay');
+const ctx = cv.getContext('2d'), octx = ov.getContext('2d');
+const $ = (id) => document.getElementById(id);
+
+// --- images -----------------------------------------------------------------
+const img = {};
+const load = (k, src) => new Promise((res) => { const i = new Image(); i.onload = () => res(); i.onerror = () => res(); i.src = src; img[k] = i; });
+const ready = Promise.all([
+  ...Object.entries(D.textures).map(([k, v]) => load('t:' + k, v)),
+  ...Object.entries(D.stills).map(([k, v]) => load('v:' + k, v)),
+]);
+
+// --- state --------------------------------------------------------------------
+let sceneId = MAIN;
+let off = new Set();      // node indices switched off in the tree
+let selected = null;      // selected node index
+let boxes = {};           // idx -> [x0,y0,x1,y1] in canvas px (this render)
+let leafBoxes = [];       // [{idx, box}] for hit-testing
+const opts = () => ({ reels: $('reels').checked, reveal: $('reveal').checked, videos: $('videos').checked, bounds: $('bounds').checked });
+
+// The wad ships the reel grid empty; the engine parents symbols into it at runtime.
+// Games either ship one scene per symbol (icons/icon_N.object with a static sprite) or
+// plain icons/*.spr sprites the engine centres in the cell. Pick whichever exists.
+function reelCell() {
+  const r = D.scenes[MAIN]; const st = r.nodes.find((n) => n.properties?.Id === 'slot_start_0');
+  return st?.properties?.Size || { w: 161, h: 144 };
+}
+const CELL = reelCell();
+function symbolPool() {
+  const pool = [];
+  for (const [id, r] of Object.entries(D.scenes)) {
+    if (!/^icons\/icon_\d+\.object$/.test(id)) continue;
+    const sp = r.nodes.find((n) => n.type === 'sprite' && !n.properties?.Hidden && D.sprites[n.properties.SpriteName]);
+    if (!sp) continue;
+    const ss = D.sprites[sp.properties.SpriteName].frames[0].sourceSize;
+    if (ss.w <= CELL.w * 2.2 && ss.h <= CELL.h * 2.2) pool.push({ kind: 'scene', id });
+  }
+  if (pool.length >= 4) return pool;
+  for (const [name, sh] of Object.entries(D.sprites)) {
+    if (!name.startsWith('icons/') || /tip|win|stb|scatter|flash|_000[1-9]\d/i.test(name)) continue;
+    const ss = sh.frames[0].sourceSize;
+    if (ss.w <= CELL.w * 2 && ss.h <= CELL.h * 2) pool.push({ kind: 'sprite', name, ss });
+  }
+  return pool;
+}
+const POOL = symbolPool();
+const SAMPLE_JACKPOT = ['1.0K', '5.0K', '20.0K', '200.0K', '2,000.0K', '50.0K', '100.0K', '500.0K', '10.0K', '2.5K'];
+
+// --- initial state ---------------------------------------------------------------------
+// Each node with `stateMachine` owns a sub-tree of states; the first leaf is the initial one.
+// state.onEnter indexes the owning node's actions[]; reference.target numbers nodes in an
+// expanded post-order walk (shared nodes counted once per parent), reference.action indexes
+// that node's actions[]. We settle every initial timeline to its end values.
+const TYPE_DEFAULT = { Scale: { x: 1, y: 1 }, Color: { a: 255, r: 255, g: 255, b: 255 }, Position: { x: 0, y: 0 }, Skew: { x: 0, y: 0 }, Origin: { x: 0, y: 0 }, Frame: 0, DrawOrder: 0, Hidden: false };
+const initCache = {};
+function expandedOrder(r) {
+  const seq = []; const walk = (i) => { for (const c of r.nodes[i].children || []) walk(c); seq.push(i); };
+  roots(r).forEach(walk); return seq;
+}
+function initialProps(id) {
+  if (initCache[id]) return initCache[id];
+  const r = D.scenes[id]; const over = {}; const order = expandedOrder(r);
+  const set = (node, prop, val) => { (over[node] ||= {})[prop] = val; };
+  const run = (ai, node, depth) => {
+    const a = r.actions[ai]; if (!a || depth > 12) return;
+    // a keyframe with no value means the property's type default (a hidden node becomes visible, scale returns to 1)
+    if (a.type === 'discrete') set(node, a.property, a.value === undefined ? (TYPE_DEFAULT[a.property] ?? null) : a.value);
+    else if (a.type === 'interpolate') set(node, a.property, a.end === undefined ? (TYPE_DEFAULT[a.property] ?? null) : a.end);
+    else if (a.type === 'reference') { const t = order[a.target]; const acts = r.nodes[t]?.actions || []; if (acts[a.action] != null) run(acts[a.action], t, depth + 1); }
+    else if (a.type === 'sequence' || a.type === 'parallel') for (const k of a.actions || []) run(k, node, depth + 1);
+  };
+  const firstLeaf = (si) => { const st = r.states[si]; if (!st) return []; if (st.children?.length) return st.mode === 'Parallel' ? st.children.flatMap(firstLeaf) : firstLeaf(st.children[0]); return [st]; };
+  r.nodes.forEach((n, i) => {
+    if (n.stateMachine == null) return;
+    for (const st of firstLeaf(n.stateMachine)) if (st.onEnter != null && (n.actions || [])[st.onEnter] != null) run(n.actions[st.onEnter], i, 0);
+  });
+  return (initCache[id] = over);
+}
+// null means "back to the property's default" (discrete with no value)
+function effective(r, id, idx) {
+  const n = r.nodes[idx]; const base = n.properties || {}; const ov = $('initial').checked ? initialProps(id)[idx] : null;
+  const an = (anim.sceneId === id) ? anim.values[idx] : null;
+  if (!ov && !an) return base;
+  const p = { ...base };
+  const apply = (o) => { for (const [k, v] of Object.entries(o)) { if (v === null) delete p[k]; else if (k === 'Color' && p.Color) p[k] = { ...p.Color, ...v }; else p[k] = v; } };
+  if (ov) apply(ov);
+  if (an) apply(an);
+  return p;
+}
+
+// --- timeline player ------------------------------------------------------------------------
+// Flattens an action tree into tracks {node, prop, t0, dur, start, end | value} and evaluates them
+// at time t. sequence = cumulative, parallel = same start, reference = another node's action,
+// empty = wait, discrete = set (and hold for `duration`), interpolate = lerp with easing.
+const anim = { sceneId: null, tracks: [], total: 0, t: 0, playing: false, values: {}, label: '' };
+function flatten(r, order, ai, node, t0, out, depth = 0) {
+  const a = r.actions[ai]; if (!a || depth > 14) return 0;
+  const dur = a.duration || 0;
+  if (a.type === 'interpolate') { out.push({ node, prop: a.property, t0, dur, start: a.start, end: a.end, tf: a.timeFunction, tp: a.timeParameters }); return dur; }
+  if (a.type === 'discrete') { out.push({ node, prop: a.property, t0, dur, value: a.value === undefined ? null : a.value, discrete: true }); return dur; }
+  if (a.type === 'empty') return dur;
+  if (a.type === 'method') { if (a.method === 'Play' || a.method === 'Stop') out.push({ node, prop: '__video', t0, dur: 0, value: a.method === 'Play', discrete: true }); return 0; }
+  if (a.type === 'reference') { const t = order[a.target]; const acts = r.nodes[t]?.actions || []; return acts[a.action] != null ? flatten(r, order, acts[a.action], t, t0, out, depth + 1) : 0; }
+  if (a.type === 'sequence') { let t = t0; for (const k of a.actions || []) t += flatten(r, order, k, node, t, out, depth + 1); return t - t0; }
+  if (a.type === 'parallel') { let m = 0; for (const k of a.actions || []) m = Math.max(m, flatten(r, order, k, node, t0, out, depth + 1)); return m; }
+  return 0;
+}
+function bezier(x1, y1, x2, y2) { // CSS-style cubic-bezier easing
+  const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx, cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+  const sx = (t) => ((ax * t + bx) * t + cx) * t, sy = (t) => ((ay * t + by) * t + cy) * t;
+  return (x) => { let t = x; for (let i = 0; i < 8; i++) { const e = sx(t) - x; if (Math.abs(e) < 1e-4) break; const d = (3 * ax * t + 2 * bx) * t + cx; if (Math.abs(d) < 1e-6) break; t -= e / d; } return sy(Math.max(0, Math.min(1, t))); };
+}
+const EASE = { Linear: (u) => u, QuadIn: (u) => u * u, QuadOut: (u) => 1 - (1 - u) ** 2, QuadInOut: (u) => u < 0.5 ? 2 * u * u : 1 - (-2 * u + 2) ** 2 / 2, CubicIn: (u) => u ** 3, CubicOut: (u) => 1 - (1 - u) ** 3, CubicInOut: (u) => u < 0.5 ? 4 * u ** 3 : 1 - (-2 * u + 2) ** 3 / 2 };
+function ease(tr, u) { if (tr.tf === 'CubicBezier' && tr.tp) { tr._b ||= bezier(...tr.tp); return tr._b(u); } return (EASE[tr.tf] || EASE.Linear)(u); }
+const DEFAULTS = { Scale: { x: 1, y: 1 }, Color: { a: 255, r: 255, g: 255, b: 255 }, Position: { x: 0, y: 0 }, Skew: { x: 0, y: 0 }, Origin: { x: 0, y: 0 }, Frame: 0, DrawOrder: 0, Hidden: false };
+function baseValue(r, sid, idx, prop) {
+  const n = r.nodes[idx]; const b = n.properties?.[prop]; const ov = initialProps(sid)[idx]?.[prop];
+  const v = ov !== undefined && ov !== null ? ov : b;
+  if (v !== undefined) return (prop === 'Color' && typeof v === 'object') ? { ...DEFAULTS.Color, ...v } : v;
+  return DEFAULTS[prop];
+}
+function lerpVal(a, b, u) {
+  if (typeof a === 'number' && typeof b === 'number') return a + (b - a) * u;
+  if (a && b && typeof a === 'object') { const o = { ...a }; for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) { const av = a[k] ?? (k === 'a' ? 255 : k === 'x' || k === 'y' ? (b[k] ?? 0) : 0), bv = b[k] ?? av; o[k] = av + (bv - av) * u; } return o; }
+  return u < 1 ? a : b;
+}
+function evalAnim(t) {
+  const r = D.scenes[anim.sceneId]; const vals = {};
+  const set = (node, prop, v) => { (vals[node] ||= {})[prop] = v; };
+  for (const tr of anim.tracks) { // sorted by t0, so later tracks win
+    if (t < tr.t0) continue;
+    if (tr.prop === '__video') { set(tr.node, 'Hidden', !tr.value); continue; }
+    if (tr.discrete) { set(tr.node, tr.prop, tr.value === null ? (DEFAULTS[tr.prop] ?? null) : tr.value); continue; }
+    const cur = vals[tr.node]?.[tr.prop] ?? baseValue(r, anim.sceneId, tr.node, tr.prop);
+    const from = tr.start !== undefined ? (tr.prop === 'Color' ? { ...(typeof cur === 'object' ? cur : DEFAULTS.Color), ...tr.start } : tr.start) : cur;
+    const to = tr.end !== undefined ? (tr.prop === 'Color' ? { ...(typeof from === 'object' ? from : DEFAULTS.Color), ...tr.end } : tr.end) : (DEFAULTS[tr.prop] ?? baseValue(r, anim.sceneId, tr.node, tr.prop));
+    const u = tr.dur ? Math.min(1, (t - tr.t0) / tr.dur) : 1;
+    set(tr.node, tr.prop, lerpVal(from, to, ease(tr, u)));
+  }
+  anim.values = vals;
+}
+function playAction(sid, ai, ownerNode, label) {
+  const r = D.scenes[sid]; const out = [];
+  const total = flatten(r, expandedOrder(r), ai, ownerNode, 0, out);
+  out.sort((a, b) => a.t0 - b.t0);
+  Object.assign(anim, { sceneId: sid, tracks: out, total: Math.max(total, 1), t: 0, playing: true, label });
+  $('player').hidden = false;
+  if (total < 40) { // an instant state: apply its values and leave them on screen
+    anim.playing = false; evalAnim(total); render();
+    $('playing').textContent = `${label} · instant — ${out.length} value${out.length === 1 ? '' : 's'} applied, nothing to animate`; $('pp').textContent = '▶'; $('scrub').value = 1000; $('clock').textContent = `${total} ms`;
+    return;
+  }
+  $('playing').textContent = `${label} · ${out.length} tracks · ${total} ms`; $('pp').textContent = '❚❚';
+  lastTs = null; requestAnimationFrame(tick);
+}
+let lastTs = null;
+function tick(ts) {
+  if (!anim.playing) return;
+  if (lastTs != null) anim.t += ts - lastTs; lastTs = ts;
+  if (anim.t > anim.total) { if ($('loop').checked) anim.t = 0; else { anim.t = anim.total; anim.playing = false; $('pp').textContent = '▶'; } }
+  evalAnim(anim.t); render(); $('scrub').value = Math.round(1000 * anim.t / anim.total); $('clock').textContent = `${Math.round(anim.t)} ms`;
+  if (anim.playing) requestAnimationFrame(tick);
+}
+function stopAnim() { anim.playing = false; anim.sceneId = null; anim.values = {}; $('player').hidden = true; render(); }
+$('pp').addEventListener('click', () => { if (!anim.tracks.length) return; anim.playing = !anim.playing; $('pp').textContent = anim.playing ? '❚❚' : '▶'; if (anim.playing) { if (anim.t >= anim.total) anim.t = 0; lastTs = null; requestAnimationFrame(tick); } });
+$('scrub').addEventListener('input', () => { if (!anim.tracks.length) return; anim.playing = false; $('pp').textContent = '▶'; anim.t = anim.total * $('scrub').value / 1000; evalAnim(anim.t); render(); $('clock').textContent = `${Math.round(anim.t)} ms`; });
+$('stopb').addEventListener('click', stopAnim);
+
+// --- scene helpers --------------------------------------------------------------
+const roots = (r) => { const p = new Set(); r.nodes.forEach((n) => (n.children || []).forEach((c) => p.add(c))); return r.nodes.map((_, i) => i).filter((i) => !p.has(i)); };
+const kidsByZ = (r, n) => [...(n.children || [])].sort((a, b) => (r.nodes[a].properties?.DrawOrder || 0) - (r.nodes[b].properties?.DrawOrder || 0));
+
+function union(idx, b) {
+  if (!b) return;
+  const o = boxes[idx];
+  boxes[idx] = o ? [Math.min(o[0], b[0]), Math.min(o[1], b[1]), Math.max(o[2], b[2]), Math.max(o[3], b[3])] : b.slice();
+}
+function rectBox(c, x, y, w, h) {
+  const m = c.getTransform();
+  const pts = [[x, y], [x + w, y], [x, y + h], [x + w, y + h]].map(([px, py]) => [m.a * px + m.c * py + m.e, m.b * px + m.d * py + m.f]);
+  return [Math.min(...pts.map((p) => p[0])), Math.min(...pts.map((p) => p[1])), Math.max(...pts.map((p) => p[0])), Math.max(...pts.map((p) => p[1]))];
+}
+
+// --- drawing primitives --------------------------------------------------------------
+// ColorModulation multiplies the texture by the node colour. Canvas2D has no tint, so draw the
+// image, multiply a colour rect over it, then re-cut the image's own alpha.
+function drawTinted(c, img, sx, sy, sw, sh, dx, dy, dw, dh) {
+  const t = c._tint || [1, 1, 1];
+  if (t[0] > 0.995 && t[1] > 0.995 && t[2] > 0.995) { c.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh); return; }
+  const w = Math.max(1, Math.ceil(sw)), h = Math.max(1, Math.ceil(sh));
+  const k = document.createElement('canvas'); k.width = w; k.height = h; const kc = k.getContext('2d');
+  kc.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
+  kc.globalCompositeOperation = 'multiply'; kc.fillStyle = `rgb(${Math.round(t[0] * 255)},${Math.round(t[1] * 255)},${Math.round(t[2] * 255)})`; kc.fillRect(0, 0, w, h);
+  kc.globalCompositeOperation = 'destination-in'; kc.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
+  c.drawImage(k, 0, 0, w, h, dx, dy, dw, dh);
+}
+function drawSprite(c, idx, p, o) {
+  const sh = D.sprites[p.SpriteName]; if (!sh) return null;
+  const f = sh.frames[Math.min(p.Frame || 0, sh.frames.length - 1)];
+  const tex = img['t:' + sh.meta.image]; if (!tex || !tex.width) return null;
+  const s = f.spriteSourceSize;
+  if (p.Size && f.ninePatch) { // stretched nine-patch, good enough for a still
+    drawTinted(c, tex, f.frame.x, f.frame.y, f.frame.w, f.frame.h, 0, 0, p.Size.w, p.Size.h);
+    return rectBox(c, 0, 0, p.Size.w, p.Size.h);
+  }
+  drawTinted(c, tex, f.frame.x, f.frame.y, f.frame.w, f.frame.h, s.x, s.y, f.frame.w, f.frame.h);
+  return rectBox(c, s.x, s.y, f.frame.w, f.frame.h);
+}
+
+function drawText(c, idx, p, o) {
+  const font = D.fonts[p.FontName]; if (!font) return null;
+  const tex = img['t:' + font.page]; if (!tex || !tex.width) return null;
+  let text = p.Text || '';
+  const jp = /^jackpot_val_(\d)$/.exec(p.Id || '');
+  if (jp && o.reveal) text = SAMPLE_JACKPOT[+jp[1] % SAMPLE_JACKPOT.length] || text;
+  const sp = p.Spacing || 0;
+  const glyphs = [...text].map((ch) => font.chars[ch.charCodeAt(0)]).filter(Boolean);
+  if (!glyphs.length) return null;
+  const tw = glyphs.reduce((a, g) => a + g.xa + sp, -sp);
+  const box = p.Size || { w: tw, h: font.lineHeight };
+  let k = 1;
+  if (p.DimensionSource === 'ProportionalSize') k = Math.min(1, box.w / tw, box.h / font.lineHeight);
+  let x = 0, y = 0;
+  if (p.HAlignment === 'Center') x = (box.w - tw * k) / 2; else if (p.HAlignment === 'Right') x = box.w - tw * k;
+  if (p.VAlignment === 'Center') y = (box.h - font.lineHeight * k) / 2; else if (p.VAlignment === 'Bottom') y = box.h - font.lineHeight * k;
+  c.save(); c.translate(x, y); c.scale(k, k);
+  let pen = 0;
+  for (const g of glyphs) { if (g.w) drawTinted(c, tex, g.x, g.y, g.w, g.h, pen + g.xo, g.yo, g.w, g.h); pen += g.xa + sp; }
+  c.restore();
+  return rectBox(c, x, y, tw * k, font.lineHeight * k);
+}
+
+function drawStill(c, idx, p, o) {
+  const st = img['v:' + p.VideoName]; if (!st || !st.width) return null;
+  drawTinted(c, st, 0, 0, st.width, st.height, 0, 0, st.width, st.height);
+  return rectBox(c, 0, 0, st.width, st.height);
+}
+
+// --- scene walk ------------------------------------------------------------------------
+function drawNode(c, r, idx, o, inMain, sid, tint = [1, 1, 1]) {
+  const n = r.nodes[idx], p = effective(r, sid, idx);
+  if (off.has(idx)) return;
+  if (p.Hidden && !o.reveal) return;
+  const isVideo = n.type === 'videoSprite';
+  if (isVideo && !o.videos) return;
+  c.save();
+  if (p.Position) c.translate(p.Position.x || 0, p.Position.y || 0);
+  // Flash-style matrix: a=cos(skewY) b=sin(skewY) c=-sin(skewX) d=cos(skewX); equal skews are a rotation
+  if (p.Skew) { const sx = (p.Skew.x || 0) * Math.PI / 180, sy = (p.Skew.y || 0) * Math.PI / 180; c.transform(Math.cos(sy), Math.sin(sy), -Math.sin(sx), Math.cos(sx), 0, 0); }
+  if (p.Scale) c.scale(p.Scale.x ?? 1, p.Scale.y ?? 1);
+  if (p.Origin) c.translate(-(p.Origin.x || 0), -(p.Origin.y || 0));
+  if (p.Color && p.Color.a != null && !o.reveal) c.globalAlpha *= p.Color.a / 255;
+  if (p.Color && (p.Color.r != null || p.Color.g != null || p.Color.b != null)) tint = [tint[0] * (p.Color.r ?? 255) / 255, tint[1] * (p.Color.g ?? 255) / 255, tint[2] * (p.Color.b ?? 255) / 255];
+  c._tint = tint;
+  if (n.blend && n.blend.destinationFactor === 'One') c.globalCompositeOperation = 'lighter';
+
+  if (n.type === 'mask') {
+    // Render the subtree to a scratch canvas, then keep only what the mask texture covers.
+    const scratch = document.createElement('canvas'); scratch.width = c.canvas.width; scratch.height = c.canvas.height;
+    const sc = scratch.getContext('2d'); sc.setTransform(c.getTransform());
+    for (const k of kidsByZ(r, n)) drawNode(sc, r, k, o, inMain, sid, tint), union(idx, boxes[k]);
+    const tex = img['t:' + p.TextureName];
+    if (tex && tex.width && p.MaskSize) {
+      const sf = p.MaskSourceFrame || { x: 0, y: 0, w: tex.width, h: tex.height };
+      const ms = p.MaskScale || {}; const mp = p.MaskPosition || { x: 0, y: 0 };
+      sc.globalCompositeOperation = 'destination-in';
+      sc.drawImage(tex, sf.x, sf.y, sf.w, sf.h, mp.x, mp.y, p.MaskSize.w * (ms.x ?? 1), p.MaskSize.h * (ms.y ?? 1));
+    }
+    const t = c.getTransform(); c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(scratch, 0, 0); c.setTransform(t);
+    c.restore(); return;
+  }
+
+  let leaf = null;
+  if (n.type === 'sprite' || n.type === 'ninePatch') leaf = drawSprite(c, idx, p, o);
+  else if (n.type === 'text') leaf = drawText(c, idx, p, o);
+  else if (isVideo) leaf = drawStill(c, idx, p, o);
+  if (leaf) { union(idx, leaf); leafBoxes.push({ idx, box: leaf }); }
+
+  for (const k of kidsByZ(r, n)) { drawNode(c, r, k, o, inMain, sid, tint); union(idx, boxes[k]); }
+
+  if (inMain && o.reels && p.Id === 'icons_holder') fillReels(c, r, n, o);
+  c.restore();
+}
+
+function fillReels(c, r, holder, o) {
+  const starts = (holder.children || []).map((k) => r.nodes[k]).filter((k) => /^slot_start_\d$/.test(k.properties?.Id || ''));
+  const end = (holder.children || []).map((k) => r.nodes[k]).find((k) => k.properties?.Id === 'slot_end');
+  if (!starts.length || !end) return;
+  const cell = starts[0].properties.Size; const rows = Math.round((end.properties.Position?.y || 0) / cell.h) + 1;
+  starts.sort((a, b) => (a.properties.Position?.x || 0) - (b.properties.Position?.x || 0));
+  if (!POOL.length) return;
+  starts.forEach((s, col) => {
+    for (let row = 0; row < rows; row++) {
+      const pick = POOL[(row * 7 + col * 3) % POOL.length];
+      c.save(); c.translate(s.properties.Position?.x || 0, row * cell.h);
+      if (pick.kind === 'scene') {
+        const sr = D.scenes[pick.id];
+        const saveOff = off; off = new Set(); // symbol scenes have their own indices
+        for (const rt of roots(sr)) drawNode(c, sr, rt, { ...o, reels: false }, false, pick.id);
+        off = saveOff;
+      } else {
+        c.translate((cell.w - pick.ss.w) / 2, (cell.h - pick.ss.h) / 2);
+        drawSprite(c, -1, { SpriteName: pick.name }, o);
+      }
+      c.restore();
+    }
+  });
+}
+
+function render() {
+  const o = opts(); const r = D.scenes[sceneId];
+  boxes = {}; leafBoxes = [];
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+  ctx.clearRect(0, 0, W, H);
+  // checker so transparent regions read as transparent
+  for (let y = 0; y < H; y += 32) for (let x = 0; x < W; x += 32) { ctx.fillStyle = ((x + y) / 32) % 2 ? '#15171d' : '#1b1e26'; ctx.fillRect(x, y, 32, 32); }
+  const symbol = sceneId.startsWith('icons/');
+  ctx.save();
+  ctx.translate(OX, 0);
+  if (symbol) { ctx.translate(1152 / 2 - CELL.w * 1.5, H / 2 - CELL.h * 1.5); ctx.scale(3, 3); }
+  if (sceneId === MAIN && D.backdrop && $('backdrop').checked) {
+    // slot_bg.wad.xml is a separate package the engine draws beneath the machine scene
+    const saveOff = off; off = new Set();
+    for (const rt of roots(D.scenes[D.backdrop])) drawNode(ctx, D.scenes[D.backdrop], rt, { ...o, reels: false }, false, D.backdrop);
+    off = saveOff; boxes = {}; leafBoxes = [];
+  }
+  for (const rt of roots(r)) drawNode(ctx, r, rt, o, sceneId === MAIN, sceneId);
+  if (symbol) { ctx.setLineDash([4, 4]); ctx.strokeStyle = '#E2B54B'; ctx.lineWidth = 0.7; ctx.strokeRect(0, 0, CELL.w, CELL.h); }
+  ctx.restore();
+  // design-space edges: what a 3:2 screen would show; the rest is 16:9 overscan
+  ctx.setLineDash([6, 6]); ctx.strokeStyle = 'rgba(226,181,75,0.45)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(OX + 0.5, 0); ctx.lineTo(OX + 0.5, H); ctx.moveTo(OX + 1152 - 0.5, 0); ctx.lineTo(OX + 1152 - 0.5, H); ctx.stroke(); ctx.setLineDash([]);
+  drawOverlay(null);
+  $('note').textContent = symbol
+    ? `Symbol scene at 3×; the dashed box is one ${CELL.w} × ${CELL.h} reel cell. Symbol art is centred on the cell and may overflow it — the reel mask clips it in the machine.`
+    : `${r.nodes.length} nodes · ${(r.states || []).filter((s) => s.id).length} states · ${(r.actions || []).length} actions · authored in a 1152 × 768 design space (dashed edges), shown here at 16:9 like the browser canvas, drawn in the engine\'s order (children ascending DrawOrder).${D.backdrop ? ' The slot_bg backdrop is a separate package the client positions in code, so it may sit a few percent off the reel grid here.' : ''}`;
+}
+
+function drawOverlay(hover) {
+  const o = opts();
+  octx.setTransform(1, 0, 0, 1, 0, 0); octx.clearRect(0, 0, W, H);
+  if (o.bounds) { octx.strokeStyle = 'rgba(226,181,75,0.35)'; octx.lineWidth = 1; for (const { box } of leafBoxes) octx.strokeRect(box[0], box[1], box[2] - box[0], box[3] - box[1]); }
+  const draw = (idx, color, w) => { const b = boxes[idx]; if (!b) return; octx.strokeStyle = color; octx.lineWidth = w; octx.strokeRect(b[0], b[1], b[2] - b[0], b[3] - b[1]); };
+  if (selected != null) draw(selected, '#E2B54B', 3);
+  if (hover != null && hover !== selected) draw(hover, '#FFFFFF', 1.5);
+}
+
+// --- hit testing ------------------------------------------------------------------------
+function hit(ev) {
+  const rc = cv.getBoundingClientRect(); const x = (ev.clientX - rc.left) * W / rc.width, y = (ev.clientY - rc.top) * H / rc.height;
+  let best = null, area = Infinity;
+  for (const { idx, box } of leafBoxes) {
+    if (x < box[0] || x > box[2] || y < box[1] || y > box[3]) continue;
+    const a = (box[2] - box[0]) * (box[3] - box[1]); if (a < area) { area = a; best = idx; }
+  }
+  return best;
+}
+cv.addEventListener('mousemove', (ev) => { const i = hit(ev); drawOverlay(i); $('tip').textContent = i == null ? '' : label(D.scenes[sceneId].nodes[i], i); });
+cv.addEventListener('mouseleave', () => { drawOverlay(null); $('tip').textContent = ''; });
+cv.addEventListener('click', (ev) => { const i = hit(ev); if (i != null) select(i, true); });
+
+// --- tree -------------------------------------------------------------------------------------
+function label(n, i) {
+  const p = n.properties || {};
+  const nm = p.SpriteName || p.VideoName || p.SoundName || p.TextureName || (p.Text != null ? JSON.stringify(p.Text) : '') || '';
+  return `[${i}] ${n.type}${p.Id ? ' #' + p.Id : ''}${nm ? ' ' + nm : ''}${p.Position ? ` @(${p.Position.x || 0},${p.Position.y || 0})` : ''}${p.Size ? ` ${p.Size.w}×${p.Size.h}` : ''}${p.DrawOrder != null ? ' z' + p.DrawOrder : ''}`;
+}
+function buildTree() {
+  const r = D.scenes[sceneId]; const host = $('tree'); host.innerHTML = '';
+  const row = (i, depth) => {
+    const n = r.nodes[i], p = n.properties || {}; const kids = kidsByZ(r, n).reverse(); // top-most first, like a layers panel
+    const nm = p.SpriteName || p.VideoName || p.SoundName || p.TextureName || p.FontName || '';
+    const el = document.createElement(kids.length ? 'details' : 'div');
+    const sum = document.createElement(kids.length ? 'summary' : 'div');
+    sum.className = 'row'; sum.dataset.idx = i; sum.tabIndex = 0;
+    sum.innerHTML = `<input type="checkbox" ${off.has(i) ? '' : 'checked'} aria-label="visible"><span class="car"></span><span class="idx">${i}</span><span class="b ${n.type}">${n.type === 'videoSprite' ? 'video' : n.type === 'particles2' ? 'particles' : n.type}</span>${p.Id ? `<span class="id">#${p.Id}</span>` : ''}${nm ? `<span class="nm">${nm.split('/').pop()}</span>` : ''}${p.Text != null ? `<span class="nm">${JSON.stringify(p.Text)}</span>` : ''}${p.Hidden ? '<span class="hid">HIDDEN</span>' : ''}${p.Color && p.Color.a === 0 ? '<span class="hid">α0</span>' : ''}`;
+    sum.querySelector('input').addEventListener('click', (e) => { e.stopPropagation(); if (off.has(i)) off.delete(i); else off.add(i); render(); });
+    sum.addEventListener('click', (e) => { if (e.target.tagName !== 'INPUT') { e.preventDefault(); if (kids.length && e.target.classList.contains('car')) el.open = !el.open; else select(i, false); } });
+    sum.addEventListener('keydown', (e) => { if (e.key === 'Enter') select(i, false); });
+    el.appendChild(sum);
+    if (kids.length) { el.open = depth < 2; const box = document.createElement('div'); box.className = 'kids'; kids.forEach((k) => box.appendChild(row(k, depth + 1))); el.appendChild(box); }
+    return el;
+  };
+  roots(r).forEach((i) => host.appendChild(row(i, 0)));
+}
+
+// --- node + states panes ---------------------------------------------------------------------------
+function actionText(r, a, depth = 0) {
+  if (!a) return '';
+  const pad = '  '.repeat(depth);
+  const dur = a.duration != null ? ` ${a.duration}ms` : '';
+  let line;
+  if (a.type === 'interpolate') line = `interpolate ${a.property}${a.start ? ' ' + JSON.stringify(a.start) : ''} → ${JSON.stringify(a.end ?? 'default')}${dur}${a.timeFunction ? ' ' + a.timeFunction : ''}`;
+  else if (a.type === 'discrete') line = `set ${a.property} = ${JSON.stringify(a.value ?? 'default')}${dur}`;
+  else if (a.type === 'method') line = `call ${a.method}(${(a.params || []).join(', ')})`;
+  else if (a.type === 'reference') line = `on node ${a.target}: ${actionText(r, r.actions[a.action], 0).trim()}`;
+  else if (a.type === 'empty') line = `wait${dur}`;
+  else line = `${a.type}[${(a.actions || []).length}]`;
+  let out = pad + line + '\n';
+  if ((a.type === 'sequence' || a.type === 'parallel') && depth < 2) for (const k of a.actions || []) out += actionText(r, r.actions[k], depth + 1);
+  return out;
+}
+function select(i, fromCanvas) {
+  selected = i; drawOverlay(null);
+  document.querySelectorAll('.row.sel').forEach((e) => e.classList.remove('sel'));
+  const rowEl = document.querySelector(`.row[data-idx="${i}"]`);
+  if (rowEl) { rowEl.classList.add('sel'); let p = rowEl.parentElement; while (p) { if (p.tagName === 'DETAILS') p.open = true; p = p.parentElement; } if (fromCanvas) rowEl.scrollIntoView({ block: 'center' }); }
+  const r = D.scenes[sceneId], n = r.nodes[i], p = n.properties || {};
+  const rows = Object.entries(p).map(([k, v]) => `<dt>${k}</dt><dd>${typeof v === 'object' ? JSON.stringify(v) : v}</dd>`).join('');
+  const extra = [n.effect ? `<dt>effect</dt><dd>${n.effect.join(', ')}</dd>` : '', n.blend ? `<dt>blend</dt><dd>${JSON.stringify(n.blend)}</dd>` : '', n.children ? `<dt>children</dt><dd>${n.children.length}</dd>` : ''].join('');
+  const acts = (n.actions || []).map((k) => { const info = timelineInfo(r, k, i); const isAnim = info.total >= 40 && info.tweens > 0; return `<div class="act"><button class="play" data-ai="${k}" data-label="action #${k} on node ${i}">${isAnim ? '▶' : '⚡'}</button>${durBadge(info)}<pre>#${k}\n${actionText(r, r.actions[k])}</pre></div>`; }).join('');
+  const ov = initialProps(sceneId)[i]; const init = ov ? `<h4>set by initial state</h4><pre>${Object.entries(ov).map(([k, v]) => `${k} = ${v === null ? 'default' : JSON.stringify(v)}`).join('\n')}</pre>` : '';
+  const sp = p.SpriteName && D.sprites[p.SpriteName];
+  const frame = sp ? `<h4>frame sheet</h4><pre>${sp.frames.length} frame(s) in ${sp.meta.image}\n${JSON.stringify(sp.frames[0])}</pre>` : '';
+  $('node').innerHTML = `<div class="kv"><dt>node</dt><dd>[${i}] ${n.type}</dd>${rows}${extra}</div>${init}${frame}${acts ? `<h4>actions on this node</h4>${acts}` : ''}`;
+  $('node').querySelectorAll('.play').forEach((b) => b.addEventListener('click', () => playAction(sceneId, +b.dataset.ai, i, b.dataset.label)));
+  if (!fromCanvas) showTab('node'); else showTab('node');
+}
+function timelineInfo(r, ai, ownerNode) {
+  const out = []; const total = flatten(r, expandedOrder(r), ai, ownerNode, 0, out);
+  const tweens = out.filter((t) => !t.discrete && t.dur > 0).length;
+  return { total, tweens, tracks: out.length };
+}
+function durBadge(info) {
+  if (info.total < 40 || !info.tweens) return `<span class="dur instant">instant · sets ${info.tracks} value${info.tracks === 1 ? '' : 's'}</span>`;
+  return `<span class="dur anim">${info.total} ms · ${info.tweens} tween${info.tweens === 1 ? '' : 's'}</span>`;
+}
+function stateOwners(r) { // state index -> node that owns the machine it belongs to
+  const owner = {};
+  const walk = (si, node) => { const st = r.states[si]; if (!st) return; owner[si] = node; for (const c of st.children || []) walk(c, node); };
+  r.nodes.forEach((n, i) => { if (n.stateMachine != null) walk(n.stateMachine, i); });
+  return owner;
+}
+function buildStates() {
+  const r = D.scenes[sceneId]; const host = $('states');
+  const owners = stateOwners(r);
+  const states = (r.states || []).map((s, i) => ({ ...s, i })).filter((s) => s.id);
+  if (!states.length) { host.innerHTML = '<div class="empty">This scene has no state machine — it is pure layout.</div>'; return; }
+  const rendered = states.map((s) => {
+    const trs = (s.transitions || []).map((t) => r.transitions[t]).filter((t) => t && t.rule != null).map((t) => { const ru = r.rules[t.rule]; return ru.type === 'param' ? `"${(ru.params || []).join('/')}"` : `${ru.type}:${ru.signal ?? ''}`; });
+    const own = owners[s.i]; const ai = own != null ? (r.nodes[own].actions || [])[s.onEnter] : null;
+    const ownerLabel = own != null ? `node ${own}${r.nodes[own].properties?.Id ? ' #' + r.nodes[own].properties.Id : ''}` : '';
+    const info = ai != null ? timelineInfo(r, ai, own) : null;
+    const isAnim = info && info.total >= 40 && info.tweens > 0;
+    return `<div class="st${isAnim ? ' has-anim' : ''}" data-anim="${isAnim ? 1 : 0}">${ai != null ? `<button class="play" data-ai="${ai}" data-node="${own}" data-label="${s.id} on ${ownerLabel}" title="${isAnim ? 'play' : 'apply'}">${isAnim ? '▶' : '⚡'}</button>` : ''}<b>${s.id}</b> ${info ? durBadge(info) : ''}<br><span class="tr">${ownerLabel ? 'of ' + ownerLabel + ' · ' : ''}entered by ${trs.join(', ') || '—'}</span>${ai != null ? `<pre>onEnter → action #${ai}\n${actionText(r, r.actions[ai])}</pre>` : ''}</div>`;
+  });
+  const nAnim = rendered.filter((h) => h.includes('data-anim="1"')).length;
+  host.innerHTML = `<div class="empty">${nAnim} of ${states.length} states animate (<b>▶</b>, gold). The rest are instant switches (<b>⚡</b>) — they set values and stop, so the picture changes once or not at all. Animated states are listed first.</div>` + rendered.filter((h) => h.includes('data-anim="1"')).join('') + rendered.filter((h) => h.includes('data-anim="0"')).join('');
+  host.querySelectorAll('.play').forEach((b) => b.addEventListener('click', () => playAction(sceneId, +b.dataset.ai, +b.dataset.node, b.dataset.label)));
+}
+function showTab(t) { document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', b.dataset.tab === t)); document.querySelectorAll('.pane').forEach((p) => (p.hidden = p.id !== t)); }
+document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => showTab(b.dataset.tab)));
+
+// --- boot ------------------------------------------------------------------------------------
+const sel = $('scene');
+const all = Object.keys(D.scenes).filter((k) => D.scenes[k].nodes?.length > 2);
+const numsort = (a, b) => (+(a.match(/\d+/) || [0])[0]) - (+(b.match(/\d+/) || [0])[0]) || a.localeCompare(b);
+const groups = {
+  'Machine': all.filter((k) => /^slot\/scene/.test(k)),
+  'Panels': all.filter((k) => /^slot\/(jackpot|paytable)\//.test(k)),
+  'Popups': all.filter((k) => /^slot\/popups\//.test(k)),
+  'Reel symbols': all.filter((k) => k.startsWith('icons/')).sort(numsort),
+  'Backdrop': all.filter((k) => k.startsWith('slot_bg/')),
+  'Scenes': all.filter((k) => !/^(slot\/scene|slot\/(jackpot|paytable|popups)\/|icons\/|slot_bg\/)/.test(k)),
+};
+for (const [g, ids] of Object.entries(groups)) { const og = document.createElement('optgroup'); og.label = g; ids.filter((id) => D.scenes[id]).forEach((id) => { const o = document.createElement('option'); o.value = id; o.textContent = id.replace(/\.object$/, ''); og.appendChild(o); }); sel.appendChild(og); }
+sel.value = MAIN;
+$('backdrop').closest('label').hidden = !D.backdrop;
+$('reels').closest('label').hidden = !D.scenes[MAIN].nodes.some((n) => n.properties?.Id === 'icons_holder');
+sel.addEventListener('change', () => { stopAnim(); sceneId = sel.value; off = new Set(); selected = null; $('reels').disabled = sceneId !== MAIN; buildTree(); buildStates(); render(); showTab('tree'); });
+['backdrop', 'initial', 'reels', 'reveal', 'videos', 'bounds'].forEach((id) => $(id).addEventListener('change', render));
+ready.then(() => { buildTree(); buildStates(); render(); });
+</script>

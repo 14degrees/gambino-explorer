@@ -1,0 +1,31 @@
+URL: https://game.onlinefungames.net/browser/scripts/parent_origins.js
+
+var PARENT_ORIGINS = [
+    'https://game.onlinefungames.net',
+    'https://www.gambinoslot.com',
+    'https://stage.gambinoslot.com'
+];
+
+function isTrustedParentOrigin(origin) {
+    return PARENT_ORIGINS.indexOf(origin) !== -1;
+}
+
+function postToParentWindow(targetWindow, message) {
+    if (targetWindow == null) {
+        return;
+    }
+    for (var i = 0; i < PARENT_ORIGINS.length; i++) {
+        try {
+            targetWindow.postMessage(message, PARENT_ORIGINS[i]);
+        } catch (e) {
+        }
+    }
+}
+
+function postToParent(message) {
+    postToParentWindow(window.parent, message);
+}
+
+function postToTop(message) {
+    postToParentWindow(window.top, message);
+}

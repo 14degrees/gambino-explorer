@@ -1,0 +1,46 @@
+if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function(searchString, position) {
+        position = position || 0;
+        return this.indexOf(searchString, position) === position;
+    };
+}
+
+"use strict";
+var START_LOADING_TIME = Date.now();
+var STAGE_BASE_URI = 'gambino-apps';
+var STAGE_NAME = 'sa-browser';
+var GRAYLOG_URI = 'https://in-grl.gambinoslot.com/gelf';
+var GRAYLOG_HEADER_NAME = '%GRAYLOG_HEADER_NAME%';
+var GRAYLOG_HEADER_VALUE = 'SB18qVdbEs3Hr0iyRK41KZ8x27BRi4TllFAV29ipkmHMDdsIDr5isWLYKR9vqkq4';
+var CURRENT_VERSION = '11.27';
+var FB_ID = "967234843290532";
+var VERSION_CODE = "master_1438c33c6a97863445a7b44a76a92d819a0ddb8e";
+var BUILD_NUMBER = "2";
+var BRANCH = "master";
+var RELEASE_BUILD = "true";
+var GOOGLE_AUTH_CLIENT_ID = "801918042290-gg143lg5k2ik4moefsbf2hk90uv5qf85.apps.googleusercontent.com";
+var SENTRY_DSN = "https://0f3b11d1d4e9b8dd657daf073bcbfd04@o4508867584917504.ingest.de.sentry.io/4509803149459536";
+
+if (RELEASE_BUILD.startsWith("%")) {
+    RELEASE_BUILD = "false";
+}
+
+if (CURRENT_VERSION.startsWith("%")) {
+    CURRENT_VERSION = "5.0";
+}
+
+if (VERSION_CODE.startsWith("%")) {
+    VERSION_CODE = "DEFAULT_VERSION";
+}
+
+if (FB_ID.startsWith("%")) {
+    FB_ID = "967234843290532";
+}
+
+if (GOOGLE_AUTH_CLIENT_ID.startsWith("%")) {
+    GOOGLE_AUTH_CLIENT_ID = "921389325713-hi26kev5dj7an910etb4pre9mjgp3a81.apps.googleusercontent.com";
+}
+
+if(SENTRY_DSN.startsWith("%")) {
+    SENTRY_DSN = "";
+}

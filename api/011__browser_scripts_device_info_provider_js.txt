@@ -1,0 +1,161 @@
+URL: https://game.onlinefungames.net/browser/scripts/device_info_provider.js
+
+var SPIRAL_TOKEN;
+
+function getGMTOffset() {
+    const now = new Date();
+    let offsetInMinutes = now.getTimezoneOffset();
+    const sign = offsetInMinutes < 0 ? '+' : '-';
+    offsetInMinutes = Math.abs(offsetInMinutes);
+    const hours = Math.floor(offsetInMinutes / 60);
+    const minutes = offsetInMinutes % 60;
+    const formattedHours = String(hours).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
+
+    return `GMT${sign}${formattedHours}:${formattedMinutes}`;
+}
+
+function getClientDeviceId() {
+    let deviceId = getCookieOrLocalStorageByName('deviceUuid');
+
+    if (deviceId === '') {
+        let uuid = self.crypto.randomUUID();
+
+        try {
+            window.localStorage.setItem('deviceUuid', uuid);
+        } catch (ex) {
+            setCookie('deviceUuid', uuid);
+        }
+
+        deviceId = uuid;
+    }
+
+    return deviceId;
+}
+
+function getDeviceInfo() {
+    const nAgt = window.navigator.userAgent;
+    let browserName = window.navigator.appName;
+    let fullVersion = window.navigator.appVersion;
+    let os = window.navigator.platform;
+    let osType = '';
+
+    if ((nAgt.indexOf('WOW64') !== -1)) {
+        osType = '(64 bit)';
+    }
+
+    os += osType;
+
+    if (new RegExp('android').test(nAgt)) {
+        os = 'android';
+    }
+
+    if (new RegExp('iPhone|iPad|iPod').test(nAgt)) {
+        os = 'ios';
+    }
+
+    if (new RegExp('IEMobile').test(nAgt) || new RegExp('WPDesktop').test(nAgt)) {
+        os = 'wp';
+    }
+
+    let verOffset;
+    let nameOffset;
+
+    // In Opera 15+, the true version is after 'OPR/'
+    if ((verOffset = nAgt.indexOf('OPR/')) !== -1) {
+        browserName = 'Opera';
+        fullVersion = nAgt.substring(verOffset + 4);
+    } // In older Opera, the true version is after 'Opera' or after 'Version'
+    else if ((verOffset = nAgt.indexOf('Opera')) !== -1) {
+        browserName = 'Opera';
+        fullVersion = nAgt.substring(verOffset + 6);
+        if ((verOffset = nAgt.indexOf('Version')) !== -1) fullVersion = nAgt.substring(verOffset + 8);
+    } // In MSIE, the true version is after 'MSIE' in userAgent
+    else if ((verOffset = nAgt.indexOf('MSIE')) !== -1) {
+        browserName = 'IE';
+        fullVersion = nAgt.substring(verOffset + 5);
+    } // In Chrome, the true version is after 'Chrome'
+    else if ((verOffset = nAgt.indexOf('Chrome')) !== -1) {
+        browserName = 'Chrome';
+        fullVersion = nAgt.substring(verOffset + 7);
+    } // In Safari, the true version is after 'Safari' or after 'Version'
+    else if ((verOffset = nAgt.indexOf('Safari')) !== -1) {
+        browserName = 'Safari';
+        fullVersion = nAgt.substring(verOffset + 7);
+        if ((verOffset = nAgt.indexOf('Version')) !== -1) fullVersion = nAgt.substring(verOffset + 8);
+    } // In Firefox, the true version is after 'Firefox'
+    else if ((verOffset = nAgt.indexOf('Firefox')) !== -1) {
+        browserName = 'Firefox';
+        fullVersion = nAgt.substring(verOffset + 8);
+    } // In most other browsers, 'name/version' is at the end of userAgent
+    else if ((nameOffset = nAgt.lastIndexOf(' ') + 1) < (verOffset = nAgt.lastIndexOf('/'))) {
+        browserName = nAgt.substring(nameOffset, verOffset);
+        fullVersion = nAgt.substring(verOffset + 1);
+        if (browserName.toLowerCase() === browserName.toUpperCase()) {
+            browserName = html.window.navigator.appName;
+        }
+    }
+
+    let ix;
+
+    // trim the fullVersion string at semicolon/space if present
+    if ((ix = fullVersion.indexOf(';')) !== -1) fullVersion = fullVersion.substring(0, ix);
+    if ((ix = fullVersion.indexOf(' ')) !== -1) fullVersion = fullVersion.substring(0, ix);
+
+    let majorVersion = '0';
+    let regExp = new RegExp(String.raw`(\d+)`);
+
+    if (regExp.test(fullVersion)) {
+        let array = fullVersion.match(regExp);
+        majorVersion = array[0];
+    }
+
+    if (majorVersion === '0') {
+        fullVersion = html.window.navigator.appVersion;
+    }
+
+    let renderTechnology = 'canvas';
+
+    if (webglSupport()) {
+        renderTechnology = 'webgl';
+    }
+
+    let platform = 'h5Pay';
+
+    if (IS_H5PAY === 'false') {
+        platform = 'browser';
+    }
+
+    let result = {
+        appVersion: CURRENT_VERSION,
+        browser: `${browserName} ${fullVersion}`,
+        clientDeviceId: getClientDeviceId(),
+        incognito: isIncognitoMode,
+        locale: 'en',
+        os: os,
+        platform: platform,
+        renderTechnology: renderTechnology,
+        resolution: `${window.screen.width}x${window.screen.height}`
+    };
+
+    if (SPIRAL_TOKEN) {
+        result.spiralToken = SPIRAL_TOKEN;
+    }
+
+    return result;
+}
+
+function getDeviceInfoJson() {
+    return JSON.stringify(getDeviceInfo());
+}
+
+function webglSupport() {
+    try {
+        let canvas = document.createElement('canvas');
+
+        return !!window.WebGLRenderingContext &&
+            (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+    } catch (e) {
+        return false;
+    }
+}

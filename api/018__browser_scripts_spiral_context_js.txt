@@ -1,0 +1,24 @@
+URL: https://game.onlinefungames.net/browser/scripts/spiral_context.js
+
+var PARENT_ORIGIN = null;
+
+if (window.addEventListener) {
+    window.addEventListener("message", handleSpiralEvents, false);
+} else if (window.attachEvent) {
+    window.attachEvent("onmessage", handleSpiralEvents, false);
+}
+
+function handleSpiralEvents(event) {
+    if (!isTrustedParentOrigin(event.origin)) return;
+
+    PARENT_ORIGIN = event.origin;
+
+    if (typeof trackParentDomainDiagnostic === "function") {
+        trackParentDomainDiagnostic(event.origin);
+    }
+
+    var data = event.data;
+    if (data.event === "setSpiralToken") {
+        SPIRAL_TOKEN = data.value;
+    }
+}

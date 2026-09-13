@@ -1,0 +1,15 @@
+URL: https://gambino-apps.appspot.com/_ah/api/user/v1/getLocalUserProfile
+
+{
+  "fullName" : "VIP Fan",
+  "displayName" : "VIP Fan",
+  "friendsRewardSended" : false,
+  "biggestWin" : 0.0,
+  "biggestHighRollerContestWin" : 0.0,
+  "biggestContestWin" : 0.0,
+  "biggestJackpotWin" : 0.0,
+  "celebrateWithFriends" : true,
+  "allowedCelebrateWithFriends" : true,
+  "hasEditableUserProfile" : false,
+  "hasEditableUserName" : false
+}

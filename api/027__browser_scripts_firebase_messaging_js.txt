@@ -1,0 +1,147 @@
+URL: https://game.onlinefungames.net/browser/scripts/firebase_messaging.js
+
+const MESSAGING_SERVICE_WORKER_NOT_SUPPORTED = "MESSAGING_SERVICE_WORKER_NOT_SUPPORTED";
+const MESSAGING_SERVICE_WORKER_REGISTRATION_FAILED = "MESSAGING_SERVICE_WORKER_REGISTRATION_FAILED";
+const MESSAGING_PERMISSION_DENIED = "MESSAGING_PERMISSION_DENIED";
+const MESSAGING_FAILED_TO_GET_CLIENT_TOKEN = "MESSAGING_FAILED_TO_GET_CLIENT_TOKEN";
+
+var notificationInitRequested = false;
+var canRequestNotificationPermission = false;
+var initialized = false;
+
+var firebaseConfig;
+var firebaseVapidKey;
+var tokenReceivedCallback;
+var tokenReceiveFailedCallback;
+
+window.addEventListener('click', function() {
+    canRequestNotificationPermission = true;
+    if(notificationInitRequested && firebaseConfig && firebaseVapidKey) {
+        initFirebaseMessagingInternal();
+    }
+});
+
+function initFirebaseMessagingInternal() {
+    if (!window.isSecureContext) {
+        console.log('Can not proceed with service worker registration, context is not secure');
+    }
+
+    if(initialized) {
+        return;
+    }
+
+    notificationInitRequested = false;
+    initialized = true;
+    if ('serviceWorker' in navigator) {
+        firebase.initializeApp(firebaseConfig);
+        const messaging = firebase.messaging();
+        navigator.serviceWorker.register('./firebase-messaging-sw.js').then(function (registration) {
+            console.log("Registration successful, scope is:", registration.scope);
+            messaging.getToken({
+                vapidKey: firebaseVapidKey, serviceWorkerRegistration: registration
+            })
+                .then((currentToken) => {
+                    if (currentToken) {
+                        if (tokenReceivedCallback != null) {
+                            tokenReceivedCallback(currentToken);
+                        }
+                        console.log('current token for client: ', currentToken);
+                    } else {
+                        if (tokenReceiveFailedCallback != null) {
+                            tokenReceiveFailedCallback(MESSAGING_FAILED_TO_GET_CLIENT_TOKEN + ":" + "token is empty");
+                        }
+                        console.log('No registration token available. Request permission to generate one.');
+                    }
+                }).catch((err) => {
+                if (tokenReceiveFailedCallback != null) {
+                    if(Notification.permission === "denied") {
+                        tokenReceiveFailedCallback(MESSAGING_PERMISSION_DENIED + ":" + err);
+                    } else {
+                        tokenReceiveFailedCallback(MESSAGING_FAILED_TO_GET_CLIENT_TOKEN + ":" + err);
+                    }
+                }
+                console.log('An error occurred while retrieving token. ', err);
+            });
+        }).catch(function (err) {
+            if (tokenReceiveFailedCallback != null) {
+                tokenReceiveFailedCallback(MESSAGING_SERVICE_WORKER_REGISTRATION_FAILED + ":" + err);
+            }
+            console.log("Service worker registration failed, error:", err);
+        });
+    } else {
+        if (tokenReceiveFailedCallback != null) {
+            tokenReceiveFailedCallback(MESSAGING_SERVICE_WORKER_NOT_SUPPORTED);
+        }
+    }
+}
+
+function initFirebaseMessaging(firebaseApiKey, firebaseAuthDomain, firebaseDatabaseURL, firebaseProjectId,
+                               firebaseStorageBucket, firebaseMessagingSenderId, firebaseAppId,
+                               vapidKey, successCallback, errorCallback) {
+    if(inIframe()) {
+        initFirebaseMessagingInIframe(firebaseApiKey, firebaseAuthDomain, firebaseDatabaseURL, firebaseProjectId,
+            firebaseStorageBucket, firebaseMessagingSenderId, firebaseAppId,
+            vapidKey, successCallback, errorCallback);
+        return;
+    }
+
+    firebaseConfig = {
+        apiKey: firebaseApiKey,
+        authDomain: firebaseAuthDomain,
+        databaseURL: firebaseDatabaseURL,
+        projectId: firebaseProjectId,
+        storageBucket: firebaseStorageBucket,
+        messagingSenderId: firebaseMessagingSenderId,
+        appId: firebaseAppId
+    };
+
+    firebaseVapidKey = vapidKey;
+    tokenReceivedCallback = successCallback;
+    tokenReceiveFailedCallback = errorCallback;
+
+    if(!canRequestNotificationPermission) {
+        notificationInitRequested = true;
+        return;
+    }
+    initFirebaseMessagingInternal();
+}
+
+function handleFirebaseEvents(event) {
+    if (!isTrustedParentOrigin(event.origin)) return;
+
+    var data = event.data;
+    if (data.event === 'firebaseSubscribeSuccess' && data.token != null && tokenReceivedCallback != null) {
+        tokenReceivedCallback(data.token);
+    }
+    if (data.event === 'firebaseSubscribeError' && tokenReceiveFailedCallback != null) {
+        tokenReceiveFailedCallback(data.message);
+    }
+}
+
+function initFirebaseMessagingInIframe(firebaseApiKey, firebaseAuthDomain, firebaseDatabaseURL, firebaseProjectId,
+                               firebaseStorageBucket, firebaseMessagingSenderId, firebaseAppId,
+                               vapidKey, successCallback, errorCallback) {
+    if(initialized) {
+        return;
+    }
+
+    tokenReceivedCallback = successCallback;
+    tokenReceiveFailedCallback = errorCallback;
+
+    if (window.addEventListener) {
+        window.addEventListener("message", handleFirebaseEvents, false);
+    }
+    else if (window.attachEvent) {
+        window.attachEvent("onmessage", handleFirebaseEvents, false);
+    }
+
+    postToParent({
+        'func': 'initFirebaseMessaging',
+        'params': {'firebaseApiKey': firebaseApiKey, 'firebaseAuthDomain': firebaseAuthDomain,
+            'firebaseDatabaseURL': firebaseDatabaseURL, 'firebaseProjectId': firebaseProjectId,
+            'firebaseStorageBucket': firebaseStorageBucket, 'firebaseMessagingSenderId': firebaseMessagingSenderId,
+            'firebaseAppId': firebaseAppId, 'vapidKey': vapidKey,
+            'successEvent': 'firebaseSubscribeSuccess',
+            'errorEvent': 'firebaseSubscribeError'}
+    });
+}

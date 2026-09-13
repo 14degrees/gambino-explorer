@@ -1,0 +1,764 @@
+URL: https://payment-dot-gambino-apps.appspot.com/_ah/api/payment/v1/listPersonalOffers
+
+{
+  "personalOffers" : [ {
+    "id" : 981196,
+    "startTimeInMillis" : 1786960800000,
+    "endTimeInMillis" : 1789379940000,
+    "delayInSeconds" : 0,
+    "durationInSeconds" : 0,
+    "cooldownInSeconds" : 0,
+    "paymentOption" : {
+      "id" : 5501848,
+      "type" : "coins_and_extra",
+      "startValue" : 960000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3840000.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "3"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    },
+    "paymentOptions" : [ {
+      "id" : 5501848,
+      "type" : "coins_and_extra",
+      "startValue" : 960000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3840000.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "3"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 5501849,
+      "type" : "coins_and_extra",
+      "startValue" : 1300000.0,
+      "discountInPercent" : 400.0,
+      "endValue" : 6500000.0,
+      "price" : 3.99,
+      "providerProductId" : "774523",
+      "platform" : 2048,
+      "contributionPoints" : 190.0,
+      "extraPurchaseItems" : [ {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "4"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 5501850,
+      "type" : "coins_and_extra",
+      "startValue" : 1700000.0,
+      "discountInPercent" : 1000.0,
+      "endValue" : 1.87E7,
+      "price" : 4.99,
+      "providerProductId" : "774524",
+      "platform" : 2048,
+      "contributionPoints" : 239.0,
+      "extraPurchaseItems" : [ {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_3"
+        }, {
+          "key" : "amount",
+          "value" : "1"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "triggerType" : "on_not_enough_coins",
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/po/PO3_Delicious_Deals_OOC_UDI{type}"
+    } ],
+    "segmentId" : 746829,
+    "version" : 29,
+    "priority" : 80,
+    "triggerExtraParams" : [ {
+      "actionType" : "on_not_enough_coins"
+    } ],
+    "displayType" : "multi_option_without_scroll",
+    "showInIndox" : false,
+    "excludeEndMultipliers" : true,
+    "timeToCooldownInSeconds" : 0,
+    "customParams" : {
+      "defaultHostName" : "Gambino Support Team",
+      "usePersonalHost" : false,
+      "useHost" : false
+    },
+    "messageForUser" : ""
+  }, {
+    "id" : 981205,
+    "startTimeInMillis" : 1786960800000,
+    "endTimeInMillis" : 1789379940000,
+    "delayInSeconds" : 0,
+    "durationInSeconds" : 0,
+    "cooldownInSeconds" : 0,
+    "paymentOption" : {
+      "id" : 5501884,
+      "type" : "coins_and_extra",
+      "startValue" : 960000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3840000.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "machine_free_spins",
+        "parameters" : [ {
+          "key" : "machine_id",
+          "value" : "114"
+        }, {
+          "key" : "count",
+          "value" : "10"
+        }, {
+          "key" : "fsTypeName",
+          "value" : "Free Spins"
+        }, {
+          "key" : "name",
+          "value" : "free"
+        }, {
+          "key" : "groupName",
+          "value" : "free"
+        }, {
+          "key" : "bet_type",
+          "value" : "default"
+        }, {
+          "key" : "betMultiplier",
+          "value" : "0.1"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "3"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    },
+    "paymentOptions" : [ {
+      "id" : 5501884,
+      "type" : "coins_and_extra",
+      "startValue" : 960000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3840000.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "machine_free_spins",
+        "parameters" : [ {
+          "key" : "machine_id",
+          "value" : "114"
+        }, {
+          "key" : "count",
+          "value" : "10"
+        }, {
+          "key" : "fsTypeName",
+          "value" : "Free Spins"
+        }, {
+          "key" : "name",
+          "value" : "free"
+        }, {
+          "key" : "groupName",
+          "value" : "free"
+        }, {
+          "key" : "bet_type",
+          "value" : "default"
+        }, {
+          "key" : "betMultiplier",
+          "value" : "0.1"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "3"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 5501885,
+      "type" : "coins_and_extra",
+      "startValue" : 1700000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 6800000.0,
+      "price" : 4.99,
+      "providerProductId" : "774524",
+      "platform" : 2048,
+      "contributionPoints" : 239.0,
+      "extraPurchaseItems" : [ {
+        "type" : "machine_free_spins",
+        "parameters" : [ {
+          "key" : "machine_id",
+          "value" : "114"
+        }, {
+          "key" : "count",
+          "value" : "15"
+        }, {
+          "key" : "fsTypeName",
+          "value" : "Free Spins"
+        }, {
+          "key" : "name",
+          "value" : "free"
+        }, {
+          "key" : "groupName",
+          "value" : "free"
+        }, {
+          "key" : "bet_type",
+          "value" : "default"
+        }, {
+          "key" : "betMultiplier",
+          "value" : "0.1"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_3"
+        }, {
+          "key" : "amount",
+          "value" : "1"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 5501886,
+      "type" : "coins_and_extra",
+      "startValue" : 3600000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 1.44E7,
+      "price" : 9.99,
+      "providerProductId" : "774552",
+      "platform" : 2048,
+      "contributionPoints" : 491.0,
+      "extraPurchaseItems" : [ {
+        "type" : "machine_free_spins",
+        "parameters" : [ {
+          "key" : "machine_id",
+          "value" : "114"
+        }, {
+          "key" : "count",
+          "value" : "25"
+        }, {
+          "key" : "fsTypeName",
+          "value" : "Free Spins"
+        }, {
+          "key" : "name",
+          "value" : "free"
+        }, {
+          "key" : "groupName",
+          "value" : "free"
+        }, {
+          "key" : "bet_type",
+          "value" : "default"
+        }, {
+          "key" : "betMultiplier",
+          "value" : "0.1"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_3"
+        }, {
+          "key" : "amount",
+          "value" : "2"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "triggerType" : "on_inbox",
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/po/PO3_Luxury_Living_13_09_MFS_UDI{type}"
+    } ],
+    "segmentId" : 647165,
+    "version" : 23,
+    "priority" : 70,
+    "triggerExtraParams" : [ {
+      "actionType" : "on_inbox"
+    } ],
+    "displayType" : "multi_option_without_scroll",
+    "showInIndox" : true,
+    "excludeEndMultipliers" : true,
+    "timeToCooldownInSeconds" : 0,
+    "customParams" : {
+      "defaultHostName" : "Gambino Support Team",
+      "usePersonalHost" : false,
+      "useHost" : false
+    },
+    "messageForUser" : ""
+  }, {
+    "id" : 1505765,
+    "startTimeInMillis" : 1786960800000,
+    "endTimeInMillis" : 1789379940000,
+    "delayInSeconds" : 0,
+    "durationInSeconds" : 0,
+    "cooldownInSeconds" : 0,
+    "paymentOption" : {
+      "id" : 5501501,
+      "type" : "coins_and_extra",
+      "startValue" : 9.2E7,
+      "discountInPercent" : 500.0,
+      "endValue" : 5.52E8,
+      "price" : 99.99,
+      "providerProductId" : "774600",
+      "platform" : 2048,
+      "contributionPoints" : 40000.0,
+      "extraPurchaseItems" : [ {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_5"
+        }, {
+          "key" : "amount",
+          "value" : "2"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    },
+    "paymentOptions" : [ {
+      "id" : 5501501,
+      "type" : "coins_and_extra",
+      "startValue" : 9.2E7,
+      "discountInPercent" : 500.0,
+      "endValue" : 5.52E8,
+      "price" : 99.99,
+      "providerProductId" : "774600",
+      "platform" : 2048,
+      "contributionPoints" : 40000.0,
+      "extraPurchaseItems" : [ {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_5"
+        }, {
+          "key" : "amount",
+          "value" : "2"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "triggerType" : "enter_high_roller_room",
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/po/PO_HRR_Add_PO_for_tiers_UDI{type}"
+    } ],
+    "segmentId" : 662547,
+    "version" : 2,
+    "priority" : 41,
+    "triggerParams" : [ {
+      "key" : "each",
+      "value" : "1"
+    } ],
+    "triggerExtraParams" : [ {
+      "actionType" : "enter_high_roller_room",
+      "actionParams" : [ {
+        "key" : "each",
+        "value" : "1"
+      } ]
+    } ],
+    "displayType" : "single_option",
+    "showInIndox" : false,
+    "excludeEndMultipliers" : true,
+    "timeToCooldownInSeconds" : 0
+  }, {
+    "id" : 981187,
+    "startTimeInMillis" : 1786960800000,
+    "endTimeInMillis" : 1789379940000,
+    "delayInSeconds" : 0,
+    "durationInSeconds" : 0,
+    "cooldownInSeconds" : 0,
+    "paymentOption" : {
+      "id" : 5501827,
+      "type" : "coins_and_extra",
+      "startValue" : 8500000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3.4E7,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "experience_booster",
+        "parameters" : [ {
+          "key" : "xp_booster_type",
+          "value" : "small"
+        }, {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "multiplier",
+          "value" : "2.0"
+        }, {
+          "key" : "durationMs",
+          "value" : "1800000"
+        } ]
+      }, {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "round",
+          "value" : "1"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "3"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    },
+    "paymentOptions" : [ {
+      "id" : 5501827,
+      "type" : "coins_and_extra",
+      "startValue" : 8500000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3.4E7,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "experience_booster",
+        "parameters" : [ {
+          "key" : "xp_booster_type",
+          "value" : "small"
+        }, {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "multiplier",
+          "value" : "2.0"
+        }, {
+          "key" : "durationMs",
+          "value" : "1800000"
+        } ]
+      }, {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "round",
+          "value" : "1"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "3"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "triggerType" : "on_close_payment_page",
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/po/PO_Humongous_Special_apr_UDI{type}"
+    } ],
+    "segmentId" : 610917,
+    "version" : 24,
+    "priority" : 35,
+    "triggerParams" : [ {
+      "key" : "list",
+      "value" : "[2,4,6,8,10,12,14,16,18,20]"
+    } ],
+    "triggerExtraParams" : [ {
+      "actionType" : "on_close_payment_page",
+      "actionParams" : [ {
+        "key" : "list",
+        "value" : "[2,4,6,8,10,12,14,16,18,20]"
+      } ]
+    } ],
+    "displayType" : "single_option",
+    "showInIndox" : false,
+    "excludeEndMultipliers" : true,
+    "timeToCooldownInSeconds" : 0,
+    "customParams" : {
+      "defaultHostName" : "Gambino Support Team",
+      "usePersonalHost" : false,
+      "useHost" : false
+    },
+    "messageForUser" : ""
+  }, {
+    "id" : 981188,
+    "startTimeInMillis" : 1786960800000,
+    "endTimeInMillis" : 1789379940000,
+    "delayInSeconds" : 0,
+    "durationInSeconds" : 0,
+    "cooldownInSeconds" : 0,
+    "paymentOption" : {
+      "id" : 5501828,
+      "type" : "coins_and_extra",
+      "startValue" : 960000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3840000.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "experience_booster",
+        "parameters" : [ {
+          "key" : "xp_booster_type",
+          "value" : "small"
+        }, {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "multiplier",
+          "value" : "2.0"
+        }, {
+          "key" : "durationMs",
+          "value" : "1800000"
+        } ]
+      }, {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "round",
+          "value" : "1"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "3"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    },
+    "paymentOptions" : [ {
+      "id" : 5501828,
+      "type" : "coins_and_extra",
+      "startValue" : 960000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3840000.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "experience_booster",
+        "parameters" : [ {
+          "key" : "xp_booster_type",
+          "value" : "small"
+        }, {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "multiplier",
+          "value" : "2.0"
+        }, {
+          "key" : "durationMs",
+          "value" : "1800000"
+        } ]
+      }, {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "round",
+          "value" : "1"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_2"
+        }, {
+          "key" : "amount",
+          "value" : "3"
+        } ]
+      } ],
+      "extraParams" : [ {
+        "key" : "poBuilder",
+        "value" : "false"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "triggerType" : "on_close_payment_page",
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/po/PO_Welcome_Pack_UDI{type}"
+    } ],
+    "segmentId" : 626584,
+    "version" : 25,
+    "priority" : 35,
+    "triggerParams" : [ {
+      "key" : "list",
+      "value" : "[3,5,7,9,11,13,15,17,19,21]"
+    } ],
+    "triggerExtraParams" : [ {
+      "actionType" : "on_close_payment_page",
+      "actionParams" : [ {
+        "key" : "list",
+        "value" : "[3,5,7,9,11,13,15,17,19,21]"
+      } ]
+    } ],
+    "displayType" : "single_option",
+    "showInIndox" : false,
+    "excludeEndMultipliers" : true,
+    "timeToCooldownInSeconds" : 0,
+    "customParams" : {
+      "defaultHostName" : "Gambino Support Team",
+      "usePersonalHost" : false,
+      "useHost" : false
+    },
+    "messageForUser" : ""
+  } ],
+  "validationPassed" : false
+}

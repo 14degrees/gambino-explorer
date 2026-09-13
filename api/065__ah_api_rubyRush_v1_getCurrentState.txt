@@ -1,0 +1,328 @@
+URL: https://gambino-apps.appspot.com/_ah/api/rubyRush/v1/getCurrentState
+
+{
+  "campaignId" : 120260912,
+  "timeToEnd" : 92626724,
+  "timeToMissionsReset" : 6226724,
+  "qb" : 0.1,
+  "totalQualifyBet" : 25.0,
+  "cycle" : 1,
+  "trailProgress" : 0,
+  "steps" : [ {
+    "idx" : 0,
+    "goal" : 5,
+    "freeRewards" : [ {
+      "amount" : 1000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 2000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 1,
+    "goal" : 15,
+    "freeRewards" : [ {
+      "amount" : 1500.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 3.0,
+      "currency" : "xp_booster",
+      "params" : "{\"count\": 3, \"type\": \"small\"}",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 2,
+    "goal" : 30,
+    "freeRewards" : [ {
+      "amount" : 2000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 4000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 3,
+    "goal" : 50,
+    "freeRewards" : [ {
+      "amount" : 2.0,
+      "currency" : "xp_booster",
+      "params" : "{\"count\": 2, \"type\": \"small\"}",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 4500.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 4,
+    "goal" : 75,
+    "freeRewards" : [ {
+      "amount" : 3100.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 6300.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 5,
+    "goal" : 105,
+    "freeRewards" : [ {
+      "amount" : 6900.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 14000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 6,
+    "goal" : 140,
+    "freeRewards" : [ {
+      "amount" : 15000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 30000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 7,
+    "goal" : 180,
+    "freeRewards" : [ {
+      "amount" : 24000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 10.0,
+      "currency" : "machine_free_spins",
+      "params" : "{\"machine_id\": 114, \"betType\": \"default\", \"name\": \"free\", \"groupName\": \"free\", \"betMultiplier\": 0.1, \"count\": 10}",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 8,
+    "goal" : 225,
+    "freeRewards" : [ {
+      "amount" : 26000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 53000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 9,
+    "goal" : 275,
+    "freeRewards" : [ {
+      "amount" : 44000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 88000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 10,
+    "goal" : 330,
+    "freeRewards" : [ {
+      "amount" : 5.0,
+      "currency" : "machine_free_spins",
+      "params" : "{\"machine_id\": 114, \"betType\": \"default\", \"name\": \"free\", \"groupName\": \"free\", \"betMultiplier\": 0.5, \"count\": 5}",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 94000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 11,
+    "goal" : 390,
+    "freeRewards" : [ {
+      "amount" : 50000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 10.0,
+      "currency" : "machine_free_spins",
+      "params" : "{\"machine_id\": 114, \"betType\": \"default\", \"name\": \"free\", \"groupName\": \"free\", \"betMultiplier\": 0.1, \"count\": 10}",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 12,
+    "goal" : 455,
+    "freeRewards" : [ {
+      "amount" : 110000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 230000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 13,
+    "goal" : 530,
+    "freeRewards" : [ {
+      "amount" : 10.0,
+      "currency" : "machine_free_spins",
+      "params" : "{\"machine_id\": 114, \"betType\": \"default\", \"name\": \"free\", \"groupName\": \"free\", \"betMultiplier\": 0.1, \"count\": 10}",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 1.0,
+      "currency" : "free_spins",
+      "params" : "{\"count\": 1, \"round\": 1}",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  }, {
+    "idx" : 14,
+    "goal" : 630,
+    "freeRewards" : [ {
+      "amount" : 190000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    }, {
+      "amount" : 1.0,
+      "currency" : "xp_booster",
+      "params" : "{\"count\": 1, \"type\": \"small\"}",
+      "rewarded" : false
+    } ],
+    "freeRewarded" : false,
+    "goldenRewards" : [ {
+      "amount" : 380000.0,
+      "currency" : "coins",
+      "rewarded" : false
+    }, {
+      "amount" : 20.0,
+      "currency" : "machine_free_spins",
+      "params" : "{\"machine_id\": 114, \"betType\": \"default\", \"name\": \"free\", \"groupName\": \"free\", \"betMultiplier\": 0.1, \"count\": 20}",
+      "rewarded" : false
+    } ],
+    "goldenRewarded" : false
+  } ],
+  "missions" : [ {
+    "type" : "SpinNTimesTask",
+    "progress" : 0,
+    "progressDouble" : 0.0,
+    "goal" : 25,
+    "goalDouble" : 25.0,
+    "reward" : 5,
+    "rewardDouble" : 5.0
+  }, {
+    "type" : "GetMegaWinTask",
+    "progress" : 0,
+    "progressDouble" : 0.0,
+    "goal" : 2,
+    "goalDouble" : 2.0,
+    "reward" : 20,
+    "rewardDouble" : 20.0,
+    "params" : [ {
+      "key" : "WinningNameParam",
+      "value" : "Epic Win"
+    }, {
+      "key" : "WinningNameParam",
+      "value" : "Mega Win"
+    } ]
+  }, {
+    "type" : "GetEpicWinTask",
+    "progress" : 0,
+    "progressDouble" : 0.0,
+    "goal" : 2,
+    "goalDouble" : 2.0,
+    "reward" : 50,
+    "rewardDouble" : 50.0,
+    "params" : [ {
+      "key" : "WinningNameParam",
+      "value" : "Epic Win"
+    } ]
+  } ],
+  "hasGoldenPass" : false,
+  "paymentOptionWrapper" : [ {
+    "paymentOption" : {
+      "id" : 3159515,
+      "type" : "ruby_rush_golden_pass",
+      "startValue" : 1.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 1.0,
+      "price" : 9.99,
+      "providerProductId" : "774552",
+      "platform" : 2048,
+      "contributionPoints" : 491.0,
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    },
+    "source" : "ruby_rush_golden_pass"
+  }, {
+    "paymentOption" : {
+      "id" : 3159516,
+      "type" : "ruby_rush_rubies",
+      "startValue" : 100.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 100.0,
+      "price" : 0.99,
+      "providerProductId" : "774548",
+      "platform" : 2048,
+      "contributionPoints" : 47.0,
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    },
+    "source" : "ruby_rush_rubies"
+  } ]
+}

@@ -1,0 +1,39 @@
+URL: https://game.onlinefungames.net/browser/scripts/service_worker.js
+
+window.addEventListener('load', function() {
+    checkForParentNotificationPermission();
+});
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
+
+(function(){
+    var cookies = document.cookie.split(";");
+    console.log("Cookies.length = " + cookies.length);
+
+    if(cookies.length > 25) {
+        console.log("Cookies cleanup.");
+
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            setCookie(cookie, null, -1);
+        }
+    }
+})();
+
+function setCookie(name, value, seconds) {
+    var expires = "";
+    if (typeof(seconds) != 'undefined') {
+        var date = new Date();
+        date.setTime(date.getTime() + (seconds*1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+
+    document.cookie = name+"="+value+expires+"; path=/";
+}

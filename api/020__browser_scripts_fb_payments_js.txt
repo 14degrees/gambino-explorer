@@ -1,0 +1,15 @@
+URL: https://game.onlinefungames.net/browser/scripts/fb_payments.js
+
+
+function paymentDialog(callback, params) {
+    exitFullscreen();
+    FB.ui({
+        method: params.method,
+        action: params.action,
+        product: params.product_id, //?t='+new Date().getTime(),
+        quantity: params.quantity,
+        //test_currency: true,
+        request_id: params.request_id,
+        subscription_id: params.subscription_id
+    }, callback);
+}

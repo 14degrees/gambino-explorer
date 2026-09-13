@@ -1,0 +1,2107 @@
+{
+ "/h5Pay/en/low/145/game101": {
+  "title": "Big 5 Africa",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/145/game101",
+  "assetsVersion": "145",
+  "sizeType": "1x2",
+  "availableFromLevel": 1,
+  "labels": [
+   "featured_quietly"
+  ],
+  "iconLocation": "/h5Pay/en/low/1/game101/icon.png"
+ },
+ "/h5Pay/en/low/414/game210": {
+  "title": "Gorilla King",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/414/game210",
+  "assetsVersion": "414",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": [
+   "new",
+   "featured_quietly"
+  ],
+  "iconLocation": "/h5Pay/en/low/414/game210/icon.png"
+ },
+ "/h5Pay/en/low/410/game209": {
+  "title": "Bingo Blast",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/410/game209",
+  "assetsVersion": "410",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": [
+   "featured_quietly"
+  ],
+  "iconLocation": "/h5Pay/en/low/410/game209/icon.png"
+ },
+ "/h5Pay/en/low/287/game114": {
+  "title": "Luxury Living",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/287/game114",
+  "assetsVersion": "287",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": [
+   "featured_quietly"
+  ],
+  "iconLocation": "/h5Pay/en/low/287/game114/icon.png"
+ },
+ "/h5Pay/en/low/408/game208": {
+  "title": "Rising Eagle",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/408/game208",
+  "assetsVersion": "408",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": [
+   "featured_quietly"
+  ],
+  "iconLocation": "/h5Pay/en/low/408/game208/icon.png"
+ },
+ "/h5Pay/en/low/235/game113": {
+  "title": "Quest to the North Pole",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/235/game113",
+  "assetsVersion": "235",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": [
+   "featured_quietly"
+  ],
+  "iconLocation": "/h5Pay/en/low/235/game113/icon.png"
+ },
+ "/h5Pay/en/low/286/game162": {
+  "title": "Sugarland Blast",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/286/game162",
+  "assetsVersion": "286",
+  "sizeType": "1x1",
+  "availableFromLevel": 9,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/286/game162/icon.png"
+ },
+ "/h5Pay/en/low/305/game184": {
+  "title": "Liberty Eagle: Connect & Win",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/305/game184",
+  "assetsVersion": "305",
+  "sizeType": "1x1",
+  "availableFromLevel": 9,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/305/game184/icon.png"
+ },
+ "/h5Pay/en/low/369/game200": {
+  "title": "Pixie Wonders",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/369/game200",
+  "assetsVersion": "369",
+  "sizeType": "1x1",
+  "availableFromLevel": 9,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/369/game200/icon.png"
+ },
+ "/h5Pay/en/low/352/game178": {
+  "title": "Thor's Riches",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/352/game178",
+  "assetsVersion": "352",
+  "sizeType": "1x1",
+  "availableFromLevel": 9,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/352/game178/icon.png"
+ },
+ "/h5Pay/en/low/402/game207": {
+  "title": "Wild Dragons",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/402/game207",
+  "assetsVersion": "402",
+  "sizeType": "1x1",
+  "availableFromLevel": 9,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/402/game207/icon.png"
+ },
+ "/h5Pay/en/low/355/game195": {
+  "title": "Mammoth Run",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/355/game195",
+  "assetsVersion": "355",
+  "sizeType": "1x1",
+  "availableFromLevel": 9,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/355/game195/icon.png"
+ },
+ "/h5Pay/en/low/235/game120": {
+  "title": "Lucky Spells",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/235/game120",
+  "assetsVersion": "235",
+  "sizeType": "1x1",
+  "availableFromLevel": 19,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/235/game120/icon.png"
+ },
+ "/h5Pay/en/low/385/game203": {
+  "title": "Santa's Gift Bags",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/385/game203",
+  "assetsVersion": "385",
+  "sizeType": "1x1",
+  "availableFromLevel": 19,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/385/game203/icon.png"
+ },
+ "/h5Pay/en/low/387/game204": {
+  "title": "Salmon Spree Superways: Catch & Respin",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/387/game204",
+  "assetsVersion": "387",
+  "sizeType": "1x1",
+  "availableFromLevel": 19,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/387/game204/icon.png"
+ },
+ "/h5Pay/en/low/327/game187": {
+  "title": "Poseidon: Road to Atlantis",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/327/game187",
+  "assetsVersion": "327",
+  "sizeType": "1x1",
+  "availableFromLevel": 19,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/327/game187/icon.png"
+ },
+ "/h5Pay/en/low/122/game134": {
+  "title": "License to Win",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/122/game134",
+  "assetsVersion": "122",
+  "sizeType": "1x1",
+  "availableFromLevel": 19,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/122/game134/icon.png"
+ },
+ "/h5Pay/en/low/377/game201": {
+  "title": "Spell Sisters",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/377/game201",
+  "assetsVersion": "377",
+  "sizeType": "1x1",
+  "availableFromLevel": 19,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/377/game201/icon.png"
+ },
+ "/h5Pay/en/low/394/game206": {
+  "title": "Leprechaun's Gems",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/394/game206",
+  "assetsVersion": "394",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/394/game206/icon.png"
+ },
+ "/h5Pay/en/low/352/game194": {
+  "title": "Amazon's Riches",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/352/game194",
+  "assetsVersion": "352",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/352/game194/icon.png"
+ },
+ "/h5Pay/en/low/189/game154": {
+  "title": "Legend of Zeus 2: Flash Cash",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/189/game154",
+  "assetsVersion": "189",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/189/game154/icon.png"
+ },
+ "/h5Pay/en/low/335/game190": {
+  "title": "Nutcracker Nights",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/335/game190",
+  "assetsVersion": "335",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/335/game190/icon.png"
+ },
+ "/h5Pay/en/low/380/game202": {
+  "title": "Breaking Bank",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/380/game202",
+  "assetsVersion": "380",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/380/game202/icon.png"
+ },
+ "/h5Pay/en/low/364/game198": {
+  "title": "Medusa Mystery",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/364/game198",
+  "assetsVersion": "364",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/364/game198/icon.png"
+ },
+ "/h5Pay/en/low/356/game192": {
+  "title": "Big City Romance",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/356/game192",
+  "assetsVersion": "356",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/356/game192/icon.png"
+ },
+ "/h5Pay/en/low/390/game205": {
+  "title": "Wild Kitties",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/390/game205",
+  "assetsVersion": "390",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/390/game205/icon.png"
+ },
+ "/h5Pay/en/low/276/game175": {
+  "title": "Salmon Spree",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/276/game175",
+  "assetsVersion": "276",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/276/game175/icon.png"
+ },
+ "/h5Pay/en/low/286/game163": {
+  "title": "Saving Christmas",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/286/game163",
+  "assetsVersion": "286",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/286/game163/icon.png"
+ },
+ "/h5Pay/en/low/338/game191": {
+  "title": "Magnifico",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/338/game191",
+  "assetsVersion": "338",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/338/game191/icon.png"
+ },
+ "/h5Pay/en/low/201/game107": {
+  "title": "Enchanted Orbs",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/201/game107",
+  "assetsVersion": "201",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game107/icon.png"
+ },
+ "/h5Pay/en/low/194/game156": {
+  "title": "American Eagle",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/194/game156",
+  "assetsVersion": "194",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/194/game156/icon.png"
+ },
+ "/h5Pay/en/low/358/game196": {
+  "title": "Big Score",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/358/game196",
+  "assetsVersion": "358",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/358/game196/icon.png"
+ },
+ "/h5Pay/en/low/308/game177": {
+  "title": "Rise of the Gladiator",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/308/game177",
+  "assetsVersion": "308",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/308/game177/icon.png"
+ },
+ "/h5Pay/en/low/146/game111": {
+  "title": "Monster Party",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/146/game111",
+  "assetsVersion": "146",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/203/game111/icon.png"
+ },
+ "/h5Pay/en/low/361/game197": {
+  "title": "Land of Liberty",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/361/game197",
+  "assetsVersion": "361",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/361/game197/icon.png"
+ },
+ "/h5Pay/en/low/294/game182": {
+  "title": "Mission: Mars",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/294/game182",
+  "assetsVersion": "294",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/294/game182/icon.png"
+ },
+ "/h5Pay/en/low/200/game158": {
+  "title": "Portal of Fortunes",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/200/game158",
+  "assetsVersion": "200",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/200/game158/icon.png"
+ },
+ "/h5Pay/en/low/318/game104": {
+  "title": "Wild Witch",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/318/game104",
+  "assetsVersion": "318",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/318/game104/icon.png"
+ },
+ "/h5Pay/en/low/141/game133": {
+  "title": "Reel Estate",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/141/game133",
+  "assetsVersion": "141",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/118/game133/icon.png"
+ },
+ "/h5Pay/en/low/117/game132": {
+  "title": "Samba in Rio",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/117/game132",
+  "assetsVersion": "117",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/117/game132/icon.png"
+ },
+ "/h5Pay/en/low/318/game185": {
+  "title": "Lobster Spree",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/318/game185",
+  "assetsVersion": "318",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/318/game185/icon.png"
+ },
+ "/h5Pay/en/low/366/game199": {
+  "title": "Sugarland Pop",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/366/game199",
+  "assetsVersion": "366",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/366/game199/icon.png"
+ },
+ "/h5Pay/en/low/287/game174": {
+  "title": "Werewolf Moon",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/287/game174",
+  "assetsVersion": "287",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/287/game174/icon.png"
+ },
+ "/h5Pay/en/low/367/game173": {
+  "title": "Compass of Riches",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/367/game173",
+  "assetsVersion": "367",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/367/game173/icon.png"
+ },
+ "/h5Pay/en/low/183/game152": {
+  "title": "Hot Hot Chilies",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/183/game152",
+  "assetsVersion": "183",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/182/game152/icon.png"
+ },
+ "/h5Pay/en/low/176/game147": {
+  "title": "Gaby's Jingle Ball",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/176/game147",
+  "assetsVersion": "176",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/169/game147/icon.png"
+ },
+ "/h5Pay/en/low/338/game186": {
+  "title": "Wild Cocktails",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/338/game186",
+  "assetsVersion": "338",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/338/game186/icon.png"
+ },
+ "/h5Pay/en/low/385/game183": {
+  "title": "Fu Gong 2: Lucky Twins",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/385/game183",
+  "assetsVersion": "385",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/385/game183/icon.png"
+ },
+ "/h5Pay/en/low/308/game179": {
+  "title": "Cleopatra's Reign",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/308/game179",
+  "assetsVersion": "308",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/308/game179/icon.png"
+ },
+ "/h5Pay/en/low/276/game176": {
+  "title": "Viva Las Xmas",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/276/game176",
+  "assetsVersion": "276",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/276/game176/icon.png"
+ },
+ "/h5Pay/en/low/153/game143": {
+  "title": "Starblaze",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/153/game143",
+  "assetsVersion": "153",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/153/game143/icon.png"
+ },
+ "/h5Pay/en/low/326/game188": {
+  "title": "It\u2019s a Family THING",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/326/game188",
+  "assetsVersion": "326",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/326/game188/icon.png"
+ },
+ "/h5Pay/en/low/284/game180": {
+  "title": "Outlaw Express",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/284/game180",
+  "assetsVersion": "284",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/284/game180/icon.png"
+ },
+ "/h5Pay/en/low/329/game189": {
+  "title": "Cherry Bombs",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/329/game189",
+  "assetsVersion": "329",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/329/game189/icon.png"
+ },
+ "/h5Pay/en/low/275/game172": {
+  "title": "Phoenix Flames",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/275/game172",
+  "assetsVersion": "275",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/275/game172/icon.png"
+ },
+ "/h5Pay/en/low/286/game166": {
+  "title": "Cloverland",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/286/game166",
+  "assetsVersion": "286",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/286/game166/icon.png"
+ },
+ "/h5Pay/en/low/318/game181": {
+  "title": "The Diamond Club",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/318/game181",
+  "assetsVersion": "318",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/318/game181/icon.png"
+ },
+ "/h5Pay/en/low/346/game193": {
+  "title": "Land O'Fortunes",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/346/game193",
+  "assetsVersion": "346",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/346/game193/icon.png"
+ },
+ "/h5Pay/en/low/287/game168": {
+  "title": "Midnight Jungle",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/287/game168",
+  "assetsVersion": "287",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/287/game168/icon.png"
+ },
+ "/h5Pay/en/low/286/game165": {
+  "title": "Book of Amun-Ra",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/286/game165",
+  "assetsVersion": "286",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/286/game165/icon.png"
+ },
+ "/h5Pay/en/low/77/game97": {
+  "title": "Christmas Eve",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/77/game97",
+  "assetsVersion": "77",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game97/icon.png"
+ },
+ "/h5Pay/en/low/267/game115": {
+  "title": "Aztec Fortunes",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/267/game115",
+  "assetsVersion": "267",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/267/game115/icon.png"
+ },
+ "/h5Pay/en/low/275/game170": {
+  "title": "Freedom Fortune",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/275/game170",
+  "assetsVersion": "275",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/275/game170/icon.png"
+ },
+ "/h5Pay/en/low/275/game171": {
+  "title": "Sugarland Wild",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/275/game171",
+  "assetsVersion": "275",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/275/game171/icon.png"
+ },
+ "/h5Pay/en/low/235/game124": {
+  "title": "King of the Jungle",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/235/game124",
+  "assetsVersion": "235",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/235/game124/icon.png"
+ },
+ "/h5Pay/en/low/385/game150": {
+  "title": "Tundra Nights",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/385/game150",
+  "assetsVersion": "385",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/385/game150/icon.png"
+ },
+ "/h5Pay/en/low/235/game159": {
+  "title": "Tale of the Dragon",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/235/game159",
+  "assetsVersion": "235",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/235/game159/icon.png"
+ },
+ "/h5Pay/en/low/235/game140": {
+  "title": "Age of Vikings",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/235/game140",
+  "assetsVersion": "235",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/235/game140/icon.png"
+ },
+ "/h5Pay/en/low/106/game127": {
+  "title": "Pele's Wonders",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/106/game127",
+  "assetsVersion": "106",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/106/game127/icon.png"
+ },
+ "/h5Pay/en/low/235/game141": {
+  "title": "Double Flash Cash Fire and Ice",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/235/game141",
+  "assetsVersion": "235",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/235/game141/icon.png"
+ },
+ "/h5Pay/en/low/116/game131": {
+  "title": "Moon Spirit",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/116/game131",
+  "assetsVersion": "116",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/115/game131/icon.png"
+ },
+ "/h5Pay/en/low/100/game105": {
+  "title": "Freedom Eagle",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/100/game105",
+  "assetsVersion": "100",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game105/icon.png"
+ },
+ "/h5Pay/en/low/275/game169": {
+  "title": "Purrville",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/275/game169",
+  "assetsVersion": "275",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/275/game169/icon.png"
+ },
+ "/h5Pay/en/low/385/game137": {
+  "title": "Dragon's Heart",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/385/game137",
+  "assetsVersion": "385",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/385/game137/icon.png"
+ },
+ "/h5Pay/en/low/286/game164": {
+  "title": "City of Wins",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/286/game164",
+  "assetsVersion": "286",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/286/game164/icon.png"
+ },
+ "/h5Pay/en/low/286/game160": {
+  "title": "Fairest",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/286/game160",
+  "assetsVersion": "286",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/286/game160/icon.png"
+ },
+ "/h5Pay/en/low/286/game167": {
+  "title": "Magic Carpet Ride",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/286/game167",
+  "assetsVersion": "286",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/286/game167/icon.png"
+ },
+ "/h5Pay/en/low/178/game149": {
+  "title": "Wild Pearls 2",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/178/game149",
+  "assetsVersion": "178",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/174/game149/icon.png"
+ },
+ "/h5Pay/en/low/299/game151": {
+  "title": "Irish Gold Machine",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/299/game151",
+  "assetsVersion": "299",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/299/game151/icon.png"
+ },
+ "/h5Pay/en/low/173/game148": {
+  "title": "Puppy Bowl",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/173/game148",
+  "assetsVersion": "173",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/173/game148/icon.png"
+ },
+ "/h5Pay/en/low/286/game161": {
+  "title": "SCREEEM!",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/286/game161",
+  "assetsVersion": "286",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/286/game161/icon.png"
+ },
+ "/h5Pay/en/low/186/game153": {
+  "title": "A Journey Through Oz",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/186/game153",
+  "assetsVersion": "186",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/185/game153/icon.png"
+ },
+ "/h5Pay/en/low/330/game155": {
+  "title": "Caribbean Treasures",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/330/game155",
+  "assetsVersion": "330",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/330/game155/icon.png"
+ },
+ "/h5Pay/en/low/176/game144": {
+  "title": "Legends of the East",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/176/game144",
+  "assetsVersion": "176",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/158/game144/icon.png"
+ },
+ "/h5Pay/en/low/110/game125": {
+  "title": "Cash Cats",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/110/game125",
+  "assetsVersion": "110",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/104/game125/icon.png"
+ },
+ "/h5Pay/en/low/27/game93": {
+  "title": "Spins of Fortune",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/27/game93",
+  "assetsVersion": "27",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game93/icon.png"
+ },
+ "/h5Pay/en/low/184/game122": {
+  "title": "Grand Eagle",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/184/game122",
+  "assetsVersion": "184",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/184/game122/icon.png"
+ },
+ "/h5Pay/en/low/146/game135": {
+  "title": "Sheriff's Bounty",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/146/game135",
+  "assetsVersion": "146",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/125/game135/icon.png"
+ },
+ "/h5Pay/en/low/101/game121": {
+  "title": "Mark of Z",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/101/game121",
+  "assetsVersion": "101",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/92/game121/icon.png"
+ },
+ "/h5Pay/en/low/188/game139": {
+  "title": "Ring in Liberty",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/188/game139",
+  "assetsVersion": "188",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/188/game139/icon.png"
+ },
+ "/h5Pay/en/low/198/game157": {
+  "title": "Egyptian Sands",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/198/game157",
+  "assetsVersion": "198",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/198/game157/icon.png"
+ },
+ "/h5Pay/en/low/191/game146": {
+  "title": "The Golden Touch",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/191/game146",
+  "assetsVersion": "191",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/191/game146/icon.png"
+ },
+ "/h5Pay/en/low/147/game103": {
+  "title": "Jackpot City",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/147/game103",
+  "assetsVersion": "147",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game103/icon.png"
+ },
+ "/h5Pay/en/low/235/game112": {
+  "title": "Mr. Pigglesworth",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/235/game112",
+  "assetsVersion": "235",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/235/game112/icon.png"
+ },
+ "/h5Pay/en/low/100/game98": {
+  "title": "Super Stacked Big Cats",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/100/game98",
+  "assetsVersion": "100",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game98/icon.png"
+ },
+ "/h5Pay/en/low/318/game106": {
+  "title": "Legend of Zeus",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/318/game106",
+  "assetsVersion": "318",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/318/game106/icon.png"
+ },
+ "/h5Pay/en/low/188/game123": {
+  "title": "Sugarland",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/188/game123",
+  "assetsVersion": "188",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/188/game123/icon.png"
+ },
+ "/h5Pay/en/low/139/game99": {
+  "title": "Wild Pearls",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/139/game99",
+  "assetsVersion": "139",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game99/icon.png"
+ },
+ "/h5Pay/en/low/151/game142": {
+  "title": "Winning Spree",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/151/game142",
+  "assetsVersion": "151",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/151/game142/icon.png"
+ },
+ "/h5Pay/en/low/105/game108": {
+  "title": "Ra's Riches",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/105/game108",
+  "assetsVersion": "105",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/48/game108/icon.png"
+ },
+ "/h5Pay/en/low/128/game96": {
+  "title": "Indiana's Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/128/game96",
+  "assetsVersion": "128",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/2/game96/icon.png"
+ },
+ "/h5Pay/en/low/135/game138": {
+  "title": "Gypsy Fortunes",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/135/game138",
+  "assetsVersion": "135",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/135/game138/icon.png"
+ },
+ "/h5Pay/en/low/238/game48": {
+  "title": "Diamond Hits",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/238/game48",
+  "assetsVersion": "238",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/238/game48/icon.png"
+ },
+ "/h5Pay/en/low/72/game117": {
+  "title": "Shamrock Luck",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/72/game117",
+  "assetsVersion": "72",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/72/game117/icon.png"
+ },
+ "/h5Pay/en/low/164/game95": {
+  "title": "Golden Vaults",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game95",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/26/game95/icon.png"
+ },
+ "/h5Pay/en/low/145/game40": {
+  "title": "Holly & Jolly",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/145/game40",
+  "assetsVersion": "145",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/6/game40/icon.png"
+ },
+ "/h5Pay/en/low/140/game100": {
+  "title": "Pots o'Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/140/game100",
+  "assetsVersion": "140",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game100/icon.png"
+ },
+ "/h5Pay/en/low/170/game58": {
+  "title": "Buffalo",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/170/game58",
+  "assetsVersion": "170",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game58/icon.png"
+ },
+ "/h5Pay/en/low/132/game9": {
+  "title": "Dragon`s Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/132/game9",
+  "assetsVersion": "132",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/41/game9/icon.png"
+ },
+ "/h5Pay/en/low/204/game128": {
+  "title": "IT'S ALIVE!!!",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/204/game128",
+  "assetsVersion": "204",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/204/game128/icon.png"
+ },
+ "/h5Pay/en/low/101/game118": {
+  "title": "EGGcellent Easter!",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/101/game118",
+  "assetsVersion": "101",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/80/game118/icon.png"
+ },
+ "/h5Pay/en/low/163/game145": {
+  "title": "Eternal Desire",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/163/game145",
+  "assetsVersion": "163",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/161/game145/icon.png"
+ },
+ "/h5Pay/en/low/188/game70": {
+  "title": "Egypt Legend",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/188/game70",
+  "assetsVersion": "188",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/188/game70/icon.png"
+ },
+ "/h5Pay/en/low/201/game136": {
+  "title": "Gone Fishin'",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/201/game136",
+  "assetsVersion": "201",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/203/game136/icon.png"
+ },
+ "/h5Pay/en/low/145/game37": {
+  "title": "Golden Unicorn",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/145/game37",
+  "assetsVersion": "145",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/15/game37/icon.png"
+ },
+ "/h5Pay/en/low/41/game902": {
+  "title": "Troy",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/41/game902",
+  "assetsVersion": "41",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/15/game902/icon.png"
+ },
+ "/h5Pay/en/low/204/game130": {
+  "title": "Santa's Workshop",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/204/game130",
+  "assetsVersion": "204",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/204/game130/icon.png"
+ },
+ "/h5Pay/en/low/170/game63": {
+  "title": "Sunny Bar",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/170/game63",
+  "assetsVersion": "170",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/100/game63/icon.png"
+ },
+ "/h5Pay/en/low/55/game909": {
+  "title": "Snow Queen",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/55/game909",
+  "assetsVersion": "55",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/15/game909/icon.png"
+ },
+ "/h5Pay/en/low/51/game86": {
+  "title": "Atlantis",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/51/game86",
+  "assetsVersion": "51",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/28/game86/icon.png"
+ },
+ "/h5Pay/en/low/101/game119": {
+  "title": "Dynamite Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/101/game119",
+  "assetsVersion": "101",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/84/game119/icon.png"
+ },
+ "/h5Pay/en/low/128/game102": {
+  "title": "Fu Gong",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/128/game102",
+  "assetsVersion": "128",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/2/game102/icon.png"
+ },
+ "/h5Pay/en/low/87/game88": {
+  "title": "Country Nights",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/87/game88",
+  "assetsVersion": "87",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/87/game88/icon.png"
+ },
+ "/h5Pay/en/low/204/game110": {
+  "title": "Buccaneer Bounty",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/204/game110",
+  "assetsVersion": "204",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/204/game110/icon.png"
+ },
+ "/h5Pay/en/low/132/game19": {
+  "title": "Falling Gems",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/132/game19",
+  "assetsVersion": "132",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/14/game19/icon.png"
+ },
+ "https://static.gambinoslot.com/h5Pay/en/low/21/game74": {
+  "title": "Heart of India",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "https://static.gambinoslot.com/h5Pay/en/low/21/game74",
+  "assetsVersion": "21",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "https://static.gambinoslot.com/h5Pay/en/low/1/game74/icon.png"
+ },
+ "/h5Pay/en/low/224/game56": {
+  "title": "Vintage Glam",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/224/game56",
+  "assetsVersion": "224",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/224/game56/icon.png"
+ },
+ "/h5Pay/en/low/188/game65": {
+  "title": "Dragon Goddess",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/188/game65",
+  "assetsVersion": "188",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/188/game65/icon.png"
+ },
+ "/h5Pay/en/low/162/game51": {
+  "title": "Arabian Tales",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/162/game51",
+  "assetsVersion": "162",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/15/game51/icon.png"
+ },
+ "/h5Pay/en/low/72/game94": {
+  "title": "Fairy Dust",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/72/game94",
+  "assetsVersion": "72",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game94/icon.png"
+ },
+ "/h5Pay/en/low/170/game61": {
+  "title": "Showluck Holmes",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/170/game61",
+  "assetsVersion": "170",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game61/icon.png"
+ },
+ "/h5Pay/en/low/105/game72": {
+  "title": "Beware The Wolf",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/105/game72",
+  "assetsVersion": "105",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/105/game72/icon.png"
+ },
+ "/h5Pay/en/low/188/game69": {
+  "title": "Magic Forest",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/188/game69",
+  "assetsVersion": "188",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/188/game69/icon.png"
+ },
+ "/h5Pay/en/low/100/game109": {
+  "title": "Heidifest",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/100/game109",
+  "assetsVersion": "100",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/51/game109/icon.png"
+ },
+ "/h5Pay/en/low/139/game32": {
+  "title": "Chinese Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/139/game32",
+  "assetsVersion": "139",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/28/game32/icon.png"
+ },
+ "https://static.gambinoslot.com/h5Pay/en/low/164/game42": {
+  "title": "Golden Pyramid",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "https://static.gambinoslot.com/h5Pay/en/low/164/game42",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "https://static.gambinoslot.com/h5Pay/en/low/10/game42/icon.png"
+ },
+ "/h5Pay/en/low/162/game55": {
+  "title": "Love Happens",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/162/game55",
+  "assetsVersion": "162",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game55/icon.png"
+ },
+ "/h5Pay/en/low/132/game23": {
+  "title": "Lucky Mine",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/132/game23",
+  "assetsVersion": "132",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/100/game23/icon.png"
+ },
+ "/h5Pay/en/low/318/game116": {
+  "title": "Hearts of Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/318/game116",
+  "assetsVersion": "318",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/318/game116/icon.png"
+ },
+ "/h5Pay/en/low/188/game64": {
+  "title": "Fourth of July",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/188/game64",
+  "assetsVersion": "188",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/188/game64/icon.png"
+ },
+ "https://static.gambinoslot.com/h5Pay/en/low/152/game44": {
+  "title": "Cinderella",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "https://static.gambinoslot.com/h5Pay/en/low/152/game44",
+  "assetsVersion": "152",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "https://static.gambinoslot.com/h5Pay/en/low/10/game44/icon.png"
+ },
+ "/h5Pay/en/low/137/game34": {
+  "title": "Spin the Funk",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/137/game34",
+  "assetsVersion": "137",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/15/game34/icon.png"
+ },
+ "/h5Pay/en/low/167/game80": {
+  "title": "Creepy Circus",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/167/game80",
+  "assetsVersion": "167",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game80/icon.png"
+ },
+ "/h5Pay/en/low/128/game10": {
+  "title": "Yummy Gummy",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/128/game10",
+  "assetsVersion": "128",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/10/game10/icon.png"
+ },
+ "https://static.gambinoslot.com/h5Pay/en/low/162/game46": {
+  "title": "Mafia Money",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "https://static.gambinoslot.com/h5Pay/en/low/162/game46",
+  "assetsVersion": "162",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "https://static.gambinoslot.com/h5Pay/en/low/10/game46/icon.png"
+ },
+ "/h5Pay/en/low/152/game43": {
+  "title": "Gangster Poker",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/152/game43",
+  "assetsVersion": "152",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/83/game43/icon.png"
+ },
+ "/h5Pay/en/low/28/game87": {
+  "title": "Magic Beanstalk",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/28/game87",
+  "assetsVersion": "28",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/28/game87/icon.png"
+ },
+ "https://static.gambinoslot.com/h5Pay/en/low/162/game52": {
+  "title": "Winter Story",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "https://static.gambinoslot.com/h5Pay/en/low/162/game52",
+  "assetsVersion": "162",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "https://static.gambinoslot.com/h5Pay/en/low/71/game52/icon.png"
+ },
+ "https://static.gambinoslot.com/h5Pay/en/low/128/game12": {
+  "title": "Wild Revengers",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "https://static.gambinoslot.com/h5Pay/en/low/128/game12",
+  "assetsVersion": "128",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "https://static.gambinoslot.com/h5Pay/en/low/10/game12/icon.png"
+ },
+ "/h5Pay/en/low/16/game73": {
+  "title": "Golden Dragon",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/16/game73",
+  "assetsVersion": "16",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game73/icon.png"
+ },
+ "/h5Pay/en/low/137/game30": {
+  "title": "Trick-or-Treat",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/137/game30",
+  "assetsVersion": "137",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/15/game30/icon.png"
+ },
+ "/h5Pay/en/low/41/game85": {
+  "title": "Farm Fun",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/41/game85",
+  "assetsVersion": "41",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game85/icon.png"
+ },
+ "/h5Pay/en/low/105/game90": {
+  "title": "Wild Australia",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/105/game90",
+  "assetsVersion": "105",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/105/game90/icon.png"
+ },
+ "/h5Pay/en/low/128/game13": {
+  "title": "Hawaii",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/128/game13",
+  "assetsVersion": "128",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/26/game13/icon.png"
+ },
+ "/h5Pay/en/low/105/game91": {
+  "title": "Winner Winner",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/105/game91",
+  "assetsVersion": "105",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game91/icon.png"
+ },
+ "/h5Pay/en/low/128/game7": {
+  "title": "Feast of Friends",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/128/game7",
+  "assetsVersion": "128",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/10/game7/icon.png"
+ },
+ "/h5Pay/en/low/201/game26": {
+  "title": "Zombie Saloon",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/201/game26",
+  "assetsVersion": "201",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/26/game26/icon.png"
+ },
+ "/h5Pay/en/low/256/game5": {
+  "title": "Jurassic Spins",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/256/game5",
+  "assetsVersion": "256",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/256/game5/icon.png"
+ },
+ "/h5Pay/en/low/132/game20": {
+  "title": "Vac-a-Cat",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/132/game20",
+  "assetsVersion": "132",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/10/game20/icon.png"
+ },
+ "/h5Pay/en/low/128/game8": {
+  "title": "BlackBeard",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/128/game8",
+  "assetsVersion": "128",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/15/game8/icon.png"
+ },
+ "/h5Pay/en/low/201/game35": {
+  "title": "Smitten Kittens",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/201/game35",
+  "assetsVersion": "201",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/10/game35/icon.png"
+ },
+ "/h5Pay/en/low/128/game6": {
+  "title": "Wild King",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/128/game6",
+  "assetsVersion": "128",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/15/game6/icon.png"
+ },
+ "/h5Pay/en/low/170/game60": {
+  "title": "Dimensions",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/170/game60",
+  "assetsVersion": "170",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game60/icon.png"
+ },
+ "/h5Pay/en/low/145/game36": {
+  "title": "Clover Mania",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/145/game36",
+  "assetsVersion": "145",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/26/game36/icon.png"
+ },
+ "https://static.gambinoslot.com/h5Pay/en/low/170/game62": {
+  "title": "Shadow Coast",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "https://static.gambinoslot.com/h5Pay/en/low/170/game62",
+  "assetsVersion": "170",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "https://static.gambinoslot.com/h5Pay/en/low/1/game62/icon.png"
+ },
+ "https://static.gambinoslot.com/h5Pay/en/low/188/game67": {
+  "title": "Gladiators",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "https://static.gambinoslot.com/h5Pay/en/low/188/game67",
+  "assetsVersion": "188",
+  "sizeType": "1x1",
+  "availableFromLevel": 30,
+  "labels": null,
+  "iconLocation": "https://static.gambinoslot.com/h5Pay/en/low/188/game67/icon.png"
+ },
+ "/h5Pay/en/low/101/game20114": {
+  "title": "Luxury Living",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/101/game20114",
+  "assetsVersion": "101",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": [
+   "featured_quietly"
+  ],
+  "iconLocation": "/h5Pay/en/low/212/game20114/icon.png"
+ },
+ "/h5Pay/en/low/383/game203": {
+  "title": "Santa's Gift Bags",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/383/game203",
+  "assetsVersion": "383",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/383/game203/icon.png"
+ },
+ "/h5Pay/en/low/389/game205": {
+  "title": "Wild Kitties",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/389/game205",
+  "assetsVersion": "389",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/389/game205/icon.png"
+ },
+ "/h5Pay/en/low/287/game177": {
+  "title": "Rise of the Gladiator",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/287/game177",
+  "assetsVersion": "287",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/287/game177/icon.png"
+ },
+ "/h5Pay/en/low/149/game20101": {
+  "title": "Big 5 Africa",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/149/game20101",
+  "assetsVersion": "149",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game20101/icon.png"
+ },
+ "/h5Pay/en/low/300/game183": {
+  "title": "Fu Gong 2: Lucky Twins",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/300/game183",
+  "assetsVersion": "300",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/300/game183/icon.png"
+ },
+ "/h5Pay/en/low/278/game179": {
+  "title": "Cleopatra's Reign",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/278/game179",
+  "assetsVersion": "278",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/278/game179/icon.png"
+ },
+ "/h5Pay/en/low/164/game97": {
+  "title": "Christmas Eve",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game97",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/77/game97/icon.png"
+ },
+ "/h5Pay/en/low/177/game150": {
+  "title": "Tundra Nights",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/177/game150",
+  "assetsVersion": "177",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/177/game150/icon.png"
+ },
+ "/h5Pay/en/low/132/game137": {
+  "title": "Dragon's Heart",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/132/game137",
+  "assetsVersion": "132",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/131/game137/icon.png"
+ },
+ "/h5Pay/en/low/1/game20093": {
+  "title": "Spins of Fortune",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/1/game20093",
+  "assetsVersion": "1",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game20093/icon.png"
+ },
+ "/h5Pay/en/low/92/game121": {
+  "title": "Mark of Z",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/92/game121",
+  "assetsVersion": "92",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/92/game121/icon.png"
+ },
+ "/h5Pay/en/low/196/game157": {
+  "title": "Egyptian Sands",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/196/game157",
+  "assetsVersion": "196",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/196/game157/icon.png"
+ },
+ "/h5Pay/en/low/320/game20106": {
+  "title": "Legend of Zeus",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/320/game20106",
+  "assetsVersion": "320",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/320/game20106/icon.png"
+ },
+ "/h5Pay/en/low/164/game108": {
+  "title": "Ra's Riches",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game108",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/105/game108/icon.png"
+ },
+ "/h5Pay/en/low/164/game96": {
+  "title": "Indiana's Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game96",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/128/game96/icon.png"
+ },
+ "/h5Pay/en/low/73/game20117": {
+  "title": "Shamrock Luck",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/73/game20117",
+  "assetsVersion": "73",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/73/game20117/icon.png"
+ },
+ "/h5Pay/en/low/164/game40": {
+  "title": "Holly & Jolly",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game40",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/145/game40/icon.png"
+ },
+ "/h5Pay/en/low/161/game145": {
+  "title": "Eternal Desire",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/161/game145",
+  "assetsVersion": "161",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/161/game145/icon.png"
+ },
+ "/h5Pay/en/low/164/game902": {
+  "title": "Troy",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game902",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/41/game902/icon.png"
+ },
+ "/h5Pay/en/low/164/game909": {
+  "title": "Snow Queen",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game909",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/55/game909/icon.png"
+ },
+ "/h5Pay/en/low/164/game86": {
+  "title": "Atlantis",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game86",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/51/game86/icon.png"
+ },
+ "/h5Pay/en/low/84/game119": {
+  "title": "Dynamite Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/84/game119",
+  "assetsVersion": "84",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/84/game119/icon.png"
+ },
+ "/h5Pay/en/low/164/game102": {
+  "title": "Fu Gong",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game102",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/128/game102/icon.png"
+ },
+ "/h5Pay/en/low/21/game74": {
+  "title": "Heart of India",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/21/game74",
+  "assetsVersion": "21",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/21/game74/icon.png"
+ },
+ "/h5Pay/en/low/164/game32": {
+  "title": "Chinese Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game32",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/139/game32/icon.png"
+ },
+ "/h5Pay/en/low/164/game42": {
+  "title": "Golden Pyramid",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game42",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/152/game42/icon.png"
+ },
+ "/h5Pay/en/low/164/game23": {
+  "title": "Lucky Mine",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game23",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/132/game23/icon.png"
+ },
+ "/h5Pay/en/low/152/game44": {
+  "title": "Cinderella",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/152/game44",
+  "assetsVersion": "152",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/152/game44/icon.png"
+ },
+ "/h5Pay/en/low/164/game34": {
+  "title": "Spin the Funk",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game34",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/137/game34/icon.png"
+ },
+ "/h5Pay/en/low/162/game46": {
+  "title": "Mafia Money",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/162/game46",
+  "assetsVersion": "162",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/162/game46/icon.png"
+ },
+ "/h5Pay/en/low/162/game52": {
+  "title": "Winter Story",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/162/game52",
+  "assetsVersion": "162",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/162/game52/icon.png"
+ },
+ "/h5Pay/en/low/164/game12": {
+  "title": "Wild Revengers",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game12",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/128/game12/icon.png"
+ },
+ "/h5Pay/en/low/164/game30": {
+  "title": "Trick-or-Treat",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game30",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/137/game30/icon.png"
+ },
+ "/h5Pay/en/low/164/game85": {
+  "title": "Farm Fun",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game85",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/41/game85/icon.png"
+ },
+ "/h5Pay/en/low/172/game13": {
+  "title": "Hawaii",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/172/game13",
+  "assetsVersion": "172",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/128/game13/icon.png"
+ },
+ "/h5Pay/en/low/164/game7": {
+  "title": "Feast of Friends",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game7",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/128/game7/icon.png"
+ },
+ "/h5Pay/en/low/164/game20": {
+  "title": "Vac-a-Cat",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game20",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/132/game20/icon.png"
+ },
+ "/h5Pay/en/low/164/game8": {
+  "title": "BlackBeard",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/164/game8",
+  "assetsVersion": "164",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/128/game8/icon.png"
+ },
+ "/h5Pay/en/low/170/game62": {
+  "title": "Shadow Coast",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/170/game62",
+  "assetsVersion": "170",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/130/game62/icon.png"
+ },
+ "/h5Pay/en/low/188/game67": {
+  "title": "Gladiators",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/188/game67",
+  "assetsVersion": "188",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/188/game67/icon.png"
+ },
+ "/h5Pay/en/low/140/game10100": {
+  "title": "Bonus Pots o'Gold",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/140/game10100",
+  "assetsVersion": "140",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/1/game10100/icon.png"
+ },
+ "/h5Pay/en/low/120/game10096": {
+  "title": "Gold Adventure",
+  "sceneName": "lobby_icon",
+  "assetsLocation": "/h5Pay/en/low/120/game10096",
+  "assetsVersion": "120",
+  "sizeType": "1x1",
+  "availableFromLevel": 1,
+  "labels": null,
+  "iconLocation": "/h5Pay/en/low/120/game10096/icon.png"
+ }
+}

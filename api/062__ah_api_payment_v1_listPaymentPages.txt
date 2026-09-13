@@ -1,0 +1,839 @@
+URL: https://payment-dot-gambino-apps.appspot.com/_ah/api/payment/v1/listPaymentPages
+
+{
+  "paymentPage" : {
+    "id" : 138480,
+    "paymentOptions" : [ {
+      "id" : 3272585,
+      "type" : "coins_and_extra",
+      "startValue" : 9.2E7,
+      "discountInPercent" : 1000.0,
+      "endValue" : 1.012E9,
+      "price" : 99.99,
+      "providerProductId" : "774600",
+      "platform" : 2048,
+      "contributionPoints" : 40000.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "5"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_5"
+        }, {
+          "key" : "amount",
+          "value" : "2"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3272586,
+      "type" : "coins_and_extra",
+      "startValue" : 3.0E7,
+      "discountInPercent" : 800.0,
+      "endValue" : 2.7E8,
+      "price" : 49.99,
+      "providerProductId" : "774595",
+      "platform" : 2048,
+      "contributionPoints" : 2931.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "5"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_5"
+        }, {
+          "key" : "amount",
+          "value" : "1"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3272587,
+      "type" : "coins_and_extra",
+      "startValue" : 1.1E7,
+      "discountInPercent" : 600.0,
+      "endValue" : 7.7E7,
+      "price" : 24.99,
+      "providerProductId" : "774570",
+      "platform" : 2048,
+      "contributionPoints" : 1317.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "3"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_4"
+        }, {
+          "key" : "amount",
+          "value" : "1"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3272588,
+      "type" : "coins_and_extra",
+      "startValue" : 3600000.0,
+      "discountInPercent" : 500.0,
+      "endValue" : 2.16E7,
+      "price" : 9.99,
+      "providerProductId" : "774552",
+      "platform" : 2048,
+      "contributionPoints" : 491.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "2"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_3"
+        }, {
+          "key" : "amount",
+          "value" : "2"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3272589,
+      "type" : "coins_and_extra",
+      "startValue" : 1700000.0,
+      "discountInPercent" : 400.0,
+      "endValue" : 8500000.0,
+      "price" : 4.99,
+      "providerProductId" : "774524",
+      "platform" : 2048,
+      "contributionPoints" : 239.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_3"
+        }, {
+          "key" : "amount",
+          "value" : "1"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 4313599,
+      "type" : "coins_and_extra",
+      "startValue" : 960000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3840000.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "round",
+          "value" : "1"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/pp/pp_NewComer_Deal_update_13_12_UDI{type}"
+    } ],
+    "excludeEndMultipliers" : true,
+    "start" : 1786960800000,
+    "end" : 1789380000000
+  },
+  "paymentPages" : [ {
+    "id" : 138480,
+    "paymentOptions" : [ {
+      "id" : 3272585,
+      "type" : "coins_and_extra",
+      "startValue" : 9.2E7,
+      "discountInPercent" : 1000.0,
+      "endValue" : 1.012E9,
+      "price" : 99.99,
+      "providerProductId" : "774600",
+      "platform" : 2048,
+      "contributionPoints" : 40000.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "5"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_5"
+        }, {
+          "key" : "amount",
+          "value" : "2"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3272586,
+      "type" : "coins_and_extra",
+      "startValue" : 3.0E7,
+      "discountInPercent" : 800.0,
+      "endValue" : 2.7E8,
+      "price" : 49.99,
+      "providerProductId" : "774595",
+      "platform" : 2048,
+      "contributionPoints" : 2931.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "5"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_5"
+        }, {
+          "key" : "amount",
+          "value" : "1"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3272587,
+      "type" : "coins_and_extra",
+      "startValue" : 1.1E7,
+      "discountInPercent" : 600.0,
+      "endValue" : 7.7E7,
+      "price" : 24.99,
+      "providerProductId" : "774570",
+      "platform" : 2048,
+      "contributionPoints" : 1317.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "3"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_4"
+        }, {
+          "key" : "amount",
+          "value" : "1"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3272588,
+      "type" : "coins_and_extra",
+      "startValue" : 3600000.0,
+      "discountInPercent" : 500.0,
+      "endValue" : 2.16E7,
+      "price" : 9.99,
+      "providerProductId" : "774552",
+      "platform" : 2048,
+      "contributionPoints" : 491.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "2"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_3"
+        }, {
+          "key" : "amount",
+          "value" : "2"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3272589,
+      "type" : "coins_and_extra",
+      "startValue" : 1700000.0,
+      "discountInPercent" : 400.0,
+      "endValue" : 8500000.0,
+      "price" : 4.99,
+      "providerProductId" : "774524",
+      "platform" : 2048,
+      "contributionPoints" : 239.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "round",
+          "value" : "2"
+        } ]
+      }, {
+        "type" : "galactic_adventure_chips",
+        "parameters" : [ {
+          "key" : "chip_type",
+          "value" : "CHIP_3"
+        }, {
+          "key" : "amount",
+          "value" : "1"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 4313599,
+      "type" : "coins_and_extra",
+      "startValue" : 960000.0,
+      "discountInPercent" : 300.0,
+      "endValue" : 3840000.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraPurchaseItems" : [ {
+        "type" : "free_spins",
+        "parameters" : [ {
+          "key" : "count",
+          "value" : "1"
+        }, {
+          "key" : "round",
+          "value" : "1"
+        } ]
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/pp/pp_NewComer_Deal_update_13_12_UDI{type}"
+    } ],
+    "excludeEndMultipliers" : true,
+    "start" : 1786960800000,
+    "end" : 1789380000000
+  }, {
+    "id" : 119771,
+    "type" : "daily_bonus_wheel",
+    "paymentOptions" : [ {
+      "id" : 3087994,
+      "type" : "free_spins",
+      "startValue" : 1.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 1.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "1"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087995,
+      "type" : "free_spins",
+      "startValue" : 1.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 1.0,
+      "price" : 4.99,
+      "providerProductId" : "774524",
+      "platform" : 2048,
+      "contributionPoints" : 239.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "2"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087996,
+      "type" : "free_spins",
+      "startValue" : 1.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 1.0,
+      "price" : 19.99,
+      "providerProductId" : "774565",
+      "platform" : 2048,
+      "contributionPoints" : 1030.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "3"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087997,
+      "type" : "free_spins",
+      "startValue" : 3.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 3.0,
+      "price" : 5.99,
+      "providerProductId" : "774525",
+      "platform" : 2048,
+      "contributionPoints" : 289.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "1"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087998,
+      "type" : "free_spins",
+      "startValue" : 5.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 5.0,
+      "price" : 8.99,
+      "providerProductId" : "774550",
+      "platform" : 2048,
+      "contributionPoints" : 440.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "1"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087999,
+      "type" : "free_spins",
+      "startValue" : 10.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 10.0,
+      "price" : 14.99,
+      "providerProductId" : "774558",
+      "platform" : 2048,
+      "contributionPoints" : 754.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "1"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3088000,
+      "type" : "free_spins",
+      "startValue" : 3.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 3.0,
+      "price" : 7.99,
+      "providerProductId" : "774527",
+      "platform" : 2048,
+      "contributionPoints" : 389.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "2"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3088001,
+      "type" : "free_spins",
+      "startValue" : 5.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 5.0,
+      "price" : 11.99,
+      "providerProductId" : "774554",
+      "platform" : 2048,
+      "contributionPoints" : 595.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "2"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3088002,
+      "type" : "free_spins",
+      "startValue" : 10.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 10.0,
+      "price" : 24.99,
+      "providerProductId" : "774570",
+      "platform" : 2048,
+      "contributionPoints" : 1317.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "2"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3088003,
+      "type" : "free_spins",
+      "startValue" : 3.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 3.0,
+      "price" : 29.99,
+      "providerProductId" : "774575",
+      "platform" : 2048,
+      "contributionPoints" : 1616.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "3"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3088004,
+      "type" : "free_spins",
+      "startValue" : 5.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 5.0,
+      "price" : 44.99,
+      "providerProductId" : "774590",
+      "platform" : 2048,
+      "contributionPoints" : 2584.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "3"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3088005,
+      "type" : "free_spins",
+      "startValue" : 10.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 10.0,
+      "price" : 69.99,
+      "providerProductId" : "774597",
+      "platform" : 2048,
+      "contributionPoints" : 4435.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "3"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/pp/pp_Gold_Adventure_Sale_400_GPH_MFS_CTB_CTBP_XPB_XPBP_MFS_MFSP_DFS_DFSP_CFP_CFPP_CFS_TWB_CIVC_BBC_ALP_GPH_FHL_ALP_DFS_HLC_PHL_WCRM_WHB_FRC_XHL_PUZ_GAH_XMC_UDI{type}"
+    } ],
+    "excludeEndMultipliers" : false
+  }, {
+    "id" : 119770,
+    "type" : "boosters",
+    "paymentOptions" : [ {
+      "id" : 3087985,
+      "type" : "experience_booster",
+      "startValue" : 1.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 1.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "extraParams" : [ {
+        "key" : "xp_booster_type",
+        "value" : "big"
+      }, {
+        "key" : "multiplier",
+        "value" : "2.0"
+      }, {
+        "key" : "duration",
+        "value" : "14400000"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087986,
+      "type" : "experience_booster",
+      "startValue" : 3.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 3.0,
+      "price" : 6.99,
+      "providerProductId" : "774526",
+      "platform" : 2048,
+      "contributionPoints" : 338.0,
+      "extraParams" : [ {
+        "key" : "xp_booster_type",
+        "value" : "big"
+      }, {
+        "key" : "multiplier",
+        "value" : "2.0"
+      }, {
+        "key" : "duration",
+        "value" : "14400000"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087987,
+      "type" : "experience_booster",
+      "startValue" : 5.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 5.0,
+      "price" : 9.99,
+      "providerProductId" : "774552",
+      "platform" : 2048,
+      "contributionPoints" : 491.0,
+      "extraParams" : [ {
+        "key" : "xp_booster_type",
+        "value" : "big"
+      }, {
+        "key" : "multiplier",
+        "value" : "2.0"
+      }, {
+        "key" : "duration",
+        "value" : "14400000"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087988,
+      "type" : "contest_booster",
+      "startValue" : 1.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 1.0,
+      "price" : 2.99,
+      "providerProductId" : "774549",
+      "platform" : 2048,
+      "contributionPoints" : 142.0,
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087989,
+      "type" : "contest_booster",
+      "startValue" : 5.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 5.0,
+      "price" : 9.99,
+      "providerProductId" : "774552",
+      "platform" : 2048,
+      "contributionPoints" : 491.0,
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087990,
+      "type" : "contest_booster",
+      "startValue" : 20.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 20.0,
+      "price" : 29.99,
+      "providerProductId" : "774575",
+      "platform" : 2048,
+      "contributionPoints" : 1616.0,
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087991,
+      "type" : "free_spins",
+      "startValue" : 10.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 10.0,
+      "price" : 14.99,
+      "providerProductId" : "774558",
+      "platform" : 2048,
+      "contributionPoints" : 754.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "1"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087992,
+      "type" : "free_spins",
+      "startValue" : 10.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 10.0,
+      "price" : 24.99,
+      "providerProductId" : "774570",
+      "platform" : 2048,
+      "contributionPoints" : 1317.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "2"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    }, {
+      "id" : 3087993,
+      "type" : "free_spins",
+      "startValue" : 10.0,
+      "discountInPercent" : 0.0,
+      "endValue" : 10.0,
+      "price" : 69.99,
+      "providerProductId" : "774597",
+      "platform" : 2048,
+      "contributionPoints" : 4435.0,
+      "extraParams" : [ {
+        "key" : "round",
+        "value" : "3"
+      } ],
+      "subscription" : false,
+      "fake" : false,
+      "enabled" : true,
+      "promo" : false,
+      "default" : false
+    } ],
+    "imageList" : [ {
+      "resolution" : "high",
+      "backgroundImage" : "https://static.gambinoslot.com/MediaLibrary/{platform}/{locale}/{res}/marketing/pp/pp_Gold_Adventure_Sale_400_GPH_MFS_CTB_CTBP_XPB_XPBP_MFS_MFSP_DFS_DFSP_CFP_CFPP_CFS_TWB_CIVC_BBC_ALP_GPH_FHL_ALP_DFS_HLC_PHL_WCRM_WHB_FRC_XHL_PUZ_GAH_XMC_UDI{type}"
+    } ],
+    "excludeEndMultipliers" : false
+  } ]
+}

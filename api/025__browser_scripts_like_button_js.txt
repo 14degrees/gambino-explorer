@@ -1,0 +1,45 @@
+URL: https://game.onlinefungames.net/browser/scripts/like_button.js
+
+function showHideLikePanel(isShow) {
+    var el = $('#likebtn'); isShow ? el.show() : el.hide();
+}
+
+function moveLikePanel(x, y) {
+    var el = $('#likebtn');
+    el.css({left: x + 'px', top: y + 'px'});
+}
+
+function showHideLikeButton(isShow) {
+    var el = $('#likebtn_simple'); isShow ? el.show() : el.hide();
+}
+
+function moveLikeButton(x, y) {
+    var el = $('#likebtn_simple');
+    el.css({left: x + 'px', top: y + 'px'});
+}
+
+function setLikeButtonUrl(url) {
+    var el = $('#likebtn_simple_control');
+    el.attr("data-href", url);
+    FB.XFBML.parse();
+}
+
+function refreshLikeButton() {
+    FB.XFBML.parse();
+}
+
+function subscribeLike(callback) {
+    FB.Event.subscribe('edge.create', callback);
+}
+
+function subscribeUnlike(callback) {
+    FB.Event.subscribe('edge.remove', callback);
+}
+
+function unsubscribeLike(callback) {
+    FB.Event.unsubscribe('edge.create', callback);
+}
+
+function unsubscribeUnlike(callback) {
+    FB.Event.unsubscribe('edge.remove', callback);
+}

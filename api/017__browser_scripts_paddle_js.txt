@@ -1,0 +1,29 @@
+URL: https://game.onlinefungames.net/browser/scripts/paddle.js
+
+
+Paddle.Setup({ vendor: parseInt(PADDLE_VENDOR_ID) });
+
+function paddleCheckoutOpen(productId, transactionId, email, country, postcode, successFunc, closeFunc) {
+  console.log(`Paddle payment page is opened for productId = ${productId}`);
+  var dto = {
+    product: productId,
+    passthrough: transactionId,
+    allowQuantity: false,
+    successCallback: successFunc,
+    closeCallback: closeFunc,
+  };
+
+  if (email !== '' && email !== null) {
+    dto.email = email;
+  }
+
+  if (country !== '' && country !== null) {
+    dto.country = country;
+  }
+
+  if (postcode !== '' && postcode !== null) {
+    dto.postcode = postcode;
+  }
+
+  Paddle.Checkout.open(dto);
+}

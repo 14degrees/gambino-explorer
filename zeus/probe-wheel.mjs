@@ -1,0 +1,16 @@
+import { chromium } from 'playwright-core';
+const browser = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+const page = await (await browser.newContext({ viewport: { width: 1400, height: 900 } })).newPage();
+page.on('pageerror', (e) => console.log('PAGEERROR', e.message));
+await page.goto('file://' + process.cwd() + '/zeus/bonuswheel-inspector.html');
+await page.waitForTimeout(2000);
+await page.click('button[data-tab="states"]');
+const labels = await page.$$eval('#states .play', (bs) => bs.map((b) => b.dataset.label));
+console.log(labels.length, 'playable states');
+console.log(labels.filter((l) => /^(spin|win|no_win|cycle|sector_3|default) /).join('\n'));
+const i = labels.findIndex((l) => l.startsWith('sector_3 '));
+await page.$$eval('#states .play', (bs, i) => bs[i].click(), i);
+await page.waitForTimeout(700);
+await page.screenshot({ path: 'zeus/wheel-sector.png', clip: { x: 10, y: 60, width: 700, height: 420 } });
+console.log(await page.textContent('#playing'));
+await browser.close();

@@ -1,0 +1,466 @@
+<title>Gambino Slots Teardown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #F2F3F5;
+    --panel: #FFFFFF;
+    --panel-2: #E9EBEF;
+    --ink: #181B21;
+    --muted: #5B6371;
+    --line: #D8DCE3;
+    --gold: #B8871F;
+    --gold-ink: #7A5A12;
+    --gold-soft: #F4E9CD;
+    --code-bg: #1C1F26;
+    --code-ink: #E6E3DA;
+    --code-dim: #8C94A1;
+    --img-bg: #0E1014;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #121419;
+      --panel: #1A1D24;
+      --panel-2: #22262F;
+      --ink: #E9E7E1;
+      --muted: #98A0AC;
+      --line: #2A2F39;
+      --gold: #E2B54B;
+      --gold-ink: #E2B54B;
+      --gold-soft: #33290F;
+      --code-bg: #0E1014;
+      --code-ink: #E6E3DA;
+      --code-dim: #7E8794;
+      --img-bg: #0A0B0E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #121419;
+    --panel: #1A1D24;
+    --panel-2: #22262F;
+    --ink: #E9E7E1;
+    --muted: #98A0AC;
+    --line: #2A2F39;
+    --gold: #E2B54B;
+    --gold-ink: #E2B54B;
+    --gold-soft: #33290F;
+    --code-bg: #0E1014;
+    --code-ink: #E6E3DA;
+    --code-dim: #7E8794;
+    --img-bg: #0A0B0E;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 40px);
+    padding-block: 40px 80px;
+  }
+  .prose { max-width: 72ch; }
+
+  h1, h2, h3 {
+    font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 0.005em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h1 { font-size: clamp(44px, 7vw, 76px); font-weight: 700; }
+  h2 { font-size: 32px; margin-top: 64px; margin-bottom: 14px; }
+  h3 { font-size: 22px; margin-top: 28px; margin-bottom: 8px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--gold-ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .eyebrow {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-ink);
+  }
+  .lede { font-size: 19px; color: var(--muted); max-width: 60ch; margin-top: 18px; }
+
+  code, pre, .mono {
+    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  code {
+    font-size: 0.9em;
+    background: var(--panel-2);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+  pre {
+    background: var(--code-bg);
+    color: var(--code-ink);
+    padding: 16px 18px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 12px 0 18px;
+  }
+  pre code { background: none; padding: 0; font-size: inherit; color: inherit; }
+  pre .dim { color: var(--code-dim); }
+  pre .hi { color: var(--gold); }
+
+  /* spec sheet */
+  .spec {
+    margin-top: 36px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+  .spec div {
+    padding: 14px 18px 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .spec dt {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .spec dd { margin: 4px 0 0; font-weight: 500; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .spec dd small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  /* flow chain */
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 8px 0;
+    margin: 18px 0 8px;
+  }
+  .flow .step {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    border-radius: 4px;
+    min-width: 0;
+  }
+  .flow .step b { display: block; font-weight: 600; }
+  .flow .step span { display: block; color: var(--muted); font-size: 13px; }
+  .flow .arrow {
+    display: flex; align-items: center;
+    padding: 0 8px;
+    color: var(--gold);
+    font-size: 20px;
+  }
+  .flow .step.gpu { border-color: var(--gold); background: var(--gold-soft); }
+
+  /* pipeline sequence */
+  ol.pipe { list-style: none; padding: 0; margin: 18px 0 0; counter-reset: s; max-width: 72ch; }
+  ol.pipe li {
+    counter-increment: s;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 0 12px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+  }
+  ol.pipe li::before {
+    content: counter(s, decimal-leading-zero);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--gold);
+  }
+  ol.pipe li b { font-weight: 600; }
+  ol.pipe li p { margin: 4px 0 0; }
+  ol.pipe li p:first-child { margin-top: 0; }
+
+  /* figures */
+  .figs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0 8px;
+  }
+  @media (max-width: 720px) { .figs { grid-template-columns: 1fr; } }
+  figure { margin: 0; }
+  figure .img {
+    background: var(--img-bg);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    /* checker so transparent art reads as transparent */
+    background-image:
+      linear-gradient(45deg, #1A1D24 25%, transparent 25%),
+      linear-gradient(-45deg, #1A1D24 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #1A1D24 75%),
+      linear-gradient(-45deg, transparent 75%, #1A1D24 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  }
+  figure img { display: block; width: 100%; height: auto; max-width: 100%; }
+  figure .img.split { position: relative; }
+  figure .img.split::after {
+    content: "";
+    position: absolute; top: 0; bottom: 0; left: 50%;
+    border-left: 1px dashed var(--gold);
+    opacity: 0.8;
+  }
+  figure .img.split .tag {
+    position: absolute; top: 8px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #F4E9CD; background: rgba(0,0,0,0.6);
+    padding: 3px 8px; border-radius: 3px;
+  }
+  figure .img.split .tag.l { left: 8px; }
+  figure .img.split .tag.r { right: 8px; }
+  figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+  figcaption b { color: var(--ink); font-weight: 600; }
+
+  /* reference table */
+  .tbl { overflow-x: auto; margin: 16px 0 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); }
+  th {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); border-bottom: 2px solid var(--ink);
+  }
+  td:first-child { white-space: nowrap; }
+
+  /* tree listing */
+  .tree {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 12px 0 8px;
+  }
+  .tree .d { color: var(--muted); }
+
+  .note {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-soft);
+    padding: 12px 16px;
+    border-radius: 0 4px 4px 0;
+    margin: 18px 0;
+    max-width: 72ch;
+  }
+  .note p:last-child { margin-bottom: 0; }
+
+  ul.files { padding-left: 18px; }
+  ul.files li { margin-bottom: 4px; }
+
+  footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Teardown · game.onlinefungames.net · 2026-09-13</div>
+  <h1>Gambino Slots Teardown</h1>
+  <p class="lede">How a Dart-built slot client paints an entire casino into one <code>&lt;canvas&gt;</code>, where every atlas and animation actually lives, and how to walk the asset tree from a terminal. The game in the screenshot is <b>American Eagle</b>, game156.</p>
+
+  <dl class="spec">
+    <div><dt>Language</dt><dd>Dart → JS (dart2js)<small>gambino.dart.js, 25 MB, 891k lines</small></dd></div>
+    <div><dt>Engine</dt><dd>“syd”, in-house<small>packages/syd/assets/common_new.wad.xml</small></dd></div>
+    <div><dt>Renderer</dt><dd>WebGL, one program<small>1920 × 1080 canvas, CSS-scaled; Canvas2D only for text &amp; tints</small></dd></div>
+    <div><dt>Asset map</dt><dd>2,657 entries<small>assets/en.low.master_1438c33c….map.json</small></dd></div>
+    <div><dt>Catalogue</dt><dd>209 titles, 239 ids in the map<small>lobby config game.getgameconfig · games.json</small></dd></div>
+    <div><dt>Your screenshot</dt><dd>American Eagle · game156<small>slot package 14 MB, 14 symbol videos</small></dd></div>
+    <div><dt>Textures</dt><dd>WebP atlases, PNG fallback<small>atlas.rgba8888.webp, up to ~1.5 MB each</small></dd></div>
+    <div><dt>Symbol animation</dt><dd>VP8 WebM, RGB | alpha split<small>MP4 fallback; .bik ids from the native build</small></dd></div>
+  </dl>
+
+  <h2>The stack, page to pixel</h2>
+  <div class="prose">
+    <p>The marketing URL is a wrapper. It hosts a login modal, analytics, and an iframe; the game itself is the iframe’s document, and the only thing that draws is one canvas inside it.</p>
+  </div>
+  <div class="flow">
+    <div class="step"><b>free_fun_games.html</b><span>wrapper: GA, pixel, modals</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>browser/index.html</b><span>iframe: login DOM + canvas</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>gambino.dart.js</b><span>dart2js bundle, engine “syd”</span></div>
+    <div class="arrow">→</div>
+    <div class="step gpu"><b>#drawHere</b><span>WebGL, 1920 × 1080</span></div>
+  </div>
+  <div class="prose">
+    <p>Scenes are data, not code. Each <code>GameScene</code> is a JSON node tree — <code>sprite</code>, <code>ninePatch</code>, <code>ttf</code>, <code>node</code> — with properties (Position, Size, DrawOrder, Color, SpriteName) and a timeline of <code>actions</code>: <code>interpolate</code>, <code>discrete</code>, <code>sequence</code>, <code>parallel</code>, cubic-bezier easing. It reads like a Flash/Animate export, which is almost certainly what it is.</p>
+  </div>
+<pre><code><span class="dim">// lobby_bg/scene.object, trimmed</span>
+{"header": {"type": "GameScene"}, "resource": {"nodes": [
+  {"type": "ninePatch", "effect": ["ColorModulation"],
+   "properties": {"Color": {"a": 0}, "DrawOrder": 4, "Position": {"x": -79},
+                  "SpriteName": "lobby_bg/bounds.spr", "Id": "minBounds", "Size": {"h": 1042, "w": 1305}}},
+  {"type": "sprite", "properties": {"Position": {"x": -537}, "SpriteName": "lobby_bg/Bitmap 1-1.spr", "DrawOrder": 2}},
+  {"type": "node", "blend": {"destinationFactor": "InverseSourceAlpha"}, "children": [0, 1, 2],
+   "properties": {"Size": {"h": 768, "w": 1152}}}
+]}}
+
+<span class="dim">// an action timeline (login screen progress bar)</span>
+{"duration": 4125, "start": {"h": 64, "w": 11}, "property": "Size", "end": {"h": 64, "w": 497}, "type": "interpolate"}
+{"timeParameters": [0.3333, 0.0, 0.3333, 0.9], "timeFunction": "CubicBezier", "duration": 417, "property": "Position", ...}</code></pre>
+
+  <h2>Asset pipeline</h2>
+  <div class="prose"><p>This is a real sequence — each step hands the next one a path.</p></div>
+  <ol class="pipe">
+    <li><div>
+      <b>Boot picks a map.</b>
+      <p>The client logs <code>MapJson URL: assets/en.&lt;quality&gt;.&lt;VERSION_CODE&gt;.map.json</code>. <code>quality</code> is <code>low</code> on a 1× display; <code>VERSION_CODE</code> is a global from <code>scripts/init_common_variables.js</code> (<code>master_1438c33c…</code>, app version 11.27). The map is a flat object: logical path → content-hashed path.</p>
+    </div></li>
+    <li><div>
+      <b>Features load as <code>.wad.xml</code> packages.</b>
+      <p>XML wrapping JSON blobs. <code>lobby/login.wad.xml</code>, <code>lobby/lobby.wad.xml</code>, <code>lobby/LobbyMain.wad.xml</code> on the way in; <code>games/game117/slot.wad.xml</code> when you open a slot. A wad declares textures, sprites, fonts, audio, video and scenes, each with hashed source paths.</p>
+    </div></li>
+    <li><div>
+      <b>Textures are packed atlases.</b>
+      <p><code>atlas.rgba8888.webp</code> with a <code>.png</code> sibling; sprites are TexturePacker-style frame sheets (<code>frame</code>, <code>sourceSize</code>, <code>spriteSourceSize</code>, optional <code>ninePatch</code>). Multi-frame sheets are flipbooks — game117’s slot atlas carries a 27-frame fire ring.</p>
+    </div></li>
+    <li><div>
+      <b>Symbol animations are video.</b>
+      <p>Not sprite strips. Each reel symbol’s “in” animation is a VP8 <code>.webm</code> (MP4 fallback) whose frame is <b>RGB on the left half, alpha matte on the right</b>. The ids still end in <code>.bik</code> — Bink video from the mobile/desktop build, transcoded for web.</p>
+    </div></li>
+    <li><div>
+      <b>The shader stitches it back together.</b>
+      <p>One GLSL program compiled with defines. Under <code>VIDEO</code>, the fragment stage samples the same texture half a UV to the right and uses its red channel as alpha.</p>
+    </div></li>
+  </ol>
+
+<pre><code><span class="dim">// packages/syd/assets/common_new.wad.xml — fragment shader, VIDEO path</span>
+#ifdef TEXTURING
+  lowp vec4 color = texture2D(us_0, outCoord);
+  #ifdef VIDEO
+    <span class="hi">color.w = texture2D(us_0, outCoordAlpha).x;</span>   <span class="dim">// outCoordAlpha = outCoord + vec2(0.5, 0.0)</span>
+  #endif
+#endif
+#ifdef MASK1
+  color.a *= texture2D(us_M1, outMaskCoord1).x;     <span class="dim">// up to two mask textures</span>
+#endif
+gl_FragColor = color;</code></pre>
+
+  <div class="figs">
+    <figure>
+      <div class="img"><img src="{{ATLAS}}" alt="game117 slot atlas: UI strings, a 27-frame fire ring animation, a lever icon" width="900" height="1134"></div>
+      <figcaption><b>game117/slot/atlas.rgba8888.webp</b> — 1398 × 1762, Shamrock Luck. Copy strips, the respin-remaining HUD, a lever, and 27 frames of the win-ring flipbook, all in one sheet. Sprites in <code>slot.wad.xml</code> point into it by rect.</figcaption>
+    </figure>
+    <figure>
+      <div class="img split"><span class="tag l">RGB</span><span class="tag r">Alpha</span><img src="{{FRAME}}" alt="A frame of InAnim_3_1.webm: pot of gold on the left, its white alpha matte on the right" width="708" height="490"></div>
+      <figcaption><b>game117/icons/InAnim_3_1.webm</b>, frame 10 — 708 × 490 @ 24 fps, VP8. The shader reads the left half as color and the right half’s red channel as alpha, so a 354 × 490 symbol lands on the reel with clean transparency.</figcaption>
+    </figure>
+  </div>
+
+
+  <h3>The game you had open</h3>
+  <div class="prose"><p>Sunset over pines, bear / wolf / elk / cougar / eagle, stars-and-stripes wild: the lobby config calls it <b>American Eagle</b>, id <code>game156</code>, assets version 194. Its sound cues settle it — <code>American_Eagle_IC_Bear.ogg</code>, <code>IC_Deer</code>, <code>IC_Puma</code>, <code>IC_Wolf</code>, <code>IC_Eagle</code>. The whole slot package is 14 MB: one 2272 × 3040 icon atlas, 14 symbol WebMs, a jackpot wad, a scatter wad, a bonus wad and 40-odd OGGs.</p></div>
+  <div class="figs">
+    <figure>
+      <div class="img"><img src="{{AEICONS}}" alt="American Eagle icon atlas: eagle coins, gold and flag stars, animal symbols, landscape scatter frames" width="900" height="1204"></div>
+      <figcaption><b>game156/icons/atlas.rgba8888.webp</b> — 2272 × 3040. Collect-eagle coins and stars in every state, the five animal symbols, the landscape scatter, plus the number glyphs the HUD is typeset from (that <code>0QS8296531</code> row is a bitmap font page).</figcaption>
+    </figure>
+    <figure>
+      <div class="tree mono" style="margin:0">games/game156/  <span class="d">14 MB downloaded via assets.mjs</span>
+├─ slot.wad.xml
+├─ icons/        <span class="d">atlas + InAnim_*.webm ×14 + IC_*.ogg</span>
+├─ slot/         <span class="d">reels atlas, paytable, popups, 25 OGG</span>
+├─ jackpot/      <span class="d">Grand / Mega / Major / Minor</span>
+├─ scatter/
+└─ bonus/</div>
+      <figcaption>The lobby tile came from a different wad — <code>icon1x1.wad.xml</code> — which is how the five eagle games were told apart before opening any of them.</figcaption>
+    </figure>
+  </div>
+
+  <h3>Where the catalogue comes from</h3>
+  <div class="prose">
+    <p>Game names aren’t in the map; they arrive from the backend in one batched call, <code>/_ah/api/batching/v1/getBatchInfo</code> on <code>gambino-apps.appspot.com</code>, under <code>response["game.getgameconfig"].rooms[].games[]</code> — <code>title</code>, <code>assetsLocation</code>, <code>assetsVersion</code>, <code>sizeType</code>, <code>availableFromLevel</code>. Marketing scenes (in-app offers, avatars, compensations) are wads on a second CDN, <code>static.gambinoslot.com/MediaLibrary/browser/en/low/…</code>. <code>games.json</code> in the folder is the flattened catalogue.</p>
+  </div>
+
+  <h2>WAD package format</h2>
+  <div class="prose"><p>Every element carries a logical <code>id</code>, and every source path is content-hashed so the CDN can cache forever.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Element</th><th>Payload</th><th>Sources</th></tr></thead>
+    <tbody>
+      <tr><td><code>&lt;texture&gt;</code></td><td>none — a name for an image</td><td><code>&lt;source path type&gt;</code> ×2: image/png, image/webp</td></tr>
+      <tr><td><code>&lt;sprite&gt;</code></td><td>JSON <code>SpriteFrameSheet</code>: <code>frames[]</code> with <code>frame</code>, <code>sourceSize</code>, <code>spriteSourceSize</code>, optional <code>ninePatch</code>; <code>meta.image</code> names the texture</td><td>—</td></tr>
+      <tr><td><code>&lt;font&gt;</code></td><td>BMFont XML: <code>&lt;common&gt;</code>, <code>&lt;pages&gt;</code>, <code>&lt;chars&gt;</code> with per-glyph rects (2,485 <code>&lt;char&gt;</code> in lobby.wad)</td><td>page image</td></tr>
+      <tr><td><code>&lt;ttf&gt;</code></td><td>none</td><td>font/ttf (NotoSans-Bold, NotoSerif-Bold, ArialR_MTB)</td></tr>
+      <tr><td><code>&lt;audio&gt;</code></td><td>none</td><td>audio/ogg, audio/mpeg</td></tr>
+      <tr><td><code>&lt;video&gt;</code></td><td>none</td><td><code>&lt;webgl path type&gt;</code> ×2: video/webm, video/mp4</td></tr>
+      <tr><td><code>&lt;scene&gt;</code></td><td>JSON <code>GameScene</code>: nodes, actions, rules, signalEvents</td><td>—</td></tr>
+      <tr><td><code>&lt;source&gt;</code> / <code>&lt;shader&gt;</code> / <code>&lt;blend&gt;</code></td><td>GLSL text, program wiring, blend-factor presets</td><td>engine wad only</td></tr>
+    </tbody>
+  </table></div>
+
+<pre><code><span class="dim">// a sprite entry, verbatim</span>
+&lt;sprite id="lobby_bg/bounds.spr"&gt;{"header": {"type": "SpriteFrameSheet"}, "resource": {"frames": [
+  {"frame": {"y": 1, "x": 2166, "w": 113, "h": 102}, "ninePatch": {"y": 25, "x": 28, "w": 57, "h": 51},
+   "sourceSize": {"h": 102, "w": 113}, "spriteSourceSize": {"y": 0, "x": 0, "w": 113, "h": 102}}],
+  "meta": {"image": "lobby_bg/atlas.rgba8888.png"}}}&lt;/sprite&gt;
+
+<span class="dim">// a video entry</span>
+&lt;video id="icons/InAnim_3_1.bik"&gt;
+  &lt;webgl path="assets/en/low/games/game117/icons/11bea9e1….InAnim_3_1.webm" type="video/webm" /&gt;
+  &lt;webgl path="assets/en/low/games/game117/icons/09fba292….InAnim_3_1.mp4"  type="video/mp4" /&gt;
+&lt;/video&gt;</code></pre>
+
+  <h3>One game’s package — game117, Shamrock Luck</h3>
+  <div class="tree mono">games/game117/
+├─ slot.wad.xml          <span class="d">608 KB · 18 textures · 82 sprites · 31 scenes · 28 fonts · 15 audio · 14 video</span>
+│   ├─ slot/atlas.rgba8888.{webp,png}          <span class="d">reels, HUD, win-ring flipbook</span>
+│   ├─ slot/popups/freespins/atlas…           <span class="d">+ B_Glass.ogg, B_Wood.ogg, mask_congr.webp</span>
+│   ├─ icons/atlas.icon{2..7}win.rgba8888…    <span class="d">per-symbol win states</span>
+│   ├─ icons/InAnim_{2..7}_1.{webm,mp4}       <span class="d">per-symbol in-animations, RGB|alpha</span>
+│   ├─ logo/atlas.rgba8888…
+│   └─ slot/Shamrock_Luck_*.ogg               <span class="d">ic_wild, ic_+1spin, sfx_lever_switch, …</span>
+├─ slot_bg.wad.xml        <span class="d">slot_bg/atlas.jpeg.{webp,png}</span>
+├─ loading.wad.xml        <span class="d">atlas + Shamrock_Luck_Preloader.{ogg,mp3}</span>
+├─ icon1x1.wad.xml · icon1x2.wad.xml · icon1x1_gray · icon1x2_gray   <span class="d">lobby tiles</span>
+├─ additional.wad.xml     <span class="d">anim_0.{webm,mp4}</span>
+└─ newgame.wad.xml        <span class="d">“new” ribbon atlas</span></div>
+
+  <h2>Reaching it from the browser</h2>
+  <div class="prose">
+    <p>Yes, all of it. Nothing is encrypted, signed, or behind auth; every file is a plain GET from the same public paths the client uses. DevTools → Network → filter <code>assets/</code> and you watch every atlas, WebM and wad go by — 509 asset requests just to reach the lobby. The 403s you get guessing paths are only GCS saying “no such object”; the real paths are in the map.</p>
+    <p><code>assets.mjs</code> in the explore folder walks the map so you don’t have to:</p>
+  </div>
+<pre><code>node assets.mjs games                <span class="dim"># game ids in the map, by entry count</span>
+node assets.mjs list game117         <span class="dim"># every file each of the game's wads references</span>
+node assets.mjs fetch game117 slot   <span class="dim"># download slot.wad.xml + its webp/webm/ogg/ttf into dl/game117/</span></code></pre>
+
+  <div class="note">
+    <p><b>Two things to keep in mind.</b> Each headless run creates a guest user on Gambino’s backend (their normal first-visit flow, but a write on their side), so the captures were kept to two. And the art is Spiral Interactive’s copyrighted work: study the technique and the format for the gamby wheel, don’t ship the pixels.</p>
+  </div>
+
+  <h2>What’s on disk</h2>
+  <div class="prose"><p><code>~/Documents/2026/crypto/ponsfork/gambino-explore/</code></p></div>
+  <ul class="files mono" style="font-size:14px">
+    <li><b>README.md</b> — the same findings, in text</li>
+    <li><b>assets.mjs</b> — map walker (games / list / fetch)</li>
+    <li><b>gambino.dart.js</b> — the client; blitter ≈ line 754 380, tint/mask helpers ≈ 760 260</li>
+    <li><b>map.json</b>, <b>stages_list.json</b> — asset map and backend stage list</li>
+    <li><b>common_new.wad.xml</b> — the engine wad: both shaders, blend presets</li>
+    <li><b>login.wad.xml</b>, <b>lobby.wad.xml</b> — lobby packages</li>
+    <li><b>game117/</b> — slot.wad.xml, slot.atlas.{webp,png}, InAnim_3_1.webm + extracted frame</li>
+    <li><b>dl/game156/</b> — American Eagle, full slot package (14 MB)</li>
+    <li><b>games.json</b>, <b>api/</b> — flattened catalogue and the raw lobby API bodies</li>
+    <li><b>icons/</b> — the five eagle lobby tiles, and a contact sheet of them</li>
+    <li><b>capture.mjs</b>, <b>requests.json</b> — headless-Chrome network log (684 responses)</li>
+    <li><b>page.html</b>, <b>browser-index.html</b>, <b>scripts_*.js</b> — wrapper, game HTML, boot globals</li>
+  </ul>
+
+  <footer>Captured against build <span class="mono">master_1438c33c6a97863445a7b44a76a92d819a0ddb8e</span>, app 11.27, stage sa-browser. Hashed paths change with every release; the logical ids in the wads don’t.</footer>
+</div>

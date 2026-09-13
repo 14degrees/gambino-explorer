@@ -1,0 +1,10 @@
+URL: https://game.onlinefungames.net/browser/scripts/init_firebase_variables.js
+
+var FIREBASE_API_KEY = "AIzaSyCblkGHEYtJyKK8bx84LX1gDWByOpbNIJY";
+var FIREBASE_AUTH_DOMAIN = "gambino-apps.firebaseapp.com";
+var FIREBASE_DATABASE_URL = "https://gambino-apps.firebaseio.com";
+var FIREBASE_PROJECT_ID = "gambino-apps";
+var FIREBASE_STORAGE_BUCKET = "gambino-apps.appspot.com";
+var FIREBASE_MESSAGING_SENDER_ID = "801918042290";
+var FIREBASE_APP_ID = "1:801918042290:web:1404737995e5f2f2e449ab";
+var FIREBASE_VAPID_KEY = "BA6iuLJERzlJef8xPWox-0nX8-AyWhghjWD7ygLaDFP4lHRQKxuSWsN_RB9vp_RpWJcShu3h7sVAHsziq1pjYvs";

@@ -1,0 +1,15 @@
+URL: https://game.onlinefungames.net/browser/resources/common.css
+
+html { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 100%; }
+body { height: 100%; }
+a:hover, a:active, a:focus { outline: 0; }
+a:focus { -moz-outline-style: none; }
+.llogin { display:none; margin-top: 35%; }
+.llogin button { cursor:pointer; background:transparent; border:0; outline: 0; }
+.llogout { cursor:pointer; text-align:center; display:none; position:absolute; top:6px; left:0; right:0; margin-left:auto; margin-right:auto; }
+.corner-all { border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+.boxed { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+.alert { display:none; position: absolute; padding: .3em; z-index: 1006; top:0; left:0; border: 1px solid #ff8f00; background-color: #fff5e5; }
+.showmessage .alert { display: block; }
+.alert div { text-align: center; width:300px; min-height: 100px; color:#f00; font-size: 90%; overflow: hidden; }
+.alert button { display: block; margin: 1em auto; border: 1px solid #ccc; background-color: #fff; color:#444; text-align: center; line-height: 1em; padding: .5em; cursor: pointer; }

@@ -1,0 +1,4 @@
+URL: https://game.onlinefungames.net/browser/scripts/splash_screen_website.js
+
+let loading = document.getElementById("splashLoadingContainer");
+loading.style.display = "block";
