@@ -97,7 +97,7 @@ execFileSync('python3', ['-c', `
 import sys, json
 from PIL import Image
 for src, dst in json.load(sys.stdin):
-    im = Image.open(src).convert('RGBA'); im.thumbnail((128, 128)); im.save(dst, 'WEBP', quality=80, method=4)
+    im = Image.open(src).convert('RGBA'); im.thumbnail((256, 256)); im.save(dst, 'WEBP', quality=80, method=4)
 `], { input: JSON.stringify(thumbJobs.filter(([, dst]) => !fs.existsSync(dst))) });
 
 const totals = {

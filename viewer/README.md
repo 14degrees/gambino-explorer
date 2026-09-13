@@ -20,6 +20,12 @@ npm run dev          # asset server on :8787 + Vite on :5173, opens the browser
   spin → sector → win) · **Tree** (layers panel: click to highlight on stage, untick to hide).
 - **Assets view**: atlases with every sprite outlined (hover for name and rect), sprite tiles,
   symbol videos composited with their alpha (hover to play), sounds, bitmap fonts rendered.
+- **Compose** (header dropdown, Scene view): *+ in-game wrapper* stacks the shared top bar
+  (`lobby/Panels/Top`), bet bar (`games/common_next_version/bottom`) and indicator panel around
+  the scene the way the client does; *Lobby* builds the lobby from `LobbyMain/sceneGames16x9`
+  with the top bar parented into `TopPanelContainer`, tiles from the catalogue laid into
+  `GamesScrollingArea`, and a rail widget. **The lobby** is also the first sidebar entry.
+  `screenAlignment` nodes anchor a subtree's origin to a screen edge (Center/Bottom = bottom-centre).
 - Deep links: the URL hash carries `#game:game154//slot/scene_mobile.object`.
 
 `src/syd/` is the runtime: `wad.ts` (parser), `scene.ts` (initial state, expanded-order

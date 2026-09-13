@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { animate } from 'animejs';
 import { parseWad, mergeWads, cdn, type Wad, type Scene } from './syd/wad';
-import { buildScene, preloadTextures, type Built } from './syd/dom';
+import { buildScene, preloadTextures, SCREEN, type Built } from './syd/dom';
 import { listStates, type StateInfo } from './syd/scene';
 import { playState } from './syd/timeline';
 import Assets from './ui/Assets';
@@ -10,6 +10,8 @@ import { nodeBox, fmtMs } from './ui/util';
 
 type Entry = { kind: 'game' | 'lobby'; id: string; title: string; wads: string[]; thumb?: string; anim: number; scenes: number };
 type Tab = 'scenes' | 'states' | 'tree';
+const K = { lobby: 'assets/en/low/lobby_next_version/lobby.wad.xml', lobbyMain: 'assets/en/low/lobby_next_version/LobbyMain.wad.xml', bottom: 'assets/en/low/games/common_next_version/bottom.wad.xml', indicator: 'assets/en/low/lobby_next_version/Panels/IndicatorPanel.wad.xml', ruby: 'assets/en/low/lobby_next_version/Features/RubyRush/RubyRushInLobby.wad.xml' };
+const COMPOSE_KEYS = { none: [], ingame: [K.lobby, K.bottom, K.indicator], lobby: [K.lobby, K.lobbyMain, K.indicator, K.ruby] };
 const isAnim = (s: StateInfo) => s.ms >= 40 && s.tweens > 0;
 
 export default function App() {
@@ -24,6 +26,15 @@ export default function App() {
   const [status, setStatus] = useState('');
   const [loadNote, setLoadNote] = useState('');
   const [view, setView] = useState<'scene' | 'assets'>('scene');
+  const [compose, setCompose] = useState<'none' | 'ingame' | 'lobby'>('none');
+  const extraRef = useRef<Record<string, Wad>>({});
+  const [extraTick, setExtraTick] = useState(0);
+  const loadExtra = useCallback(async (keys: string[]) => {
+    const missing = keys.filter((k) => !extraRef.current[k] && map[k]);
+    if (!missing.length) return;
+    await Promise.all(missing.map((k) => fetch(cdn(map[k])).then((r) => r.text()).then((x) => { extraRef.current[k] = parseWad(x); })));
+    setExtraTick((t) => t + 1);
+  }, [map]);
   const [tab, setTab] = useState<Tab>('states');
   const [opts, setOpts] = useState({ initial: true, backdrop: true, reels: true, reveal: false, loop: true, auto: true });
   const [playing, setPlaying] = useState<{ label: string; total: number; tracks: number } | null>(null);
@@ -72,6 +83,7 @@ export default function App() {
     return () => { cancelled = true; };
   }, [entry, wadName, map]);
 
+  useEffect(() => { if (compose !== 'none') loadExtra(COMPOSE_KEYS[compose]); }, [compose, loadExtra]);
   const scene: Scene | null = wad && sceneId ? wad.scenes[sceneId] : null;
   const states = useMemo(() => (scene ? listStates(scene) : []), [scene]);
   const animated = useMemo(() => states.filter(isAnim).sort((a, b) => b.ms - a.ms), [states]);
@@ -106,6 +118,33 @@ export default function App() {
     if (sceneId.startsWith('icons/')) b.root.style.transform = 'translate(300px, 200px) scale(3)';
     for (const i of hiddenNodes) if (b.els[i]) b.els[i].style.display = 'none';
     host.appendChild(b.root); builtRef.current = b;
+    // wrappers: the packages the client stacks around a scene
+    const X = extraRef.current; const layer = (w: Wad | undefined, id: string, z: number, dx = 0, dy = 0, into?: HTMLElement) => { if (!w?.scenes[id]) return null; const bb = buildScene(w, w.scenes[id], { applyInitial: opts.initial }); bb.root.style.zIndex = String(z); if (dx || dy) bb.root.style.transform = `translate(${dx}px, ${dy}px)`; (into || host).appendChild(bb.root); return bb; };
+    if (compose === 'ingame' && !sceneId.startsWith('icons/')) {
+      layer(X[K.bottom], 'bottom/scene16x9.object', 900);
+      layer(X[K.lobby], 'lobby/Panels/Top/scene16x9.object', 910, -SCREEN.ox, 0); // the client parents the top bar at the screen origin
+      layer(X[K.indicator], 'IndicatorPanel/scene16x9.object', 905);
+    }
+    if (compose === 'lobby') {
+      host.innerHTML = ''; builtRef.current = null;
+      layer(X[K.lobby], 'lobby_bg/scene.object', 1);
+      const grid = layer(X[K.lobbyMain], 'LobbyMain/sceneGames16x9.object', 10);
+      const top = grid?.els.find((e) => e?.dataset.id === 'TopPanelContainer'); layer(X[K.lobby], 'lobby/Panels/Top/scene16x9.object', 910, 0, 0, top || undefined);
+      const area = grid?.els.find((e) => e?.dataset.id === 'GamesScrollingArea');
+      if (area && catalog) { area.style.zIndex = '20';
+        // the scroll area's masks are sized by the client at runtime; lift them so the tiles paint
+        for (let p: HTMLElement | null = area; p && !p.classList.contains('scene'); p = p.parentElement) if (p.classList.contains('mask')) { p.style.maskImage = 'none'; (p.style as any).webkitMaskImage = 'none'; p.style.width = '0'; p.style.height = '0'; }
+        // tiles are laid out by code in the client; use the catalogue's lobby games
+        const games = catalog.games.filter((g: any) => g.title).sort((a: any, b: any) => (a.level ?? 99) - (b.level ?? 99) || a.title.localeCompare(b.title));
+        const T = 196, G = 19; // measured from the live lobby: ~196 px tiles on a 215 px pitch, two rows
+        games.forEach((g: any, i: number) => { const col = Math.floor(i / 2), row = i % 2; const d = document.createElement('div'); d.className = 'tile-lobby'; d.style.cssText = `position:absolute;left:${-26 + col * (T + G)}px;top:${row * (T + G)}px;width:${T}px;height:${T}px;background:url(/thumbs/${g.id}.webp) center/cover;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.5)`; d.title = g.title; area.appendChild(d); });
+      }
+      layer(X[K.indicator], 'IndicatorPanel/scene16x9.object', 905);
+      const rail = grid?.els.find((e) => e?.dataset.id === 'IndicatorScrollingArea'); if (rail) rail.style.zIndex = '21';
+      const ruby = layer(X[K.ruby], 'Features/RubyRush/RubyRushInLobby/sceneLobbyBanner.object', 906, 0, 150, rail || undefined); // left-rail widget slot
+      if (ruby) ruby.root.style.transform += ' scale(0.55)'; // the promo banner variant; the rail shows the compact widget
+      if (grid) builtRef.current = grid;
+    }
     // auto-entrance: a scene with a `show` entrance, or one that paints nothing at rest, plays its
     // entrance once — after its textures have decoded, so the reveal is not spent on empty sprites
     if (opts.auto && !opts.reveal) {
@@ -115,7 +154,7 @@ export default function App() {
         preloadTextures(wad, scene).then(() => { if (live && builtRef.current === b) { setLoadNote(''); play(pick, { loop: false }); } }); }
     }
     return () => cleanup();
-  }, [wad, scene, sceneId, view, opts.backdrop, opts.initial, opts.reels, opts.reveal, opts.auto]);
+  }, [wad, scene, sceneId, view, compose, extraTick, opts.backdrop, opts.initial, opts.reels, opts.reveal, opts.auto]);
 
   // hide toggles from the tree apply live
   useEffect(() => { const b = builtRef.current; if (!b || !scene) return; b.els.forEach((el, i) => { if (!el) return; const wantHidden = hiddenNodes.has(i); if (wantHidden) el.style.display = 'none'; else if (el.style.display === 'none' && !(opts.initial ? (scene.nodes[i].properties?.Hidden && !b.init[i]?.hasOwnProperty('Hidden')) || b.init[i]?.Hidden : scene.nodes[i].properties?.Hidden)) el.style.display = ''; }); }, [hiddenNodes]);
@@ -142,6 +181,7 @@ export default function App() {
         {entry && <div className="crumb"><b>{entry.title}</b><span>{entry.id}{status ? ' · ' + status : ''}{loadNote ? ' · ' + loadNote : ''}</span></div>}
         {entry?.kind === 'lobby' && entry.wads.length > 1 && <select value={wadName || entry.wads[0]} onChange={(e) => { setWadName(e.target.value); setSceneId(''); }}>{entry.wads.map((w) => <option key={w} value={w}>{w}</option>)}</select>}
         {wad && <div className="seg"><button className={view === 'scene' ? 'on' : ''} onClick={() => setView('scene')}>Scene</button><button className={view === 'assets' ? 'on' : ''} onClick={() => setView('assets')}>Assets</button></div>}
+        {wad && view === 'scene' && <select value={compose} onChange={(e) => setCompose(e.target.value as any)} aria-label="Compose" title="Stack the shared wrapper packages around the scene, the way the client does"><option value="none">Scene only</option><option value="ingame">+ in-game wrapper (top bar, bet bar, side panel)</option><option value="lobby">Lobby (grid + top bar + rail)</option></select>}
         <details className="menu"><summary>View options</summary><div>
           {([['backdrop', 'slot_bg backdrop', 'Draw the separate background package under machine scenes'], ['initial', 'apply initial state', 'Settle every node into its state machine\'s first state before drawing'], ['reels', 'populate reels', 'Fill the empty reel grid with the game\'s own symbols'], ['auto', 'auto-entrance', 'If a scene paints nothing at rest, play its show/default state once'], ['reveal', 'reveal hidden (x-ray)', 'Ignore Hidden and alpha 0 — every layer at once, including alternatives'], ['loop', 'loop playback', '']] as const).map(([k, l, t]) => <label key={k} title={t}><input type="checkbox" checked={opts[k]} onChange={(e) => setOpts({ ...opts, [k]: e.target.checked })} />{l}</label>)}
         </div></details>
@@ -150,8 +190,10 @@ export default function App() {
       <aside>
         <div className="side-search"><input type="search" placeholder={`Search ${entries.filter((e) => e.kind === 'game').length} games, ${entries.filter((e) => e.kind === 'lobby').length} features…`} value={q} onChange={(e) => setQ(e.target.value)} />
           <select value={sort} onChange={(e) => setSort(e.target.value as any)} aria-label="Sort"><option value="title">A–Z</option><option value="anim">most animated</option></select></div>
+        <button className={`item lobby-entry${compose === 'lobby' ? ' sel' : ''}`} onClick={() => { const e = entries.find((x) => x.kind === 'lobby' && x.id === 'LobbyMain'); if (e) { setEntry(e); setWadName(''); setSceneId('LobbyMain/sceneGames16x9.object'); setView('scene'); setCompose('lobby'); } }}>
+          <div className="th" style={{ background: 'linear-gradient(135deg,#5b1a8a,#c2258f)' }} /><div><b>The lobby</b><span>composed: grid · top bar · rail · dock</span></div></button>
         {(['game', 'lobby'] as const).map((kind) => { const list = shown.filter((e) => e.kind === kind); return !list.length ? null : <div key={kind}><div className="group">{kind === 'game' ? 'Games' : 'Lobby features'} · {list.length}</div>
-          {list.map((e) => <button key={e.kind + e.id} className={`item${entry?.id === e.id && entry.kind === e.kind ? ' sel' : ''}`} onClick={() => { setEntry(e); setWadName(''); setSceneId(''); setView('scene'); }}>
+          {list.map((e) => <button key={e.kind + e.id} className={`item${entry?.id === e.id && entry.kind === e.kind ? ' sel' : ''}`} onClick={() => { setEntry(e); setWadName(''); setSceneId(''); setView('scene'); if (compose === 'lobby') setCompose(e.kind === 'game' ? 'ingame' : 'none'); }}>
             <div className="th" style={e.thumb ? { backgroundImage: `url(${e.thumb})` } : undefined} /><div><b>{e.title}</b><span>{e.id} · {e.scenes} scenes · {e.anim} anim</span></div></button>)}
         </div>; })}
       </aside>

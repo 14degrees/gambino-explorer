@@ -31,6 +31,10 @@ export function preloadTextures(w: Wad, r: Scene, timeoutMs = 8000): Promise<voi
   return Promise.race([all.then(() => {}), new Promise<void>((res) => setTimeout(res, timeoutMs))]);
 }
 
+// A screenAlignment node puts its subtree's origin at a screen anchor (Center/Bottom = the
+// bottom-centre of the 1366×768 screen). Scenes are drawn inside the 1152-wide design box, which
+// sits `ox` pixels in from the screen's left edge.
+export const SCREEN = { w: 1366, h: 768, design: 1152, ox: 107 };
 export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; reveal?: boolean } = {}): Built {
   const init = opts.applyInitial === false ? {} : initialProps(r);
   const els: HTMLElement[] = []; const videos = new Map<number, AlphaVideo>();
@@ -58,14 +62,21 @@ export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; rev
   const build = (i: number): HTMLElement => {
     const n = r.nodes[i]; const p = effectiveProps(r, init, i);
     const el = document.createElement('div'); el.className = `nd ${n.type}`; el.id = 'n' + i; if (p.Id) el.dataset.id = p.Id;
-    const st: string[] = [`transform:${transformOf(p)}`];
+    let tf = transformOf(p);
+    if (n.type === 'screenAlignment') {
+      const ax = p.HAlignment === 'Center' ? SCREEN.w / 2 : p.HAlignment === 'Right' ? SCREEN.w : 0; const ay = p.VAlignment === 'Center' ? SCREEN.h / 2 : p.VAlignment === 'Bottom' ? SCREEN.h : 0;
+      tf = `translate(${ax - SCREEN.ox}px, ${ay}px) ` + tf;
+    }
+    // scroll-area masks are placeholder-sized in the data and resized by the client; don't clip with them
+    const runtimeMask = n.type === 'mask' && /scroll/i.test(p.Id || '');
+    const st: string[] = [`transform:${tf}`];
     if (p.Origin) st.push(`transform-origin:${p.Origin.x || 0}px ${p.Origin.y || 0}px`);
     if (p.DrawOrder != null) st.push(`z-index:${p.DrawOrder}`);
     if (p.Hidden && !opts.reveal) st.push('display:none');
     if (p.Color && p.Color.a != null && !opts.reveal) st.push(`opacity:${(p.Color.a / 255).toFixed(3)}`);
     if (p.Color && (p.Color.r != null || p.Color.g != null || p.Color.b != null)) { const br = ((p.Color.r ?? 255) + (p.Color.g ?? 255) + (p.Color.b ?? 255)) / 765; if (br < 0.98) st.push(`filter:brightness(${br.toFixed(2)})`); }
     if (n.blend?.destinationFactor === 'One') st.push('mix-blend-mode:plus-lighter');
-    if (n.type === 'mask' && p.TextureName && p.MaskSize) {
+    if (n.type === 'mask' && p.TextureName && p.MaskSize && !runtimeMask) {
       const url = texUrl(w, p.TextureName);
       if (url) { const ms = p.MaskScale || {}, mp = p.MaskPosition || { x: 0, y: 0 }; const mw = p.MaskSize.w * (ms.x ?? 1), mh = p.MaskSize.h * (ms.y ?? 1);
         st.push(`width:${mp.x + mw}px;height:${mp.y + mh}px;-webkit-mask-image:url(${url});mask-image:url(${url});-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:${mp.x}px ${mp.y}px;mask-position:${mp.x}px ${mp.y}px;-webkit-mask-size:${mw}px ${mh}px;mask-size:${mw}px ${mh}px;mask-mode:luminance`); }
