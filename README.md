@@ -117,3 +117,5 @@ a keyframe with no value means the property's type default; `Skew` with x = y is
 - `report/` — the teardown page source and figures
 - `LEARNINGS.md` — what we learned, in one page
 - `dl/` — every wad and asset fetched so far; `api/` — raw lobby API bodies from the captures; `gambino.dart.js` — the client bundle
+
+- `PLAYABLE.md` — plan for making the composed lobby / in-game wrapper interactive (button runtime, signal wiring, glue, stubbed data)
