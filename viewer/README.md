@@ -10,11 +10,17 @@ npm install
 npm run dev          # asset server on :8787 + Vite on :5173, opens the browser
 ```
 
-- **Left**: search and pick a game or lobby feature (thumbnails from the catalogue).
-- **Top**: scene dropdown (Machine / Panels / Popups / Reel symbols / Backdrop), toggles for
-  the `slot_bg` backdrop, initial-state resolution, populated reels, revealing hidden nodes, looping.
-- **Right**: every state of the scene; animated ones first (▶, duration and tween count),
-  instant switches after (⚡). Click to play on the stage.
+- **Left**: search and pick a game or lobby feature (sort A–Z or by animation count).
+- **Top**: Scene / Assets switch; *View options* for the `slot_bg` backdrop, initial-state
+  resolution, populated reels, auto-entrance, x-ray (reveal hidden), looping.
+- **Scene view**: the stage, a player (play/pause, scrub, stop), and a **Spin** button when the
+  scene has a wheel node. Auto-entrance plays `show`/`default` once for scenes that paint nothing at rest.
+- **Right tabs**: **Scenes** (grouped, with node/animation counts) · **States** (animated first with
+  duration and tween count; ▶ plays from rest, **+** queues a sequence that plays without resetting —
+  spin → sector → win) · **Tree** (layers panel: click to highlight on stage, untick to hide).
+- **Assets view**: atlases with every sprite outlined (hover for name and rect), sprite tiles,
+  symbol videos composited with their alpha (hover to play), sounds, bitmap fonts rendered.
+- Deep links: the URL hash carries `#game:game154//slot/scene_mobile.object`.
 
 `src/syd/` is the runtime: `wad.ts` (parser), `scene.ts` (initial state, expanded-order
 references, timeline flattening), `dom.ts` (scene → divs, masks in luminance mode, bitmap text),

@@ -7,7 +7,7 @@ import { cdn } from './wad';
 import { initialProps, effectiveProps, kidsByZ, roots } from './scene';
 import { AlphaVideo } from './video';
 
-export type Built = { root: HTMLElement; els: HTMLElement[]; videos: Map<number, AlphaVideo>; init: Record<number, Record<string, any>>; setFrame: (i: number, f: number) => void; reset: () => void };
+export type Built = { root: HTMLElement; els: HTMLElement[]; videos: Map<number, AlphaVideo>; init: Record<number, Record<string, any>>; setFrame: (i: number, f: number) => void; reset: () => void; visibleLeaves: () => number };
 
 const texUrl = (w: Wad, id: string) => { const t = w.textures[id]; return t ? cdn(t.webp || t.png!) : null; };
 
@@ -73,5 +73,7 @@ export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; rev
     root, els, videos, init,
     setFrame: (i, f) => { const sp = els[i]?.querySelector('.spr') as HTMLElement | null; const sh = w.sprites[r.nodes[i].properties?.SpriteName]; const fr = sh?.frames[Math.min(f, sh.frames.length - 1)]; if (sp && fr) sp.style.backgroundPosition = `-${fr.frame.x}px -${fr.frame.y}px`; },
     reset: () => { els.forEach((e, i) => { if (e) e.style.cssText = base[i]; }); videos.forEach((v) => v.stop()); },
+    // leaves that would actually paint at rest (no hidden / alpha-0 ancestor)
+    visibleLeaves: () => [...root.querySelectorAll('.spr, .vid')].filter((e) => { let p = e.parentElement; while (p && p !== root) { if (p.style.display === 'none' || p.style.opacity === '0' || p.style.opacity === '0.000') return false; p = p.parentElement; } return true; }).length,
   };
 }

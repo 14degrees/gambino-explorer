@@ -7,12 +7,12 @@ import type { Built } from './dom';
 const NAMED: Record<string, string> = { QuadIn: 'inQuad', QuadOut: 'outQuad', QuadInOut: 'inOutQuad', CubicIn: 'inCubic', CubicOut: 'outCubic', CubicInOut: 'inOutCubic', Linear: 'linear' };
 const ease = (tr: Track) => tr.tf === 'CubicBezier' && tr.tp ? cubicBezier(tr.tp[0], tr.tp[1], tr.tp[2], tr.tp[3]) : (NAMED[tr.tf || ''] || 'linear');
 
-export function playState(r: Scene, built: Built, actionIndex: number, ownerNode: number, opts: { loop?: boolean } = {}) {
+export function playState(r: Scene, built: Built, actionIndex: number, ownerNode: number, opts: { loop?: boolean; reset?: boolean; onComplete?: () => void } = {}) {
   const order = expandedOrder(r); const tracks: Track[] = [];
   const total = flatten(r, order, actionIndex, ownerNode, 0, tracks);
   tracks.sort((a, b) => a.t0 - b.t0);
-  built.reset();
-  const tl = createTimeline({ loop: !!opts.loop, defaults: { ease: 'linear' }, onLoop: () => built.reset() });
+  if (opts.reset !== false) built.reset();
+  const tl = createTimeline({ loop: !!opts.loop, defaults: { ease: 'linear' }, onLoop: () => { if (opts.reset !== false) built.reset(); }, onComplete: () => opts.onComplete?.() });
   const el = (i: number) => built.els[i];
   for (const tr of tracks) {
     const target = el(tr.node); if (!target) continue;

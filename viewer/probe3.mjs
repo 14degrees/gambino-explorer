@@ -1,0 +1,15 @@
+import { chromium } from 'playwright-core';
+const browser = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+const page = await (await browser.newContext({ viewport: { width: 1500, height: 900 } })).newPage();
+page.on('pageerror', (e) => console.log('PAGEERROR', e.message));
+await page.goto('http://localhost:5173/#game:game154//slot%2Fscene_mobile.object');
+await page.waitForTimeout(800); await page.click('.tabs button:nth-child(2)');
+await page.waitForFunction(() => document.querySelectorAll('.right .st').length > 0, null, { timeout: 60000 }); await page.waitForTimeout(2500);
+await page.click('.seg button:nth-child(2)'); await page.waitForTimeout(800);
+await page.click('.seg button:nth-child(1)'); await page.waitForTimeout(1500);
+await page.click('.tabs button:nth-child(3)'); await page.waitForTimeout(300);
+const rows = await page.$$('.trow'); const labels = await page.$$eval('.trow', (r) => r.map((x) => x.textContent));
+const i = labels.findIndex((l) => /jackpotAnim\b|#jackpotAnim$/.test(l) || l.includes('#innerWheel') || l.includes('#progress_logo') || l.includes('#jackpotAnim'));
+await rows[i >= 0 ? i : 6].click(); await page.waitForTimeout(400);
+await page.screenshot({ path: 'v3-tree.png', clip: { x: 130, y: 20, width: 1370, height: 560 } });
+await browser.close();
