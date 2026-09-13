@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { animate } from 'animejs';
 import { parseWad, mergeWads, cdn, type Wad, type Scene } from './syd/wad';
-import { buildScene, type Built } from './syd/dom';
+import { buildScene, preloadTextures, type Built } from './syd/dom';
 import { listStates, type StateInfo } from './syd/scene';
 import { playState } from './syd/timeline';
 import Assets from './ui/Assets';
@@ -22,6 +22,7 @@ export default function App() {
   const [wad, setWad] = useState<Wad | null>(null);
   const [sceneId, setSceneId] = useState('');
   const [status, setStatus] = useState('');
+  const [loadNote, setLoadNote] = useState('');
   const [view, setView] = useState<'scene' | 'assets'>('scene');
   const [tab, setTab] = useState<Tab>('states');
   const [opts, setOpts] = useState({ initial: true, backdrop: true, reels: true, reveal: false, loop: true, auto: true });
@@ -93,6 +94,7 @@ export default function App() {
 
   // (re)build the DOM for the current scene
   useEffect(() => {
+    let cleanup = () => {};
     const host = stageRef.current; if (!host) return;
     tlRef.current?.cancel(); tlRef.current = null; setPlaying(null); setPaused(false); setBox(null);
     host.innerHTML = ''; builtRef.current = null;
@@ -104,11 +106,15 @@ export default function App() {
     if (sceneId.startsWith('icons/')) b.root.style.transform = 'translate(300px, 200px) scale(3)';
     for (const i of hiddenNodes) if (b.els[i]) b.els[i].style.display = 'none';
     host.appendChild(b.root); builtRef.current = b;
-    // auto-entrance: a scene that paints nothing at rest gets its entrance state played once
-    if (opts.auto && !opts.reveal && b.visibleLeaves() === 0) {
-      const st = listStates(scene).filter(isAnim); const pick = st.find((s) => s.id === 'show') || st.find((s) => s.id === 'default') || st.sort((a, c) => c.tweens - a.tweens)[0];
-      if (pick) setTimeout(() => play(pick, { loop: false }), 50);
+    // auto-entrance: a scene with a `show` entrance, or one that paints nothing at rest, plays its
+    // entrance once — after its textures have decoded, so the reveal is not spent on empty sprites
+    if (opts.auto && !opts.reveal) {
+      const st = listStates(scene).filter(isAnim);
+      const pick = st.find((s) => s.id === 'show') || (b.visibleLeaves() === 0 ? (st.find((s) => s.id === 'default') || [...st].sort((a, c) => c.tweens - a.tweens)[0]) : undefined);
+      if (pick) { setLoadNote('decoding art…'); let live = true; cleanup = () => { live = false; };
+        preloadTextures(wad, scene).then(() => { if (live && builtRef.current === b) { setLoadNote(''); play(pick, { loop: false }); } }); }
     }
+    return () => cleanup();
   }, [wad, scene, sceneId, view, opts.backdrop, opts.initial, opts.reels, opts.reveal, opts.auto]);
 
   // hide toggles from the tree apply live
@@ -133,7 +139,7 @@ export default function App() {
     <div className="app">
       <header>
         <h1>Gambino Viewer</h1>
-        {entry && <div className="crumb"><b>{entry.title}</b><span>{entry.id}{status ? ' · ' + status : ''}</span></div>}
+        {entry && <div className="crumb"><b>{entry.title}</b><span>{entry.id}{status ? ' · ' + status : ''}{loadNote ? ' · ' + loadNote : ''}</span></div>}
         {entry?.kind === 'lobby' && entry.wads.length > 1 && <select value={wadName || entry.wads[0]} onChange={(e) => { setWadName(e.target.value); setSceneId(''); }}>{entry.wads.map((w) => <option key={w} value={w}>{w}</option>)}</select>}
         {wad && <div className="seg"><button className={view === 'scene' ? 'on' : ''} onClick={() => setView('scene')}>Scene</button><button className={view === 'assets' ? 'on' : ''} onClick={() => setView('assets')}>Assets</button></div>}
         <details className="menu"><summary>View options</summary><div>

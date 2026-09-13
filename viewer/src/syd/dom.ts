@@ -20,6 +20,17 @@ export function transformOf(p: Record<string, any>) {
   return parts.join(' ');
 }
 
+// Decode every texture a scene can reference (its sprites, fonts and masks) before animating it.
+export function preloadTextures(w: Wad, r: Scene, timeoutMs = 8000): Promise<void> {
+  const urls = new Set<string>();
+  for (const n of r.nodes) { const p = n.properties || {};
+    const sh = p.SpriteName && w.sprites[p.SpriteName]; if (sh) { const u = texUrl(w, sh.meta.image); if (u) urls.add(u); }
+    const f = p.FontName && w.fonts[p.FontName]; if (f) { const u = texUrl(w, f.page); if (u) urls.add(u); }
+    if (n.type === 'mask' && p.TextureName) { const u = texUrl(w, p.TextureName); if (u) urls.add(u); } }
+  const all = Promise.all([...urls].map((u) => new Promise<void>((res) => { const im = new Image(); im.onload = () => im.decode().then(() => res(), () => res()); im.onerror = () => res(); im.src = u; })));
+  return Promise.race([all.then(() => {}), new Promise<void>((res) => setTimeout(res, timeoutMs))]);
+}
+
 export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; reveal?: boolean } = {}): Built {
   const init = opts.applyInitial === false ? {} : initialProps(r);
   const els: HTMLElement[] = []; const videos = new Map<number, AlphaVideo>();
@@ -74,6 +85,6 @@ export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; rev
     setFrame: (i, f) => { const sp = els[i]?.querySelector('.spr') as HTMLElement | null; const sh = w.sprites[r.nodes[i].properties?.SpriteName]; const fr = sh?.frames[Math.min(f, sh.frames.length - 1)]; if (sp && fr) sp.style.backgroundPosition = `-${fr.frame.x}px -${fr.frame.y}px`; },
     reset: () => { els.forEach((e, i) => { if (e) e.style.cssText = base[i]; }); videos.forEach((v) => v.stop()); },
     // leaves that would actually paint at rest (no hidden / alpha-0 ancestor)
-    visibleLeaves: () => [...root.querySelectorAll('.spr, .vid')].filter((e) => { let p = e.parentElement; while (p && p !== root) { if (p.style.display === 'none' || p.style.opacity === '0' || p.style.opacity === '0.000') return false; p = p.parentElement; } return true; }).length,
+    visibleLeaves: () => [...root.querySelectorAll('.spr')].filter((e) => { let p = e.parentElement; while (p && p !== root) { if (p.style.display === 'none' || p.style.opacity === '0' || p.style.opacity === '0.000' || /brightness\(0\.[0-2]/.test(p.style.filter)) return false; p = p.parentElement; } return true; }).length,
   };
 }
