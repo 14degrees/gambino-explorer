@@ -1,0 +1,9 @@
+body { background: #1a0a3a; overflow: hidden; }
+.play { position: fixed; inset: 0; display: grid; place-items: center; background: radial-gradient(ellipse at 50% 40%, #5a1a9a 0%, #2a0a5a 55%, #14052e 100%); }
+.play .frame { position: relative; width: min(100vw, calc(100vh * 1366 / 768)); aspect-ratio: 1366 / 768; overflow: hidden; border: 0; border-radius: 0; background: transparent; }
+.play .stage { position: absolute; left: 0; top: 0; width: 1366px; height: 768px; transform-origin: 0 0; }
+.play .design { position: absolute; left: 107px; top: 0; width: 1152px; height: 768px; }
+.play .hud { position: fixed; left: 12px; bottom: 10px; color: rgba(255,255,255,0.55); font: 12px "IBM Plex Mono", monospace; display: flex; gap: 14px; align-items: center; }
+.play .hud b { color: #E2B54B; font-weight: 500; }
+.play .hud button { font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: .08em; text-transform: uppercase; background: rgba(0,0,0,.35); color: #fff; border: 1px solid rgba(255,255,255,.25); border-radius: 4px; padding: 4px 9px; cursor: pointer; }
+.play .loading { position: fixed; inset: 0; display: grid; place-items: center; color: #E8E6E0; font: 600 22px "Barlow Condensed", sans-serif; letter-spacing: .1em; text-transform: uppercase; }

@@ -42,3 +42,11 @@ also `/catalog.json`, `/map.json`, `/thumbs`. `npm run build && npm run preview`
 Not yet: chaining states the way the engine does (spin → sector → win), particles, rgb tint
 beyond a brightness approximation, the lobby-only node types (`screenAlignment`, `tile`,
 `multilineText`, `renderTarget`), an asset browser per game.
+
+## Playable pages
+
+`/play.html` — **Daily Free Spin**, end to end: open → idle rim lights → SPIN → lights race,
+wheel spins and lands → slice highlight → Congratulations with the amount and the bonus
+breakdown → COLLECT → reset. Everything visible is the game's data; `src/play/DailySpin.tsx`
+is only the glue the client's code provides (what a click does, where the wheel stops, the
+numbers). Runtimes are created with `playInitial` so authored idle loops (`repeat`) start.

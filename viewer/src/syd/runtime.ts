@@ -19,7 +19,7 @@ export class Runtime {
   private listeners: Listener[] = [];
   log: string[] = [];
 
-  constructor(public scene: Scene, public built: Built, public wad: Wad, public name = '') {
+  constructor(public scene: Scene, public built: Built, public wad: Wad, public name = '', opts: { playInitial?: boolean } = {}) {
     const S = scene.states || [];
     const walk = (si: number, node: number, parent: number | null) => { const st = S[si]; if (!st) return; this.owner.set(si, node); if (st.children?.length) { for (const c of st.children) walk(c, node, si); } else if (parent != null) this.container.set(si, parent); };
     scene.nodes.forEach((n, i) => { if (n.stateMachine != null) { this.machineOf.set(i, n.stateMachine); walk(n.stateMachine, i, null); } });
@@ -28,6 +28,7 @@ export class Runtime {
     for (const root of this.machineOf.values()) start(root);
     (scene.signalEvents || []).forEach((ev: any, k: number) => { if (ev.source === ev.target) this.selfEvent.set(ev.source, k); });
     this.attachButtons();
+    if (opts.playInitial) for (const si of [...this.active.values()]) this.enter(si); // the client enters initial states, so idle loops start
   }
 
   on(fn: Listener) { this.listeners.push(fn); }
