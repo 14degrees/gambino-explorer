@@ -121,3 +121,5 @@ button.b.gold { background: var(--gold); color: #1a1408; border-color: var(--gol
 .tile-lobby:hover { outline: 3px solid #fff; }
 .events { font: 11px/1.5 "IBM Plex Mono", monospace; color: var(--muted); max-height: 110px; overflow: auto; padding: 6px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
 .events b { color: var(--gold); font-weight: 500; }
+
+.particle { position: absolute; left: 0; top: 0; background-repeat: no-repeat; pointer-events: none; }

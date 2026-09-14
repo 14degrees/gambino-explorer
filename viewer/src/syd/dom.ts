@@ -6,8 +6,9 @@ import type { Wad, Scene } from './wad';
 import { cdn } from './wad';
 import { initialProps, effectiveProps, kidsByZ, roots } from './scene';
 import { AlphaVideo } from './video';
+import { Particles } from './particles';
 
-export type Built = { root: HTMLElement; els: HTMLElement[]; videos: Map<number, AlphaVideo>; sounds: Map<number, HTMLAudioElement>; init: Record<number, Record<string, any>>; setFrame: (i: number, f: number) => void; setText: (i: number, text: string) => void; reset: () => void; visibleLeaves: () => number };
+export type Built = { root: HTMLElement; els: HTMLElement[]; videos: Map<number, AlphaVideo>; sounds: Map<number, HTMLAudioElement>; particles: Map<number, Particles>; init: Record<number, Record<string, any>>; setFrame: (i: number, f: number) => void; setText: (i: number, text: string) => void; reset: () => void; visibleLeaves: () => number };
 
 const texUrl = (w: Wad, id: string) => { const t = w.textures[id]; return t ? cdn(t.webp || t.png!) : null; };
 
@@ -37,7 +38,7 @@ export function preloadTextures(w: Wad, r: Scene, timeoutMs = 8000): Promise<voi
 export const SCREEN = { w: 1366, h: 768, design: 1152, ox: 107 };
 export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; reveal?: boolean } = {}): Built {
   const init = opts.applyInitial === false ? {} : initialProps(r);
-  const els: HTMLElement[] = []; const videos = new Map<number, AlphaVideo>(); const sounds = new Map<number, HTMLAudioElement>();
+  const els: HTMLElement[] = []; const videos = new Map<number, AlphaVideo>(); const sounds = new Map<number, HTMLAudioElement>(); const particles = new Map<number, Particles>();
   // ColorModulation multiplies the texture by the accumulated node colour. In CSS: a colour
   // layer under the image with multiply blending, masked by the image's own alpha.
   const tintCss = (tint: number[], url: string, f: any) => tint[0] > 0.995 && tint[1] > 0.995 && tint[2] > 0.995 ? '' :
@@ -90,6 +91,7 @@ export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; rev
     if (n.type === 'sprite' || n.type === 'ninePatch') { const s = spriteEl(p.SpriteName, p.Frame || 0, tint); if (s) el.appendChild(s); }
     else if (n.type === 'tile' && p.SpriteName) { const s = spriteEl(p.SpriteName, 0, tint, p.Size || { w: 2048, h: 2048 }); if (s) el.appendChild(s); }
     else if (n.type === 'text') { const t = textEl(p); if (t) el.appendChild(t); }
+    else if (n.type === 'particles2' && p.SpriteName && w.sprites[p.SpriteName]) { const url = texUrl(w, w.sprites[p.SpriteName].meta.image); if (url) { const q = new Particles(el, w.sprites[p.SpriteName], url, p); particles.set(i, q); if (!p.Hidden) q.play(); } }
     else if ((n.type === 'sound' || n.type === 'stream') && p.SoundName && w.audio[p.SoundName]) { const a = new Audio(cdn(w.audio[p.SoundName].ogg || w.audio[p.SoundName].mp3!)); a.preload = 'none'; a.loop = !!p.Loop; sounds.set(i, a); }
     else if (n.type === 'videoSprite' && p.VideoName && w.videos[p.VideoName]) { const v = new AlphaVideo(cdn(w.videos[p.VideoName].webm || w.videos[p.VideoName].mp4!)); videos.set(i, v); el.appendChild(v.canvas); }
     for (const k of kidsByZ(r, n)) el.appendChild(build(k, tint));
@@ -99,10 +101,10 @@ export function buildScene(w: Wad, r: Scene, opts: { applyInitial?: boolean; rev
   for (const rt of roots(r)) root.appendChild(build(rt));
   const base = els.map((e) => e?.style.cssText);
   return {
-    root, els, videos, sounds, init,
+    root, els, videos, sounds, particles, init,
     setText: (i, text) => { const el = els[i]; if (!el) return; el.querySelectorAll(':scope > .txt').forEach((t) => t.remove()); const t = textEl({ ...effectiveProps(r, init, i), Text: text }); if (t) el.insertBefore(t, el.firstChild); },
     setFrame: (i, f) => { const sp = els[i]?.querySelector('.spr') as HTMLElement | null; const sh = w.sprites[r.nodes[i].properties?.SpriteName]; const fr = sh?.frames[Math.min(f, sh.frames.length - 1)]; if (sp && fr) sp.style.backgroundPosition = `-${fr.frame.x}px -${fr.frame.y}px`; },
-    reset: () => { els.forEach((e, i) => { if (e) e.style.cssText = base[i]; }); videos.forEach((v) => v.stop()); sounds.forEach((a) => { a.pause(); a.currentTime = 0; }); },
+    reset: () => { els.forEach((e, i) => { if (e) e.style.cssText = base[i]; }); videos.forEach((v) => v.stop()); sounds.forEach((a) => { a.pause(); a.currentTime = 0; }); particles.forEach((q) => q.clear()); },
     // leaves that would actually paint at rest (no hidden / alpha-0 ancestor)
     visibleLeaves: () => [...root.querySelectorAll('.spr')].filter((e) => { let p = e.parentElement; while (p && p !== root) { if (p.style.display === 'none' || p.style.opacity === '0' || p.style.opacity === '0.000' || /brightness\(0\.[0-2]/.test(p.style.filter)) return false; p = p.parentElement; } return true; }).length,
   };

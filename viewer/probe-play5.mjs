@@ -1,0 +1,10 @@
+import { chromium } from 'playwright-core';
+const browser = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+const page = await (await browser.newContext({ viewport: { width: 1366, height: 768 } })).newPage();
+page.on('pageerror', (e) => console.log('PAGEERROR', e.message));
+await page.goto('http://localhost:5173/play.html'); await page.waitForFunction(() => !document.querySelector('.loading'), null, { timeout: 90000 }); await page.waitForTimeout(800);
+const hit = await page.$('.hit[title=spinBtn]'); const b = await hit.boundingBox(); await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2); await page.mouse.down(); await page.mouse.up();
+await page.waitForTimeout(7600); await page.screenshot({ path: 'coins-1.png' });
+await page.waitForTimeout(900); await page.screenshot({ path: 'coins-2.png' });
+console.log('particles alive:', await page.$$eval('.particle', (p) => p.length));
+await browser.close();
