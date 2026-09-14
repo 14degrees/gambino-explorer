@@ -56,10 +56,17 @@ export function flatten(r: Scene, order: number[], ai: number, node: number, t0:
   if (a.type === 'reference') { const t = order[a.target]; const acts = r.nodes[t]?.actions || []; return acts[a.action] != null ? flatten(r, order, acts[a.action], t, t0, out, depth + 1) : 0; }
   if (a.type === 'sequence') { let t = t0; for (const k of a.actions || []) t += flatten(r, order, k, node, t, out, depth + 1); return t - t0; }
   if (a.type === 'parallel') { let m = 0; for (const k of a.actions || []) m = Math.max(m, flatten(r, order, k, node, t0, out, depth + 1)); return m; }
+  // repeat: loop one action forever — unrolled to a horizon so it fits one timeline
+  if (a.type === 'repeat') { let t = t0; for (let i = 0; i < REPEAT_MAX && t - t0 < REPEAT_HORIZON; i++) { const d = flatten(r, order, a.action, node, t, out, depth + 1); if (d <= 0) break; t += d; } return t - t0; }
+  // timed: run one action, repeating, for `duration` ms (iterations 0 = as many as fit)
+  if (a.type === 'timed') { const span = a.duration || 0; let t = t0; const max = a.iterations || 1000; for (let i = 0; i < max && t - t0 < span; i++) { const d = flatten(r, order, a.action, node, t, out, depth + 1); if (d <= 0) break; t += d; } return span; }
   return 0;
 }
+const REPEAT_HORIZON = 20_000, REPEAT_MAX = 200;
+/** a state counts as animated when it tweens, or steps values over time (lamp chases, flipbooks) */
+export function isAnimated(ms: number, tweens: number, steps: number) { return ms >= 40 && (tweens > 0 || steps >= 3); }
 
-export type StateInfo = { id: string; index: number; owner: number; ownerId: string | null; action: number; ms: number; tweens: number; enteredBy: string[] };
+export type StateInfo = { id: string; index: number; owner: number; ownerId: string | null; action: number; ms: number; tweens: number; steps: number; enteredBy: string[] };
 export function listStates(r: Scene): StateInfo[] {
   const owners = stateOwners(r); const order = expandedOrder(r); const out: StateInfo[] = [];
   (r.states || []).forEach((st, si) => {
@@ -67,7 +74,8 @@ export function listStates(r: Scene): StateInfo[] {
     const own = owners[si]; const acts = r.nodes[own].actions || []; const ai = st.onEnter != null ? acts[st.onEnter] : null; if (ai == null) return;
     const tracks: Track[] = []; const ms = flatten(r, order, ai, own, 0, tracks);
     const enteredBy = (st.transitions || []).map((t: number) => r.transitions?.[t]).filter((t: any) => t && t.rule != null).map((t: any) => { const ru = r.rules![t.rule]; return ru.type === 'param' ? (ru.params || []).join('/') : `${ru.type}:${ru.signal ?? ''}`; });
-    out.push({ id: st.id, index: si, owner: own, ownerId: r.nodes[own].properties?.Id || null, action: ai, ms, tweens: tracks.filter((t) => !t.discrete && t.dur > 0).length, enteredBy });
+    const stepTimes = new Set(tracks.filter((t) => t.discrete && t.t0 > 0).map((t) => t.t0));
+    out.push({ id: st.id, index: si, owner: own, ownerId: r.nodes[own].properties?.Id || null, action: ai, ms, tweens: tracks.filter((t) => !t.discrete && t.dur > 0).length, steps: stepTimes.size, enteredBy });
   });
   return out;
 }

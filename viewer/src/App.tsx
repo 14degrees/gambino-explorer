@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { animate } from 'animejs';
 import { parseWad, mergeWads, cdn, type Wad, type Scene } from './syd/wad';
 import { buildScene, preloadTextures, SCREEN, type Built } from './syd/dom';
-import { listStates, type StateInfo } from './syd/scene';
+import { listStates, isAnimated, type StateInfo } from './syd/scene';
 import { playState } from './syd/timeline';
 import { Runtime } from './syd/runtime';
 import Assets from './ui/Assets';
@@ -13,7 +13,7 @@ type Entry = { kind: 'game' | 'lobby'; id: string; title: string; wads: string[]
 type Tab = 'scenes' | 'states' | 'tree';
 const K = { lobby: 'assets/en/low/lobby_next_version/lobby.wad.xml', lobbyMain: 'assets/en/low/lobby_next_version/LobbyMain.wad.xml', bottom: 'assets/en/low/games/common_next_version/bottom.wad.xml', indicator: 'assets/en/low/lobby_next_version/Panels/IndicatorPanel.wad.xml', ruby: 'assets/en/low/lobby_next_version/Features/RubyRush/RubyRushInLobby.wad.xml' };
 const COMPOSE_KEYS = { none: [], ingame: [K.lobby, K.bottom, K.indicator], lobby: [K.lobby, K.lobbyMain, K.indicator, K.ruby] };
-const isAnim = (s: StateInfo) => s.ms >= 40 && s.tweens > 0;
+const isAnim = (s: StateInfo) => isAnimated(s.ms, s.tweens, s.steps);
 
 export default function App() {
   const [catalog, setCatalog] = useState<any>(null);
@@ -255,7 +255,7 @@ function StateRow({ s, anim, onPlay, onQueue }: { s: StateInfo; anim: boolean; o
   return <div className={`st${anim ? '' : ' instant'}`}>
     <button className="play" onClick={onPlay} title={anim ? 'play from rest' : 'apply'}>{anim ? '▶' : '⚡'}</button>
     <div><b>{s.id}</b><small>{s.ownerId ? '#' + s.ownerId : 'node ' + s.owner}{s.enteredBy.length ? ' · via ' + s.enteredBy.slice(0, 4).join(', ') + (s.enteredBy.length > 4 ? '…' : '') : ''}</small></div>
-    <span className="dur">{anim ? `${fmtMs(s.ms)} · ${s.tweens}` : 'instant'}</span>
+    <span className="dur">{anim ? `${fmtMs(s.ms)} · ${s.tweens ? s.tweens + ' tw' : s.steps + ' steps'}` : 'instant'}</span>
     <button className="plus" onClick={onQueue} title="add to sequence">+</button>
   </div>;
 }
